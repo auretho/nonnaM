@@ -1,0 +1,21 @@
+.navigation{
+    // position: fixed;
+    // top: 0;
+    // left: 0;
+    flex: 1;
+    background-color: lightgreen;
+    padding: 1em 0;
+    width: 100%;
+    &-list{
+        display: flex;
+        justify-content: center;
+        margin: auto;
+    
+        &-item{
+            margin: 0 1em;
+        }
+    
+    }
+
+
+}

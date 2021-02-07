@@ -1,0 +1,25 @@
+.header{
+    flex: 1;
+    min-height: 100%;
+    background: no-repeat url("https://cdn.pixabay.com/photo/2015/05/29/10/00/olives-789140_1280.jpg");
+    background-size: cover;
+    background-attachment: fixed;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    
+    &-title{
+        color: #fff;
+        font-size: 5em;
+        font-weight: bold;
+        font-style: italic;
+        text-shadow: 0 0 5px black;
+    }
+
+    &-subtitle{
+        color: #fff;
+        font-size: 2em;
+        text-shadow: 0 0 5px black;
+    }
+}

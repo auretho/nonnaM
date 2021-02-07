@@ -1,0 +1,27 @@
+.main{
+    height: 100%;
+    display: flex;
+
+    &-presentation-block{
+        height: 500px;
+        width: 25%;
+        border: 1px solid red;
+        background-color: pink;
+        
+    }
+    
+    &-presentation-picture{
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+    }
+
+    &-presentation-description{
+        padding: 1em;
+        text-align: justify;
+    }
+} 
+
+.mamma{
+    object-fit: cover; // A REVOIR AVEC UNE NOUVELLE PHOTO
+}
