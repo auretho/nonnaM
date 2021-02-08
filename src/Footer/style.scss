@@ -1,0 +1,29 @@
+@use 'src/vars';
+
+.footer{
+    background-color: vars.$oliveBackgr;
+    border: 1px solid vars.$oliveColor;
+    height: 50px;
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+    z-index: 100;
+    display: flex;
+    flex-direction: column;
+
+    &-list{
+        display: flex;
+        justify-content: center;
+        margin: auto;
+        
+        &-item{
+            margin: 0 2em;
+            color: black;
+        }   
+    }
+}
+
+.footer .active{
+    font-weight: bold;
+    // font-style: italic;
+}
