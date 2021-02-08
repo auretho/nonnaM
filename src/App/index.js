@@ -1,18 +1,26 @@
+import { Switch, Route } from 'react-router-dom';
 import Nav from '../Nav';
-import Header from '../Header';
-import Main from '../Main';
-import Comments from '../Comments';
 import Footer from '../Footer';
+import Home from '../Home';
+import Product from '../Product';
 import './style.scss';
 
 function App() {
   return (
     <div className="app">
-      <Nav />
-      <Header />
-      <Main />
-      <Comments />
-      <Footer />
+          <Nav />
+      <Switch>
+
+        <Route exact path="/">
+          <Home />
+        </Route>
+
+        <Route path="/tomates">
+          <Product />
+        </Route>
+
+      </Switch>
+          <Footer />
     </div>
   );
 }
