@@ -1,21 +1,25 @@
 import React from'react';
+import { NavLink } from 'react-router-dom';
 import './style.scss';
 
 const Nav = () => (
     <nav className="navigation">
         <ul className="navigation-list">
-            <a href="home">
-                <li className="navigation-list-item">Accueil</li>
-            </a>
-            <a href="home">
+            <NavLink exact to="/">
+                <li className="navigation-list-item">Notre histoire</li>
+            </NavLink>
+            <NavLink to="/olives">
                 <li className="navigation-list-item">Huile d'olive</li>
-            </a>
-            <a href="home">
+            </NavLink>
+            <NavLink to="/tomates">
                 <li className="navigation-list-item">Tomates</li>
-            </a>
-            <a href="home">
+            </NavLink>
+            <NavLink to="/artichauts">
+                <li className="navigation-list-item">Artichauts</li>
+            </NavLink>
+            <NavLink to="/about">
                 <li className="navigation-list-item">A propos</li>
-            </a>
+            </NavLink>
         </ul>
     </nav>
 )

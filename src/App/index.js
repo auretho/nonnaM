@@ -1,6 +1,7 @@
 import Nav from '../Nav';
 import Header from '../Header';
 import Main from '../Main';
+import Comments from '../Comments';
 import './style.scss';
 
 function App() {
@@ -9,6 +10,7 @@ function App() {
       <Nav />
       <Header />
       <Main />
+      <Comments />
     </div>
   );
 }

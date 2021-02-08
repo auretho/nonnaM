@@ -1,0 +1,25 @@
+@use 'reset';
+@use 'vars';
+
+
+body {
+  margin: 0;
+  // font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+  //   'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+  //   sans-serif;
+  font-family: serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  
+  //A REVOIR!!!! ===============
+  background: no-repeat url("https://cdn.pixabay.com/photo/2015/05/29/10/00/olives-789140_1280.jpg");
+  background-size: cover;
+  background-attachment: fixed;
+  // ============================
+
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}

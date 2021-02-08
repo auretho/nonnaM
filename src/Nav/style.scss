@@ -1,21 +1,29 @@
+@use 'src/vars';
+
 .navigation{
-    // position: fixed;
-    // top: 0;
-    // left: 0;
-    flex: 1;
-    background-color: lightgreen;
+    position:fixed;
+    top:0;
+    z-index:100;
+    background-color: rgb(214, 244, 195);
     padding: 1em 0;
     width: 100%;
+    border: 1px solid vars.$oliveColor;
+
     &-list{
         display: flex;
         justify-content: center;
         margin: auto;
     
         &-item{
-            margin: 0 1em;
-        }
-    
+            margin: 0 2em;
+            color: black;
+        }   
     }
+}
 
-
+.active{
+    color: rgb(3, 99, 54);
+    font-weight: bold;
+    padding-bottom: .5em;
+    border-bottom: 2px solid rgb(3, 99, 54);
 }
