@@ -6,28 +6,30 @@
 }
 
 .product{
-        width: 50%;
-        margin: 1em auto;
-        display: flex;
-        align-items: center;
-        background-color: rgba(255, 255, 255, 0.678);   
+    width: 50%;
+    margin: 1em auto;
+    display: flex;
+    align-items: center;
+    background-color: rgba(255, 255, 255, 0.678);   
 
-    &-image{
-        height: 300px;
-        border-radius: 5px;
-        box-shadow: 0 0 3px black;
-        margin: 1em;
-    }
+&-image{
+    height: 300px;
+    max-width: 300px;
+    object-fit: cover;
+    border-radius: 5px;
+    box-shadow: 0 0 3px black;
+    margin: 1em;
+}
 
-    &-button{
-        width: 110px;
-        margin-top: 2em;
-        padding: .5em;
-        text-align: center;
-    }
+&-button{
+    width: 110px;
+    margin-top: 2em;
+    padding: .5em;
+    text-align: center;
+}
 }
 
 .right{
-    display: flex;
-    flex-direction: column;
+display: flex;
+flex-direction: column;
 }

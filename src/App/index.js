@@ -15,7 +15,7 @@ function App() {
           <Home />
         </Route>
 
-        <Route path="/tomates">
+        <Route path="/produits">
           <Product />
         </Route>
 

@@ -16,10 +16,10 @@ const Nav = () => (
             <NavLink to="/olives">
                 <li className="navigation-list-item">Huile d'olive</li>
             </NavLink>
-            <NavLink to="/tomates">
+            <NavLink to="/produits/tomates">
                 <li className="navigation-list-item">Tomates</li>
             </NavLink>
-            <NavLink to="/artichauts">
+            <NavLink to="/produits/artichauts">
                 <li className="navigation-list-item">Artichauts</li>
             </NavLink>
             <NavLink to="/about">

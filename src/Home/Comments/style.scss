@@ -1,13 +1,13 @@
 .comments{
     &-blocks{
         display: flex;
-        height: 500px;
+        height: 450px;
         width: 70%;
         margin: auto;
     }
 
     &-title{
-        margin: 3em 0 2em 3em;
+        margin: 3em 0 3em 3em;
         color: #fff;
         font-size: 2em;
         font-weight: bold;
@@ -39,5 +39,6 @@
         padding: 1em;
         text-align: justify;
         font-size: 1.3em;
+        font-style: italic;
     }
 }
