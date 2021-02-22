@@ -1,25 +1,77 @@
 .header{
     flex: 1;
     min-height: 100%;
-    // background: no-repeat url("https://cdn.pixabay.com/photo/2015/05/29/10/00/olives-789140_1280.jpg");
-    // background-size: cover;
-    // background-attachment: fixed;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     
+    &-top{
+        display: flex;
+        align-items: center;
+        position: relative;
+        top: -40px;
+    }
+
+    &-title-logo{
+        position: relative;
+        top: -20px;
+        width: 110px;
+        height: auto;
+        filter: drop-shadow(0 0 2px #fff);
+        margin-left: 1em;
+    }
+
     &-title{
-        color: #fff;
-        font-size: 5em;
-        font-weight: bold;
+        // font-family: 'Bradley Hand', serif;
         font-style: italic;
-        text-shadow: 0 0 5px black;
+        font-weight: bold;
+        font-size: 4.5em;
+        color: #3f3f3f;
+        text-shadow: 0 0 2px #fff;
+    }
+    
+    &-subtext{
+        position: relative;
+        top: -85px;
+        color: #3f3f3f;
+        text-shadow: 0 0 2px #fff;
+        font-size: 24px;
+        width: 270px;
+        font-style: italic;
+        font-weight: bold;
+        // font-family: 'Bradley Hand', serif;
+
     }
 
     &-subtitle{
+        position: relative;
+        top: 70px;
+        // font-family: 'Bradley Hand', serif;
+        font-style: italic;
+        font-weight: bold;
         color: #fff;
         font-size: 2em;
         text-shadow: 0 0 5px black;
     }
+
+    &-arrows{
+        position: relative;
+        color: #fff;
+        top: 70px;
+        filter:drop-shadow(0 0 5px black);
+        animation: floating 2s ease-in-out infinite;
+    }
+    
+        @keyframes floating {
+            0% {
+                transform: translatey(0px) rotate(90deg);
+            }
+            50% {
+                transform: translatey(15px) rotate(90deg);
+            }
+            100% {
+                transform: translatey(0px) rotate(90deg);
+            }
+        }
 }

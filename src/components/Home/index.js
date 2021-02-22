@@ -1,7 +1,8 @@
 // import React from'react';
 import Header from './Header';
 import Main from './Main';
-import Comments from './Comments';
+import Comments from '../../containers/Comments';
+import Process from '../Process';
 
 import './style.scss';
 
@@ -10,6 +11,7 @@ const Home = () => (
         <Header />
         <Main />
         <Comments />
+        <Process />
     </div>
 )
 

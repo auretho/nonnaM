@@ -1,0 +1,57 @@
+.process{
+    padding-bottom: 800px; // A REVOIR
+    // font-size: 5em;
+    display: flex;
+    flex-direction: column;
+    // background-color: rgba(247, 127, 127, 0.377);
+
+    &-img{
+        height: 55px;
+        margin: auto;
+
+    }
+
+    &-description{
+        position: absolute;
+        top: 200px; // A REVOIR
+        left: 50px;
+        background-color: rgba(255, 235, 205, 0.5);
+        width: 30%;
+        margin-left: 3em;
+        text-align: center;
+        border-radius: 5px;
+
+        &-title{
+            font-weight: bold;
+            font-size: 1.5em;
+            padding-bottom: .5em;
+        }
+
+    }
+}
+
+.wrapper{
+    position: sticky;
+    top: 80px;
+}
+
+#basket{
+    height: 125px;
+    top: 80px;
+    z-index: 99;
+}
+
+#left{
+    padding-right: 80px;
+}
+
+#right{
+    padding-left: 80px;
+}
+
+.veggie-wrapper{
+    display: flex;
+    flex-direction: column;
+    position: sticky;
+    top: 80px;
+}
