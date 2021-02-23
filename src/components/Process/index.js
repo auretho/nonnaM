@@ -1,35 +1,70 @@
 import React from 'react';
 import panier from './img/panier.png';
-import tomate from './img/tomate.png';
 import salade from './img/salade.png';
 import artichaut from './img/artichaut.png';
+import tomate from './img/tomate.png';
+import drop from './img/goutte.png';
+import drop2 from './img/goutte2.png';
+
+import pot from './img/pot.png';
+import pot2 from './img/pot2.png';
+
 import './style.scss';
 
-const Process = () => (
-    <div className="process">
-        <div className="wrapper">
-            <div className="left veggie-wrapper">
-                <img src={tomate} alt="" className="process-img" id="left"/>
-                <img src={artichaut} alt="" className="process-img" id="right"/>
-                <img src={salade} alt="" className="process-img" id="left"/>
-            </div>
-            <div className="right veggie-wrapper">
-                <img src={tomate} alt="" className="process-img" id="right"/>
-                <img src={artichaut} alt="" className="process-img" id="left"/>
-                <img src={salade} alt="" className="process-img" id="right"/>
-            </div>
+const Process = ({handleSticky}) => {
+
+    const handleStickyElement = (evt) => {
+        const target = evt.target;
+        console.log(target.scrollTop);
+        console.log('ça marche!!')
+       
+        handleSticky();
+    }
+
+
+    return(
+    <section className="process" onScroll={handleStickyElement}>
+        <h1>Voici comme nous faisons pour vous donner de bons légumes</h1>
+        <div className="wrapper process-one" >
+            <img src={salade} alt="" className="process-veggie left"/>
+            <img src={tomate} alt="" className="process-veggie right"/>
+            <img src={artichaut} alt="" className="process-veggie left"/>
+            <img src={salade} alt="" className="process-veggie right"/>
+            <img src={tomate} alt="" className="process-veggie left"/>
+            <img src={artichaut} alt="" className="process-veggie right"/>
+
+            <img src={panier} alt="" className="process-basket"/>
         </div>
-            <div className="process-description">
-                <h1 className="process-description-title">
-                    Voici comment nous procédons pour vous donner les meilleurs légumes
-                </h1>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore nemo mollitia doloribus voluptas possimus atque aliquid non delectus sequi voluptatem magni, nostrum at dicta. Rem dolorum autem a soluta facere.</p>
+        <div className="wrapper process-two">
+            <div className="drops">
+                <div className="red-drops">
+                    <img src={drop} alt="" className="process-drop left-drop"/>
+                    <img src={drop} alt="" className="process-drop left-drop"/>
+                    <img src={drop} alt="" className="process-drop left-drop"/>
+                    <img src={drop} alt="" className="process-drop left-drop"/>
+                    <img src={drop} alt="" className="process-drop left-drop"/>
+                </div>
+
+                <div className="green-drops">
+                    <img src={drop2} alt="" className="process-drop right-drop"/>
+                    <img src={drop2} alt="" className="process-drop right-drop"/>
+                    <img src={drop2} alt="" className="process-drop right-drop"/>
+                    <img src={drop2} alt="" className="process-drop right-drop"/>
+                    <img src={drop2} alt="" className="process-drop right-drop"/>
+                </div>
+
+            </div>
+            
+            <div className="jars">
+                <img src={pot} alt="" className="process-jar"/>
+                <img src={pot2} alt="" className="process-jar"/>
             </div>
 
 
-        <img src={panier} alt="" className="process-img" id="basket"/>
 
-    </div>
-)
+        </div>
+        
+    </section>
+)}
 
 export default Process;

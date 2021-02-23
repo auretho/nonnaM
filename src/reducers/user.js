@@ -1,10 +1,10 @@
-import photo1 from './img/1.jpg';
-import photo2 from './img/2.jpg';
-import photo3 from './img/3.jpg';
-import photo4 from './img/4.jpg';
-import photo5 from './img/5.jpg';
-import photo6 from './img/6.jpg';
-import photo7 from './img/7.jpg';
+// import photo1 from './img/1.jpg';
+// import photo2 from './img/2.jpg';
+// import photo3 from './img/3.jpg';
+// import photo4 from './img/4.jpg';
+// import photo5 from './img/5.jpg';
+// import photo6 from './img/6.jpg';
+// import photo7 from './img/7.jpg';
 import photo8 from './img/8.jpg';
 import photo9 from './img/9.jpg';
 import photo10 from './img/10.jpg';

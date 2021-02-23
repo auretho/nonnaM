@@ -1,18 +1,27 @@
 .process{
-    padding-bottom: 800px; // A REVOIR
-    // font-size: 5em;
+    padding-bottom: 2000px; // A REVOIR
     display: flex;
     flex-direction: column;
     // background-color: rgba(247, 127, 127, 0.377);
 
-    &-img{
-        height: 55px;
+    &-basket{
+        display: block;
+        height: 70px;
+        width: 120px;
         margin: auto;
+        z-index: 99;
+    }
 
+    &-veggie, &-drop{
+        width: 50px;
+        margin: auto;
+        position: sticky;
+        top: 30%;
+        padding-bottom: 10px;
     }
 
     &-description{
-        position: absolute;
+        position: relative;
         top: 200px; // A REVOIR
         left: 50px;
         background-color: rgba(255, 235, 205, 0.5);
@@ -26,32 +35,56 @@
             font-size: 1.5em;
             padding-bottom: .5em;
         }
+    }
 
+    &-two{
+        margin-top: 20px;
+    }
+
+    &-drop{
+        width: 30px;
+        z-index: -1;
+        position: sticky;
+        top: 45%;
+    }
+
+    &-jar{
+        width: 100px;
+        
     }
 }
 
 .wrapper{
-    position: sticky;
-    top: 80px;
-}
-
-#basket{
-    height: 125px;
-    top: 80px;
-    z-index: 99;
-}
-
-#left{
-    padding-right: 80px;
-}
-
-#right{
-    padding-left: 80px;
-}
-
-.veggie-wrapper{
+    width: 100%;
     display: flex;
     flex-direction: column;
+}
+
+.left{
+    padding-right: 30px;
+
+    &-drop{
+       padding-right: 35px; 
+    }
+}
+
+.right{
+    padding-left: 30px;
+
+    &-drop{
+        padding-left: 35px; 
+     }
+}
+
+
+.red-drops, .green-drops{
+    display:flex;
+    flex-direction: column;
+}
+
+.drops, .jars{
+    display: flex;
+    margin: auto;
     position: sticky;
-    top: 80px;
+    top: 45%;
 }
