@@ -1,4 +1,4 @@
-// import React from'react';
+import React from'react';
 import Header from './Header';
 import Main from './Main';
 import Comments from '../../containers/Comments';
@@ -8,10 +8,10 @@ import './style.scss';
 
 const Home = () => (
     <div className="home">
-        <Header />
-        <Main />
-        <Comments />
-        <Process />
+            <Header />
+            <Main />
+            <Comments />
+            <Process />
     </div>
 )
 

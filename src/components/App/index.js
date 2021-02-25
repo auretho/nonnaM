@@ -11,27 +11,25 @@ import './style.scss';
 function App() {
   return (
     <div className="app">
-          <Nav />
-      
-      <Switch>
-        <Route exact path="/">
-          <Home />
-        </Route>
+      <Nav />
+        <Switch>
+          <Route exact path="/">
+            <Home />
+          </Route>
 
-        <Route path="/produits">
-          <Product />
-        </Route>
+          <Route path="/produits">
+            <Product />
+          </Route>
 
-        <Route path="/about">
-          <About />
-        </Route>
+          <Route path="/about">
+            <About />
+          </Route>
 
-        <Route path="/contact">
-          <Contact />
-        </Route>
-      </Switch>
-
-          <Footer />
+          <Route path="/contact">
+            <Contact />
+          </Route>
+        </Switch>
+      <Footer />
     </div>
   );
 }

@@ -6,6 +6,7 @@ import './style.scss';
 
 const Main = () => (
     <section className="main">
+        
         <div className="main-presentation-block">
             <img src={papa} alt="presentation de l'equipe" className="main-presentation-picture"/>
         </div>
