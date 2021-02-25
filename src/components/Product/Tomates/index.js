@@ -1,5 +1,5 @@
 import React from'react';
-import salsa from './img/salsa.jpg';
+import salsa from '../../../assets/salsa.jpg';
 import './style.scss';
 
 const Tomato = () => (

@@ -1,5 +1,5 @@
 import React from'react';
-import artichauts from './img/artichauts.jpg';
+import artichauts from '../../../assets/artichauts.jpg';
 import './style.scss';
 
 const Artichauts = () => (

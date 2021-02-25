@@ -1,8 +1,8 @@
 import React from'react';
 import { Parallax } from 'react-parallax';
-import bg from '../../../img/cupello.png';
+import bg from '../../../assets/cupello.png';
 import './style.scss';
-import logo from './logo10.png';
+import logo from '../../../assets/logo10.png';
 import DoubleArrowIcon from '@material-ui/icons/DoubleArrow';
 
 const Header = () => (

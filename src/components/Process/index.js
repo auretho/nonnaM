@@ -2,15 +2,15 @@ import React from 'react';
 import { Parallax } from 'react-parallax';
 import BG from '../../img/house.png';
 
-import panier from './img/panier.png';
-import salade from './img/salade.png';
-import artichaut from './img/artichaut.png';
-import tomate from './img/tomate.png';
-import drop from './img/goutte.png';
-import drop2 from './img/goutte2.png';
+import panier from '../../assets/panier.png';
+import salade from '../../assets/salade.png';
+import artichaut from '../../assets/artichaut.png';
+import tomate from '../../assets/tomate.png';
+import drop from '../../assets/goutte.png';
+import drop2 from '../../assets/goutte2.png';
 
-import pot from './img/pot.png';
-import pot2 from './img/pot2.png';
+import pot from '../../assets/pot.png';
+import pot2 from '../../assets/pot2.png';
 
 import './style.scss';
 

@@ -1,7 +1,7 @@
 import React from'react';
-import papa from './papa.jpg';
-import nonna from './nonna.jpg';
-import mamma from './mamma.png';
+import papa from '../../../assets/papa.jpg';
+import nonna from '../../../assets/nonna.jpg';
+import mamma from '../../../assets/mamma.png';
 import './style.scss';
 
 const Main = () => (
