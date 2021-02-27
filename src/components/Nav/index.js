@@ -1,13 +1,12 @@
 import React from'react';
 import { NavLink } from 'react-router-dom';
-import logo from '../../assets/logo10.png';
+import logo from '../../assets/logo-final.png';
 import './style.scss';
 
 const Nav = () => (
     <nav className="navigation">
          <NavLink exact to="/" className="navigation-full-logo">
-                {/* <h1 className="navigation-title">Nonna</h1> */}
-                <img className="navigation-logo" src={logo} alt="logo"/>
+            <img className="navigation-logo" src={logo} alt="logo"/>
         </NavLink>
         
         <ul className="navigation-list">

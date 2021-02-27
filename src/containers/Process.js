@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import Process from '../components/Process';
+import Process from '../components/Home/Process';
 import { getsSticky } from '../actions/process-actions';
 
 const mapStateToProps = null;

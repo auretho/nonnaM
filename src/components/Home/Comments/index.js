@@ -1,6 +1,6 @@
 import React from 'react';
 import { Parallax } from 'react-parallax';
-import bg from '../../../img/house.png';
+import bg from '../../../assets/house.png';
 
 import './style.scss';
 
