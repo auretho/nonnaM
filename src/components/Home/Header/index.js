@@ -1,8 +1,8 @@
 import React from'react';
 // import { Parallax } from 'react-parallax';
-import ciel from '../../../assets/ciel.png';
-import ville from '../../../assets/ville.png';
-import terrain from '../../../assets/terrain2.png';
+import ciel from '../../../assets/ciel1.png';
+import ville from '../../../assets/ville1.png';
+import terrain from '../../../assets/terrain1.png';
 
 
 import './style.scss';
@@ -12,6 +12,7 @@ import DoubleArrowIcon from '@material-ui/icons/DoubleArrow';
 const Header = () => {
     
     const translate = document.querySelectorAll('.translate');
+    
     const handleScroll = () => {
         const scroll = window.pageYOffset;
         
@@ -21,60 +22,36 @@ const Header = () => {
         })
     }
 
-
     window.addEventListener('scroll', handleScroll);
 
-
     return(
-    <header>
-        <section>
-            <div className="header" >
-                <div className="header-logo translate" data-speed="0.1">
-                    <div className="header-top">
-                       <img className="header-title-logo" src={logo} alt="logo"/>
+        <div>
+            <header>
+                <div className="header" >
+                    <div className="header-logo translate" data-speed="0.2">
+                        <div className="header-top">
+                            <img className="header-title-logo" src={logo} alt="logo"/>
+                        </div>
+                        <div className="header-bottom">
+                            <h2 className="header-subtext">Notre histoire, notre terre, nos produits pour vous</h2>
+                        </div>
                     </div>
-                    <div className="header-bottom">
-                        <h2 className="header-subtext">Notre histoire, notre terre, nos produits pour vous</h2>
-                    </div>
+
+                    <h3 className="header-subtitle">C'est ici que commence notre histoire </h3>
+                    <DoubleArrowIcon className="header-arrows" style={{ fontSize: 50 }}/>
                 </div>
 
-                <h3 className="header-subtitle">C'est ici que commence notre histoire </h3>
-                <DoubleArrowIcon className="header-arrows" style={{ fontSize: 50 }}/>
-            </div>
-        </section>
-            <div style={{ height: '100vh'}}>
-            <img className="translate" src={ciel} alt="" 
-                 style={{
-                     width: '100vw', 
-                     position: 'relative', 
-                     zIndex: '-2'
-                }}
-                 data-speed="0.1"
-            />
-            <img className="translate" src={ville} alt="" 
-                 style={{
-                     width: '100vw', 
-                    //  height: '200px',
-                     position:'relative',
-                     top: '-14%',
-                     zIndex: '-2'
-                     }}
-                 data-speed="-0.2"
-            />
-            <img className="translate" src={terrain} alt="" 
-                 style={{
-                     width: '100vw', 
-                    //  height: '100%',
-                     position:'relative',
-                     top: '-32.5%',
-                     zIndex: '-2'
-                     }}
-                 data-speed="-0.4"
-            />
-            </div>
+                <img className="translate header-bg-sky" src={ciel} alt="" data-speed="0.3" />
+                <img className="translate header-bg-town" src={ville} alt="" data-speed="-0.1"/>
+                <img className="translate header-bg-field" src={terrain} alt="" data-speed="-0.3"/>
 
-        <div className="header-shadow"></div>
-    </header>
+            </header>
+            <section>
+                <div className="header-shadow" ></div>
+            </section>
+        </div>
+           
+
 )}
 
 export default Header;

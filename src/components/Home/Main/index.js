@@ -2,11 +2,13 @@ import React from'react';
 import papa from '../../../assets/papa.jpg';
 import nonna from '../../../assets/nonna.jpg';
 import mamma from '../../../assets/mamma.png';
+import vista from '../../../assets/vista.jpg';
+
 import './style.scss';
 
 const Main = () => (
     <section className="main">
-        
+        <div className="blocks-container">
         <div className="main-presentation-block">
             <img src={papa} alt="presentation de l'equipe" className="main-presentation-picture"/>
         </div>
@@ -34,6 +36,7 @@ const Main = () => (
         </div>
         <div className="main-presentation-block">
             <img src={mamma} alt="presentation de l'equipe" className="main-presentation-picture mamma"/>
+        </div>
         </div>
     </section>
 )
