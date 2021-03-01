@@ -10,16 +10,16 @@ const Comments = ({comments, handleHomeScroll}) => {
     
     return(
     <section>
-        <Parallax bgImage={bg} strength={250} className="comments-section translate" data-speed="-0.1">
+        <Parallax bgImage={bg} strength={250} className="comments-section" >
             <div className="comments" >
-                <h2 className="comments-title">Qu'en pensez vous?!</h2>
+                <h2 className="comments-title">Que pensez vous de Nonna M?!</h2>
                 <div className="comments-blocks">
                 
                 {
                 comments.map((comment, id) => (
                     <div className="oneBlock" key={id}>
                         <h1 className="oneBlock-name">{comment.name}</h1>
-                        <p className="oneBlock-comment">{comment.text}</p>
+                        <p className="oneBlock-comment">{comment.text} Lorem ipsum dolor sit amet consectetur, adipisicing elit. Esse, enim.</p>
                     </div>
                 ))
                 }

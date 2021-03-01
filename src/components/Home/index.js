@@ -1,6 +1,5 @@
 import React from'react';
 import Header from './Header';
-import Description from './Description';
 import Main from './Main';
 import Comments from '../../containers/Comments';
 import Process from '../../containers/Process';
@@ -8,9 +7,9 @@ import Process from '../../containers/Process';
 import './style.scss';
 
 const Home = () => {
+
     const handleHomeScroll = () => {
         const translate = document.querySelectorAll('.translate');
-        
         const handleScroll = () => {
             const scroll = window.pageYOffset;
             
@@ -25,7 +24,6 @@ const Home = () => {
     return(
     <div className="home">
             <Header handleHomeScroll={handleHomeScroll}/>
-            {/* <Description /> */}
             <Main handleHomeScroll={handleHomeScroll}/>
             <Comments handleHomeScroll={handleHomeScroll}/>
             <Process handleHomeScroll={handleHomeScroll}/>

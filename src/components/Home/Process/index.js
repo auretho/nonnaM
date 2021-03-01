@@ -16,8 +16,8 @@ import brouette from '../../../assets/brouette.png';
 
 import './style.scss';
 
-const Process = ({handleSticky}) => {
-
+const Process = ({handleHomeScroll}) => {
+    handleHomeScroll();
 
     const rendered = (percentage) => {
         // console.log(percentage);
@@ -38,16 +38,16 @@ const Process = ({handleSticky}) => {
     )}
 
     return(
-    <section >
+    <section className="process-section">
         <Parallax bgImage={champs} style={{ height: '100vh'}} strength={300} renderLayer={rendered} className="process">
-            <div style={{height: '100vh', position: 'relative'}} className="process-section" >
+            <div style={{height: '100vh', position: 'relative'}} className="process-div" >
 
                 <h1 className="process-header">Voici comme nous faisons pour vous donner les meilleurs légumes:</h1>
                 
             </div>
         </Parallax>
 
-        <div style={{ height: '10vh'}}></div>
+        {/* <div style={{ height: '15vh', background: 'linear-gradient(to bottom, pink, transparent)', position: 'relative', top: '-150px'}}></div> */}
     </section>
 )}
 

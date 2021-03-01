@@ -1,4 +1,7 @@
 import React from'react';
+import { Parallax } from 'react-parallax';
+
+import bg from '../../../assets/champs.jpg';
 import papa from '../../../assets/papa.jpg';
 import nonna from '../../../assets/nonna.jpg';
 import mamma from '../../../assets/mamma.png';
@@ -6,10 +9,13 @@ import mamma from '../../../assets/mamma.png';
 import './style.scss';
 
 const Main = ({handleHomeScroll}) => {
+
     handleHomeScroll();
+    
     return(
-    <section className="main">
-        <div className="blocks-container translate" data-speed="-0.1">
+    <section>
+    <Parallax bgImage={bg} className="main" strength={300}>
+        <div className="blocks-container" >
             <div className="main-presentation-block">
                 <img src={papa} alt="presentation de l'equipe" className="main-presentation-picture"/>
             </div>
@@ -39,6 +45,7 @@ const Main = ({handleHomeScroll}) => {
                 <img src={mamma} alt="presentation de l'equipe" className="main-presentation-picture mamma"/>
             </div>
         </div>
+    </Parallax>
     </section>
 )}
 

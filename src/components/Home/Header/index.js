@@ -18,7 +18,7 @@ const Header = ({handleHomeScroll}) => {
         <div>
             <header>
                 <div className="header" >
-                    <div className="header-logo translate" data-speed="0.2">
+                    <div className="header-logo translate" data-speed="0.6">
                         <div className="header-top">
                             <img className="header-title-logo" src={logo} alt="logo"/>
                         </div>
@@ -26,14 +26,15 @@ const Header = ({handleHomeScroll}) => {
                             <h2 className="header-subtext">Notre histoire, notre terre, nos produits pour vous</h2>
                         </div>
                     </div>
-
-                    <h3 className="header-subtitle">C'est ici que commence notre histoire </h3>
-                    <DoubleArrowIcon className="header-arrows" style={{ fontSize: 50 }}/>
+                    <div className=" header-subtitle-block translate" data-speed="0.5" style={{zIndex:'60'}}>
+                        <h3 className="header-subtitle">C'est ici que commence notre histoire </h3>
+                        <DoubleArrowIcon className="header-arrows" style={{ fontSize: 50 }}/>
+                    </div>
                 </div>
 
-                <img className="translate header-bg-sky" src={ciel} alt="" data-speed="0.3" />
-                <img className="translate header-bg-town" src={ville} alt="" data-speed="-0.1"/>
-                <img className="translate header-bg-field" src={terrain} alt="" data-speed="-0.3"/>
+                <img className="translate header-bg-sky" src={ciel} alt="" data-speed="0.4" />
+                <img className="translate header-bg-town" src={ville} alt="" data-speed="0.3"/>
+                <img className="translate header-bg-field" src={terrain} alt="" data-speed="0.2"/>
 
             </header>
             <section>
