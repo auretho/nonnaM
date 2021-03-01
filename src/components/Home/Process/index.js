@@ -39,25 +39,15 @@ const Process = ({handleSticky}) => {
 
     return(
     <section >
-        <Parallax bgImage={champs} style={{ height: '100vh'}} strength={300} renderLayer={rendered}>
-            <div style={{height: '100vh', position: 'relative'}} className="process" >
-                {/* <img src={brouette} 
-                     alt="" 
-                     style={{ 
-                         height: '500px', 
-                         position: 'absolute',
-                         top: '50%',
-                         left: '50%', 
-                         transform: 'translate(60%, -10%)',
-                     }}
-                     className="process-frontImage"/> */}
+        <Parallax bgImage={champs} style={{ height: '100vh'}} strength={300} renderLayer={rendered} className="process">
+            <div style={{height: '100vh', position: 'relative'}} className="process-section" >
 
                 <h1 className="process-header">Voici comme nous faisons pour vous donner les meilleurs légumes:</h1>
                 
             </div>
         </Parallax>
 
-        <div style={{ height: '100vh'}}></div>
+        <div style={{ height: '10vh'}}></div>
     </section>
 )}
 

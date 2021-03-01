@@ -1,7 +1,9 @@
 .process{
-    // padding-bottom: 2000px; // A REVOIR
     display: flex;
     flex-direction: column;
+    align-items: center;
+    position: relative;
+    top: -150px;
 
     &-header{
         margin: auto;

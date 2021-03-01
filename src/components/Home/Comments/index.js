@@ -4,11 +4,15 @@ import bg from '../../../assets/house.png';
 
 import './style.scss';
 
-const Comments = ({comments}) => (
+const Comments = ({comments, handleHomeScroll}) => {
+    
+    handleHomeScroll();
+    
+    return(
     <section>
-        <Parallax bgImage={bg} strength={250}>
-            <div className="comments">
-                <h2 className="comments-title">Parlez-nous de vous!</h2>
+        <Parallax bgImage={bg} strength={250} className="comments-section translate" data-speed="-0.1">
+            <div className="comments" >
+                <h2 className="comments-title">Qu'en pensez vous?!</h2>
                 <div className="comments-blocks">
                 
                 {
@@ -23,6 +27,6 @@ const Comments = ({comments}) => (
             </div>
         </Parallax>
     </section>
-)
+)}
 
 export default Comments;

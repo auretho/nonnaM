@@ -6,23 +6,13 @@ import terrain from '../../../assets/terrain1.png';
 
 
 import './style.scss';
-import logo from '../../../assets/test-new-logo5.png';
+// import logo from '../../../assets/test-new-logo5.png';
+import logo from '../../../assets/logo-coeurSVG.png';
 import DoubleArrowIcon from '@material-ui/icons/DoubleArrow';
 
-const Header = () => {
+const Header = ({handleHomeScroll}) => {
     
-    const translate = document.querySelectorAll('.translate');
-    
-    const handleScroll = () => {
-        const scroll = window.pageYOffset;
-        
-        translate.forEach( element => {
-            const speed = element.dataset.speed;
-            element.style.transform = `translateY(${scroll * speed}px)`;
-        })
-    }
-
-    window.addEventListener('scroll', handleScroll);
+    handleHomeScroll();
 
     return(
         <div>

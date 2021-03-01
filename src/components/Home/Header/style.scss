@@ -7,7 +7,7 @@ header{
     height: 100vh;
     position: relative;
     overflow: hidden;
-    background-color: #71680d;
+    // background: url('../../../assets/house.png') no-repeat;
 }
 
 section{
@@ -26,19 +26,18 @@ section{
     align-items: center;
     
     &-logo{
-        z-index: 2;
+        z-index: 3;
     }
 
     &-top{
         display: flex;
         align-items: center;
         position: relative;
-        top: -40px;
+        top: -100px;
     }
 
     &-title-logo{
         position: relative;
-        top: -20px;
         width: 400px;
         height: auto;
         filter: drop-shadow(0 0 1px rgb(255, 255, 255));
@@ -54,10 +53,10 @@ section{
     
     &-subtext{
         position: relative;
-        top: -85px;
+        top: -145px;
         color: #3f3f3f;
         text-shadow: 0 0 2px #fff;
-        font-size: 26px;
+        font-size: 25px;
         width: 285px;
         font-style: italic;
         font-weight: bold;
@@ -99,7 +98,7 @@ section{
         width: 100%;
         bottom: 100%;
         left: 0;
-        background: linear-gradient(to top, #71680d, transparent); 
+        // background: linear-gradient(to top, #6C782B, transparent); 
         z-index: 4;
     }
 }
@@ -118,7 +117,7 @@ section{
     width: 100%;
     top: 0;
     left: 0;
-    z-index: 3; // A VOIR
+    z-index: 2; // A VOIR
 }
 
 .header-bg-field{
@@ -130,3 +129,9 @@ section{
 }
 
 
+@media (max-width: 1400px){
+    .header-shadow{
+        height: 150px;
+    }
+
+}
