@@ -1,0 +1,36 @@
+.bottom{
+    height: 100vh;
+    width: 100%;
+    background: url('../../../assets/olives.png');
+
+    &-contact{
+        position: relative;
+        top: 200px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    &-title{
+        text-align: center;
+        font-size: 3.5em;
+    }
+
+    &-details{
+        margin-top: 2em;
+        left: 12px;
+        text-align: center;
+        font-size: 2.5em;
+    }
+
+    &-email{
+        color: #04613f;
+        text-shadow: 0 0 10px #068c5b;
+    }
+
+    &-image{
+        margin-top: 2em;
+        width: 150px;
+        text-align: center;
+    }
+}

@@ -1,53 +1,38 @@
 import React from 'react';
 import { Parallax } from 'react-parallax';
-
-import champs from '../../../assets/champs.png'; 
-// import cupello from '../../../assets/cupello.png'; 
-
-import brouette from '../../../assets/brouette.png'; 
-// import panier from '../../../assets/panier.png';
-// import salade from '../../../assets/salade.png';
-// import artichaut from '../../../assets/artichaut.png';
-// import tomate from '../../../assets/tomate.png';
-// import drop from '../../../assets/goutte.png';
-// import drop2 from '../../../assets/goutte2.png';
-// import pot from '../../../assets/pot.png';
-// import pot2 from '../../../assets/pot2.png';
-
 import './style.scss';
+import champs from '../../../assets/champs.png'; 
 
-const Process = ({handleHomeScroll}) => {
-    handleHomeScroll();
 
+const Process = ({img}) => {
+    console.log(img)
     const rendered = (percentage) => {
-        // console.log(percentage);
+        const transformStyle = {transform: `scale(${percentage * .5})`};
         return(
-        <div>
-            <img src={brouette} alt="" 
-                 style={{ 
-                    height: '500px', 
-                    position: 'absolute',
-                    top: '50%',
-                    left: '50%', 
-                    transform: `scale(${percentage * .5})`, 
-                    // opacity: `${percentage * .7}`
-                 }}
-                 className="process-frontImage"
-            />
+        <div className="process-images" id="produits">
+            {
+            img.map((element, i) => (
+                <div className="process-block" key={i}>
+                    <img className="process-image"
+                        src={element.name} alt="" 
+                        style={transformStyle}   
+                    />
+                    <h1 className="process-image-title" 
+                        style={transformStyle}>
+                        {element.text}
+                    </h1>
+                </div>
+            ))
+            }
         </div>
     )}
 
     return(
-    <section className="process-section">
-        <Parallax bgImage={champs} style={{ height: '100vh'}} strength={300} renderLayer={rendered} className="process">
-            <div style={{height: '100vh', position: 'relative'}} className="process-div" >
-
-                <h1 className="process-header">Voici comme nous faisons pour vous donner les meilleurs légumes:</h1>
-                
-            </div>
+    <section className="process">
+        <Parallax className="process-parallax" bgImage={champs} style={{ height: '100vh'}} strength={300} renderLayer={rendered}>
+            {/* <h1 className="process-text">Et vous, quel produit vous intéresse?</h1> */}
         </Parallax>
 
-        {/* <div style={{ height: '15vh', background: 'linear-gradient(to bottom, pink, transparent)', position: 'relative', top: '-150px'}}></div> */}
     </section>
 )}
 

@@ -4,10 +4,8 @@ import bg from '../../../assets/house.png';
 
 import './style.scss';
 
-const Comments = ({comments, handleHomeScroll}) => {
-    
-    handleHomeScroll();
-    
+const Comments = ({comments}) => {
+        
     return(
     <section>
         <Parallax bgImage={bg} strength={250} className="comments-section" >

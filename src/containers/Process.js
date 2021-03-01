@@ -1,14 +1,10 @@
 import { connect } from 'react-redux';
 import Process from '../components/Home/Process';
-import { getsSticky } from '../actions/process-actions';
 
-const mapStateToProps = null;
-  
-const mapDispatchToProps = (dispatch) => ({
-    handleSticky: () => {
-        console.log('coucou');
-        dispatch(getsSticky())
-    }
+const mapStateToProps = (state) => ({
+    img: state.process.img,
 });
+  
+const mapDispatchToProps = null;
 
 export default connect( mapStateToProps, mapDispatchToProps )(Process)

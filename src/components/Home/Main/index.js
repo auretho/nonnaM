@@ -8,9 +8,7 @@ import mamma from '../../../assets/mamma.png';
 
 import './style.scss';
 
-const Main = ({handleHomeScroll}) => {
-
-    handleHomeScroll();
+const Main = () => {
     
     return(
     <section>

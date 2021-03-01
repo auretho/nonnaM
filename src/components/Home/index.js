@@ -3,12 +3,14 @@ import Header from './Header';
 import Main from './Main';
 import Comments from '../../containers/Comments';
 import Process from '../../containers/Process';
+import Bottom from './Bottom';
+
 
 import './style.scss';
 
 const Home = () => {
 
-    const handleHomeScroll = () => {
+    const handleHeaderScroll = () => {
         const translate = document.querySelectorAll('.translate');
         const handleScroll = () => {
             const scroll = window.pageYOffset;
@@ -23,10 +25,11 @@ const Home = () => {
     
     return(
     <div className="home">
-            <Header handleHomeScroll={handleHomeScroll}/>
-            <Main handleHomeScroll={handleHomeScroll}/>
-            <Comments handleHomeScroll={handleHomeScroll}/>
-            <Process handleHomeScroll={handleHomeScroll}/>
+            <Header handleHeaderScroll={handleHeaderScroll} />
+            <Main />
+            <Comments />
+            <Process />
+            <Bottom />
     </div>
 )}
 

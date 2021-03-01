@@ -1,18 +1,14 @@
 import React from'react';
-// import { Parallax } from 'react-parallax';
 import ciel from '../../../assets/ciel1.png';
 import ville from '../../../assets/ville1.png';
 import terrain from '../../../assets/terrain1.png';
-
-
-import './style.scss';
-// import logo from '../../../assets/test-new-logo5.png';
 import logo from '../../../assets/logo-coeurSVG.png';
 import DoubleArrowIcon from '@material-ui/icons/DoubleArrow';
+import './style.scss';
 
-const Header = ({handleHomeScroll}) => {
+const Header = ({handleHeaderScroll}) => {
     
-    handleHomeScroll();
+    handleHeaderScroll();
 
     return(
         <div>

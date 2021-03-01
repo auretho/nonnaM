@@ -1,6 +1,6 @@
 import React from'react';
 import { NavLink } from 'react-router-dom';
-import logo from '../../assets/logo-final.png';
+import logo from '../../assets/logo-coeurSVG.png';
 import './style.scss';
 
 const Nav = () => (
@@ -13,12 +13,12 @@ const Nav = () => (
             <NavLink exact to="/">
                 <li className="navigation-list-item">Notre histoire</li>
             </NavLink>
-            <NavLink to="/olives">
+            <NavLink to="/produits">
                 <li className="navigation-list-item">Huile d'olive</li>
             </NavLink>
-            <NavLink to="/produits/tomates">
+            <a href="#produits">
                 <li className="navigation-list-item">Tomates</li>
-            </NavLink>
+            </a>
             <NavLink to="/produits/artichauts">
                 <li className="navigation-list-item">Artichauts</li>
             </NavLink>

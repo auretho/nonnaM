@@ -1,105 +1,52 @@
 .process{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    position: relative;
 
-    &-header{
-        margin: auto;
-        text-align: center;
-        padding: 1em;
-        border-radius: 30px;
-        font-size: 1.5em;
-        background-color: blanchedalmond;
-    }
-
-    &-basket{
-        display: block;
-        height: 90px;
-        width: 170px;
-        margin: auto;
-        z-index: 99;
-    }
-
-    &-veggie, &-drop{
-        width: 50px;
-        margin: auto;
-        position: sticky;
-        top: 50%;
-        padding-bottom: 25px;
-    }
-
-    &-description{
+    &-parallax{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
         position: relative;
-        top: 200px; // A REVOIR
-        left: 50px;
-        background-color: rgba(255, 235, 205, 0.5);
-        width: 30%;
-        margin-left: 3em;
-        text-align: center;
-        border-radius: 5px;
-        opacity: 0;
-        transition: 2s;
+    }
+    
+    &-images{
+       display: flex;
+       justify-content: center;
+       align-items: stretch; 
+    }
 
+    &-block{
+        position: relative;
+        top: 60px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    &-block:hover{
+        filter: drop-shadow(0 0 10px black)
+    }
+
+    &-image{
+        height: 500px;
+        max-width: auto;
+    
         &-title{
-            font-weight: bold;
-            font-size: 1.5em;
-            padding-bottom: .5em;
+            position: relative;
+            top: -120px;
+            font-size: 3.5em;
+            background-color: wheat;
+            padding: .6em 1.3em;
+            margin: auto;
+            max-width: 500px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px black;
+            text-align: center;
         }
     }
 
-    &-description:hover{
-        opacity: 1;
+    &-text{
+        font-size: 2em;
+        background-color: #D6F4C3;
+        padding: .6em 1.3em;
     }
-
-    &-two{
-        margin-top: 20px;
-    }
-
-    &-drop{
-        width: 30px;
-        z-index: -1;
-        position: sticky;
-        top: 45%;
-    }
-
-    &-jar{
-        width: 150px;
-        
-    }
-}
-
-.wrapper{
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-}
-
-.left{
-    padding-right: 50px;
-
-    &-drop{
-       padding-right: 55px; 
-    }
-}
-
-.right{
-    padding-left: 50px;
-
-    &-drop{
-        padding-left: 55px; 
-     }
-}
-
-
-.red-drops, .green-drops{
-    display:flex;
-    flex-direction: column;
-}
-
-.drops, .jars{
-    display: flex;
-    margin: auto;
-    position: sticky;
-    top: 45%;
 }
