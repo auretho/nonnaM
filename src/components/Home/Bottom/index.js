@@ -10,7 +10,8 @@ const Bottom = () => (
             </h1>
             <div className="bottom-details">
                 <h2>Luca Lucarelli</h2>
-                <a href="mailto: luca@nonnaM.com" className="bottom-email">luca@nonnaM.com</a>
+                <a href="mailto: luca@nonna-m.com" className="bottom-email">luca@nonna-m.com</a>
+                <h2 className="bottom-tel">+33 12 34 56 78 43</h2>
             </div>
             <a href="#header">
                 <img src={oil} alt="" className="bottom-image"/>
