@@ -3,7 +3,7 @@ import { Parallax } from 'react-parallax';
 
 import bg from '../../../assets/champs.jpg';
 import papa from '../../../assets/papa.jpg';
-import nonna from '../../../assets/nonna.jpg';
+import nonna from '../../../assets/nonna-lu.jpg';
 import mamma from '../../../assets/mamma.png';
 
 import './style.scss';

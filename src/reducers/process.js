@@ -1,6 +1,6 @@
 import potTomate from '../assets/pot.png';
 import potArtichaut from '../assets/pot2.png';
-import oil from '../assets/oil2.png';
+import oil from '../assets/oil.png';
 
 
 const initialState = {

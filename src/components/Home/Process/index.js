@@ -4,7 +4,7 @@ import { Parallax } from 'react-parallax';
 
 import './style.scss';
 import champs from '../../../assets/champs.png';
-import oil from '../../../assets/oil2.png'; 
+import oil from '../../../assets/oil.png'; 
 
 
 const Process = ({img}) => {

@@ -1,5 +1,5 @@
 import React from'react';
-import oil from '../../../assets/oil2.png';
+import oil from '../../../assets/oil.png';
 import './style.scss';
 
 const Bottom = () => (
