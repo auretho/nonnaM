@@ -12,7 +12,9 @@ const Bottom = () => (
                 <h2>Luca Lucarelli</h2>
                 <a href="mailto: luca@nonnaM.com" className="bottom-email">luca@nonnaM.com</a>
             </div>
-            <img src={oil} alt="" className="bottom-image"/>
+            <a href="#header">
+                <img src={oil} alt="" className="bottom-image"/>
+            </a>
         </div>
     </div>
 )

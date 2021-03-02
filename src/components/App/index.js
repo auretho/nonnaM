@@ -13,7 +13,7 @@ function App() {
     <div className="app">
       <Nav />
         <Switch>
-          <Route path="/">
+          <Route exact path="/">
             <Home />
           </Route>
 

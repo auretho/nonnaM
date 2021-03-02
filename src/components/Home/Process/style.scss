@@ -50,3 +50,38 @@
         padding: .6em 1.3em;
     }
 }
+
+.ui.modal>.image.content{
+    align-items: center;
+}
+
+.ui.header{
+    position: relative;
+    top: 0;
+    display: inline-block;
+    text-align: left;
+}
+
+.ui.modal>.content>.image{
+    width: 150px;
+}
+
+.ui.dimmer{
+    background-color: rgba(255, 255, 255, 0.726);
+}
+
+
+
+
+
+
+@media(max-width: 1450px){
+    .process-image{
+        height: 400px;
+
+        &-title{
+            max-width: 400px;
+            font-size: 3.2em;
+        }
+    }
+}

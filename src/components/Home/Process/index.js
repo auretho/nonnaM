@@ -1,11 +1,14 @@
 import React from 'react';
+import { Header, Button, Image, Modal } from 'semantic-ui-react'
 import { Parallax } from 'react-parallax';
+
 import './style.scss';
-import champs from '../../../assets/champs.png'; 
+import champs from '../../../assets/champs.png';
+import oil from '../../../assets/oil2.png'; 
 
 
 const Process = ({img}) => {
-    console.log(img)
+
     const rendered = (percentage) => {
         const transformStyle = {transform: `scale(${percentage * .5})`};
         return(
@@ -27,10 +30,47 @@ const Process = ({img}) => {
         </div>
     )}
 
+    const [open, setOpen] = React.useState(false);
+
+
     return(
     <section className="process">
         <Parallax className="process-parallax" bgImage={champs} style={{ height: '100vh'}} strength={300} renderLayer={rendered}>
             {/* <h1 className="process-text">Et vous, quel produit vous intéresse?</h1> */}
+           
+           
+            <Modal
+      onClose={() => setOpen(false)}
+      onOpen={() => setOpen(true)}
+      open={open}
+      trigger={<Button>Ouvrir un des produits</Button>}
+    >
+      {/* <Modal.Header>Select a Photo</Modal.Header> */}
+      <Modal.Content image>
+        <Image size='medium' src={oil} />
+        <Modal.Description>
+          <Header>Huile d'olive</Header>
+          <p>
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Veritatis minus maiores architecto accusamus aperiam consectetur possimus quae praesentium ad ea!
+          </p>
+        </Modal.Description>
+      </Modal.Content>
+      <Modal.Actions>
+        <Button color='black' onClick={() => setOpen(false)}>
+          Annuler
+        </Button>
+        <Button
+          content="Super, je commande!"
+          labelPosition='right'
+          icon='checkmark'
+          onClick={() => setOpen(false)}
+          positive
+        />
+      </Modal.Actions>
+    </Modal>
+
+
+            
         </Parallax>
 
     </section>

@@ -27,8 +27,8 @@ const Home = () => {
     <div className="home">
             <Header handleHeaderScroll={handleHeaderScroll} />
             <Main />
-            <Comments />
             <Process />
+            <Comments />
             <Bottom />
     </div>
 )}
