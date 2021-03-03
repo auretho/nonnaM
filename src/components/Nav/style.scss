@@ -4,8 +4,8 @@
     position:fixed;
     top:0;
     z-index:100;
-    background-color: rgba(214, 244, 195, 0.694); // A VOIR
-    // background-color: rgb(214, 244, 195);
+    background-color: #659441b1;
+    background-image: linear-gradient(#e3f8d5, rgba(255, 255, 255, 0));
     width: 100%;
     border: 1px solid vars.$oliveColor;
     height: 60px;
@@ -21,13 +21,16 @@
 
     &-list{
         display: flex;
-        align-items: center;
+        align-items: stretch;
+        height: 100%;
         margin: auto;
     
         &-item{
-            margin: 0 2em;
+            transform: translate(0, 50%);
+            margin: 0 1.5em;
             color: black;
             padding: .5em 0;
+            font-size: 1.05em;
         }   
     }
 
@@ -48,7 +51,8 @@
 }
 
 .navigation-list .active{
-    color: rgb(3, 99, 54);
-    font-weight: bold;
-    border-bottom: 2px solid rgb(3, 99, 54);
+    background: linear-gradient(to bottom, rgba(4, 121, 41, 0.632), transparent );
+    text-shadow: 0 0 1px lightgrey;
 }
+
+
