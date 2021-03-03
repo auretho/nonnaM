@@ -8,24 +8,27 @@ const initialState = {
     [
         {
           name: potTomate,
+          shortName: 'tomates',
           text: "Salsa picante"  
         },
         {
           name: potArtichaut,
+          shortName: 'artichauts',
           text: "Coeurs d'artichauts"  
         },
         {
             name: oil,
+            shortName: 'huile',
             text: "Huile d'olive"  
           },
     ]
 };
 
-const user = (state = initialState, action = {}) => {
+const products = (state = initialState, action = {}) => {
     switch (action.type){ 
         default:
             return state;
     }
 }
 
-export default user;
+export default products;

@@ -1,87 +1,77 @@
+.image{
+    position: relative;
+}
+
 .process{
+    height: 100vh;
+    width: 100%;
+    background: url('../../../assets/champs.png');
 
-    &-parallax{
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        position: relative;
-    }
-    
-    &-images{
-       display: flex;
-       justify-content: center;
-       align-items: stretch; 
+    &-arrow{
+        width: 150px;
+        position: absolute;
+        top: 400px;
+        left: 550px;
     }
 
-    &-block{
-        position: relative;
-        top: 60px;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-    }
-
-    &-block:hover{
-        filter: drop-shadow(0 0 10px black)
-    }
-
-    &-image{
-        height: 500px;
-        max-width: auto;
-    
-        &-title{
-            position: relative;
-            top: -120px;
-            font-size: 3.5em;
-            background-color: wheat;
-            padding: .6em 1.3em;
-            margin: auto;
-            max-width: 500px;
-            border-radius: 10px;
-            box-shadow: 0 0 10px black;
-            text-align: center;
-        }
+    &-smile{
+        opacity: 1;
+        width: 80px;
+        position: absolute;
+        top: 320px;
+        left: 700px;
     }
 
     &-text{
-        font-size: 2em;
-        background-color: #D6F4C3;
-        padding: .6em 1.3em;
+        width: 180px;
+        background-color: blanchedalmond;
+        border: 2px solid red;
+        border-radius: 10px;
+        padding: .5em 0.2em;
+        position: absolute;
+        top: 250px;
+        left: 510px;
     }
-}
 
-.ui.modal>.image.content{
-    align-items: center;
-}
-
-.ui.header{
-    position: relative;
-    top: 0;
-    display: inline-block;
-    text-align: left;
-}
-
-.ui.modal>.content>.image{
-    width: 150px;
-}
-
-.ui.dimmer{
-    background-color: rgba(255, 255, 255, 0.726);
-}
-
-
-
-
-
-
-@media(max-width: 1450px){
-    .process-image{
-        height: 400px;
-
-        &-title{
-            max-width: 400px;
-            font-size: 3.2em;
-        }
+    &-arrow2{
+        width: 100px;
+        position: absolute;
+        top: 370px;
+        left: 330px;
     }
+
+    &-smile2{
+        opacity: 1;
+        width: 80px;
+        position: absolute;
+        top: 290px;
+        left: 340px;
+    }
+
+    &-text2{
+        width: 180px;
+        background-color: blanchedalmond;
+        border: 2px solid red;
+        border-radius: 10px;
+        padding: .5em 0.2em;
+        position: absolute;
+        top: 220px;
+        left: 150px;
+    }
+
+    &-text h1, &-text2 h1{
+        text-decoration: underline;
+        margin-bottom: .4em;
+        text-shadow: 0 0 1px black;
+        font-size: 1.1em;
+    }
+
+    &-smile:hover{
+        filter: drop-shadow(0 0 5px black);
+    }
+
+}
+
+.hidden{
+    display: none;
 }

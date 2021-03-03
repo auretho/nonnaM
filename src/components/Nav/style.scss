@@ -4,7 +4,8 @@
     position:fixed;
     top:0;
     z-index:100;
-    background-color: rgb(214, 244, 195);
+    background-color: rgba(214, 244, 195, 0.694); // A VOIR
+    // background-color: rgb(214, 244, 195);
     width: 100%;
     border: 1px solid vars.$oliveColor;
     height: 60px;
@@ -33,7 +34,8 @@
     &-logo{
         width: 80px;
         margin-left: 4em;
-        filter: drop-shadow(0 0 .3px #fff)
+        padding-top: .2em;
+        filter: drop-shadow(0 0 .3px black)
     }
 
     &-logo:hover{

@@ -1,10 +1,9 @@
 import { Switch, Route } from 'react-router-dom';
 import Nav from '../Nav';
-import Footer from '../Footer';
+// import Footer from '../Footer';
 import Home from '../Home';
-import Product from '../Product';
+import Products from '../../containers/Products';
 import About from '../../containers/About';
-import Contact from '../Contact';
 
 import './style.scss';
 
@@ -18,15 +17,11 @@ function App() {
           </Route>
 
           <Route path="/produits">
-            <Product />
+            <Products />
           </Route>
 
           <Route path="/about">
             <About />
-          </Route>
-
-          <Route path="/contact">
-            <Contact />
           </Route>
         </Switch>
       {/* <Footer /> */}

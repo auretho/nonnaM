@@ -1,30 +1,33 @@
 import React from'react';
-import { NavLink } from 'react-router-dom';
+import { NavHashLink } from 'react-router-hash-link';
 import logo from '../../assets/logo-coeurSVG.png';
 import './style.scss';
 
 const Nav = () => (
     <nav className="navigation">
-         <NavLink exact to="/" className="navigation-full-logo">
+         <NavHashLink exact smooth to="#header" className="navigation-full-logo">
             <img className="navigation-logo" src={logo} alt="logo"/>
-        </NavLink>
+        </NavHashLink>
         
         <ul className="navigation-list">
-            <NavLink exact to="/">
+            <NavHashLink exact smooth to="/#header">
                 <li className="navigation-list-item">Notre histoire</li>
-            </NavLink>
-            <NavLink to="/produits">
+            </NavHashLink>
+            <NavHashLink smooth to="#product">
                 <li className="navigation-list-item">Huile d'olive</li>
-            </NavLink>
-            <a href="#produits">
+            </NavHashLink>
+            <NavHashLink smooth to="#product">
                 <li className="navigation-list-item">Tomates</li>
-            </a>
-            <NavLink to="/produits/artichauts">
+            </NavHashLink>
+            <NavHashLink smooth to="#artichauts">
                 <li className="navigation-list-item">Artichauts</li>
-            </NavLink>
-            <NavLink to="/about">
+            </NavHashLink>
+            <NavHashLink exact smooth to="/#process">
+                <li className="navigation-list-item">L'origine des produits</li>
+            </NavHashLink>
+            <NavHashLink to="/about">
                 <li className="navigation-list-item">A propos</li>
-            </NavLink>
+            </NavHashLink>
         </ul>
     </nav>
 )

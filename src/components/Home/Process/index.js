@@ -1,122 +1,91 @@
 import React from 'react';
-import { Header, Button, Image, Modal } from 'semantic-ui-react'
-import { Parallax } from 'react-parallax';
+import HoverImage from "react-hover-image";
+
+import arrow from '../../../assets/right-drawn-arrow.png';
+import smile1 from '../../../assets/smile1.png';
+import smile2 from '../../../assets/smile2.png';
+import scribble from '../../../assets/scribble.png';
+
 
 import './style.scss';
-import champs from '../../../assets/champs.png';
-import oil from '../../../assets/oil.png'; 
 
 
-const Process = ({img}) => {
+const Products = () => {
+    
+    // A SUPPRIMER SI UTILISATION DE HOVER
+    // const handleClick = () => {
+    //     const text = document.querySelector('.process-text');
+    //     if (text.className === "process-text hidden"){
+    //         text.className = "process-text";
+    //     } else{
+    //         text.className = "process-text hidden";
+    //     }
+    // }
 
-    const rendered = (percentage) => {
-        const transformStyle = {transform: `scale(${percentage * .5})`};
-        return(
-        <div className="process-images" id="produits">
-            {
-            img.map((element, i) => (
-                <div className="process-block" key={i}>
-                    <img className="process-image"
-                        src={element.name} alt="" 
-                        style={transformStyle}   
-                    />
-                    <h1 className="process-image-title" 
-                        style={transformStyle}>
-                        {element.text}
-                    </h1>
-                </div>
-            ))
-            }
-        </div>
-    )}
+    const handleHover = () => {
+        const arrow = document.querySelector('.process-arrow');
+        const text = document.querySelector('.process-text');
+        
+        text.className = "process-text";
+        arrow.style = "filter: drop-shadow(0 0 5px black)";
+    }
 
-    const [open, setOpen] = React.useState(false);
+    const handleHoverOut = () => {
+        const arrow = document.querySelector('.process-arrow');
+        const text = document.querySelector('.process-text');
+        
+        text.className = "process-text hidden";
+        arrow.style.filter = null;
+    }
 
+    const handleHover2 = () => {
+        const arrow = document.querySelector('.process-arrow2');
+        const text = document.querySelector('.process-text2');
+        
+        text.className = "process-text2";
+        arrow.style = "filter: drop-shadow(0 0 5px black)";
+    }
+
+    const handleHoverOut2 = () => {
+        const arrow = document.querySelector('.process-arrow2');
+        const text = document.querySelector('.process-text2');
+        
+        text.className = "process-text2 hidden";
+        arrow.style.filter = null;
+    }
 
     return(
-    <section className="process">
-        <Parallax className="process-parallax" bgImage={champs} style={{ height: '100vh'}} strength={300} renderLayer={rendered}>
-            {/* <h1 className="process-text">Et vous, quel produit vous intéresse?</h1> */}
-           
-           
-            <Modal
-      onClose={() => setOpen(false)}
-      onOpen={() => setOpen(true)}
-      open={open}
-      trigger={<Button>Ouvrir un des produits</Button>}
-    >
-      {/* <Modal.Header>Select a Photo</Modal.Header> */}
-      <Modal.Content image>
-        <Image size='medium' src={oil} />
-        <Modal.Description>
-          <Header>Huile d'olive</Header>
-          <p>
-            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Veritatis minus maiores architecto accusamus aperiam consectetur possimus quae praesentium ad ea!
-          </p>
-        </Modal.Description>
-      </Modal.Content>
-      <Modal.Actions>
-        <Button color='black' onClick={() => setOpen(false)}>
-          Annuler
-        </Button>
-        <Button
-          content="Super, je commande!"
-          labelPosition='right'
-          icon='checkmark'
-          onClick={() => setOpen(false)}
-          positive
-        />
-      </Modal.Actions>
-    </Modal>
+    <div className="process" id="process">
 
-
+        {/* IMAGE ONE =============================================*/}
+        <div className="image img-one">
+            <img src={arrow} alt="" className="process-arrow" />
+            <div onMouseOver={handleHover} onMouseLeave={handleHoverOut}>
+                <HoverImage src={smile1} hoverSrc={smile2} /*onClick={handleClick}*/ className="process-smile"/>
+            </div>
             
-        </Parallax>
+            <p className="process-text hidden">
+                <h1>LES ARTICHAUTS:</h1> 
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat, quisquam commodi voluptatum enim repellat vero.
+            </p>
+        </div>
 
-    </section>
+        {/* IMAGE TWO =============================================*/}
+        <div className="image img-two">
+            <img src={scribble} alt="" className="process-arrow2" />
+            <div onMouseOver={handleHover2} onMouseLeave={handleHoverOut2}>
+                <HoverImage src={smile1} hoverSrc={smile2} /*onClick={handleClick}*/ className="process-smile2"/>
+            </div>
+            
+            <p className="process-text2 hidden">
+                <h1>L'HUILE D'OLIVE:</h1>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat, quisquam commodi voluptatum enim repellat vero.
+            </p>
+        </div>
+
+    </div>
 )}
 
-export default Process;
+export default Products;
 
 
-
-// CODE TEST A GARDER
-/* <div className="wrapper process-one" >
-
-                    <p className="process-description" style={{ transition: 'opacity'}}>
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Et voluptates veritatis aliquam quidem, perspiciatis quam assumenda saepe, minima voluptate possimus doloremque consequuntur earum omnis repellendus est, deleniti repudiandae. Magnam, maiores! Suscipit recusandae iste unde nisi accusantium distinctio. Ducimus dolor veniam, nemo eveniet amet quia. Consequuntur delectus adipisci enim totam minus?
-                    </p>
-                    
-                    <img src={salade} alt="" className="process-veggie left"/>
-                    <img src={tomate} alt="" className="process-veggie right"/>
-                    <img src={artichaut} alt="" className="process-veggie left"/>
-                    <img src={salade} alt="" className="process-veggie right"/>
-                    <img src={tomate} alt="" className="process-veggie left"/>
-                    <img src={artichaut} alt="" className="process-veggie right"/>
-                    <img src={panier} alt="" className="process-basket"/>
-                </div> */
-                /* <div className="wrapper process-two">
-                    <div className="drops">
-                        <div className="red-drops">
-                            <img src={drop} alt="" className="process-drop left-drop"/>
-                            <img src={drop} alt="" className="process-drop left-drop"/>
-                            <img src={drop} alt="" className="process-drop left-drop"/>
-                            <img src={drop} alt="" className="process-drop left-drop"/>
-                            <img src={drop} alt="" className="process-drop left-drop"/>
-                        </div>
-
-                        <div className="green-drops">
-                            <img src={drop2} alt="" className="process-drop right-drop"/>
-                            <img src={drop2} alt="" className="process-drop right-drop"/>
-                            <img src={drop2} alt="" className="process-drop right-drop"/>
-                            <img src={drop2} alt="" className="process-drop right-drop"/>
-                            <img src={drop2} alt="" className="process-drop right-drop"/>
-                        </div>
-
-                    </div>
-                    
-                    <div className="jars">
-                        <img src={pot} alt="" className="process-jar"/>
-                        <img src={pot2} alt="" className="process-jar"/>
-                    </div>
-                </div> */

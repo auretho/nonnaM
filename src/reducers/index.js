@@ -1,9 +1,9 @@
 import { combineReducers } from 'redux';
 import user from './user';
-import process from './process';
+import products from './products';
 
 
 export default combineReducers({
     user,
-    process,
+    products,
 });
