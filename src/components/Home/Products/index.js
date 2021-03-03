@@ -1,10 +1,9 @@
 import React from 'react';
-import { Header, Button, Image, Modal } from 'semantic-ui-react'
 import { Parallax } from 'react-parallax';
+import Modal from './ModalWindow.js';
 
-import './style.scss';
 import champs from '../../../assets/champs.png';
-import oil from '../../../assets/oil.png'; 
+import './style.scss';
 
 
 const Products = ({img}) => {
@@ -16,61 +15,32 @@ const Products = ({img}) => {
             {
             img.map((element, i) => (
                 <div className="product-block" key={i} id={element.shortName}>
-                    <img className="product-image"
-                        src={element.name} alt="" 
-                        style={transformStyle}   
-                    />
-                    <h1 className="product-image-title" 
-                        style={transformStyle}>
-                        {element.text}
-                    </h1>
+                    <Modal item={element} triggerItem={
+                        <img className="product-image"
+                            src={element.image} alt="" 
+                            style={transformStyle}   
+                        />
+                    }/>
+
+                    <Modal item={element} triggerItem={
+                        <h1 className="product-image-title" 
+                            style={transformStyle}>
+                            {element.name}
+                        </h1>
+                    }/>
                 </div>
             ))
             }
         </div>
     )}
 
-    const [open, setOpen] = React.useState(false);
-
-
     return(
     <section className="product" id="product">
         <Parallax className="product-parallax" bgImage={champs} style={{ height: '100vh'}} strength={300} renderLayer={rendered}>
             {/* <h1 className="product-text">Et vous, quel produit vous intéresse?</h1> */}
            
-           
-            <Modal
-      onClose={() => setOpen(false)}
-      onOpen={() => setOpen(true)}
-      open={open}
-      trigger={<Button>Ouvrir un des produits</Button>}
-    >
-      {/* <Modal.Header>Select a Photo</Modal.Header> */}
-      <Modal.Content image>
-        <Image size='medium' src={oil} />
-        <Modal.Description>
-          <Header>Huile d'olive</Header>
-          <p>
-            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Veritatis minus maiores architecto accusamus aperiam consectetur possimus quae praesentium ad ea!
-          </p>
-        </Modal.Description>
-      </Modal.Content>
-      <Modal.Actions>
-        <Button color='black' onClick={() => setOpen(false)}>
-          Annuler
-        </Button>
-        <Button
-          content="Super, je commande!"
-          labelPosition='right'
-          icon='checkmark'
-          onClick={() => setOpen(false)}
-          positive
-        />
-      </Modal.Actions>
-    </Modal>
-
-
             
+
         </Parallax>
 
     </section>

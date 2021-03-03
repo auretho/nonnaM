@@ -19,10 +19,10 @@
         top: 60px;
         display: flex;
         flex-direction: column;
-        justify-content: center;
+        display: inline-block;
     }
 
-    &-block:hover{
+    &-block img:hover, &-block h1:hover{
         filter: drop-shadow(0 0 10px black)
     }
 

@@ -7,20 +7,23 @@ const initialState = {
     img: 
     [
         {
-          name: potTomate,
+          image: potTomate,
           shortName: 'tomates',
-          text: "Salsa picante"  
+          name: "Salsa picante",
+          description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis porro neque eos esse. Quae, tempore ipsum harum reprehenderit delectus vel." 
         },
         {
-          name: potArtichaut,
+          image: potArtichaut,
           shortName: 'artichauts',
-          text: "Coeurs d'artichauts"  
+          name: "Coeurs d'artichauts",
+          description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis porro neque eos esse. Quae, tempore ipsum harum reprehenderit delectus vel."  
         },
         {
-            name: oil,
+            image: oil,
             shortName: 'huile',
-            text: "Huile d'olive"  
-          },
+            name: "Huile d'olive",
+            description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis porro neque eos esse. Quae, tempore ipsum harum reprehenderit delectus vel."  
+        },
     ]
 };
 
