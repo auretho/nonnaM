@@ -1,8 +1,7 @@
 import { Switch, Route } from 'react-router-dom';
 import Nav from '../Nav';
-// import Footer from '../Footer';
 import Home from '../Home';
-import Products from '../../containers/Products';
+// import Products from '../../containers/Products';
 import About from '../../containers/About';
 
 import './style.scss';
@@ -12,19 +11,16 @@ function App() {
     <div className="app">
       <Nav />
         <Switch>
+
           <Route exact path="/">
             <Home />
-          </Route>
-
-          <Route path="/produits">
-            <Products />
           </Route>
 
           <Route path="/about">
             <About />
           </Route>
+          
         </Switch>
-      {/* <Footer /> */}
     </div>
   );
 }

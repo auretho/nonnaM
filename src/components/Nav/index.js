@@ -28,6 +28,9 @@ const Nav = () => (
             <NavHashLink to="/about">
                 <li className="navigation-list-item">A propos</li>
             </NavHashLink>
+            <NavHashLink smooth to="#contact">
+                <li className="navigation-list-item">Contact</li>
+            </NavHashLink>
         </ul>
     </nav>
 )

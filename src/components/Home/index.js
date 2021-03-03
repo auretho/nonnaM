@@ -4,7 +4,7 @@ import Main from './Main';
 import Products from '../../containers/Products';
 import Process from './Process';
 import Comments from '../../containers/Comments';
-import Bottom from './Bottom';
+import Contact from './Contact';
 
 
 import './style.scss';
@@ -31,7 +31,7 @@ const Home = () => {
             <Products />
             <Process />
             <Comments />
-            <Bottom />
+            <Contact />
     </div>
 )}
 
