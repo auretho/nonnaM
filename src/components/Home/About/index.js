@@ -11,6 +11,7 @@ const About = ({cupello}) => {
                 element.nextSibling.classList.add('hidden')
     
             } else{
+                element.parentElement.style = "background-color: rgba(255, 255, 255, 0.7)";
                 element.classList.add('hidden');
                 element.nextSibling.classList.remove('hidden')
             }

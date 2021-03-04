@@ -1,6 +1,6 @@
 import React from 'react';
 import { Header, Button, Image, Modal } from 'semantic-ui-react'
-// import oil from '../../../assets/oil.png'; 
+import { NavHashLink } from 'react-router-hash-link';
 import './style.scss';
 
 
@@ -28,13 +28,15 @@ const ModalWindow = ({triggerItem, item}) => {
                 <Button color='black' onClick={() => setOpen(false)}>
                 Annuler
                 </Button>
-                <Button
-                content="Super, je commande!"
-                labelPosition='right'
-                icon='checkmark'
-                onClick={() => setOpen(false)}
-                positive
-                />
+                <NavHashLink smooth to="#contact">
+                    <Button
+                    content="Super, je commande!"
+                    labelPosition='right'
+                    icon='checkmark'
+                    onClick={() => setOpen(false)}
+                    positive
+                    />
+                </NavHashLink>
             </Modal.Actions>
         </Modal>
 )}

@@ -8,12 +8,12 @@ import './style.scss';
 
 const Header = ({handleHeaderScroll}) => {
     
-    // React.useEffect(() => {
-    //     handleHeaderScroll();
-    // }, [])
+    React.useEffect(() => {
+        handleHeaderScroll();
+    }, [])
 
     return(
-        <div id="header">
+        <div id="home">
             <header>
                 <div className="header" >
                     <div className="header-logo translate" data-speed="0.6">

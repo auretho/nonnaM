@@ -5,16 +5,19 @@ import './style.scss';
 
 const Nav = () => (
     <nav className="navigation">
-         <NavHashLink exact smooth to="#header" className="navigation-full-logo">
+         <NavHashLink smooth to="#home" className="navigation-full-logo">
             <img className="navigation-logo" src={logo} alt="logo"/>
         </NavHashLink>
         
         <ul className="navigation-list">
-            <NavHashLink exact smooth to="/#header">
+            <NavHashLink smooth to="/#home">
+                <li className="navigation-list-item">Accueil</li>
+            </NavHashLink>
+            <NavHashLink smooth to="/#header">
                 <li className="navigation-list-item">Notre histoire</li>
             </NavHashLink>
             <NavHashLink smooth to="#about">
-                <li className="navigation-list-item">A propos</li>
+                <li className="navigation-list-item">Photos</li>
             </NavHashLink>
             <NavHashLink smooth to="#product">
                 <li className="navigation-list-item">Nos produits</li>

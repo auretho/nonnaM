@@ -26,7 +26,7 @@ const Home = () => {
     }
     
     return(
-    <div className="home">
+    <div className="home" id="home">
             <Header handleHeaderScroll={handleHeaderScroll} />
             <Main />
             <About />
