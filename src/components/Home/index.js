@@ -3,7 +3,7 @@ import Header from './Header';
 import Main from './Main';
 import About from '../../containers/About';
 import Products from '../../containers/Products';
-import Process from './Process';
+import Process from '../../containers/Process';
 import Comments from '../../containers/Comments';
 import Contact from './Contact';
 

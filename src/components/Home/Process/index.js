@@ -1,7 +1,7 @@
 import React from 'react';
 import HoverImage from "react-hover-image";
 
-import arrow from '../../../assets/right-drawn-arrow.png';
+// import arrow from '../../../assets/arrow1.png';
 import smile1 from '../../../assets/smile1.png';
 import smile2 from '../../../assets/smile2.png';
 import scribble from '../../../assets/scribble.png';
@@ -10,7 +10,8 @@ import scribble from '../../../assets/scribble.png';
 import './style.scss';
 
 
-const Products = () => {
+const Products = ({location}) => {
+    console.log(location);
     
     // A SUPPRIMER SI UTILISATION DE HOVER
     // const handleClick = () => {
@@ -56,36 +57,61 @@ const Products = () => {
 
     return(
     <div className="process" id="process">
-
-        {/* IMAGE ONE =============================================*/}
-        <div className="image img-one">
-            <img src={arrow} alt="" className="process-arrow" />
-            <div onMouseOver={handleHover} onMouseLeave={handleHoverOut}>
-                <HoverImage src={smile1} hoverSrc={smile2} /*onClick={handleClick}*/ className="process-smile"/>
+        {
+        location.map((element, i) => (
+            <div className="process-img" key={i}>
+                <div 
+                    className="process-imageDiv" 
+                    onMouseOver={handleHover} 
+                    onMouseLeave={handleHoverOut} 
+                    style={{
+                        position: `${element.imgBlockPos.pos}`,
+                        top: `${element.imgBlockPos.top}`,
+                        left: `${element.imgBlockPos.left}`,
+                    }}
+                >
+                    
+                    <img src={element.arrow} alt="" className="process-arrow" />
+                    <HoverImage 
+                        className="process-smile" 
+                        src={element.img1} 
+                        hoverSrc={element.img2} 
+                        style={{
+                            position: `${element.smileyPos.pos}`,
+                            top: `${element.smileyPos.top}`,
+                        }}
+                    />
+                
+                    <div 
+                        className="process-text hidden"
+                        style={{
+                            position: `${element.textPos.pos}`,
+                            top: `${element.textPos.top}`,
+                            left: `${element.textPos.left}`,
+                        }}
+                    >
+                        <h1>LES ARTICHAUTS:</h1> 
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat, quisquam commodi voluptatum enim repellat vero.</p>
+                    </div>
+                </div>
             </div>
-            
-            <div className="process-text hidden">
-                <h1>LES ARTICHAUTS:</h1> 
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat, quisquam commodi voluptatum enim repellat vero.</p>
-            </div>
-        </div>
-
-        {/* IMAGE TWO =============================================*/}
-        <div className="image img-two">
-            <img src={scribble} alt="" className="process-arrow2" />
-            <div onMouseOver={handleHover2} onMouseLeave={handleHoverOut2}>
-                <HoverImage src={smile1} hoverSrc={smile2} /*onClick={handleClick}*/ className="process-smile2"/>
-            </div>
-            
-            <div className="process-text2 hidden">
-                <h1>L'HUILE D'OLIVE:</h1>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat, quisquam commodi voluptatum enim repellat vero.</p>
-            </div>
-        </div>
-
+        ))    
+        }
     </div>
 )}
 
 export default Products;
 
 
+        {/* IMAGE TWO ============================================= */}
+        // <div className="image img-two">
+        //     <img src={scribble} alt="" className="process-arrow2" />
+        //     <div onMouseOver={handleHover2} onMouseLeave={handleHoverOut2}>
+        //         <HoverImage src={smile1} hoverSrc={smile2} /*onClick={handleClick}*/ className="process-smile2"/>
+        //     </div>
+            
+        //     <div className="process-text2 hidden">
+        //         <h1>L'HUILE D'OLIVE:</h1>
+        //         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat, quisquam commodi voluptatum enim repellat vero.</p>
+        //     </div>
+        // </div>
