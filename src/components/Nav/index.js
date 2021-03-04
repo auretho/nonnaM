@@ -19,7 +19,7 @@ const Nav = () => (
             <NavHashLink smooth to="#product">
                 <li className="navigation-list-item">Tomates</li>
             </NavHashLink>
-            <NavHashLink smooth to="#artichauts">
+            <NavHashLink smooth to="#product">
                 <li className="navigation-list-item">Artichauts</li>
             </NavHashLink>
             <NavHashLink exact smooth to="/#process">

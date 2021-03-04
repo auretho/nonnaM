@@ -8,9 +8,9 @@ import './style.scss';
 
 const Header = ({handleHeaderScroll}) => {
     
-    React.useEffect(() => {
-        handleHeaderScroll();
-    }, [])
+    // React.useEffect(() => {
+    //     handleHeaderScroll();
+    // }, [])
 
     return(
         <div>

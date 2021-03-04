@@ -1,6 +1,6 @@
 import React from 'react';
 import { Header, Button, Image, Modal } from 'semantic-ui-react'
-import oil from '../../../assets/oil.png'; 
+// import oil from '../../../assets/oil.png'; 
 import './style.scss';
 
 
