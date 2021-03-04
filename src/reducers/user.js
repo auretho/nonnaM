@@ -4,7 +4,7 @@
 // import photo4 from './img/4.jpg';
 // import photo5 from './img/5.jpg';
 // import photo6 from './img/6.jpg';
-import photo7 from './img/7.jpg';
+// import photo7 from './img/7.jpg';
 import photo8 from './img/8.jpg';
 import photo9 from './img/9.jpg';
 import photo10 from './img/10.jpg';
@@ -44,7 +44,7 @@ const initialState = {
         // photo4,
         // photo5,
         // photo6,
-        photo7,
+        // photo7,
         photo8,
         photo9,
         photo10,
