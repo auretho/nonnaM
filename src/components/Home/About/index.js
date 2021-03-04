@@ -2,10 +2,9 @@ import React from 'react';
 import './style.scss';
 
 const About = ({cupello}) => {
-    
+  
     const handleClick = (evt) => {
         const img = document.querySelectorAll('.about-photo');
-
         img.forEach(element => {
             if(evt.target !== element){
                 element.classList.remove('hidden');
@@ -19,8 +18,8 @@ const About = ({cupello}) => {
     }
 
     return(
-    <div className="about">
-        <div className="about-container">
+    <div className="about" id="about">
+        <div className="about-container" >
             {
             cupello.map((photo, index) => (
                 <div className="about-photos" key={index} onClick={handleClick}>

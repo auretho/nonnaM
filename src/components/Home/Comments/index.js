@@ -9,7 +9,7 @@ const Comments = ({comments}) => {
     return(
     <section>
         <Parallax bgImage={bg} strength={250} className="comments-section" >
-            <div className="comments" >
+            <div className="comments" id="comments">
                 <h2 className="comments-title">Que pensez vous de Nonna M?!</h2>
                 <div className="comments-blocks">
                 

@@ -1,6 +1,7 @@
 import React from'react';
 import Header from './Header';
 import Main from './Main';
+import About from '../../containers/About';
 import Products from '../../containers/Products';
 import Process from './Process';
 import Comments from '../../containers/Comments';
@@ -28,6 +29,7 @@ const Home = () => {
     <div className="home">
             <Header handleHeaderScroll={handleHeaderScroll} />
             <Main />
+            <About />
             <Products />
             <Process />
             <Comments />

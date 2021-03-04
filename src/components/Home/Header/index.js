@@ -13,8 +13,8 @@ const Header = ({handleHeaderScroll}) => {
     // }, [])
 
     return(
-        <div>
-            <header id="header">
+        <div id="header">
+            <header>
                 <div className="header" >
                     <div className="header-logo translate" data-speed="0.6">
                         <div className="header-top">

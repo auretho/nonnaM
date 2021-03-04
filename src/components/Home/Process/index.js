@@ -64,10 +64,10 @@ const Products = () => {
                 <HoverImage src={smile1} hoverSrc={smile2} /*onClick={handleClick}*/ className="process-smile"/>
             </div>
             
-            <p className="process-text hidden">
+            <div className="process-text hidden">
                 <h1>LES ARTICHAUTS:</h1> 
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat, quisquam commodi voluptatum enim repellat vero.
-            </p>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat, quisquam commodi voluptatum enim repellat vero.</p>
+            </div>
         </div>
 
         {/* IMAGE TWO =============================================*/}
@@ -77,10 +77,10 @@ const Products = () => {
                 <HoverImage src={smile1} hoverSrc={smile2} /*onClick={handleClick}*/ className="process-smile2"/>
             </div>
             
-            <p className="process-text2 hidden">
+            <div className="process-text2 hidden">
                 <h1>L'HUILE D'OLIVE:</h1>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat, quisquam commodi voluptatum enim repellat vero.
-            </p>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat, quisquam commodi voluptatum enim repellat vero.</p>
+            </div>
         </div>
 
     </div>
