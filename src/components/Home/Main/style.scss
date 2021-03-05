@@ -8,7 +8,6 @@
    
 
     &-presentation-block{
-        // box-shadow: 0 0 10px black;
         height: auto;
         width: 24%;   
         display: flex;
@@ -29,7 +28,7 @@
         text-align: justify;
         font-style: italic;
         text-shadow: 0 0 2px white;
-        font-size: 1.4em; // A REVOIR POUR LES MEDIA QUERIES
+        font-size: 1.4em; 
     }
     
     &-presentation-description span{

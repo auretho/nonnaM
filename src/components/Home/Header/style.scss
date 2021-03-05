@@ -53,7 +53,6 @@ section{
     &-subtext{
         position: relative;
         top: -145px;
-        // color: #3f3f3f; // A VOIR
         text-shadow: 0 0 2px #fff;
         font-size: 25px;
         width: 285px;
@@ -103,7 +102,6 @@ section{
         height: 300px;
         width: 100%;
         left: 0;
-        // background: linear-gradient(to top, #D7DDC5, transparent); 
         z-index: 4;
     }
 }
@@ -122,7 +120,7 @@ section{
     width: 100%;
     top: 0;
     left: 0;
-    z-index: 2; // A VOIR
+    z-index: 2; 
 }
 
 .header-bg-field{
