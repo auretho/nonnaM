@@ -11,29 +11,60 @@ import Contact from './Contact';
 import './style.scss';
 
 const Home = () => {
-
-    const handleHeaderScroll = () => {
-        const translate = document.querySelectorAll('.translate');
-        const handleScroll = () => {
-            const scroll = window.pageYOffset;
+    const handleScrollTop = () => {
+        const hauteur = () => {
+            const target = document.querySelectorAll('.pageSection');
+            const links = document.querySelectorAll('nav a');
+            const scrollY = window.scrollY;  
             
-            translate.forEach( element => {
-                const speed = element.dataset.speed;
-                element.style.transform = `translateY(${scroll * speed}px)`;
+            console.log(window.location.pathname);
+    
+            target.forEach(section => {
+                if(section.offsetTop <= scrollY && section.offsetTop + section.offsetHeight > scrollY){
+                    links.forEach(link => {
+                        // console.log(links);
+                        // console.log(section);
+                        // link.classList.add('active');
+                    })
+                    section.classList.add('active');
+                }
+                
+                else{
+                    section.classList.remove('active');
+                }
             })
-        }
-        window.addEventListener('scroll', handleScroll);
-    }
+        };
+        window.addEventListener('scroll', hauteur);
+    };
+
+    handleScrollTop();
+
+
+    React.useEffect(() => {
+        const handleHeaderScroll = () => {
+            const translate = document.querySelectorAll('.translate');
+            const handleScroll = () => {
+                const scroll = window.pageYOffset;
+
+                translate.forEach( element => {
+                    const speed = element.dataset.speed;
+                    element.style.transform = `translateY(${scroll * speed}px)`;
+                })
+            }
+            window.addEventListener('scroll', handleScroll);
+        };
+        handleHeaderScroll();
+    }, [])
     
     return(
-    <div className="home" id="home">
-            <Header handleHeaderScroll={handleHeaderScroll} />
-            <Main />
-            <About />
-            <Products />
-            <Process />
-            <Comments />
-            <Contact />
+    <div className="home" id="home" onScroll={handleScrollTop}>
+        <Header />
+        <Main />
+        <About />
+        <Products />
+        <Process />
+        <Comments />
+        <Contact />
     </div>
 )}
 

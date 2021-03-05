@@ -1,9 +1,10 @@
 import React from'react';
+import { NavHashLink } from 'react-router-hash-link'
 import oil from '../../../assets/oil.png';
 import './style.scss';
 
 const Contact = () => (
-    <div className="contact" id="contact">
+    <div className="contact pageSection" id="contact">
         <div className="contact-div">
             <h1 className="contact-title">
                 Vous voulez commander?
@@ -13,9 +14,9 @@ const Contact = () => (
                 <a href="mailto: luca@nonna-m.com" className="contact-email">luca@nonna-m.com</a>
                 <h2 className="contact-tel">+33 12 34 56 78 43</h2>
             </div>
-            <a href="#header">
+            <NavHashLink smooth to="#home">
                 <img src={oil} alt="" className="contact-image"/>
-            </a>
+            </NavHashLink>
         </div>
     </div>
 )

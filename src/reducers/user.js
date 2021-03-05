@@ -1,10 +1,3 @@
-// import photo1 from './img/1.jpg';
-// import photo2 from './img/2.jpg';
-// import photo3 from './img/3.jpg';
-// import photo4 from './img/4.jpg';
-// import photo5 from './img/5.jpg';
-// import photo6 from './img/6.jpg';
-// import photo7 from './img/7.jpg';
 import photo8 from './img/8.jpg';
 import photo9 from './img/9.jpg';
 import photo10 from './img/10.jpg';
@@ -15,7 +8,6 @@ import photo14 from './img/14.jpg';
 import photo15 from './img/15.jpg';
 import photo16 from './img/16.jpg';
 import photo17 from './img/17.jpg';
-import photo18 from './img/18.jpg';
 import photo19 from './img/19.jpg';
 import photo20 from './img/20.jpg';
 import photo21 from './img/21.jpg';
@@ -23,6 +15,43 @@ import photo21 from './img/21.jpg';
 
 
 const initialState = {
+    navlinks: [
+        {
+            name: 'Accueil',
+            location: '',
+            anchor: 'home',
+        },
+        {
+            name: 'Notre histoire',
+            location: '/presentation',
+            anchor: 'header',
+        },
+        {
+            name: 'Photos',
+            location: '/photos',
+            anchor: 'about',
+        },
+        {
+            name: 'Nos produits',
+            location: '/produits',
+            anchor: 'product',
+        },
+        {
+            name: 'L\'origine des produits',
+            location: '/origine',
+            anchor: 'process',
+        },
+        {
+            name: 'Commentaires',
+            location: '/commentaires',
+            anchor: 'comments',
+        },
+        {
+            name: 'Contact',
+            location: '/contact',
+            anchor: 'contact',
+        },
+    ],
     comments: [
         {
             name: "Luca",
@@ -38,13 +67,6 @@ const initialState = {
         }
     ],
     cupello: [
-        // photo1,
-        // photo2,
-        // photo3,
-        // photo4,
-        // photo5,
-        // photo6,
-        // photo7,
         photo8,
         photo9,
         photo10,
@@ -55,11 +77,11 @@ const initialState = {
         photo15,
         photo16,
         photo17,
-        photo18,
         photo19,
         photo20,
         photo21,
-    ]
+    ],
+
 
     
 };

@@ -19,7 +19,7 @@ const About = ({cupello}) => {
     }
 
     return(
-    <div className="about" id="about">
+    <div className="about pageSection" id="about">
         <div className="about-container" >
             {
             cupello.map((photo, index) => (
