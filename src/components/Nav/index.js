@@ -12,7 +12,7 @@ const Nav = ({navlinks}) => (
         <ul className="navigation-list">
             {
             navlinks.map((link, i) => (
-                <NavHashLink smooth to={`${link.location}/#${link.anchor}`} key={i}>
+                <NavHashLink smooth exact to={`${link.location}${link.anchor}`} key={i} >
                     <li className="navigation-list-item">{link.name}</li>
                 </NavHashLink>
             ))

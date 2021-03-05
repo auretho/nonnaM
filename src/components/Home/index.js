@@ -1,4 +1,4 @@
-import React from'react';
+import React, {useEffect} from'react';
 import Header from './Header';
 import Main from './Main';
 import About from '../../containers/About';
@@ -11,36 +11,8 @@ import Contact from './Contact';
 import './style.scss';
 
 const Home = () => {
-    const handleScrollTop = () => {
-        const hauteur = () => {
-            const target = document.querySelectorAll('.pageSection');
-            const links = document.querySelectorAll('nav a');
-            const scrollY = window.scrollY;  
-            
-            console.log(window.location.pathname);
-    
-            target.forEach(section => {
-                if(section.offsetTop <= scrollY && section.offsetTop + section.offsetHeight > scrollY){
-                    links.forEach(link => {
-                        // console.log(links);
-                        // console.log(section);
-                        // link.classList.add('active');
-                    })
-                    section.classList.add('active');
-                }
-                
-                else{
-                    section.classList.remove('active');
-                }
-            })
-        };
-        window.addEventListener('scroll', hauteur);
-    };
 
-    handleScrollTop();
-
-
-    React.useEffect(() => {
+    useEffect(() => {
         const handleHeaderScroll = () => {
             const translate = document.querySelectorAll('.translate');
             const handleScroll = () => {
@@ -53,11 +25,37 @@ const Home = () => {
             }
             window.addEventListener('scroll', handleScroll);
         };
+
+        const handleScrollNav = () => {
+            const scrollNavBar = () => {            
+                const scrollY = window.scrollY;  
+                const allLinks = document.querySelectorAll('nav>ul>a');
+                allLinks.forEach(link => {
+                    let section = document.querySelector(link.hash);
+                    if (section.offsetTop <= scrollY && link.hash === "#header"){
+                        link.classList.add("active");
+                    }
+                    else {
+                        link.classList.remove('active');
+                    }
+                    
+                    if (section.offsetTop <= scrollY && section.offsetTop + section.offsetHeight > scrollY ) {
+                        link.classList.add("active");
+                    } 
+                    else {
+                        link.classList.remove("active");
+                    }
+                })
+            };
+            window.addEventListener('scroll', scrollNavBar);
+        };
+    
         handleHeaderScroll();
+        handleScrollNav();
     }, [])
     
     return(
-    <div className="home" id="home" onScroll={handleScrollTop}>
+    <div className="home" id="home">
         <Header />
         <Main />
         <About />

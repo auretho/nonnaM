@@ -19,37 +19,49 @@ const initialState = {
         {
             name: 'Accueil',
             location: '',
-            anchor: 'home',
+            anchor: '/#header',
+            path: '/#header',
         },
         {
             name: 'Notre histoire',
             location: '/presentation',
-            anchor: 'header',
+            anchor: '/#main',
+            path: '/presentation/#main',
+
         },
         {
             name: 'Photos',
             location: '/photos',
-            anchor: 'about',
+            anchor: '/#about',
+            path: '/photos/#about',
         },
         {
             name: 'Nos produits',
             location: '/produits',
-            anchor: 'product',
+            anchor: '/#product',
+            path: '/produits/#product',
+
         },
         {
             name: 'L\'origine des produits',
             location: '/origine',
-            anchor: 'process',
+            anchor: '/#process',
+            path: '/origine/#process',
+
         },
         {
             name: 'Commentaires',
             location: '/commentaires',
-            anchor: 'comments',
+            anchor: '/#comments',
+            path: '/commentaires/#comments',
+
         },
         {
             name: 'Contact',
             location: '/contact',
-            anchor: 'contact',
+            anchor: '/#contact',
+            path: '/contact/#contact',
+
         },
     ],
     comments: [

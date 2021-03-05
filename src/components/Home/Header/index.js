@@ -6,14 +6,8 @@ import logo from '../../../assets/logo-coeurSVG.png';
 import DoubleArrowIcon from '@material-ui/icons/DoubleArrow';
 import './style.scss';
 
-const Header = ({handleHeaderScroll}) => {
-    
-    // React.useEffect(() => {
-    //     handleHeaderScroll();
-    // }, [])
-
-    return(
-        <div id="home">
+const Header = () => (
+        <div id="header">
             <header>
                 <div className="header" >
                     <div className="header-logo translate" data-speed="0.6">
@@ -41,6 +35,6 @@ const Header = ({handleHeaderScroll}) => {
         </div>
            
 
-)}
+)
 
 export default Header;
