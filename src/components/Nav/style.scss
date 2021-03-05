@@ -18,18 +18,23 @@
         padding-top: .3em;
         margin-right: .3em;
     }
+    &-link{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+    }
 
     &-list{
         display: flex;
-        align-items: stretch;
         height: 100%;
         margin: auto;
+        position: relative;
     
         &-item{
-            transform: translate(0, 50%);
             margin: 0 1.5em;
-            color: black;
             padding: .5em 0;
+            color: black;
             font-size: 1.05em;
         }   
     }
