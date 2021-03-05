@@ -41,6 +41,7 @@ const Home = () => {
                     
                     if (section.offsetTop <= scrollY && section.offsetTop + section.offsetHeight > scrollY ) {
                         link.classList.add("active");
+                        console.log(link.href);
                     } 
                     else {
                         link.classList.remove("active");
