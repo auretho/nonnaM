@@ -20,47 +20,40 @@ const initialState = {
             name: 'Accueil',
             location: '',
             anchor: '/#accueil',
-            // path: '/#header',
         },
         {
             name: 'Notre histoire',
             location: '',
             anchor: '/#notre-histoire',
-            // path: '/presentation/#main',
 
         },
         {
             name: 'Photos',
             location: '',
             anchor: '/#photos',
-            // path: '/photos/#about',
         },
         {
             name: 'Nos produits',
             location: '',
             anchor: '/#nos-produits',
-            // path: '/produits/#product',
 
         },
         {
             name: 'L\'origine des produits',
             location: '',
             anchor: '/#origine-des-produits',
-            // path: '/origine/#process',
 
         },
         {
             name: 'Commentaires',
             location: '',
             anchor: '/#recettes',
-            // path: '/commentaires/#comments',
 
         },
         {
             name: 'Contact',
             location: '',
             anchor: '/#contact',
-            // path: '/contact/#contact',
 
         },
     ],

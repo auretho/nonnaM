@@ -7,7 +7,7 @@ const Contact = () => (
     <div className="contact pageSection" id="contact">
         <div className="contact-div">
             <h1 className="contact-title">
-                Vous voulez commander?
+                Nous contacter:
             </h1>
             <div className="contact-details">
                 <h2>Luca Lucarelli</h2>

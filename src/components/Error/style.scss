@@ -21,7 +21,26 @@
     }
 
     &-logo{
-        height: 250px;
+        height: 230px;
+        animation: beat 2.5s ease-in-out infinite;
+    }
+
+    @keyframes beat {
+        0%{
+          transform: scale( 1 );
+        }
+        20%{
+          transform: scale( 1.2 );
+        }
+        40%{
+          transform: scale( 1 );
+        }
+        60%{
+          transform: scale( 1.2 );
+        }
+        100%{
+          transform: scale( 1 );
+        }
     }
 
     &-logo:hover{

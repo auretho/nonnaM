@@ -1,11 +1,13 @@
 .contact{
     height: 100vh;
     width: 100%;
-    background: url('../../../assets/olives.png');
+    background: url('../../../assets/contact.png');
+    background-size: cover;
+    // font-family: 'Amatic SC', 'Bradley Hand', serif;
 
     &-div{
         position: relative;
-        top: 50%;
+        top: 60%;
         left: 50%;
         transform: translate(-50%, -50%);
         display: flex;
@@ -19,7 +21,7 @@
     }
 
     &-details{
-        margin-top: 2em;
+        margin-top: .5em;
         left: 12px;
         text-align: center;
         font-size: 2.5em;
@@ -27,12 +29,11 @@
 
     &-email{
         color: #04613f;
-        text-shadow: 0 0 10px #068c5b;
     }
 
     &-email:hover{
         color: #04613f;
-        text-shadow: 2px 2px 5px #024d31;
+        text-shadow: 0 0 2px white;
     }
 
     &-tel{
