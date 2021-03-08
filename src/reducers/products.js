@@ -1,7 +1,7 @@
 import tomate from '../assets/tomate2.png';
 import artichaut from '../assets/artichaut2.png';
 import olive from '../assets/olive2.png';
-// import truffe from '../assets/truffe.png';
+import truffe from '../assets/truffe.png';
 
 
 

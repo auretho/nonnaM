@@ -2,21 +2,25 @@
     &-parallax{
         height: 100vh;
         width: 100%;
-        display: flex;
-        justify-content: center;
-        align-items: center;
     }
     
     &-images{
-       display: flex;
-       justify-content: center;
+        max-height: 100vh;
+        max-width: 100vw;
+        display: flex;
+        flex-wrap: wrap;
     }
 
     &-block{
-        width: 33%;
         display: flex;
         flex-direction: column;
         align-items: center;
+        width: 25%;
+        max-width: 33%;
+        height: auto;
+        margin: 0 auto;
+        // background-color: lightgreen;
+        // border: 1px solid red;
     }
 
     &-image{
