@@ -19,48 +19,48 @@ const initialState = {
         {
             name: 'Accueil',
             location: '',
-            anchor: '/#header',
-            path: '/#header',
+            anchor: '/#accueil',
+            // path: '/#header',
         },
         {
             name: 'Notre histoire',
-            location: '/presentation',
-            anchor: '/#main',
-            path: '/presentation/#main',
+            location: '',
+            anchor: '/#notre-histoire',
+            // path: '/presentation/#main',
 
         },
         {
             name: 'Photos',
-            location: '/photos',
-            anchor: '/#about',
-            path: '/photos/#about',
+            location: '',
+            anchor: '/#photos',
+            // path: '/photos/#about',
         },
         {
             name: 'Nos produits',
-            location: '/produits',
-            anchor: '/#product',
-            path: '/produits/#product',
+            location: '',
+            anchor: '/#nos-produits',
+            // path: '/produits/#product',
 
         },
         {
             name: 'L\'origine des produits',
-            location: '/origine',
-            anchor: '/#process',
-            path: '/origine/#process',
+            location: '',
+            anchor: '/#origine-des-produits',
+            // path: '/origine/#process',
 
         },
         {
             name: 'Commentaires',
-            location: '/commentaires',
-            anchor: '/#comments',
-            path: '/commentaires/#comments',
+            location: '',
+            anchor: '/#recettes',
+            // path: '/commentaires/#comments',
 
         },
         {
             name: 'Contact',
-            location: '/contact',
+            location: '',
             anchor: '/#contact',
-            path: '/contact/#contact',
+            // path: '/contact/#contact',
 
         },
     ],

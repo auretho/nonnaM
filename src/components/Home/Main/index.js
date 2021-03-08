@@ -11,7 +11,7 @@ import './style.scss';
 const Main = () => {
     
     return(
-    <section id="main">
+    <section id="notre-histoire">
     <Parallax bgImage={bg} className="main" strength={300}>
         <div className="blocks-container" >
             <div className="main-presentation-block">

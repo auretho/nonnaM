@@ -7,7 +7,7 @@ import './style.scss';
 const Comments = ({comments}) => {
         
     return(
-    <section className="pageSection" id="comments">
+    <section className="pageSection" id="recettes">
         <Parallax bgImage={bg} strength={250} className="comments-section" >
             <div className="comments" >
                 <h2 className="comments-title">Idées recette: les nôtres... et les vôtres!</h2>

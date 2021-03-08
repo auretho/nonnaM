@@ -14,7 +14,7 @@ const Contact = () => (
                 <a href="mailto: luca@nonna-m.com" className="contact-email">luca@nonna-m.com</a>
                 <h2 className="contact-tel">+33 12 34 56 78 43</h2>
             </div>
-            <NavHashLink smooth to="#home">
+            <NavHashLink smooth to="#bienvenue">
                 <img src={tomate} alt="" className="contact-image"/>
             </NavHashLink>
         </div>

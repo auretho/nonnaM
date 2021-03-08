@@ -5,7 +5,7 @@ import './style.scss';
 
 const Nav = ({navlinks}) => (
     <nav className="navigation">
-         <NavHashLink smooth to="/#home" className="navigation-full-logo">
+         <NavHashLink smooth to="/#bienvenue" className="navigation-full-logo">
             <img className="navigation-logo" src={logo} alt="logo"/>
         </NavHashLink>
         

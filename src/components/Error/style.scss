@@ -1,0 +1,33 @@
+.error{
+    background: url('../../assets/spaghetti.jpg') no-repeat;
+    background-size: cover;
+    height: 100vh;
+    width: 100%;
+
+    &-text{
+        font-family: 'Amatic SC', serif;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    &-text h1{
+        font-size: 10em;
+        font-weight: bold;
+        color: #fff;
+        text-shadow: 0 0 3px black;
+    }
+
+    &-logo{
+        height: 250px;
+    }
+
+    &-logo:hover{
+        transition: transform 1s;
+        transform: scale(1.4);
+        filter: drop-shadow(0 0 3px #fff);
+    }
+
+}

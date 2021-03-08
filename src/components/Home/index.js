@@ -32,7 +32,7 @@ const Home = () => {
                 const allLinks = document.querySelectorAll('nav>ul>a');
                 allLinks.forEach(link => {
                     let section = document.querySelector(link.hash);
-                    if (section.offsetTop <= scrollY && link.hash === "#header"){
+                    if (section.offsetTop <= scrollY && link.hash === "#accueil"){
                         link.classList.add("active");
                     }
                     else {

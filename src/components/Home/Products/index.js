@@ -35,7 +35,7 @@ const Products = ({img}) => {
     )}
 
     return(
-    <section className="product" id="product">
+    <section className="product" id="nos-produits">
         <Parallax className="product-parallax" bgImage={champs} style={{ height: '100vh'}} strength={300} renderLayer={rendered} />
             {/* <h1 className="product-text">Et vous, quel produit vous intéresse?</h1> */}
     </section>
