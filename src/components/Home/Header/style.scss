@@ -26,13 +26,14 @@ section{
     
     &-logo{
         z-index: 3;
+        position: relative;
+        top: -100px;
     }
 
     &-top{
         display: flex;
-        align-items: center;
-        position: relative;
-        top: -100px;
+        justify-content: center;
+
     }
 
     &-title-logo{
@@ -51,20 +52,13 @@ section{
     }
     
     &-subtext{
-        position: relative;
-        top: -145px;
-        text-shadow: 0 0 2px #fff;
-        font-size: 25px;
-        width: 285px;
-        font-style: italic;
-        font-weight: bold;
+        font-family: 'Euphoria Script', serif;
+        text-shadow: 0 0 1px grey;
+        font-size: 3em;
     }
 
     &-subtitle-block{
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        margin-top: 70px;
+        text-align: center;
         font-size: 1.1em;
     }
 
@@ -78,7 +72,7 @@ section{
     }
 
     &-arrows{
-        margin-top: 30px;
+        margin-top: 15px;
         color: #fff;
         filter:drop-shadow(0 0 5px black);
         animation: floating 2s ease-in-out infinite;
@@ -109,22 +103,16 @@ section{
 
 .header-bg-sky{
     position: absolute;
+    height: 100%;
     width: 100%;
     top: 0;
     left: 0;
     right: left;
 }
 
-.header-bg-town{
-    position: absolute;
-    width: 100%;
-    top: 0;
-    left: 0;
-    z-index: 2; 
-}
-
 .header-bg-field{
     position: absolute;
+    height: 100%;
     width: 100%;
     top: 0;
     left: 0;
@@ -138,8 +126,8 @@ section{
     }
 
     .header-subtext{
-        font-size: 22px;
-        width: 270px;
+        // font-size: 22px;
+        // width: 270px;
     }
 
     .header-shadow{
@@ -147,9 +135,9 @@ section{
     }
 
     .header-subtitle-block{
-        margin-top: 0px;
-        position: relative;
-        top: -80px;
+        // margin-top: 0px;
+        // position: relative;
+        // top: -80px;
     }
 
 }

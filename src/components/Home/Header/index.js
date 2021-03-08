@@ -1,7 +1,6 @@
 import React from'react';
-import ciel from '../../../assets/ciel1.png';
-import ville from '../../../assets/ville1.png';
-import terrain from '../../../assets/terrain1.png';
+import ciel from '../../../assets/cielo.png';
+import terrain from '../../../assets/campo.png';
 import logo from '../../../assets/logo-coeurSVG.png';
 import DoubleArrowIcon from '@material-ui/icons/DoubleArrow';
 import './style.scss';
@@ -10,7 +9,7 @@ const Header = () => (
         <div id="header">
             <header>
                 <div className="header" >
-                    <div className="header-logo translate" data-speed="0.6">
+                    <div className="header-logo translate" data-speed="0.8">
                         <div className="header-top">
                             <img className="header-title-logo" src={logo} alt="logo"/>
                         </div>
@@ -18,15 +17,14 @@ const Header = () => (
                             <h2 className="header-subtext">Notre histoire, notre terre, nos produits pour vous</h2>
                         </div>
                     </div>
-                    <div className=" header-subtitle-block translate" data-speed="0.4" style={{zIndex:'60'}}>
-                        <h3 className="header-subtitle">C'est ici que commence notre histoire </h3>
+                    <div className=" header-subtitle-block translate" data-speed="0.3" style={{zIndex:'60'}}>
+                        <h3 className="header-subtitle">C'est ici que commence notre histoire... </h3>
                         <DoubleArrowIcon className="header-arrows" style={{ fontSize: 50 }}/>
                     </div>
                 </div>
 
                 <img className="translate header-bg-sky" src={ciel} alt="" data-speed="0.4" />
-                <img className="translate header-bg-town" src={ville} alt="" data-speed="0.3"/>
-                <img className="translate header-bg-field" src={terrain} alt="" data-speed="0.2"/>
+                <img className="translate header-bg-field" src={terrain} alt="" data-speed="0"/>
 
             </header>
             <section>
