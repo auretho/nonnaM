@@ -55,7 +55,7 @@ const Home = () => {
     }, [])
     
     return(
-    <div className="home" id="home">
+    <div className="home">
         <Header />
         <Main />
         <About />
