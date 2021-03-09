@@ -19,7 +19,7 @@ const initialState = {
         {
             name: 'Accueil',
             location: '',
-            anchor: '/#accueil',
+            anchor: '/#bienvenue',
         },
         {
             name: 'Notre histoire',

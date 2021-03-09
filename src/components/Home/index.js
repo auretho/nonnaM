@@ -29,10 +29,10 @@ const Home = () => {
         const handleScrollNav = () => {
             const scrollNavBar = () => {            
                 const scrollY = window.scrollY;  
-                const allLinks = document.querySelectorAll('nav>ul>a');
+                const allLinks = document.querySelectorAll('nav>a');
                 allLinks.forEach(link => {
                     let section = document.querySelector(link.hash);
-                    if (section.offsetTop <= scrollY && link.hash === "#accueil"){
+                    if (section.offsetTop <= scrollY && link.hash === "#bienvenue"){
                         link.classList.add("active");
                     }
                     else {

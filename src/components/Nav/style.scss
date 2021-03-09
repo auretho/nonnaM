@@ -28,7 +28,7 @@
     &-list{
         display: flex;
         height: 100%;
-        margin: auto;
+        // margin: auto;
         position: relative;
     
         &-item{
@@ -41,10 +41,15 @@
         }   
     }
 
+    &-full-logo{
+        margin-right: 3em;
+
+    }
+
     &-logo{
-        width: 80px;
-        margin-left: 4em;
-        padding-top: .2em;
+        width: 90px;
+        // margin-left: 4em;
+        // padding-top: .2em;
         filter: drop-shadow(0 0 .3px black)
     }
 
