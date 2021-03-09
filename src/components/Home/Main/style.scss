@@ -20,13 +20,13 @@
     }
 
     &-blocks-text{
-        width: 90%;
-        margin: 2em auto 0;
-        background-color: rgba(255, 255, 255, 0.7);
+        width: 80%;
+        margin: 1em auto 0;
+        background-color: rgba(255, 255, 255, 0.5);
         display: flex;
         flex-direction: column;
         align-items: center;
-        padding: 2em 3em;
+        padding: 2em 6em;
         overflow: hidden;
         box-shadow: 0 0 5px black;
     }
@@ -48,7 +48,7 @@
 
     &-presentation-description{
         padding: .3em 0;
-        text-align: justify;
+        text-align: center;
         font-style: italic;
         font-size: 1.4em; 
     }
