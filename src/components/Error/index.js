@@ -7,7 +7,7 @@ const Error = () => (
     <div className="error">
         <div className="error-text">
             <h1>404 page not found</h1>
-            <Link to="/#bienvenue">
+            <Link to="/#accueil">
                 <img src={coeur} alt="logo" className="error-logo"/>
             </Link>
         </div>

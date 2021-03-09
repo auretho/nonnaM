@@ -7,7 +7,7 @@ import './style.scss';
 
 function App() {
   return (
-    <div className="app" id="bienvenue">
+    <div className="app" id="bienvenue" >
       <Nav />
         <Switch>
           <Route exact path="/" component={Home}/>

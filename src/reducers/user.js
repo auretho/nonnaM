@@ -45,7 +45,7 @@ const initialState = {
 
         },
         {
-            name: 'Commentaires',
+            name: 'Recettes',
             location: '',
             anchor: '/#recettes',
 

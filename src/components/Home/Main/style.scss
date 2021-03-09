@@ -7,23 +7,21 @@
     position: relative;
    
     &-blocks-container{
-        width: 90%;
+        width: 80%;
         margin: 2em auto;
         display: flex;
         flex-direction: column;
-        justify-content: center;
     }
 
     &-blocks-pictures{
         width: 100%;
         display: flex;
-        justify-content: center;
+        justify-content: space-between;
     }
-
 
     &-blocks-text{
         width: 90%;
-        margin: auto;
+        margin: 2em auto 0;
         background-color: rgba(255, 255, 255, 0.7);
         display: flex;
         flex-direction: column;
@@ -35,6 +33,11 @@
 
     &-presentation-block{
         flex: 1;
+        margin: auto .3em;
+    }
+
+    &-presentation-block img{
+        box-shadow: 0 0 5px black;
     }
     
     &-presentation-picture{
@@ -47,7 +50,6 @@
         padding: .3em 0;
         text-align: justify;
         font-style: italic;
-        text-shadow: 0 0 2px white;
         font-size: 1.4em; 
     }
     
