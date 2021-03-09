@@ -13,16 +13,20 @@ const Main = () => {
     return(
     <section id="notre-histoire">
     <Parallax bgImage={bg} className="main" strength={300}>
-        <div className="blocks-container" >
-            <div className="main-presentation-block">
-                <img src={papa} alt="presentation de l'equipe" className="main-presentation-picture"/>
-            </div>
-            
-            <div className="main-presentation-block">
-                <img src={nonna} alt="presentation de l'equipe" className="main-presentation-picture"/>
+        <div className="main-blocks-container" >
+            <div className="main-blocks-pictures">
+                <div className="main-presentation-block">
+                    <img src={papa} alt="presentation de l'equipe" className="main-presentation-picture"/>
+                </div>
+                <div className="main-presentation-block">
+                    <img src={nonna} alt="presentation de l'equipe" className="main-presentation-picture"/>
+                </div>
+                <div className="main-presentation-block">
+                    <img src={mamma} alt="presentation de l'equipe" className="main-presentation-picture mamma"/>
+                </div>
             </div>
 
-            <div src="" alt="presentation de l'equipe" className="main-presentation-block text-block">
+            <div src="" alt="presentation de l'equipe" className="main-blocks-text text-block">
                 <p className="main-presentation-description">
                 C'est une histoire simple, comme il y en tant d'autres. Une histoire de famille, de partage et d'amour d'une terre. 
                 </p>
@@ -38,9 +42,6 @@ const Main = () => {
                 <p className="main-presentation-description">
                 A presto ... 
                 ​</p>
-            </div>
-            <div className="main-presentation-block">
-                <img src={mamma} alt="presentation de l'equipe" className="main-presentation-picture mamma"/>
             </div>
         </div>
     </Parallax>
