@@ -5,6 +5,22 @@ import bg from '../../../assets/recetas.png';
 import './style.scss';
 
 const Comments = ({comments}) => {
+
+    const handleClickToBack= (evt) => {
+        const target = evt.currentTarget;
+        setTimeout(() => {
+            target.style.transform="rotateY(180deg)"
+            target.previousSibling.style.transform="rotateY(0)"
+        }, 10);
+    }
+
+        const handleClickToFront = (evt) => {
+            const target = evt.currentTarget;
+            setTimeout(() => {
+                target.nextSibling.style.transform="rotateY(0)"
+                target.style.transform="rotateY(180deg)"
+            }, 10);
+        }
         
     return(
     <section className="pageSection" id="recettes">
@@ -15,9 +31,19 @@ const Comments = ({comments}) => {
                 
                 {
                 comments.map((comment, id) => (
-                    <div className="oneBlock" key={id}>
-                        <h1 className="oneBlock-name">{comment.name}</h1>
-                        <p className="oneBlock-comment">{comment.text} Lorem ipsum dolor sit amet consectetur, adipisicing elit. Esse, enim.</p>
+                    <div className="wrapper" key={id}>
+                        <div className="oneBlock back" onClick={handleClickToFront}>
+                            <h1 className="oneBlock-name">{comment.name}</h1>
+                            <p className="oneBlock-comment">
+                                Recette secrète de la Nonna ;)
+                            </p>
+                        </div>
+                        <div className="oneBlock front" onClick={handleClickToBack}>
+                            <h1 className="oneBlock-name">{comment.name}</h1>
+                            <p className="oneBlock-comment">{comment.text} 
+                                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Esse, enim.
+                            </p>
+                        </div>
                     </div>
                 ))
                 }
