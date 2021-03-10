@@ -58,6 +58,7 @@ section{
     }
 
     &-subtitle-block{
+        margin-top: 4em;
         text-align: center;
         font-size: 1.1em;
     }
@@ -68,12 +69,12 @@ section{
         // font-weight: bold;
         color: #fff;
         font-size: 1.7em;
-        text-shadow: 0 0 5px black;
+        text-shadow: 0 0 10px black;
         z-index: 4;
     }
 
     &-arrows{
-        margin-top: 15px;
+        margin-top: 0.2em;
         color: #fff;
         filter:drop-shadow(0 0 5px black);
         animation: floating 2s ease-in-out infinite;

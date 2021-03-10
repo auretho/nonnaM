@@ -6,27 +6,35 @@
     // font-family: 'Amatic SC', 'Bradley Hand', serif;
 
     &-div{
-        position: relative;
-        top: 60%;
-        left: 50%;
-        transform: translate(-50%, -50%);
+        height: 100%;
         display: flex;
         flex-direction: column;
         align-items: center;
+        justify-content: center;
     }
     
     &-title{
         font-family: 'Amatic SC', 'Bradley Hand', serif;
         font-weight: bold;
         text-align: center;
-        font-size: 3.5em;
+        font-size: 4em;
     }
 
     &-details{
-        margin-top: .5em;
-        left: 12px;
+        background-color: rgba(255, 255, 255, 0.4);
+        margin-top: 2em;
+        padding: 1em;
+        border-radius: 10px;
         text-align: center;
-        font-size: 2.5em;
+        font-size: 2.4em;
+    }
+
+    &-details h2{
+        margin: .3em auto;
+    }
+
+    &-details h2:nth-child(1){
+        font-weight: bold;
     }
 
     &-email{
@@ -35,7 +43,8 @@
 
     &-email:hover{
         color: #04613f;
-        text-shadow: 0 0 2px white;
+        text-shadow: 0 0 2px #02482e;
+        font-style: italic;
     }
 
     &-tel{

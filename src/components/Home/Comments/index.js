@@ -35,7 +35,7 @@ const Comments = ({comments}) => {
                         <div className="oneBlock back" onClick={handleClickToFront}>
                             <h1 className="oneBlock-name">{comment.name}</h1>
                             <p className="oneBlock-comment">
-                                Recette secrète de la Nonna ;)
+                                *Recette secrète de la Nonna*
                             </p>
                         </div>
                         <div className="oneBlock front" onClick={handleClickToBack}>

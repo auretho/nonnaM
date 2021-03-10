@@ -17,7 +17,7 @@ const Products = ({location}) => {
 
     return(
     <div className="process" id="origine-des-produits">
-        <h1 className="process-title">Mais d'où viennent ces produits?</h1>
+        <h1 className="process-title">D'où viennent tous nos produits?</h1>
         {
         location.map((element, i) => (
             <div 

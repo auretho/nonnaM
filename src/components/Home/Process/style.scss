@@ -6,10 +6,11 @@
     background-size: cover;
 
     &-title{
+        font-family: 'Amatic SC', 'Nunito', 'Quicksand', serif;
         position: relative;
-        top: 2em;
+        top: 1em;
         text-align: center;
-        font-size: 3em;
+        font-size: 5em;
     }
 
     &-img{
