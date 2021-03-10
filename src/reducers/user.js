@@ -19,7 +19,7 @@ const initialState = {
         {
             name: 'Accueil',
             location: '',
-            anchor: '/#bienvenue',
+            anchor: '/#accueil',
         },
         {
             name: 'Notre histoire',
@@ -39,7 +39,7 @@ const initialState = {
 
         },
         {
-            name: 'L\'origine des produits',
+            name: 'L\'origine de nos produits',
             location: '',
             anchor: '/#origine-des-produits',
 

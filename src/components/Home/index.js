@@ -29,10 +29,10 @@ const Home = () => {
         const handleScrollNav = () => {
             const scrollNavBar = () => {            
                 const scrollY = window.scrollY;  
-                const allLinks = document.querySelectorAll('nav>a');
+                const allLinks = document.querySelectorAll('nav>ul>a');
                 allLinks.forEach(link => {
                     let section = document.querySelector(link.hash);
-                    if (section.offsetTop <= scrollY && link.hash === "#bienvenue"){
+                    if (section.offsetTop <= scrollY && link.hash === "#accueil"){
                         link.classList.add("active");
                     }
                     else {
@@ -55,7 +55,7 @@ const Home = () => {
     }, [])
     
     return(
-    <div className="home" >
+    <div className="home"  >
         <Header />
         <Main />
         <About />

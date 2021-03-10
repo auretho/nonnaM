@@ -6,8 +6,8 @@ import DoubleArrowIcon from '@material-ui/icons/DoubleArrow';
 import './style.scss';
 
 const Header = () => (
-        <div>
-            <header>
+        <div id="accueil">
+            <header >
                 <div className="header" >
                     <div className="header-logo translate" data-speed="0.8">
                         <div className="header-top">
