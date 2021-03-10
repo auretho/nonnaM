@@ -17,6 +17,7 @@ const Products = ({location}) => {
 
     return(
     <div className="process" id="origine-des-produits">
+        <h1 className="process-title">Mais d'où viennent ces produits?</h1>
         {
         location.map((element, i) => (
             <div 
@@ -27,10 +28,7 @@ const Products = ({location}) => {
                     top: `${element.imgBlockPos.top}`,
                     left: `${element.imgBlockPos.left}`,
             }}>
-                <div 
-                    className="process-imageDiv" 
-                >
-                    
+                <div className="process-imageDiv">
                     <img 
                         src={element.arrow} 
                         alt="" 

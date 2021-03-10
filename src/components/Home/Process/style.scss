@@ -5,6 +5,13 @@
     background: url('../../../assets/plantation.png');
     background-size: cover;
 
+    &-title{
+        position: relative;
+        top: 2em;
+        text-align: center;
+        font-size: 3em;
+    }
+
     &-img{
         position: absolute;
         top: 0;

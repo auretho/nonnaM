@@ -12,25 +12,28 @@ const Products = ({img}) => {
         const transformStyle = {transform: `scale(${percentage * .5})`};
         return(
         <div className="product-images" >
-            {
-            img.map((element, i) => (
-                <div className="product-block" key={i} id={element.shortName}>
-                    <Modal item={element} triggerItem={
-                        <img className="product-image"
-                            src={element.image} alt="" 
-                            style={transformStyle}   
-                        />
-                    }/>
+            {/* <h1 className="product-text">Et vous, quel produit vous intéresse?</h1> */}
+            <div className="product-items">
+                {
+                img.map((element, i) => (
+                    <div className="product-block" key={i} id={element.shortName}>
+                        <Modal item={element} triggerItem={
+                            <img className="product-image"
+                                src={element.image} alt="" 
+                                style={transformStyle}   
+                            />
+                        }/>
 
-                    <Modal item={element} triggerItem={
-                        <h1 className="product-image-title" 
-                            style={transformStyle}>
-                            {element.name}
-                        </h1>
-                    }/>
-                </div>
-            ))
-            }
+                        <Modal item={element} triggerItem={
+                            <h1 className="product-image-title" 
+                                style={transformStyle}>
+                                {element.name}
+                            </h1>
+                        }/>
+                    </div>
+                ))
+                }
+            </div>
         </div>
     )}
 
