@@ -37,7 +37,7 @@ const Main = () => {
                 Et c'est ainsi, au détour d'une lasagne aux artichauds entre amis, d'un plat de pâtes sauce tomates maison, d'un "aperitivo" qu'est née l'envie de vous faire partager ces produits de la belle région d'Abruzzo et plus précisément de la ville de Cupello.
                 </p>
                 <p className="main-presentation-description">
-                Les produits d'une vie, les "<span>ricette speciale</span>" de Nonna, c'est cela que nous avons décidé de vous faire partager sur ce site. 
+                Les produits d'une vie, les "<span >ricette speciale</span>" de Nonna, c'est cela que nous avons décidé de vous faire partager sur ce site. 
                 </p>
                 <p className="main-presentation-description">
                 A presto ... 

@@ -1,5 +1,5 @@
 import React from 'react';
-import { Parallax } from 'react-parallax';
+import { Parallax, Background } from 'react-parallax';
 import Modal from './ModalWindow.js';
 
 import champs from '../../../assets/champs2.png';
@@ -39,8 +39,12 @@ const Products = ({img}) => {
 
     return(
     <section className="product" id="nos-produits">
-        <Parallax className="product-parallax" bgImage={champs} style={{ height: '100vh'}} strength={300} renderLayer={rendered} />
-            {/* <h1 className="product-text">Et vous, quel produit vous intéresse?</h1> */}
+        <Parallax className="product-parallax"  strength={300} renderLayer={rendered}>
+            <Background>
+                <img src={champs} alt=""/>
+            </Background>
+        </Parallax>
+
     </section>
 )}
 
