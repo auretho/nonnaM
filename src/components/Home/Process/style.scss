@@ -52,3 +52,9 @@
 .hidden{
     display: none;
 }
+
+@media (max-width: 488px){
+    .process-img{
+        display: none; // A REVOIR
+    }
+}

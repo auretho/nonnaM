@@ -55,6 +55,7 @@ section{
         font-family: 'Euphoria Script', serif;
         text-shadow: 0 0 1px grey;
         font-size: 3em;
+        text-align: center;
     }
 
     &-subtitle-block{
@@ -122,7 +123,25 @@ section{
 }
 
 
-@media (max-width: 1450px){
+
+@media (max-width: 488px){
+    .header-title-logo{
+        width: 250px;
+    }
+
+    .header-subtitle-block{
+        margin-top: 2em;
+    }
+    
+    .header-subtitle{
+        margin: auto;
+        width: 80%;
+    }
+}
+
+
+
+@media (min-width: 1024px) and (max-width: 1450px){
     .header-title-logo{
         width: 350px;
     }

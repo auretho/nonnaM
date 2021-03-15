@@ -6,9 +6,9 @@
     z-index:100;
     background-color: #659441b1;
     background-image: linear-gradient(#e3f8d5, rgba(255, 255, 255, 0));
+    height: 60px;
     width: 100%;
     border: 1px solid vars.$oliveColor;
-    height: 60px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -67,4 +67,11 @@
     text-shadow: 0 0 1px lightgrey;
 }
 
+
+
+@media (max-width: 488px){
+    .navigation-list{
+        display: none; // A REVOIR
+    }
+}
 
