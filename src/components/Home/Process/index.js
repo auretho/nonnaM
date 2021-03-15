@@ -1,5 +1,7 @@
 import React from 'react';
 import HoverImage from "react-hover-image";
+import img1 from '../../../assets/smile1.png';
+import img2 from '../../../assets/smile2.png';
 import './style.scss';
 
 
@@ -7,11 +9,13 @@ const Products = ({location}) => {
 
     const handleHover = (evt) => { 
         evt.target.nextSibling.nextSibling.classList.remove('hidden');
+        evt.target.nextSibling.attributes.src.value = img2;
         evt.target.parentElement.style.filter = "drop-shadow(0 0 5px black)";
     }
 
     const handleHoverOut = (evt) => {
         evt.target.nextSibling.nextSibling.classList.add('hidden'); 
+        evt.target.nextSibling.attributes.src.value = img1;
         evt.target.parentElement.style.filter = '';
     }
 

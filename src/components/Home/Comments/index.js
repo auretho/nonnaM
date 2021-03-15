@@ -26,7 +26,7 @@ const Comments = ({comments}) => {
     <section className="pageSection" id="recettes">
         <Parallax bgImage={bg} strength={250} className="comments-section" >
             <div className="comments" >
-                <h2 className="comments-title">Idées recette: les nôtres... et les vôtres!</h2>
+                <h2 className="comments-title">Idées de recettes: les nôtres... et les vôtres!</h2>
                 <div className="comments-blocks">
                 
                 {

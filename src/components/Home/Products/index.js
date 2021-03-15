@@ -12,7 +12,7 @@ const Products = ({img}) => {
         const transformStyle = {transform: `scale(${percentage * .5})`};
         return(
         <div className="product-images" >
-            {/* <h1 className="product-text">Et vous, quel produit vous intéresse?</h1> */}
+            <h1 className="product-text">Que voulez-vous commander aujourd'hui?</h1>
             <div className="product-items">
                 {
                 img.map((element, i) => (

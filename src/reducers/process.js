@@ -16,8 +16,8 @@ const initialState = {
             text: 'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Officia officiis amet iusto enim placeat quisquam saepe corrupti hic consectetur repellat.',
             imgBlockPos: {
                 pos: 'relative',
-                top: '55%',
-                left: '60%', 
+                top: '45%',
+                left: '62%', 
             },
             arrowPos: {
                 pos: '',
@@ -44,7 +44,7 @@ const initialState = {
             text: 'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Officia officiis amet iusto enim placeat quisquam saepe corrupti hic consectetur repellat.',
             imgBlockPos: {
                 pos: 'relative',
-                top: '55%',
+                top: '45%',
                 left: '10%', 
             },
             arrowPos: {
@@ -67,12 +67,12 @@ const initialState = {
             img1: smile1,
             img2: smile2,
             arrow: arrow3,
-            title: 'Le soleil pour les tomates',
+            title: 'Le soleil (la plupart du temps) pour les tomates',
             text: 'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Officia officiis amet iusto enim placeat quisquam saepe corrupti hic consectetur repellat.',
             imgBlockPos: {
                 pos: 'relative',
                 top: '20%',
-                left: '5%', 
+                left: '15%', 
             },
             arrowPos: {
                 pos: '',
