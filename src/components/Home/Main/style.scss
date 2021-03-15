@@ -58,6 +58,30 @@
 
 } 
 
+@media (max-width: 488px){
+    .main-blocks-container{
+        height: 100%;
+    }
+
+    .main-blocks-pictures{
+        display: block;
+    }
+
+    .main-presentation-block{
+        text-align: center;
+    }
+
+    .main-presentation-picture{
+        height: 300px;
+        width: 300px;
+    }
+
+    .main-blocks-text{
+        font-size: .8em;
+        padding: .3em;
+    }
+}
+
 @media (max-width: 1450px){
     // .main-presentation-block{
     //     height: 550px;
