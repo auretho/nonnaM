@@ -39,7 +39,7 @@ const initialState = {
 
         },
         {
-            name: 'L\'origine de nos produits',
+            name: 'D\'où viennent-ils?',
             location: '',
             anchor: '/#origine-des-produits',
 

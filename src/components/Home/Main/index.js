@@ -4,7 +4,7 @@ import { Parallax } from 'react-parallax';
 import bg from '../../../assets/champs.jpg';
 import papa from '../../../assets/papa.jpg';
 import nonna from '../../../assets/nonna-lu.jpg';
-import mamma from '../../../assets/mamma.png';
+import mamma from '../../../assets/mamma2.png';
 
 import './style.scss';
 
@@ -31,7 +31,7 @@ const Main = () => {
                 C'est une histoire simple, comme il y en tant d'autres. Une histoire de famille, de partage et d'amour d'une terre. 
                 </p>
                 <p className="main-presentation-description">
-                Et pour sublimer cette terre, il y a (bien sûr) une femme, Nonna Maria, une cuisinière passionnée, qui a donné  vie à ces récoltes.
+                Et pour sublimer cette terre, il y a (bien sûr) une femme, Nonna Maria, une cuisinière passionnée, qui a donné vie à ses récoltes.
                 </p>
                 <p className="main-presentation-description">
                 Et c'est ainsi, au détour d'une lasagne aux artichauds entre amis, d'un plat de pâtes sauce tomates maison, d'un "aperitivo" qu'est née l'envie de vous faire partager ces produits de la belle région d'Abruzzo et plus précisément de la ville de Cupello.

@@ -1,6 +1,6 @@
 import React from 'react';
 import { Header, Button, Image, Modal } from 'semantic-ui-react'
-import { NavHashLink } from 'react-router-hash-link';
+import { HashLink } from 'react-router-hash-link';
 import './style.scss';
 
 
@@ -28,7 +28,7 @@ const ModalWindow = ({triggerItem, item}) => {
                 <Button color='black' onClick={() => setOpen(false)}>
                 Annuler
                 </Button>
-                <NavHashLink smooth to="#contact">
+                <HashLink smooth to="#contact">
                     <Button
                     content="Super, je commande!"
                     labelPosition='right'
@@ -36,7 +36,7 @@ const ModalWindow = ({triggerItem, item}) => {
                     onClick={() => setOpen(false)}
                     positive
                     />
-                </NavHashLink>
+                </HashLink>
             </Modal.Actions>
         </Modal>
 )}

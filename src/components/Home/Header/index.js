@@ -1,4 +1,5 @@
 import React from'react';
+import { HashLink } from 'react-router-hash-link';
 import ciel from '../../../assets/cielo.png';
 import terrain from '../../../assets/campo.png';
 import logo from '../../../assets/logo-coeurSVG.png';
@@ -19,7 +20,9 @@ const Header = () => (
                     </div>
                     <div className=" header-subtitle-block translate" data-speed="0.4" style={{zIndex:'60'}}>
                         <h3 className="header-subtitle">C'est ici que commence notre histoire... </h3>
+                    <HashLink smooth to="/#notre-histoire">
                         <DoubleArrowIcon className="header-arrows" style={{ fontSize: 50 }}/>
+                    </HashLink>
                     </div>
                 </div>
 
