@@ -67,11 +67,24 @@
     text-shadow: 0 0 1px lightgrey;
 }
 
-
+.mobile-nav{
+    display: none;
+}
 
 @media (max-width: 488px){
     .navigation-list{
         display: none; // A REVOIR
+    }
+
+    .navigation-logo{
+        margin-left: 2em;
+    }
+
+    .mobile-nav{
+        display: block;
+        width: 90%;
+        text-align: right;
+        margin-right: 2em;
     }
 }
 

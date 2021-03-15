@@ -81,4 +81,13 @@
         padding-top: .5em;
         margin-bottom: .5em;
     }
+
+    .oneBlock{
+        height: 250px;
+        width: 250px;
+
+        &-name{
+            padding-top: .5em;
+        }
+    }
 }

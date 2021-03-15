@@ -1,6 +1,8 @@
 import React from'react';
 import { NavHashLink } from 'react-router-hash-link';
 import logo from '../../assets/logo-coeurSVG.png';
+import MenuIcon from '@material-ui/icons/Menu';
+
 import './style.scss';
 
 const Nav = ({navlinks}) => (
@@ -18,6 +20,9 @@ const Nav = ({navlinks}) => (
             ))
             }
         </ul>
+        <div className="mobile-nav">
+            <MenuIcon className="nav-burger" style={{ color: 'black', fontSize: 45 }} /*open={opened ? opened : ""} onClick={onToggle}*/ />
+        </div>
     </nav>
 )
 
