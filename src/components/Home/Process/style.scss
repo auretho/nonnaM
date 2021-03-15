@@ -54,6 +54,13 @@
 }
 
 @media (max-width: 488px){
+    .process{ // A REVOIR POUR CONFIRMATION
+        display: none;
+    }
+    .process-title{
+        font-size: 3em;
+    }
+
     .process-img{
         display: none; // A REVOIR
     }
