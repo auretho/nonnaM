@@ -52,7 +52,7 @@ const Products = ({img}) => {
     <section className="product" id="nos-produits">
         <Parallax className="product-parallax"  strength={300} renderLayer={rendered}>
             <Background>
-                <img src={champs} alt=""/>
+                <img src={champs} alt="" className="product-parallax-bgimg"/>
             </Background>
         </Parallax>
 
