@@ -12,6 +12,7 @@
         margin: 2em auto;
         display: flex;
         flex-direction: column;
+
     }
 
     &-blocks-pictures{
@@ -73,7 +74,7 @@
 
     .main-presentation-picture{
         height: 300px;
-        width: 300px;
+        width: 100%;
     }
 
     .main-blocks-text{

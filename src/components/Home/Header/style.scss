@@ -129,13 +129,18 @@ section{
         width: 250px;
     }
 
+    .header-subtext{
+        font-size: 2em;
+    }
+
     .header-subtitle-block{
-        margin-top: 2em;
+        margin-top: 0;
     }
     
     .header-subtitle{
         margin: auto;
         width: 80%;
+        font-size: 1.3em;
     }
 }
 

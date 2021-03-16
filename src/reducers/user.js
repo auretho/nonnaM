@@ -27,9 +27,10 @@ import photo27 from './img/27.jpg';
 import photo28 from './img/28.jpg';
 import photo29 from './img/29.jpg';
 import photo30 from './img/30.jpg';
-
+import { ON_TOGGLE } from '../actions/user';
 
 const initialState = {
+    burgerOpened: false, 
     navlinks: [
         {
             name: 'Accueil',
@@ -118,13 +119,15 @@ const initialState = {
         photo30,
 
     ],
-
-
-    
 };
 
 const user = (state = initialState, action = {}) => {
     switch (action.type) {
+        case ON_TOGGLE:
+            return{
+                ...state,
+                burgerOpened: !state.burgerOpened,
+            }
         default:
             return state;
     }

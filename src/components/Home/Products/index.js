@@ -7,8 +7,19 @@ import './style.scss';
 
 
 const Products = ({img}) => {
+    let mobile = false;
+
+    if (window.innerWidth < 488) {
+        mobile = true;
+    }
 
     const rendered = (percentage) => {
+        const renderElement = document.querySelector('.product-parallax');
+
+        if(renderElement && window.innerWidth <= 488){
+            renderElement.classList.add('mobile');
+        }
+    
         const transformStyle = {transform: `scale(${percentage * .5})`};
         return(
         <div className="product-images" >
@@ -44,6 +55,33 @@ const Products = ({img}) => {
                 <img src={champs} alt=""/>
             </Background>
         </Parallax>
+
+        {/* ==================MOBILE ONLY ============================ */}
+        <div className={mobile ? "product-images-mobile" : "product-images-mobile mobile"} >
+            <h1 className="product-text">Que voulez-vous commander aujourd'hui?</h1>
+            <div className="product-items">
+                {
+                img.map((element, i) => (
+                    <div className="product-block" key={i} id={element.shortName}>
+                        <Modal item={element} triggerItem={
+                            <img className="product-image"
+                                src={element.image} alt="" 
+                                // style={transformStyle}   
+                            />
+                        }/>
+
+                        <Modal item={element} triggerItem={
+                            <h1 className="product-image-title" 
+                                // style={transformStyle}
+                            >
+                                {element.name}
+                            </h1>
+                        }/>
+                    </div>
+                ))
+                }
+            </div>
+        </div>
 
     </section>
 )}
