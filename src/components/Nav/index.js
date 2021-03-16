@@ -6,7 +6,6 @@ import MenuIcon from '@material-ui/icons/Menu';
 import './style.scss';
 
 const Nav = ({navlinks, burgerOpened, handleBurger}) => {
-    console.log(burgerOpened);
     const handleBurgerClick = () => {
         handleBurger()
     }

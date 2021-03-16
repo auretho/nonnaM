@@ -12,7 +12,8 @@ const Main = () => {
     
     return(
     <section id="notre-histoire">
-    <Parallax bgImage={bg} className="main" strength={300}>
+    <Parallax bgImage={bg}  className="main" strength={300}>
+        
         <div className="main-blocks-container" >
             <div className="main-blocks-pictures">
                 <div className="main-presentation-block">
