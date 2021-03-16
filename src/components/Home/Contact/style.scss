@@ -80,4 +80,18 @@
     .contact-details h2, .contact-details a{
         font-size: .7em;
     }
+
+    .contact-details{
+        background-color: rgba(255, 255, 255, 0.6);
+    }
+
+    .contact-image{
+        margin: 1em 0;
+    }
+
+    .contact-tel a{
+        font-size: .9em;
+        font-weight: bold;
+        color: black;
+    }
 }
