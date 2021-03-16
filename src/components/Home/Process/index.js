@@ -1,5 +1,6 @@
 import React from 'react';
 import HoverImage from "react-hover-image";
+import ProcessMobile from './ProcessMobile.js';
 import img1 from '../../../assets/smile1.png';
 import img2 from '../../../assets/smile2.png';
 import './style.scss';
@@ -23,6 +24,7 @@ const Products = ({location}) => {
     <div className="process" id="origine-des-produits">
         <h1 className="process-title">D'où viennent tous nos produits?</h1>
         {
+        window.innerWidth > 488 ?
         location.map((element, i) => (
             <div 
                 className="process-img" 
@@ -70,6 +72,8 @@ const Products = ({location}) => {
                 </div>
             </div>
         ))    
+        :
+        <ProcessMobile location={location}/>
         }
     </div>
 )}

@@ -47,6 +47,10 @@
         text-shadow: 0 0 1px black;
         font-size: 1.1em;
     }
+
+    &-img-mobile{
+        // display: none;
+    }
 }
 
 .hidden{
@@ -55,13 +59,28 @@
 
 @media (max-width: 488px){
     .process{ // A REVOIR POUR CONFIRMATION
-        display: none;
-    }
-    .process-title{
-        font-size: 3em;
+        // display: none;
     }
 
     .process-img{
-        display: none; // A REVOIR
+        display: none;
+    }
+
+    .process-img-mobile{
+        display: unset;
+    }
+
+    .process-title{
+        font-size: 2em;
+    }
+
+    .process-arrow, .process-smile, .process-text{
+        // display: none; // A REVOIR
+        // height: 50%;
+        width: 60px;
+    }
+
+    .process-text{
+        width: 300px;
     }
 }
