@@ -2,7 +2,7 @@ import { connect } from 'react-redux';
 import About from '../components/Home/About';
 
 const mapStateToProps = (state) => ({
-    cupello: state.user.cupello,
+    cupello: state.recipes.cupello,
 });
   
 const mapDispatchToProps = null;

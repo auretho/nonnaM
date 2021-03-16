@@ -22,10 +22,10 @@ const About = ({cupello}) => {
     <div className="about pageSection" id="photos">
         <div className="about-container" >
             {
-            cupello.map((photo, index) => (
+            cupello.map((img, index) => (
                 <div className="about-photos" key={index} onClick={handleClick}>
-                    <img className="about-photo" src={photo} alt="photos de cupello"/>
-                    <p className="about-text hidden">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Impedit asperiores aliquam harum vero rem molestias.</p>
+                    <img className="about-photo" src={img.photo} alt="photos de cupello"/>
+                    <p className="about-text hidden">{img.text}</p>
                 </div>
             ))
             }
