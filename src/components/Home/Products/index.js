@@ -20,7 +20,7 @@ const Products = ({img}) => {
             renderElement.classList.add('mobile');
         }
     
-        const transformStyle = {transform: `scale(${percentage * .5})`};
+        const transformStyle = {transform: `scale(${percentage * .4})`};
         return(
         <div className="product-images" >
             <h1 className="product-text">Que voulez-vous commander aujourd'hui?</h1>

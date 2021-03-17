@@ -1,8 +1,8 @@
 {
   "files": {
-    "main.css": "/static/css/main.78013ca5.chunk.css",
-    "main.js": "/static/js/main.e528abb4.chunk.js",
-    "main.js.map": "/static/js/main.e528abb4.chunk.js.map",
+    "main.css": "/static/css/main.3d648344.chunk.css",
+    "main.js": "/static/js/main.2335b45c.chunk.js",
+    "main.js.map": "/static/js/main.2335b45c.chunk.js.map",
     "runtime-main.js": "/static/js/runtime-main.3c6067cb.js",
     "runtime-main.js.map": "/static/js/runtime-main.3c6067cb.js.map",
     "static/css/2.85f7760d.chunk.css": "/static/css/2.85f7760d.chunk.css",
@@ -12,7 +12,7 @@
     "static/js/3.055822fa.chunk.js.map": "/static/js/3.055822fa.chunk.js.map",
     "index.html": "/index.html",
     "static/css/2.85f7760d.chunk.css.map": "/static/css/2.85f7760d.chunk.css.map",
-    "static/css/main.78013ca5.chunk.css.map": "/static/css/main.78013ca5.chunk.css.map",
+    "static/css/main.3d648344.chunk.css.map": "/static/css/main.3d648344.chunk.css.map",
     "static/js/2.788addb5.chunk.js.LICENSE.txt": "/static/js/2.788addb5.chunk.js.LICENSE.txt",
     "static/media/1.49eaf20a.jpg": "/static/media/1.49eaf20a.jpg",
     "static/media/10.1ef04796.jpg": "/static/media/10.1ef04796.jpg",
@@ -47,12 +47,12 @@
     "static/media/arrow3.6cffe8c3.png": "/static/media/arrow3.6cffe8c3.png",
     "static/media/artichaut2.de73f80f.png": "/static/media/artichaut2.de73f80f.png",
     "static/media/semantic.min.css": "/static/media/outline-icons.ddae9b1b.woff",
-    "static/media/campo.d758f877.png": "/static/media/campo.d758f877.png",
+    "static/media/campo.d636246b.png": "/static/media/campo.d636246b.png",
     "static/media/style.scss": "/static/media/spaghetti.46a67cd7.jpg",
-    "static/media/cielo.1ed5aecf.png": "/static/media/cielo.1ed5aecf.png",
+    "static/media/cielo.bf2f00c9.png": "/static/media/cielo.bf2f00c9.png",
     "static/media/coeur-solo.4dd0f6e2.png": "/static/media/coeur-solo.4dd0f6e2.png",
     "static/media/logo-coeurSVG.f2ae86d1.png": "/static/media/logo-coeurSVG.f2ae86d1.png",
-    "static/media/mamma2.f38e257f.png": "/static/media/mamma2.f38e257f.png",
+    "static/media/mamma2.b83852b4.png": "/static/media/mamma2.b83852b4.png",
     "static/media/nonna-lu.8c81edf4.jpg": "/static/media/nonna-lu.8c81edf4.jpg",
     "static/media/olive2.31e8753e.png": "/static/media/olive2.31e8753e.png",
     "static/media/papa.7a902a61.jpg": "/static/media/papa.7a902a61.jpg",
@@ -66,7 +66,7 @@
     "static/js/runtime-main.3c6067cb.js",
     "static/css/2.85f7760d.chunk.css",
     "static/js/2.788addb5.chunk.js",
-    "static/css/main.78013ca5.chunk.css",
-    "static/js/main.e528abb4.chunk.js"
+    "static/css/main.3d648344.chunk.css",
+    "static/js/main.2335b45c.chunk.js"
   ]
 }

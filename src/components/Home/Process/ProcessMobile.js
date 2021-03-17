@@ -37,6 +37,7 @@ const ProcessMobile = ({location}) => {
             <img 
                 className="process-smile" 
                 src={element.img1} 
+                alt=""
                 // hoverSrc={element.img2}
                 onClick={handleClick} 
                 style={{
