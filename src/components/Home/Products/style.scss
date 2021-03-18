@@ -131,6 +131,7 @@
     }
 
     .product-image{
+        object-fit: contain;
         height: auto;
         width: 100%;
         filter: drop-shadow(0 0 5px white);

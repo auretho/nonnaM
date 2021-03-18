@@ -28,7 +28,7 @@ const ModalWindow = ({triggerItem, item}) => {
                 <Button color='black' onClick={() => setOpen(false)}>
                 Annuler
                 </Button>
-                <HashLink smooth to="#contact">
+                <HashLink smooth to="/commandes">
                     <Button
                     content="Super, je commande!"
                     labelPosition='right'
