@@ -13,7 +13,7 @@ const initialState = {
         {
           image: tomate,
           shortName: 'tomates',
-          name: "Salsa picante",
+          name: "Sauces tomate",
           description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis porro neque eos esse. Quae, tempore ipsum harum reprehenderit delectus vel." 
         },
         {
@@ -31,7 +31,7 @@ const initialState = {
         {
             image: truffe,
             shortName: 'truffe',
-            name: "Truffe blanche",
+            name: "Truffes",
             description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis porro neque eos esse. Quae, tempore ipsum harum reprehenderit delectus vel."  
         },
         {
