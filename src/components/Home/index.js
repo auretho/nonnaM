@@ -33,22 +33,26 @@ const Home = () => {
                 const allLinks = document.querySelectorAll('nav>div>ul>a');
                 allLinks.forEach(link => {
                     let section = document.querySelector(link.hash);
+                    // ========================== vvPOUR L'ORDER FORMvv ==================================
+                    if(section === null){
+                        return;
+                    }
+                    // ========================== ^^POUR L'ORDER FORM^^ ==================================
 
                     if (section.offsetTop <= scrollY && link.hash === "#accueil"){
                         link.classList.add("active");
-                    }
-                    else {
+                    } else {
                         link.classList.remove('active');
                     }
                     
                     if (section.offsetTop <= scrollY && section.offsetTop + section.offsetHeight > scrollY ) {
-
                         link.classList.add("active");
-                    } 
-                    else {
+                    } else {
                         link.classList.remove("active");
                     }
+
                 })
+
             };
             window.addEventListener('scroll', scrollNavBar);
         };
