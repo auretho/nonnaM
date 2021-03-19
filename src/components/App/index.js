@@ -12,7 +12,7 @@ function App() {
       <Nav />
         <Switch>
           <Route exact path="/" component={Home}/>
-          <Route path="/commandes" component={Orders}/>
+          <Route exact path="/commandes" component={Orders}/>
           <Route component={Error} />
         </Switch>
     </div>

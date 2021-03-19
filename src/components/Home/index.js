@@ -29,9 +29,11 @@ const Home = () => {
         const handleScrollNav = () => {
             const scrollNavBar = () => {            
                 const scrollY = window.scrollY;  
-                const allLinks = document.querySelectorAll('nav>ul>a');
+
+                const allLinks = document.querySelectorAll('nav>div>ul>a');
                 allLinks.forEach(link => {
                     let section = document.querySelector(link.hash);
+
                     if (section.offsetTop <= scrollY && link.hash === "#accueil"){
                         link.classList.add("active");
                     }
@@ -40,6 +42,7 @@ const Home = () => {
                     }
                     
                     if (section.offsetTop <= scrollY && section.offsetTop + section.offsetHeight > scrollY ) {
+
                         link.classList.add("active");
                     } 
                     else {
