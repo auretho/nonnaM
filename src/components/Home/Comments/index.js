@@ -1,6 +1,7 @@
 import React from 'react';
 import { Parallax } from 'react-parallax';
 import bg from '../../../assets/recetas.png';
+import KeyboardReturnIcon from '@material-ui/icons/KeyboardReturn';
 
 import './style.scss';
 
@@ -14,18 +15,18 @@ const Comments = ({comments}) => {
         }, 10);
     }
 
-        const handleClickToFront = (evt) => {
-            const target = evt.currentTarget;
-            setTimeout(() => {
-                target.nextSibling.style.transform="rotateY(0)"
-                target.style.transform="rotateY(180deg)"
-            }, 10);
-        }
+    const handleClickToFront = (evt) => {
+        const target = evt.currentTarget;
+        setTimeout(() => {
+            target.nextSibling.style.transform="rotateY(0)"
+            target.style.transform="rotateY(180deg)"
+        }, 10);
+    }
         
     return(
-    <section className="pageSection" id="recettes">
+    <section className="comments" id="recettes">
         <Parallax bgImage={bg} strength={250} className="comments-section" >
-            <div className="comments" >
+            <div>
                 <h2 className="comments-title">Idées de recettes: les nôtres... et les vôtres!</h2>
                 <div className="comments-blocks">
                 
@@ -43,6 +44,7 @@ const Comments = ({comments}) => {
                             <p className="oneBlock-comment">{comment.text} 
                                 Lorem ipsum dolor sit amet consectetur, adipisicing elit. Esse, enim.
                             </p>
+                            <KeyboardReturnIcon className="oneBlock-icon" />
                         </div>
                     </div>
                 ))

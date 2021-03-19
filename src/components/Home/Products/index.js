@@ -20,7 +20,7 @@ const Products = ({img}) => {
             renderElement.classList.add('mobile');
         }
     
-        const transformStyle = {transform: `scale(${percentage * .4})`};
+        const transformStyle = {transform: `scale(${percentage * .8})`};
         return(
         <div className="product-images" >
             <h1 className="product-text">Que voulez-vous commander aujourd'hui?</h1>
@@ -37,7 +37,8 @@ const Products = ({img}) => {
 
                         <Modal item={element} triggerItem={
                             <h1 className="product-image-title" 
-                                style={transformStyle}>
+                                style={transformStyle}
+                                >
                                 {element.name}
                             </h1>
                         }/>
