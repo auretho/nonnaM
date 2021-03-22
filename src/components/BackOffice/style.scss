@@ -1,0 +1,52 @@
+.backOffice{
+    min-height: 100vh;
+    width: 100%;
+    background-image: url('../../assets/champs.jpg');
+    background-size: cover;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+
+    &-container{
+        height: 70vh;
+        width: 100%;
+        background-color: rgba(255, 255, 255, 0.6);
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+    }
+
+    &-title{
+        font-weight: bold;
+        font-size: 1.5em;
+    }
+
+    &-row{
+        width: 80%;
+        height: 80px;
+        margin: auto;
+        background-color: lightgreen;
+        border: 1px solid rgb(193, 6, 6);
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding-left: 3em;
+
+        &-icon{
+            filter: drop-shadow(0 0 1px grey);
+            margin-right: 1em;
+        }
+
+        &-icon:hover{
+            filter: drop-shadow(0 0 3px grey);
+        }
+    }
+}
+
+#edit{
+    color: gold;
+}
+
+#delete{
+    color: rgb(193, 6, 6);
+}

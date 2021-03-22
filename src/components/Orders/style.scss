@@ -7,13 +7,22 @@
     align-items: center;
 
     &-form{
-        max-width: 50%;
+        max-width: 60%;
         margin: auto;
+        padding: 2em;
         background-color: #fff;
+        box-shadow: 0 0 10px black;
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
+
+        &-title{
+            text-transform: uppercase;
+            font-weight: bold;
+            font-size: 1.3em;
+            margin: 1em 0;
+        }
 
         &-div{
             width: 100%;
@@ -24,8 +33,15 @@
             margin: auto;
         }
 
-        &-item{
+        &-input{
             margin: 1em;
+            padding: .5em;
+            width: 300px;
+        }
+
+        &-button{
+            margin-top: 1em;
+            padding: .5em;
         }
     }
 }

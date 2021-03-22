@@ -1,4 +1,5 @@
 import React from'react';
+import { Link } from 'react-router-dom';
 import { HashLink } from 'react-router-hash-link';
 import ciel from '../../../assets/cielo.png';
 import terrain from '../../../assets/campo.png';
@@ -18,6 +19,11 @@ const Header = () => (
                             <h2 className="header-subtext">Notre histoire, notre terre, nos produits pour vous</h2>
                         </div>
                     </div>
+                   
+                    <Link to="/back-office" style={{zIndex: '10'}}>
+                        <button  >Vers le Back Office</button>
+                    </Link>
+                   
                     <div className=" header-subtitle-block translate" data-speed="0.4" style={{zIndex:'60'}}>
                         <h3 className="header-subtitle">C'est ici que commence notre histoire... </h3>
                     <HashLink smooth to="/#notre-histoire">
