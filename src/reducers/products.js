@@ -4,9 +4,6 @@ import olive from '../assets/olive2.png';
 import truffe from '../assets/truffe.png';
 import jambon from '../assets/jambon.png';
 
-
-
-
 const initialState = {
     img: 
     [

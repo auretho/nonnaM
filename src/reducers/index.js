@@ -4,7 +4,7 @@ import products from './products';
 import process from './process';
 import recipes from './recipes';
 import backoffice from './backoffice';
-
+import orders from './orders';
 
 
 export default combineReducers({
@@ -13,4 +13,5 @@ export default combineReducers({
     process,
     recipes,
     backoffice,
+    orders,
 });

@@ -8,7 +8,6 @@ const mapStateToProps = (state) => ({
   
 const mapDispatchToProps = (dispatch) => ({
     handleStockEdit: (newStock) => {
-        console.log('this is a test');
         dispatch(editStock(newStock))
     }
 });
