@@ -4,7 +4,7 @@ const initialState = {
     stock: '5',
 };
 
-const orders = (state = initialState, action = {}) => {
+const backoffice = (state = initialState, action = {}) => {
     switch (action.type){ 
         case EDIT_STOCK:
             return{
@@ -16,4 +16,4 @@ const orders = (state = initialState, action = {}) => {
     }
 }
 
-export default orders;
+export default backoffice;

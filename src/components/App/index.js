@@ -1,7 +1,7 @@
 import { Switch, Route } from 'react-router-dom';
 import Nav from '../../containers/Navbar';
 import Home from '../Home';
-import Orders from '../Orders';
+import Orders from '../../containers/Orders';
 import BackOffice from '../../containers/BackOffice';
 import Error from '../Error';
 
