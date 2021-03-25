@@ -1,8 +1,9 @@
 import { connect } from 'react-redux';
 import Orders from '../components/Orders';
-import { onChange, onSubmit } from '../actions/user';
+import { onChange, onSubmit, addProduct } from '../actions/user';
 
 const mapStateToProps = (state) => ({
+    inputDetails: state.orders.inputDetails,
     form: state.orders.form,
 });
   
@@ -13,6 +14,10 @@ const mapDispatchToProps = (dispatch) => ({
 
     handleSubmit: () => {
         dispatch(onSubmit())
+    },
+
+    addNewProduct: (payload) => {
+        dispatch(addProduct(payload))
     },
 });
 

@@ -45,3 +45,20 @@
         }
     }
 }
+
+.errorMsg{
+    display: none;
+    color: red;
+    font-weight: bold;
+    font-style: italic;
+}
+
+.full-item-list{
+    width: 100%;
+}
+
+.item-container{
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+}
