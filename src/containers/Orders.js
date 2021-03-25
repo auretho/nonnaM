@@ -5,6 +5,7 @@ import { onChange, onSubmit, addProduct } from '../actions/user';
 const mapStateToProps = (state) => ({
     inputDetails: state.orders.inputDetails,
     form: state.orders.form,
+    products: state.orders.products,
 });
   
 const mapDispatchToProps = (dispatch) => ({

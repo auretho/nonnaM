@@ -1,10 +1,7 @@
-import React, {useState} from 'react';
 import { v1 as uuidv1 } from 'uuid';
 import './style.scss';
 
-const Orders = ({form, handleChange, handleSubmit, addNewProduct}) => {
-
-    const productList = []; 
+const Orders = ({products, form, handleChange, handleSubmit, addNewProduct}) => {
 
     if(form){
         form.id = uuidv1();
@@ -19,24 +16,17 @@ const Orders = ({form, handleChange, handleSubmit, addNewProduct}) => {
 
     const handleFormSubmit = (evt) => {
         evt.preventDefault();
+        products.forEach(product => {
+            product.count = ''
+            console.log(product.count);
+        })
         handleSubmit();
     }
 
-    const handleItemSelection = (evt) => {
-        evt.preventDefault();
-        if(evt.target.classList.contains('selected')){
-            evt.target.classList.remove('selected');
+    const handleCountChange = (evt) => {
+        const prodToUpdate = products.filter((product) => evt.target.name === product.name)
+        addNewProduct(prodToUpdate[0].count = evt.target.value);
 
-            const prodToRemove = productList.indexOf(evt.target.value);
-            if (prodToRemove > -1) {
-                productList.splice(prodToRemove, 1);
-            }
-        } 
-        else {
-            evt.target.classList.add('selected');
-            productList.push(evt.target.value);
-        }
-        console.log(productList);
     }
 
     return(
@@ -52,7 +42,7 @@ const Orders = ({form, handleChange, handleSubmit, addNewProduct}) => {
                           placeholder="Nom de famille" 
                           value={form.lastname}
                           onChange={handleInputChange} 
-                          required/>
+                          />
             </div>
             <div className="order-form-div">
                 Prénom<input type="text" 
@@ -61,7 +51,7 @@ const Orders = ({form, handleChange, handleSubmit, addNewProduct}) => {
                           placeholder="Prénom" 
                           value={form.firstname}
                           onChange={handleInputChange} 
-                          required/>
+                          />
             </div>
             <div className="order-form-div">
                 Email<input type="email" 
@@ -70,32 +60,26 @@ const Orders = ({form, handleChange, handleSubmit, addNewProduct}) => {
                           placeholder="Email" 
                           value={form.email}
                           onChange={handleInputChange} 
-                          required/>
+                          />
             </div>
 
             {/* SELECTION DES PRODUITS */}
             <div className="full-item-list">
-                <div className="item-container">
-                    <input type="checkbox" 
-                        //    checked={checked ? "" : "checked"}
-                        //    onChange={handleUnchecked} 
-                           onClick={handleItemSelection} value="tomates1"/>
-                    <label htmlFor="tomates1">Tomates 1</label>
-                </div>
-                <div className="item-container">
-                    <input type="checkbox" 
-                        //    checked={checked ? checked : ""}
-                        //    onChange={handleUnchecked} 
-                           onClick={handleItemSelection} value="tomates2"/>
-                    <label htmlFor="tomates2">Tomates 2</label>
-                </div>
-                <div className="item-container">
-                    <input type="checkbox" 
-                        //    checked={checked ? checked : ""}
-                        //    onChange={handleUnchecked}
-                           onClick={handleItemSelection} value="tomates3"/>
-                    <label htmlFor="tomates3">Tomates 3</label>
-                </div>
+                {
+                    products.map((product, key) => (
+                    <div className="item-container" key={key}>
+                        <label htmlFor={product.name} className="item-label">
+                            {product.fullname}
+                        </label>
+                        <select name={product.name} id="" onChange={handleCountChange}>
+                            <option value="">Choisir</option>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                        </select>
+                    </div>
+                    ))
+                    }
             </div>
 
 
@@ -108,7 +92,7 @@ const Orders = ({form, handleChange, handleSubmit, addNewProduct}) => {
                           placeholder="Merci d'indiquer les produits et quantités souhaités." 
                           value={form.message}
                           onChange={handleInputChange} 
-                          required></textarea>
+                          ></textarea>
             </div>
             <h2 className="errorMsg">
                 Merci de bien vouloir remplir tous les champs demandés!

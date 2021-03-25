@@ -57,8 +57,16 @@
     width: 100%;
 }
 
-.item-container{
-    width: 100%;
-    display: flex;
-    justify-content: space-evenly;
+.item{
+    &-container{
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        margin: .5em auto;
+    }
+
+    &-label{
+        margin-right: 1em;
+    }
+
 }

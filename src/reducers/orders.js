@@ -1,16 +1,33 @@
-import { ON_CHANGE, ON_SUBMIT, ADD_PRODUCT, REMOVE_PRODUCT } from '../actions/user';
+import { ON_CHANGE, ON_SUBMIT, ADD_PRODUCT } from '../actions/user';
 
 
 const initialState = {
     form: {
         id: '',
-        subject: '',      
+        subject: 'Commande n°',      
         lastname: '',
         firstname: '',
         email: '',
         message: '',
-        products: '',
     },
+    products: [
+        {
+            fullname: "Tomates 1",
+            name: "tomates1",
+            count: ""
+        },
+        {
+            fullname: "Tomates 2",
+            name: "tomates2",
+            count: ""
+        },
+        {
+            fullname: "Tomates 3",
+            name: "tomates3",
+            count: ""
+        }
+    ],
+
     // inputDetails: [
     //     {
     //         title: 'Nom',
@@ -41,13 +58,12 @@ const orders = (state = initialState, action = {}) => {
         case ON_CHANGE:
             return{
                 ...state,
-                form: {
+                form:{ 
                     ...state.form, 
-                    subject: `Commande n°`, // A REVOIR POUR ACCOLDER L'ID
-                    ...action.payload},
-
+                    ...action.payload,}
             };
         case ON_SUBMIT: 
+        
             return{
                 ...state,
                 form: {        
@@ -58,26 +74,12 @@ const orders = (state = initialState, action = {}) => {
                     email: '',
                     message: '',
                 },
+                // products: 
             };
         case ADD_PRODUCT: 
             return{
                 ...state,
-                form: {        
-                    products: [
-                        ...state.form.products,
-                        action.payload
-                    ]
-                },
-            };
-        case REMOVE_PRODUCT: 
-            return{
-                ...state,
-                form: {        
-                    products: [
-                        ...state.form.products,
-                        action.payload
-                    ]
-                },
+                // ...action.payload
             };
         default:
             return state;
