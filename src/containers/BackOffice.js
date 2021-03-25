@@ -4,6 +4,7 @@ import {editStock} from '../actions/backoffice';
 
 const mapStateToProps = (state) => ({
     stock: state.backoffice.stock,
+    products: state.backoffice.products,
 });
   
 const mapDispatchToProps = (dispatch) => ({
