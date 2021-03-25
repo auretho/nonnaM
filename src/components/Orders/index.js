@@ -1,11 +1,19 @@
 import { v1 as uuidv1 } from 'uuid';
+import { Redirect, useHistory } from 'react-router-dom'
 import './style.scss';
 
-const Orders = ({products, form, handleChange, handleSubmit, addNewProduct}) => {
+const Orders = ({products, form, redirection, handleChange, handleSubmit, addNewProduct}) => {
+    
+    const history = useHistory();
 
     if(form){
         form.id = uuidv1();
     }
+    if (redirection){
+       setTimeout(() => {
+           history.push('/#bienvenue')
+       },5000);
+    }    
 
     const handleInputChange = (evt) => {
         const {name, value} = evt.target;
@@ -31,6 +39,11 @@ const Orders = ({products, form, handleChange, handleSubmit, addNewProduct}) => 
 
     return(
     <div className="order">
+        {
+        redirection ? 
+            <h1 className="order-submitted-message">Merci pour votre message, nous vous répondrons au plus vite! <br></br>A presto! </h1>
+        
+        : 
         <form id={form.id} action="" className="order-form" onSubmit={handleFormSubmit}>
             <h1 className="order-form-title">
                 Formulaire de commande
@@ -101,6 +114,7 @@ const Orders = ({products, form, handleChange, handleSubmit, addNewProduct}) => 
                 Valider ma commande
             </button>
         </form>
+        }
     </div>
 )}
 

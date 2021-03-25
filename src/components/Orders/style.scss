@@ -5,6 +5,7 @@
     background-size: cover;
     display: flex;
     align-items: center;
+    justify-content: center;
 
     &-form{
         max-width: 60%;
@@ -68,5 +69,9 @@
     &-label{
         margin-right: 1em;
     }
+}
 
+.order-submitted-message{
+    font-size: 2em;
+    text-align: center;
 }

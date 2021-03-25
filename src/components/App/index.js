@@ -7,7 +7,12 @@ import Error from '../Error';
 
 import './style.scss';
 
-function App() {
+function App({redirection, rebootRedirection}) {
+  setTimeout(() => {
+    rebootRedirection(redirection)
+  }, 8000);
+  
+
   return (
     <div className="app" id="bienvenue" >
       <Nav />

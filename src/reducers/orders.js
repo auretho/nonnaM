@@ -1,4 +1,4 @@
-import { ON_CHANGE, ON_SUBMIT, ADD_PRODUCT } from '../actions/user';
+import { ON_CHANGE, ON_SUBMIT, ADD_PRODUCT, ON_TOGGLE } from '../actions/user';
 
 
 const initialState = {
@@ -27,7 +27,7 @@ const initialState = {
             count: ""
         }
     ],
-
+    redirection: false,
     // inputDetails: [
     //     {
     //         title: 'Nom',
@@ -63,7 +63,6 @@ const orders = (state = initialState, action = {}) => {
                     ...action.payload,}
             };
         case ON_SUBMIT: 
-        
             return{
                 ...state,
                 form: {        
@@ -74,12 +73,16 @@ const orders = (state = initialState, action = {}) => {
                     email: '',
                     message: '',
                 },
-                // products: 
+                redirection: true,
             };
         case ADD_PRODUCT: 
             return{
                 ...state,
-                // ...action.payload
+            };
+        case ON_TOGGLE: 
+            return{
+                ...state,
+                redirection: false,
             };
         default:
             return state;
