@@ -11,14 +11,25 @@ const auth = {
 const transporter = nodemailer.createTransport(mailGun(auth));
 
 
-const sendMail = (id, email, subject, text, firstname, lastname, cb) => {
+const sendMail = (id, email, subject, text, firstname, lastname, products, cb) => {
+    const shortId = id.substring(0, 8);
+    const productsOrdered = products.map((product) => {
+        return `<br><b>Produit:</b>${product.fullname}  /  <b>Quantité:</b> ${product.count}`
+    }).join('');
+
+
     const mailOptions = {
-        from: email, // TODO replace this with your own email
-        to: 'aurelie.thouzeau@gmail.com', // TODO: the receiver email has to be authorized for the free tier
-        subject: `${subject} ${id}`,
-        text: `NOM: ${firstname} ${lastname} 
-        \nMESSAGE: ${text} 
-        \nID: ${id}`,
+        from: email,
+        to: 'aurelie.thouzeau@gmail.com', 
+        subject: `${subject} ${shortId}`,
+        // text: `<b>NOM</b>: ${firstname} ${lastname} 
+        // \nMESSAGE: ${text} 
+        // \nID: ${id}`,
+        html:`<p><b>FULL ID:</b> ${id}</p> 
+        <p><b>NOM:</b> ${firstname} ${lastname} </p>
+        <p><b>NOM:</b> ${email}</p>
+        <p><b>MESSAGE:</b> ${text}</p> 
+        <p><b>PRODUITS:</b>${productsOrdered}</p>`,
         
     };
 
@@ -27,7 +38,7 @@ const sendMail = (id, email, subject, text, firstname, lastname, cb) => {
             console.log('il y a eu une erreur');
             return cb(err, null);
         }
-        console.log('message envoyé!!');
+        console.log('message envoyé!');
         return cb(null, data);
     });
 }

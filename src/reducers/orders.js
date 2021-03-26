@@ -1,8 +1,6 @@
 import { ON_CHANGE, ON_SUBMIT, ADD_PRODUCT, ON_REDIRECT } from '../actions/user';
 
-
 const initialState = {
-
     form: {
         id: '',
         subject: 'Commande n°',      
@@ -66,14 +64,6 @@ const orders = (state = initialState, action = {}) => {
         case ON_SUBMIT: 
             return{
                 ...state,
-                // form: {        
-                //     id: '',
-                //     subject: '',      
-                //     lastname: '',
-                //     firstname: '',
-                //     email: '',
-                //     message: '',
-                // },
                 redirection: true,
             };
         case ADD_PRODUCT: 
@@ -84,6 +74,14 @@ const orders = (state = initialState, action = {}) => {
             return{
                 ...state,
                 redirection: false,
+                form: {        
+                    id: '',
+                    subject: '',      
+                    lastname: '',
+                    firstname: '',
+                    email: '',
+                    message: '',
+                },
             };
         default:
             return state;

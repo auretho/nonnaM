@@ -1,5 +1,5 @@
 import { v1 as uuidv1 } from 'uuid';
-import { Redirect, useHistory } from 'react-router-dom'
+import { useHistory } from 'react-router-dom'
 import './style.scss';
 
 const Orders = ({products, form, redirection, handleChange, handleSubmit, addNewProduct}) => {
@@ -24,10 +24,13 @@ const Orders = ({products, form, redirection, handleChange, handleSubmit, addNew
 
     const handleFormSubmit = (evt) => {
         evt.preventDefault();
-        products.forEach(product => {
-            product.count = ''
-        })
         handleSubmit();
+        setTimeout(() => {
+            products.forEach(product => {
+                product.count = ''
+            })        
+        },5000);
+        
     }
 
     const handleCountChange = (evt) => {
