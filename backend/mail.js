@@ -11,7 +11,7 @@ const auth = {
 const transporter = nodemailer.createTransport(mailGun(auth));
 
 
-const sendMail = (id, email, subject, text, firstname, lastname, products, cb) => {
+const sendMail = (id, email, text, firstname, lastname, products, cb) => {
     const shortId = id.substring(0, 8);
     const productsOrdered = products.map((product) => {
         return `<br><b>Produit:</b>${product.fullname}  /  <b>Quantité:</b> ${product.count}`
@@ -21,13 +21,13 @@ const sendMail = (id, email, subject, text, firstname, lastname, products, cb) =
     const mailOptions = {
         from: email,
         to: 'aurelie.thouzeau@gmail.com', 
-        subject: `${subject} ${shortId}`,
+        subject: `Commande n° ${shortId}`,
         // text: `<b>NOM</b>: ${firstname} ${lastname} 
         // \nMESSAGE: ${text} 
         // \nID: ${id}`,
         html:`<p><b>FULL ID:</b> ${id}</p> 
         <p><b>NOM:</b> ${firstname} ${lastname} </p>
-        <p><b>NOM:</b> ${email}</p>
+        <p><b>EMAIL:</b> ${email}</p>
         <p><b>MESSAGE:</b> ${text}</p> 
         <p><b>PRODUITS:</b>${productsOrdered}</p>`,
         

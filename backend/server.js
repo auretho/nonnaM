@@ -11,10 +11,10 @@ app.use(cors({ origin: "*" }));
 app.use(express.json()); // A VOIR LE FONCTIONNEMENT
 
 app.post('/sendOrder', (req, res) => {
-    const { id, email, subject, text, firstname, lastname, products } = req.body;
+    const { id, email, text, firstname, lastname, products } = req.body;
     console.log(req.body);
 
-    sendMail(id, email, subject, text, firstname, lastname, products, (err) => {
+    sendMail(id, email, text, firstname, lastname, products, (err) => {
         console.log('la fonction sendMail fonctionne');
         if (err) {
             return res.status(500).json({ message: err.message || 'Erreur interne' });

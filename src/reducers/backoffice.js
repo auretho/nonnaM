@@ -6,7 +6,7 @@ const initialState = {
         {
             fullname: "Tomates 1",
             name: "tomates1",
-            stock: '12',
+            stock: '',
         },
         {
             fullname: "Tomates 2",

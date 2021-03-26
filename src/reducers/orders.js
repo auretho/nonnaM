@@ -3,7 +3,6 @@ import { ON_CHANGE, ON_SUBMIT, ADD_PRODUCT, ON_REDIRECT } from '../actions/user'
 const initialState = {
     form: {
         id: '',
-        subject: 'Commande n°',      
         lastname: '',
         firstname: '',
         email: '',

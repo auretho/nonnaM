@@ -4,15 +4,18 @@ import DeleteIcon from '@material-ui/icons/Delete';
 
 const BackOffice = ({products, handleChange}) => {
 
-    const handleInputChange = key => evt => {
-        let newArr = [...products]
-        newArr[key].stock = evt.target.value; 
-        console.log(newArr);
-        // const prodToUpdate = products.filter((product) => evt.target.name === product.name)
-        // console.log(prodToUpdate[0].stock = 5)
-        // handleChange(prodToUpdate[0].stock = evt.target.value);
-        // console.log(products);
-        // handleChange(evt.target.value)
+    const handleInputChange = (evt) => {
+        const {name, value} = evt.target;
+        const result = products.find(product => (product.name === name)); 
+
+        handleChange({
+            products: products.map(product => {
+            if (product.name === result.name) {
+                product.stock = value;
+                return product
+            }
+            return product;
+        })})
     }
 
     return(
@@ -28,12 +31,12 @@ const BackOffice = ({products, handleChange}) => {
                     <h3 className="row-stock">
                         Stock restant: 
                     </h3>
-                        <input type="text"
+                        <input type="number"
                                className="stock" 
                                name={product.name}
                                value={product.stock} 
-                               onChange={handleInputChange(key)}/>
-                            
+                               onChange={handleInputChange}/>
+                    <h3>{product.stock}</h3>        
                     <div className="backOffice-row-icons">
                         <EditIcon 
                             className="backOffice-row-icon" 
