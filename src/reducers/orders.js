@@ -1,7 +1,8 @@
-import { ON_CHANGE, ON_SUBMIT, ADD_PRODUCT, ON_TOGGLE } from '../actions/user';
+import { ON_CHANGE, ON_SUBMIT, ADD_PRODUCT, ON_REDIRECT } from '../actions/user';
 
 
 const initialState = {
+
     form: {
         id: '',
         subject: 'Commande n°',      
@@ -65,21 +66,21 @@ const orders = (state = initialState, action = {}) => {
         case ON_SUBMIT: 
             return{
                 ...state,
-                form: {        
-                    id: '',
-                    subject: '',      
-                    lastname: '',
-                    firstname: '',
-                    email: '',
-                    message: '',
-                },
+                // form: {        
+                //     id: '',
+                //     subject: '',      
+                //     lastname: '',
+                //     firstname: '',
+                //     email: '',
+                //     message: '',
+                // },
                 redirection: true,
             };
         case ADD_PRODUCT: 
             return{
                 ...state,
             };
-        case ON_TOGGLE: 
+        case ON_REDIRECT: 
             return{
                 ...state,
                 redirection: false,

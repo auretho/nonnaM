@@ -26,7 +26,6 @@ const Orders = ({products, form, redirection, handleChange, handleSubmit, addNew
         evt.preventDefault();
         products.forEach(product => {
             product.count = ''
-            console.log(product.count);
         })
         handleSubmit();
     }

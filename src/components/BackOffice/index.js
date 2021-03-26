@@ -2,17 +2,17 @@ import './style.scss';
 import EditIcon from '@material-ui/icons/Edit';
 import DeleteIcon from '@material-ui/icons/Delete';
 
-const BackOffice = ({stock, handleStockEdit, products}) => {
-    console.log(products);
-    const handleEdit = (e) => {
-        console.log(stock)
-        handleStockEdit('12');
+const BackOffice = ({products, handleChange}) => {
 
-        //TEST
-        const el = document.querySelector('.row-stock > span');
-        const input = document.createElement("input");
-        input.setAttribute("value", el.textContent);
-        el.replaceWith(input);
+    const handleInputChange = key => evt => {
+        let newArr = [...products]
+        newArr[key].stock = evt.target.value; 
+        console.log(newArr);
+        // const prodToUpdate = products.filter((product) => evt.target.name === product.name)
+        // console.log(prodToUpdate[0].stock = 5)
+        // handleChange(prodToUpdate[0].stock = evt.target.value);
+        // console.log(products);
+        // handleChange(evt.target.value)
     }
 
     return(
@@ -25,15 +25,20 @@ const BackOffice = ({stock, handleStockEdit, products}) => {
             products.map((product, key) => (
                 <div className="backOffice-row" key={key}>
                     <h2>{product.fullname}</h2>
-                    <p className="row-stock">
-                        Stock: <span>{product.stock}</span>
-                    </p>
+                    <h3 className="row-stock">
+                        Stock restant: 
+                    </h3>
+                        <input type="text"
+                               className="stock" 
+                               name={product.name}
+                               value={product.stock} 
+                               onChange={handleInputChange(key)}/>
+                            
                     <div className="backOffice-row-icons">
                         <EditIcon 
                             className="backOffice-row-icon" 
                             id="edit"
                             style={{fontSize: '40'}}
-                            onClick={handleEdit}
                         />
                         <DeleteIcon 
                         className="backOffice-row-icon" 

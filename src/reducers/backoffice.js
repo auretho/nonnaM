@@ -1,33 +1,33 @@
-import {EDIT_STOCK} from '../actions/backoffice';
+import { EDIT_STOCK, ON_CHANGE } from '../actions/backoffice';
 
 const initialState = {
-    stock: '5',
+    stock: '',
     products: [
         {
             fullname: "Tomates 1",
             name: "tomates1",
-            stock: '2',
+            stock: '12',
         },
         {
             fullname: "Tomates 2",
             name: "tomates2",
-            stock: '25',
+            stock: '',
         },
         {
             fullname: "Tomates 3",
             name: "tomates3",
-            stock: '12',
+            stock: '',
         }
     ],
 };
 
 const backoffice = (state = initialState, action = {}) => {
     switch (action.type){ 
-        case EDIT_STOCK:
+        case ON_CHANGE:
             return{
                 ...state,
-                stock: action.payload,
-            }
+                ...action.payload,
+            };
         default:
             return state;
     }

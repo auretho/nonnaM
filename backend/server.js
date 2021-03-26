@@ -11,16 +11,14 @@ app.use(cors({ origin: "*" }));
 app.use(express.json()); // A VOIR LE FONCTIONNEMENT
 
 app.post('/sendOrder', (req, res) => {
-    const { lastname, firstname, email } = req.body;
+    const { id, email, subject, text, firstname, lastname } = req.body;
     console.log(req.body);
-
-    sendMail(lastname, firstname, email, (err) => {
+    
+    sendMail(id, email, subject, text, firstname, lastname, (err) => {
         console.log('la fonction sendMail fonctionne');
         if (err) {
-            console.log('ERROR: ', err);
             return res.status(500).json({ message: err.message || 'Erreur interne ma soeur' });
         }
-        console.log('Woop Woop! Email envoyé sister!');
         return res.json({ message: 'Email envoyé!!!!! ' });
     });
 });
