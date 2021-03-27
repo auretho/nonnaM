@@ -2,7 +2,7 @@ import { v1 as uuidv1 } from 'uuid';
 import { useHistory } from 'react-router-dom'
 import './style.scss';
 
-const Orders = ({products, form, redirection, handleChange, handleSubmit, addNewProduct}) => {
+const Orders = ({prodList, form, redirection, handleChange, handleSubmit, addNewProduct}) => {
     
     const history = useHistory();
 
@@ -26,24 +26,29 @@ const Orders = ({products, form, redirection, handleChange, handleSubmit, addNew
         evt.preventDefault();
         handleSubmit();
         setTimeout(() => {
-            products.forEach(product => {
-                product.count = ''
-            })        
+            prodList.forEach(product => product.map(element => {
+                element.count = ''
+            }))       
         },5000);
         
     }
 
     const handleCountChange = (evt) => {
-        const prodToUpdate = products.filter((product) => evt.target.name === product.name)
-        addNewProduct(prodToUpdate[0].count = evt.target.value);
-
+        // const prodToUpdate = products.filter((product) => evt.target.name === product.name)
+        // addNewProduct(prodToUpdate[0].count = evt.target.value);
+        // console.log(evt.target.name);
+        prodList.map(element => element.find(el => {
+            if(el.name === evt.target.name){
+                addNewProduct(el.count = evt.target.value);
+            } 
+        }));
     }
 
     return(
     <div className="order">
         {
         redirection ? 
-            <h1 className="order-submitted-message">Merci pour votre message, nous vous répondrons au plus vite! <br></br>A presto! </h1>
+            <h1 className="order-submitted-message">Merci pour votre message, nous vous répondrons au plus vite! <br/>A presto! </h1>
         
         : 
         <form id={form.id} action="" className="order-form" onSubmit={handleFormSubmit}>
@@ -81,18 +86,23 @@ const Orders = ({products, form, redirection, handleChange, handleSubmit, addNew
             {/* SELECTION DES PRODUITS */}
             <div className="full-item-list">
                 {
-                    products.map((product, key) => (
-                    <div className="item-container" key={key}>
-                        <label htmlFor={product.name} className="item-label">
-                            {product.fullname}
-                        </label>
-                        <select name={product.name} id="" onChange={handleCountChange}>
-                            <option value="">Choisir</option>
-                            <option value="1">1</option>
-                            <option value="2">2</option>
-                            <option value="3">3</option>
-                        </select>
-                    </div>
+                    prodList.map((element) => (
+                        element.map((product, key) => {
+                            // console.log(product);
+                            return(
+                            <div className="item-container" key={key}>
+                                <label htmlFor={product.name} className="item-label">
+                                    {product.name}
+                                </label>
+                                <select name={product.name} id="" onChange={handleCountChange}>
+                                    <option value="">Choisir</option>
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                </select>
+                            </div>
+                            )
+                        })
                     ))
                     }
             </div>

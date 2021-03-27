@@ -13,9 +13,16 @@ const transporter = nodemailer.createTransport(mailGun(auth));
 
 const sendMail = (id, email, text, firstname, lastname, products, cb) => {
     const shortId = id.substring(0, 8);
-    const productsOrdered = products.map((product) => {
-        return `<br><b>Produit:</b>${product.fullname}  /  <b>Quantité:</b> ${product.count}`
-    }).join('');
+    const productsOrdered = products.map(product => product.map(element => {
+        if(element.count != ""){
+            return `<div>
+                <b>Produit:</b> ${element.name}
+                <br>
+                <b>Quantité:</b> ${element.count}
+            </div>`
+            }
+        }
+    )).join('');
 
 
     const mailOptions = {

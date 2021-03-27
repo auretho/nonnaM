@@ -16,7 +16,7 @@ const OrderMdlw = (store) => (next) => (action) => {
                     text: store.getState().orders.form.message,
                     firstname: store.getState().orders.form.firstname,
                     lastname: store.getState().orders.form.lastname,
-                    products: store.getState().orders.products,
+                    products: store.getState().products.products,
                 },
             })
             .then( res => {

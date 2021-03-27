@@ -7,6 +7,8 @@ const mapStateToProps = (state) => ({
     form: state.orders.form,
     products: state.orders.products,
     redirection: state.orders.redirection,
+    prodList: state.products.products,
+
 });
   
 const mapDispatchToProps = (dispatch) => ({
