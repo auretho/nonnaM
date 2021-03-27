@@ -8,24 +8,26 @@ const initialState = {
         email: '',
         message: '',
     },
-    products: [
-        {
-            fullname: "Tomates 1",
-            name: "tomates1",
-            count: ""
-        },
-        {
-            fullname: "Tomates 2",
-            name: "tomates2",
-            count: ""
-        },
-        {
-            fullname: "Tomates 3",
-            name: "tomates3",
-            count: ""
-        }
-    ],
+    total: 0,
     redirection: false,
+
+    // products: [
+    //     {
+    //         fullname: "Tomates 1",
+    //         name: "tomates1",
+    //         count: ""
+    //     },
+    //     {
+    //         fullname: "Tomates 2",
+    //         name: "tomates2",
+    //         count: ""
+    //     },
+    //     {
+    //         fullname: "Tomates 3",
+    //         name: "tomates3",
+    //         count: ""
+    //     }
+    // ],
     // inputDetails: [
     //     {
     //         title: 'Nom',

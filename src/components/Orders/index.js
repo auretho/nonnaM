@@ -2,7 +2,7 @@ import { v1 as uuidv1 } from 'uuid';
 import { useHistory } from 'react-router-dom'
 import './style.scss';
 
-const Orders = ({prodList, form, redirection, handleChange, handleSubmit, addNewProduct}) => {
+const Orders = ({prodList, form, total, redirection, handleChange, handleSubmit, addNewProduct}) => {
     
     const history = useHistory();
 
@@ -22,6 +22,24 @@ const Orders = ({prodList, form, redirection, handleChange, handleSubmit, addNew
         })
     }
 
+    const handleCountChange = (evt) => {
+        // const prodToUpdate = products.filter((product) => evt.target.name === product.name)
+        // addNewProduct(prodToUpdate[0].count = evt.target.value);
+        // console.log(evt.target.name);
+        prodList.map(element => element.find(el => {
+            if(el.name === evt.target.name){
+                console.log(el.price);
+                addNewProduct(el.count = evt.target.value);
+                addNewProduct(total += el.price);
+                console.log(total);
+            } 
+        }));
+    }
+
+    const handleTotalChange = (evt) => {
+
+    }
+
     const handleFormSubmit = (evt) => {
         evt.preventDefault();
         handleSubmit();
@@ -30,18 +48,6 @@ const Orders = ({prodList, form, redirection, handleChange, handleSubmit, addNew
                 element.count = ''
             }))       
         },5000);
-        
-    }
-
-    const handleCountChange = (evt) => {
-        // const prodToUpdate = products.filter((product) => evt.target.name === product.name)
-        // addNewProduct(prodToUpdate[0].count = evt.target.value);
-        // console.log(evt.target.name);
-        prodList.map(element => element.find(el => {
-            if(el.name === evt.target.name){
-                addNewProduct(el.count = evt.target.value);
-            } 
-        }));
     }
 
     return(
@@ -100,14 +106,14 @@ const Orders = ({prodList, form, redirection, handleChange, handleSubmit, addNew
                                     <option value="2">2</option>
                                     <option value="3">3</option>
                                 </select>
+                                <h2 className="item-price">{product.price.toFixed(2)}€</h2>
                             </div>
                             )
                         })
                     ))
                     }
             </div>
-
-
+            <h2 className="item-total">TOTAL: {total}€</h2>
             <div className="order-form-div">
                 Message<textarea 
                           name="message" 

@@ -24,7 +24,7 @@ const ModalWindow = ({triggerItem, products, item}) => {
                         <Modal.Description>
                         <Header>{prod.name}</Header>
                         <p>{prod.description}</p>
-                        <p className="price">Prix: {prod.price}</p>
+                        <p className="price">Prix: {prod.price}€</p>
                         </Modal.Description>
                     </Modal.Content>
                     )

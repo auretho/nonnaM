@@ -55,19 +55,33 @@
 }
 
 .full-item-list{
-    width: 80%;
+    width: 100%;
 }
 
 .item{
     &-container{
         width: 100%;
-        display: flex;
-        justify-content: space-between;
+        display: grid;
+        grid-template-columns: 1.5fr .5fr .6fr;
         margin: .5em auto;
     }
 
     &-label{
         margin-right: 1em;
+    }
+
+    &-price{
+        justify-self: end;
+    }
+
+    &-total{
+        display: block;
+        width: 50%;
+        align-self: flex-end;
+        text-align: center;
+        font-size: 1.2em;
+        font-weight: bold;
+        margin-top: 1em;
     }
 }
 
