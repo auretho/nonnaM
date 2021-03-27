@@ -1,6 +1,4 @@
 import './style.scss';
-import EditIcon from '@material-ui/icons/Edit';
-import DeleteIcon from '@material-ui/icons/Delete';
 
 const BackOffice = ({products, handleChange}) => {
 
@@ -28,27 +26,17 @@ const BackOffice = ({products, handleChange}) => {
             products.map((product, key) => (
                 <div className="backOffice-row" key={key}>
                     <h2>{product.fullname}</h2>
-                    <h3 className="row-stock">
-                        Stock restant: 
-                    </h3>
                         <input type="number"
                                className="stock" 
                                name={product.name}
                                value={product.stock} 
                                onChange={handleInputChange}/>
-                    <h3>{product.stock}</h3>        
-                    <div className="backOffice-row-icons">
-                        <EditIcon 
-                            className="backOffice-row-icon" 
-                            id="edit"
-                            style={{fontSize: '40'}}
-                        />
-                        <DeleteIcon 
-                        className="backOffice-row-icon" 
-                        id="delete"
-                        style={{fontSize: '40'}}
-                        />
-                    </div>
+                    <div className="backOffice-stock-div">
+                        <h3 className="backOffice-stock-title">
+                            Stock restant: 
+                        </h3>    
+                        <h3>{product.stock}</h3> 
+                    </div> 
                 </div>
             ))
             }

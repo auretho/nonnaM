@@ -1,12 +1,12 @@
 import React from 'react';
 import { Parallax, Background } from 'react-parallax';
-import Modal from './ModalWindow.js';
+import Modal from '../../../containers/Modal';
 
 import champs from '../../../assets/champs2.png';
 import './style.scss';
 
 
-const Products = ({img}) => {
+const Products = ({img, products}) => {
     let mobile = false;
 
     if (window.innerWidth < 488) {
@@ -28,14 +28,14 @@ const Products = ({img}) => {
                 {
                 img.map((element, i) => (
                     <div className="product-block" key={i} id={element.shortName}>
-                        <Modal item={element} triggerItem={
+                        <Modal item={element.shortName} triggerItem={
                             <img className="product-image"
                                 src={element.image} alt="" 
                                 style={transformStyle}   
                             />
                         }/>
 
-                        <Modal item={element} triggerItem={
+                        <Modal item={element.shortName} triggerItem={
                             <h1 className="product-image-title" 
                                 style={transformStyle}
                                 >
@@ -64,14 +64,14 @@ const Products = ({img}) => {
                 {
                 img.map((element, i) => (
                     <div className="product-block" key={i} id={element.shortName}>
-                        <Modal item={element} triggerItem={
+                        <Modal item={products} triggerItem={
                             <img className="product-image"
                                 src={element.image} alt="" 
                                 // style={transformStyle}   
                             />
                         }/>
 
-                        <Modal item={element} triggerItem={
+                        <Modal item={products} triggerItem={
                             <h1 className="product-image-title" 
                                 // style={transformStyle}
                             >

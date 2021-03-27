@@ -1,11 +1,10 @@
 import { connect } from 'react-redux';
-import Products from '../components/Home/Products';
+import Modal from '../components/Home/Products/ModalWindow';
 
 const mapStateToProps = (state) => ({
-    img: state.products.img,
     products: state.products.products,
 });
   
 const mapDispatchToProps = null;
 
-export default connect( mapStateToProps, mapDispatchToProps )(Products)
+export default connect( mapStateToProps, mapDispatchToProps )(Modal)

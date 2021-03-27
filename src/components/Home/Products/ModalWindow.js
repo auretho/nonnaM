@@ -4,8 +4,7 @@ import { HashLink } from 'react-router-hash-link';
 import './style.scss';
 
 
-const ModalWindow = ({triggerItem, item}) => {
-    
+const ModalWindow = ({triggerItem, products, item}) => {
     const [open, setOpen] = React.useState(false);
     return(
         <Modal
@@ -13,18 +12,26 @@ const ModalWindow = ({triggerItem, item}) => {
             onOpen={() => setOpen(true)}
             open={open}
             trigger={triggerItem}
+            className="modal-container"
             >
-            {/* <Modal.Header>Select a Photo</Modal.Header> */}
-
-                <Modal.Content image>
-                    <Image size='medium' src={item.image} />
-                    <Modal.Description>
-                    <Header>{item.name}</Header>
-                    <p>{item.description}</p>
-                    </Modal.Description>
-                </Modal.Content>
-
-            <Modal.Actions>
+            {
+            products.map((element) => (
+                element.map((prod, key) => {
+                if(prod.shortName === item){
+                    return(
+                    <Modal.Content image className="modal-content" key={key}>
+                        <Image size='medium' src={prod.image} />
+                        <Modal.Description>
+                        <Header>{prod.name}</Header>
+                        <p>{prod.description}</p>
+                        <p className="price">Prix: {prod.price}</p>
+                        </Modal.Description>
+                    </Modal.Content>
+                    )
+                }})
+            ))
+            }
+            <Modal.Actions className="modal-footer">
                 <Button color='black' onClick={() => setOpen(false)}>
                 Annuler
                 </Button>

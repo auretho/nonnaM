@@ -144,6 +144,25 @@
     }
 }
 
+.modal{
+
+    &-container{
+        display: flex;
+        align-items: flex-end;
+        max-height: 500px;
+        overflow-y: scroll;
+    }
+
+    &-content{
+        border-bottom: 1px solid lightgrey;
+    }
+}
+
+.price{
+    font-weight: bold;
+    margin-top: 1em;
+}
+
 @media(max-width: 1450px){
     // .product-image{
     //     height: 400px;
