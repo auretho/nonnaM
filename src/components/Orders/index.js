@@ -110,7 +110,7 @@ const Orders = ({prodList, form, total, redirection, handleChange, handleSubmit,
                     ))
                     }
             </div>
-            <h2 className="item-total">TOTAL: {total}€</h2>
+            <h2 className="item-total">TOTAL: {total.toFixed(2)}€</h2>
             <div className="order-form-div">
                 Message<textarea 
                           name="message" 
