@@ -8,7 +8,7 @@ const initialState = {
         email: '',
         message: '',
     },
-    total: 0,
+    total: null,
     redirection: false,
 
     // products: [
@@ -70,6 +70,7 @@ const orders = (state = initialState, action = {}) => {
         case ADD_PRODUCT: 
             return{
                 ...state,
+                ...action.payload,
             };
         case ON_REDIRECT: 
             return{

@@ -3,7 +3,7 @@ import { useHistory } from 'react-router-dom'
 import './style.scss';
 
 const Orders = ({prodList, form, total, redirection, handleChange, handleSubmit, addNewProduct}) => {
-    
+    // console.log(total);
     const history = useHistory();
 
     if(form){
@@ -23,15 +23,10 @@ const Orders = ({prodList, form, total, redirection, handleChange, handleSubmit,
     }
 
     const handleCountChange = (evt) => {
-        // const prodToUpdate = products.filter((product) => evt.target.name === product.name)
-        // addNewProduct(prodToUpdate[0].count = evt.target.value);
-        // console.log(evt.target.name);
         prodList.map(element => element.find(el => {
             if(el.name === evt.target.name){
-                console.log(el.price);
                 addNewProduct(el.count = evt.target.value);
-                addNewProduct(total += el.price);
-                console.log(total);
+                addNewProduct({total: total + (el.price * el.count)});
             } 
         }));
     }
@@ -105,6 +100,8 @@ const Orders = ({prodList, form, total, redirection, handleChange, handleSubmit,
                                     <option value="1">1</option>
                                     <option value="2">2</option>
                                     <option value="3">3</option>
+                                    <option value="3">4</option>
+                                    <option value="3">5</option>
                                 </select>
                                 <h2 className="item-price">{product.price.toFixed(2)}€</h2>
                             </div>
