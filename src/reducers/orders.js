@@ -19,30 +19,26 @@ const initialState = {
             type: 'text',
             name: 'lastname',
             placeholder: 'Nom de famille',
-            value: '',
-            pattern: '',
+            pattern: '^[a-zA-Z]$',
         },
         {
             title: 'Prénom',
             type: 'text',
             name: 'firstname',
             placeholder: 'Prénom',
-            value: '',
+            pattern: '^[a-zA-Z]$',
         },
         {
             title: 'Email',
             type: 'email',
             name: 'email',
             placeholder: 'Email',
-            value: '',
-            pattern: '',
         },
         {
             title: 'Téléphone',
             type: 'tel',
             name: 'phone',
             placeholder: 'ex: 06 12 34 56 78',
-            value: '',
             pattern: '^(?:[0-9] ?){10,14}$',
         },
     ],
@@ -53,6 +49,7 @@ const orders = (state = initialState, action = {}) => {
         case ON_CHANGE:
             return{
                 ...state,
+                // ...action.payload,
                 form:{ 
                     ...state.form, 
                     ...action.payload,

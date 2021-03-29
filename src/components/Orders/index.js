@@ -4,6 +4,7 @@ import './style.scss';
 
 const Orders = ({inputDetails, prodList, form, total, redirection, delivery, handleChange, handleSubmit, addNewProduct}) => {
     const history = useHistory();
+    const numberArr = [];
 
     if(form){
         form.id = uuidv1();
@@ -14,11 +15,21 @@ const Orders = ({inputDetails, prodList, form, total, redirection, delivery, han
        },5000);
     }    
 
+    const ListNumbers = () => {
+        for (let i = 1; i <= 100; i++) {
+            numberArr.push(i)
+        }
+    };
+
     const handleInputChange = (evt) => {
+        console.log(evt.target);
         const {name, value} = evt.target;
             inputDetails.find(el => {
             if(el.name === name){
-                handleChange(el.value = value);
+                handleChange({[name]: el.value = value});
+            }
+            else if (name === 'message'){
+                handleChange({[name]: el.value = value})
             }
         })
     }
@@ -66,8 +77,10 @@ const Orders = ({inputDetails, prodList, form, total, redirection, delivery, han
         },5000);
     }
 
+    ListNumbers();
+
     return(
-    <div className="order">
+    <div className="order" id="order">
         {
         redirection ? 
             <h1 className="order-submitted-message">Merci pour votre message, nous vous répondrons au plus vite! <br/>A presto! </h1>
@@ -80,14 +93,15 @@ const Orders = ({inputDetails, prodList, form, total, redirection, delivery, han
                 {
                 inputDetails.map((element, key) => (
                     <div className="order-form-div" key={key}>
-                    {element.title}<input type={element.type} 
-                                name={element.name}
-                                className="order-form-input" 
-                                placeholder={element.placeholder} 
-                                value={element.value}
-                                pattern={element.pattern}
-                                onChange={handleInputChange} 
-                                />
+                    {element.title}
+                    <input type={element.type} 
+                           name={element.name}
+                           className="order-form-input" 
+                           placeholder={element.placeholder} 
+                           value={form.value}
+                        //    pattern={element.pattern}
+                           onChange={handleInputChange} 
+                    />
                     </div>
                 ))
                 }         
@@ -103,12 +117,13 @@ const Orders = ({inputDetails, prodList, form, total, redirection, delivery, han
                                     {product.name}
                                 </label>
                                 <select name={product.name} id="" onChange={handleCountChange}>
-                                    <option value="0">Choisir</option>
-                                    <option value="1">1</option>
-                                    <option value="2">2</option>
-                                    <option value="3">3</option>
-                                    <option value="4">4</option>
-                                    <option value="5">5</option>
+                                    <option value="">Choisir</option>
+                                    {
+                                        numberArr.map((el, key) => {
+                                            return(
+                                            <option value={el} key={key}>{el}</option>
+                                        )})
+                                    }
                                 </select>
                                 <h2 className="item-price">{product.price.toFixed(2)}€</h2>
                             </div>
@@ -121,11 +136,11 @@ const Orders = ({inputDetails, prodList, form, total, redirection, delivery, han
             <div className="order-delivery">
                 <div className="order-radio-container">
                     <input type="radio" id="avec" name="delivery" value={delivery} onChange={handleRadioSelect} required/>
-                    <label htmlFor="huey" className="order-radio">Avec livraison (+1€)</label>
+                    <label htmlFor="avec" className="order-radio">Avec livraison (+1€)</label>
                 </div>
                 <div className="order-radio-container">
                     <input type="radio" id="sans"  name="delivery" value={delivery} onChange={handleRadioSelect}/>
-                    <label htmlFor="huey" className="order-radio">Sans livraison</label>
+                    <label htmlFor="sans" className="order-radio">Sans livraison</label>
                 </div>
             </div>
             <h2 className="item-total">TOTAL TTC: {total.toFixed(2)}€</h2>
@@ -136,7 +151,7 @@ const Orders = ({inputDetails, prodList, form, total, redirection, delivery, han
                           className="order-form-input" 
                           id="msgArea"
                           placeholder="Merci d'indiquer les produits et quantités souhaités." 
-                          value={form.message}
+                        //   value={form.message}
                           onChange={handleInputChange} 
                           ></textarea>
             </div>
