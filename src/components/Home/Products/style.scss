@@ -41,7 +41,7 @@
         flex-direction: column;
         align-items: center;
         width: 250px;
-        padding: 1em;
+        padding: 0;
         z-index: 1;
         margin: 1em auto;
     }
@@ -95,6 +95,27 @@
     display: none;
 }
 
+.modal{
+
+    &-container{
+        display: flex;
+        align-items: flex-end;
+        max-height: 500px;
+        overflow-y: scroll;
+    }
+
+    &-content{
+        border-bottom: 1px solid lightgrey;
+    }
+}
+
+.price{
+    font-weight: bold;
+    margin-top: 1em;
+}
+
+
+
 @media (max-width: 488px){
     .product-images-mobile{
         background-image: url('../../../assets/champs2.png');
@@ -107,6 +128,8 @@
 
     .product-items{
         width: 90%;
+        align-items: baseline;
+        padding-top: 1.5em;
     }
 
     .product-text{
@@ -126,7 +149,8 @@
     .product-image{
         object-fit: contain;
         height: auto;
-        width: 100%;
+        width: 80%;
+        margin: auto;
         filter: drop-shadow(0 0 5px white);
         
         &-title{
@@ -142,26 +166,18 @@
             margin-top: 2em;
         }
     }
-}
 
-.modal{
-
-    &-container{
-        display: flex;
-        align-items: flex-end;
-        max-height: 500px;
-        overflow-y: scroll;
-    }
-
-    &-content{
-        border-bottom: 1px solid lightgrey;
+    .modal{
+        &-container{
+            height: 70vh;
+            padding-bottom: 1em;
+        }
     }
 }
 
-.price{
-    font-weight: bold;
-    margin-top: 1em;
-}
+
+
+
 
 @media(max-width: 1450px){
     // .product-image{

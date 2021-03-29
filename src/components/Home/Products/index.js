@@ -64,14 +64,14 @@ const Products = ({img, products}) => {
                 {
                 img.map((element, i) => (
                     <div className="product-block" key={i} id={element.shortName}>
-                        <Modal item={products} triggerItem={
+                        <Modal item={element.shortName} triggerItem={
                             <img className="product-image"
                                 src={element.image} alt="" 
                                 // style={transformStyle}   
                             />
                         }/>
 
-                        <Modal item={products} triggerItem={
+                        <Modal item={element.shortName} triggerItem={
                             <h1 className="product-image-title" 
                                 // style={transformStyle}
                             >
