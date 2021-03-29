@@ -2,8 +2,7 @@ import { v1 as uuidv1 } from 'uuid';
 import { useHistory } from 'react-router-dom'
 import './style.scss';
 
-const Orders = ({prodList, form, total, redirection, handleChange, handleSubmit, addNewProduct}) => {
-    // console.log(total);
+const Orders = ({prodList, form, total, redirection, delivery, handleChange, handleSubmit, addNewProduct}) => {
     const history = useHistory();
 
     if(form){
@@ -36,6 +35,29 @@ const Orders = ({prodList, form, total, redirection, handleChange, handleSubmit,
                 }
             } 
         }));
+    }
+
+    const handleKeyPress = (evt) => {
+        if(evt.keyCode == 32){
+            console.log('barre d\'espace appuyée!');
+        }
+    }
+
+    const handleRadioSelect = (evt) => {
+        if(delivery === undefined){
+            if(evt.target.id === "avec"){
+                addNewProduct({delivery: true, total: total + 1})
+            } else{
+                addNewProduct({delivery: false})
+            }
+        }
+        else {
+            if(evt.target.id === "avec"){
+                addNewProduct({delivery: true, total: total + 1})
+            } else{
+                addNewProduct({delivery: false, total: total - 1})
+            }
+        }
     }
 
 
@@ -90,9 +112,9 @@ const Orders = ({prodList, form, total, redirection, handleChange, handleSubmit,
             <div className="order-form-div">
                 Phone<input type="tel" 
                           name="phone"
-                          pattern="[0-9]{10}"
+                          pattern="^(?:[0-9] ?){10,14}$"
                           className="order-form-input" 
-                          placeholder="ex: 0612345678" 
+                          placeholder="ex: 06 12 34 56 78" 
                           value={form.phone}
                           onChange={handleInputChange} 
                           />
@@ -123,6 +145,19 @@ const Orders = ({prodList, form, total, redirection, handleChange, handleSubmit,
                         })
                     ))
                     }
+            </div>
+
+            <div className="order-delivery">
+                <div className="order-radio-container">
+                    <input type="radio" id="avec" name="delivery" value={delivery} onChange={handleRadioSelect} required/>
+                    <label htmlFor="huey" className="order-radio">Avec livraison (+1€)</label>
+                </div>
+            {/* </div>
+            <div className="order-delivery"> */}
+                <div className="order-radio-container">
+                    <input type="radio" id="sans"  name="delivery" value={delivery} onChange={handleRadioSelect}/>
+                    <label htmlFor="huey" className="order-radio">Sans livraison</label>
+                </div>
             </div>
             <h2 className="item-total">TOTAL TTC: {total.toFixed(2)}€</h2>
             <div className="order-form-div">

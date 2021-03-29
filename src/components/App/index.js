@@ -8,9 +8,11 @@ import Error from '../Error';
 import './style.scss';
 
 function App({redirection, rebootRedirection}) {
-  setTimeout(() => {
-    rebootRedirection(redirection)
-  }, 8000);
+  if(redirection){
+    setTimeout(() => {
+      rebootRedirection(redirection)
+    }, 8000);
+  }
   
 
   return (

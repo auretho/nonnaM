@@ -6,10 +6,12 @@ const initialState = {
         lastname: '',
         firstname: '',
         email: '',
+        phone: '',
         message: '',
     },
     total: 0,
     redirection: false,
+    delivery: undefined,
 
     // inputDetails: [
     //     {
@@ -69,6 +71,7 @@ const orders = (state = initialState, action = {}) => {
                     phone: '',
                     message: '',
                 },
+                delivery: undefined,
                 total: 0,
             };
         default:
