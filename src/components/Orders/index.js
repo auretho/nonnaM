@@ -2,7 +2,7 @@ import { v1 as uuidv1 } from 'uuid';
 import { useHistory } from 'react-router-dom'
 import './style.scss';
 
-const Orders = ({prodList, form, total, redirection, delivery, handleChange, handleSubmit, addNewProduct}) => {
+const Orders = ({inputDetails, prodList, form, total, redirection, delivery, handleChange, handleSubmit, addNewProduct}) => {
     const history = useHistory();
 
     if(form){
@@ -16,8 +16,10 @@ const Orders = ({prodList, form, total, redirection, delivery, handleChange, han
 
     const handleInputChange = (evt) => {
         const {name, value} = evt.target;
-        handleChange({
-            [name] : value,
+            inputDetails.find(el => {
+            if(el.name === name){
+                handleChange(el.value = value);
+            }
         })
     }
 
@@ -37,12 +39,6 @@ const Orders = ({prodList, form, total, redirection, delivery, handleChange, han
         }));
     }
 
-    const handleKeyPress = (evt) => {
-        if(evt.keyCode == 32){
-            console.log('barre d\'espace appuyée!');
-        }
-    }
-
     const handleRadioSelect = (evt) => {
         if(delivery === undefined){
             if(evt.target.id === "avec"){
@@ -59,7 +55,6 @@ const Orders = ({prodList, form, total, redirection, delivery, handleChange, han
             }
         }
     }
-
 
     const handleFormSubmit = (evt) => {
         evt.preventDefault();
@@ -82,44 +77,20 @@ const Orders = ({prodList, form, total, redirection, delivery, handleChange, han
             <h1 className="order-form-title">
                 Formulaire de commande
             </h1>
-            <div className="order-form-div">
-                Nom<input type="text" 
-                          name="lastname" 
-                          className="order-form-input" 
-                          placeholder="Nom de famille" 
-                          value={form.lastname}
-                          onChange={handleInputChange} 
-                          />
-            </div>
-            <div className="order-form-div">
-                Prénom<input type="text" 
-                          name="firstname" 
-                          className="order-form-input" 
-                          placeholder="Prénom" 
-                          value={form.firstname}
-                          onChange={handleInputChange} 
-                          />
-            </div>
-            <div className="order-form-div">
-                Email<input type="email" 
-                          name="email" 
-                          className="order-form-input" 
-                          placeholder="Email" 
-                          value={form.email}
-                          onChange={handleInputChange} 
-                          />
-            </div>
-            <div className="order-form-div">
-                Phone<input type="tel" 
-                          name="phone"
-                          pattern="^(?:[0-9] ?){10,14}$"
-                          className="order-form-input" 
-                          placeholder="ex: 06 12 34 56 78" 
-                          value={form.phone}
-                          onChange={handleInputChange} 
-                          />
-            </div>
-
+                {
+                inputDetails.map((element, key) => (
+                    <div className="order-form-div" key={key}>
+                    {element.title}<input type={element.type} 
+                                name={element.name}
+                                className="order-form-input" 
+                                placeholder={element.placeholder} 
+                                value={element.value}
+                                pattern={element.pattern}
+                                onChange={handleInputChange} 
+                                />
+                    </div>
+                ))
+                }         
             {/* SELECTION DES PRODUITS */}
             <div className="full-item-list">
                 {
@@ -152,8 +123,6 @@ const Orders = ({prodList, form, total, redirection, delivery, handleChange, han
                     <input type="radio" id="avec" name="delivery" value={delivery} onChange={handleRadioSelect} required/>
                     <label htmlFor="huey" className="order-radio">Avec livraison (+1€)</label>
                 </div>
-            {/* </div>
-            <div className="order-delivery"> */}
                 <div className="order-radio-container">
                     <input type="radio" id="sans"  name="delivery" value={delivery} onChange={handleRadioSelect}/>
                     <label htmlFor="huey" className="order-radio">Sans livraison</label>

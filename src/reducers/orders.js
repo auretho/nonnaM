@@ -13,29 +13,39 @@ const initialState = {
     redirection: false,
     delivery: undefined,
 
-    // inputDetails: [
-    //     {
-    //         title: 'Nom',
-    //         type: 'text',
-    //         name: 'lastname',
-    //         placeholder: 'Nom de famille',
-    //         value: '',
-    //     },
-    //     {
-    //         title: 'Prénom',
-    //         type: 'text',
-    //         name: 'firstname',
-    //         placeholder: 'Prénom',
-    //         value: '',
-    //     },
-    //     {
-    //         title: 'Email',
-    //         type: 'email',
-    //         name: 'email',
-    //         placeholder: 'Email',
-    //         value: '',
-    //     },
-    // ],
+    inputDetails: [
+        {
+            title: 'Nom',
+            type: 'text',
+            name: 'lastname',
+            placeholder: 'Nom de famille',
+            value: '',
+            pattern: '',
+        },
+        {
+            title: 'Prénom',
+            type: 'text',
+            name: 'firstname',
+            placeholder: 'Prénom',
+            value: '',
+        },
+        {
+            title: 'Email',
+            type: 'email',
+            name: 'email',
+            placeholder: 'Email',
+            value: '',
+            pattern: '',
+        },
+        {
+            title: 'Téléphone',
+            type: 'tel',
+            name: 'phone',
+            placeholder: 'ex: 06 12 34 56 78',
+            value: '',
+            pattern: '^(?:[0-9] ?){10,14}$',
+        },
+    ],
 };
 
 const orders = (state = initialState, action = {}) => {
