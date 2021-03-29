@@ -23,17 +23,21 @@ const Orders = ({prodList, form, total, redirection, handleChange, handleSubmit,
     }
 
     const handleCountChange = (evt) => {
+        const target = evt.target.value; 
         prodList.map(element => element.find(el => {
             if(el.name === evt.target.name){
-                addNewProduct(el.count = evt.target.value);
-                addNewProduct({total: total + (el.price * el.count)});
+                if(el.count < target) {
+                addNewProduct({total: total + ((target - el.count) * el.price)});
+                addNewProduct(el.count = target);
+                } 
+                else{
+                    addNewProduct({total: total - ((el.count - target) * el.price)});
+                    addNewProduct(el.count = target);
+                }
             } 
         }));
     }
 
-    const handleTotalChange = (evt) => {
-
-    }
 
     const handleFormSubmit = (evt) => {
         evt.preventDefault();
@@ -96,12 +100,12 @@ const Orders = ({prodList, form, total, redirection, handleChange, handleSubmit,
                                     {product.name}
                                 </label>
                                 <select name={product.name} id="" onChange={handleCountChange}>
-                                    <option value="">Choisir</option>
+                                    <option value="0">Choisir</option>
                                     <option value="1">1</option>
                                     <option value="2">2</option>
                                     <option value="3">3</option>
-                                    <option value="3">4</option>
-                                    <option value="3">5</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5</option>
                                 </select>
                                 <h2 className="item-price">{product.price.toFixed(2)}€</h2>
                             </div>

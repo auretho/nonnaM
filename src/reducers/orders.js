@@ -8,7 +8,7 @@ const initialState = {
         email: '',
         message: '',
     },
-    total: null,
+    total: 0,
     redirection: false,
 
     // products: [
