@@ -87,6 +87,16 @@ const Orders = ({prodList, form, total, redirection, handleChange, handleSubmit,
                           onChange={handleInputChange} 
                           />
             </div>
+            <div className="order-form-div">
+                Phone<input type="tel" 
+                          name="phone"
+                          pattern="[0-9]{10}"
+                          className="order-form-input" 
+                          placeholder="ex: 0612345678" 
+                          value={form.phone}
+                          onChange={handleInputChange} 
+                          />
+            </div>
 
             {/* SELECTION DES PRODUITS */}
             <div className="full-item-list">
@@ -114,7 +124,7 @@ const Orders = ({prodList, form, total, redirection, handleChange, handleSubmit,
                     ))
                     }
             </div>
-            <h2 className="item-total">TOTAL: {total.toFixed(2)}€</h2>
+            <h2 className="item-total">TOTAL TTC: {total.toFixed(2)}€</h2>
             <div className="order-form-div">
                 Message<textarea 
                           name="message" 

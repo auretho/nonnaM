@@ -11,23 +11,6 @@ const initialState = {
     total: 0,
     redirection: false,
 
-    // products: [
-    //     {
-    //         fullname: "Tomates 1",
-    //         name: "tomates1",
-    //         count: ""
-    //     },
-    //     {
-    //         fullname: "Tomates 2",
-    //         name: "tomates2",
-    //         count: ""
-    //     },
-    //     {
-    //         fullname: "Tomates 3",
-    //         name: "tomates3",
-    //         count: ""
-    //     }
-    // ],
     // inputDetails: [
     //     {
     //         title: 'Nom',
@@ -60,7 +43,8 @@ const orders = (state = initialState, action = {}) => {
                 ...state,
                 form:{ 
                     ...state.form, 
-                    ...action.payload,}
+                    ...action.payload,
+                }
             };
         case ON_SUBMIT: 
             return{
@@ -82,8 +66,10 @@ const orders = (state = initialState, action = {}) => {
                     lastname: '',
                     firstname: '',
                     email: '',
+                    phone: '',
                     message: '',
                 },
+                total: 0,
             };
         default:
             return state;
