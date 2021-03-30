@@ -105,3 +105,46 @@
     font-size: 2em;
     text-align: center;
 }
+
+@media (max-width: 488px) {
+    
+    .order-form{
+        max-width: 90%;
+        padding: 2em 1em;
+    
+        &-div{
+            width: 100%;
+            flex-direction: column;
+            align-items:flex-start;
+        }
+
+        &-input{
+            width: 100%;
+            margin: 1em 0;
+        }
+    }
+
+    .order-radio-container{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 50%;
+        margin: .5em;
+        text-align: center;
+    }
+
+    .item-container{
+        align-items: center;
+        margin: 1em auto;
+    }
+
+    .item-total{
+        width: 100%;
+        margin-bottom: 1em;
+    }
+
+    .order-submitted-message{
+        width: 90%;
+        font-size: 1.5em;
+    }
+}

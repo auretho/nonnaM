@@ -83,7 +83,9 @@ const Orders = ({inputDetails, prodList, form, total, redirection, delivery, han
     <div className="order" id="order">
         {
         redirection ? 
-            <h1 className="order-submitted-message">Merci pour votre message, nous vous répondrons au plus vite! <br/>A presto! </h1>
+            <h1 className="order-submitted-message">
+                Merci pour votre message, nous vous répondrons au plus vite! <br/>A presto! 
+            </h1>
         
         : 
         <form id={form.id} action="" className="order-form" onSubmit={handleFormSubmit}>
