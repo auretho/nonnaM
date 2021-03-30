@@ -80,7 +80,7 @@
     }
 }
 
-@media (max-width: 768px){
+@media (min-width: 489px) and (max-width: 768px){
     .main{
         &-blocks-pictures{
             display: block;

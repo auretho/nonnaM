@@ -123,7 +123,7 @@
     }
 }
 
-@media (max-width: 768px){
+@media (min-width: 489px) and (max-width: 768px){
     .mobile-nav{
         height: 60px;
         width: 100%;

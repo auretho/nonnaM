@@ -97,7 +97,7 @@
     }
 }
 
-@media (max-width: 768px){
+@media (min-width: 489px) and (max-width: 768px){
     .comments-title{
         font-size: 3.5em;
         padding-top: 1.3em;

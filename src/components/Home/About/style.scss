@@ -109,7 +109,7 @@
     }
 }
 
-@media (max-width: 768px){
+@media (min-width: 489px) and (max-width: 768px){
     .about-container{
         display: grid;
         grid-template-columns: repeat(3, 1fr);
