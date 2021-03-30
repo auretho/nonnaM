@@ -22,7 +22,8 @@
             text-transform: uppercase;
             font-weight: bold;
             font-size: 1.3em;
-            margin: 1em 0;
+            margin: 1em auto;
+            text-align: center;
         }
 
         &-div{
@@ -136,6 +137,7 @@
     .item-container{
         align-items: center;
         margin: 1em auto;
+        grid-template-columns: 1.3fr .7fr .6fr;
     }
 
     .item-total{

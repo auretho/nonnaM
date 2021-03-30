@@ -72,12 +72,17 @@
 }
 
 @media (max-width: 488px){
+    // .wrapper{
+    //     // display: flex;
+    //     // justify-content: center;
+    // }
+
     .comments-blocks{
-        display: block;
+        flex-direction: column;    
     }
 
     .comments-title{
-        font-size: 3.5em;
+        font-size: 3em;
         padding-top: .5em;
         margin-bottom: .5em;
     }
@@ -85,6 +90,7 @@
     .oneBlock{
         height: 250px;
         width: 250px;
+        margin: 1em auto;
 
         &-name{
             padding-top: .5em;
@@ -93,5 +99,9 @@
         &-comment{
             font-size: 1em;
         }
+    }
+
+    .back{
+        margin: auto;
     }
 }
