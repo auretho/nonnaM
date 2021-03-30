@@ -1,7 +1,8 @@
 require('dotenv'). config({ path: '/Applications/MAMP/htdocs/Perso/nonna/.env' })
 const express = require('express');
 const sendMail = require('./mail');
-// const bodyParser = require('body-parser');
+const bodyParser = require('body-parser');
+const mongoose = require('mongoose');
 const cors = require('cors');
 const app = express();
 
@@ -9,6 +10,14 @@ const PORT = 3001;
 
 app.use(cors({ origin: "*" }));
 app.use(express.json()); // A VOIR LE FONCTIONNEMENT
+
+
+mongoose.connect(process.env.CONNECT,
+  { useNewUrlParser: true,
+    useUnifiedTopology: true })
+  .then(() => console.log('Connexion à MongoDB réussie !'))
+  .catch(() => console.log('Connexion à MongoDB échouée !'));
+
 
 app.post('/sendOrder', (req, res) => {
     const { id, email, text, firstname, lastname, phone, products, total } = req.body;
