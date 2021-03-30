@@ -80,6 +80,24 @@
     }
 }
 
+@media (max-width: 768px){
+    .main{
+        &-blocks-pictures{
+            display: block;
+        }
+
+        &-presentation-block{
+            width: 70%;
+            margin: 1em auto;
+        }
+
+        &-blocks-text{
+            font-size: 1em;
+            padding: 1em;
+        }
+    }
+}
+
 @media (max-width: 1450px){
     // .main-presentation-block{
     //     height: 550px;

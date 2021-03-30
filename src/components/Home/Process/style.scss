@@ -47,10 +47,6 @@
         text-shadow: 0 0 1px black;
         font-size: 1.1em;
     }
-
-    &-img-mobile{
-        // display: none;
-    }
 }
 
 .hidden{
@@ -58,10 +54,6 @@
 }
 
 @media (max-width: 488px){
-    .process{ // A REVOIR POUR CONFIRMATION
-        // display: none;
-    }
-
     .process-img{
         display: none;
     }
@@ -80,6 +72,12 @@
         width: 60px;
     }
 
+    .process-text{
+        width: 300px;
+    }
+}
+
+@media (max-width: 768px){
     .process-text{
         width: 300px;
     }

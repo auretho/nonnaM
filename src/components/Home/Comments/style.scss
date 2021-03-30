@@ -71,12 +71,7 @@
     transform-style: preserve-3d;
 }
 
-@media (max-width: 488px){
-    // .wrapper{
-    //     // display: flex;
-    //     // justify-content: center;
-    // }
-
+@media (max-width: 768px){
     .comments-blocks{
         flex-direction: column;    
     }
@@ -100,8 +95,21 @@
             font-size: 1em;
         }
     }
+}
 
-    .back{
-        margin: auto;
+@media (max-width: 768px){
+    .comments-title{
+        font-size: 3.5em;
+        padding-top: 1.3em;
+    }
+
+    .oneBlock{
+        height: 280px;
+        width: 450px;
+        margin: 1em auto;
+
+        &-comment{
+            font-size: 1.3em;
+        }
     }
 }

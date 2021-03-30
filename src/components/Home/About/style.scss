@@ -108,3 +108,47 @@
         font-size: .8em;
     }
 }
+
+@media (max-width: 768px){
+    .about-container{
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-auto-rows: 200px;
+    }
+    .about{
+        &-container div:nth-child(2){ // BROUETTE
+            grid-column: 2;
+            grid-row: 2 / 4;
+        }
+
+        &-container div:nth-child(5){ // CASA
+            grid-column: 1 / 3;
+            grid-row: 4 / 6;
+        }
+
+        &-container div:nth-child(6){ // POTS TOMATES 
+            grid-column: 3;
+            grid-row: 10 / 12;
+        }
+
+        &-container div:nth-child(13){ // CHAMPS ARTICHAUTS
+            grid-column: 1 / 4;
+            grid-row: 8;
+        }
+
+        &-container div:nth-child(22){ // HUILE 
+            grid-column: 1;
+            grid-row: 6 / 8;
+        }
+        
+        &-container div:nth-child(23){ // BASILIC
+            grid-column: 2;
+            grid-row: 9 / 11;
+        }
+
+        &-container div:nth-child(25){ // CHAMPS PAPA
+            grid-column: 1;
+            grid-row: 11 / 13;
+        }
+    }
+}

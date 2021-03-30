@@ -24,12 +24,22 @@ const initialState = {
                 top: '65%',
                 left: '55%', 
             },
+            imgBlockPosIpad: {
+                pos: 'absolute',
+                top: '65%',
+                left: '55%', 
+            },
             arrowPos: {
                 pos: '',
                 top: '',
                 left: '',
             },
             arrowPosMob: {
+                pos: '',
+                top: '',
+                left: '',
+            },
+            arrowPosIpad: {
                 pos: '',
                 top: '',
                 left: '',
@@ -44,12 +54,22 @@ const initialState = {
                 top: '-50px',
                 left: '',
             },
+            smileyPosIpad: {
+                pos: 'relative',
+                top: '-130px',
+                left: '',
+            },
             textPos: {
                 pos: 'absolute',
                 top: '-80%',
                 left: '110%',
             },
             textPosMob: {
+                pos: 'absolute',
+                top: '50%',
+                left: '-140%',
+            },
+            textPosIpad: {
                 pos: 'absolute',
                 top: '50%',
                 left: '-140%',
@@ -71,6 +91,11 @@ const initialState = {
                 top: '40%',
                 left: '20%', 
             },
+            imgBlockPosIpad: {
+                pos: 'absolute',
+                top: '50%',
+                left: '30%', 
+            },
             arrowPos: {
                 pos: 'relative',
                 top: '-70px',
@@ -80,6 +105,11 @@ const initialState = {
                 pos: 'relative',
                 top: '',
                 left: '30px',
+            },
+            arrowPosIpad: {
+                pos: 'relative',
+                top: '-70px',
+                left: '-60px',
             },
             smileyPos: {
                 pos: 'relative',
@@ -91,6 +121,11 @@ const initialState = {
                 top: '-70px',
                 left: '-30px',
             },
+            smileyPosIpad: {
+                pos: 'relative',
+                top: '-200px',
+                left: '-200px',
+            },
             textPos: {
                 pos: 'absolute',
                 top: '40%',
@@ -100,6 +135,11 @@ const initialState = {
                 pos: 'absolute',
                 top: '100%',
                 left: '-30%',
+            },
+            textPosIpad: {
+                pos: 'absolute',
+                top: '55%',
+                left: '-60%',
             },
         },
         {
@@ -118,12 +158,22 @@ const initialState = {
                 top: '20%',
                 left: '25%', 
             },
+            imgBlockPosIpad: {
+                pos: 'absolute',
+                top: '30%',
+                left: '45%', 
+            },
             arrowPos: {
                 pos: '',
                 top: '',
                 left: '',
             },
             arrowPosMob: {
+                pos: '',
+                top: '',
+                left: '',
+            },
+            arrowPosIpad: {
                 pos: '',
                 top: '',
                 left: '',
@@ -138,6 +188,11 @@ const initialState = {
                 top: '0px',
                 left: '',
             },
+            smileyPosIpad: {
+                pos: 'relative',
+                top: '0px',
+                left: '',
+            },
             textPos: {
                 pos: 'absolute',
                 top: '-30%',
@@ -147,6 +202,11 @@ const initialState = {
                 pos: 'absolute',
                 top: '130%',
                 left: '-150%',
+            },
+            textPosIpad: {
+                pos: 'absolute',
+                top: '130%',
+                left: '-40%',
             },
         },
     ]

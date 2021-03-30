@@ -1,0 +1,81 @@
+import React from 'react';
+import HoverImage from "react-hover-image";
+import ProcessMobile from './ProcessMobile.js';
+import img1 from '../../../assets/smile1.png';
+import img2 from '../../../assets/smile2.png';
+import './style.scss';
+
+
+const Products = ({location}) => {
+
+    const handleHover = (evt) => { 
+        evt.target.nextSibling.nextSibling.classList.remove('hidden');
+        evt.target.nextSibling.attributes.src.value = img2;
+        evt.target.parentElement.style.filter = "drop-shadow(0 0 5px black)";
+    }
+
+    const handleHoverOut = (evt) => {
+        evt.target.nextSibling.nextSibling.classList.add('hidden'); 
+        evt.target.nextSibling.attributes.src.value = img1;
+        evt.target.parentElement.style.filter = '';
+    }
+
+    return(
+    <div className="process" id="origine-des-produits">
+        <h1 className="process-title">D'où viennent tous nos produits?</h1>
+        {
+        window.innerWidth > 488 ?
+        location.map((element, i) => (
+            <div 
+                className="process-img" 
+                key={i}
+                style={{
+                    position: `${element.imgBlockPos.pos}`,
+                    top: `${element.imgBlockPos.top}`,
+                    left: `${element.imgBlockPos.left}`,
+            }}>
+                <div className="process-imageDiv">
+                    <img 
+                        src={element.arrow} 
+                        alt="" 
+                        className="process-arrow" 
+                        onMouseOver={handleHover} 
+                        onMouseLeave={handleHoverOut} 
+                        style={{
+                            position: `${element.arrowPos.pos}`,
+                            top: `${element.arrowPos.top}`,
+                            left: `${element.arrowPos.left}`,
+                        }}
+                    />
+                    <HoverImage 
+                        className="process-smile" 
+                        src={element.img1} 
+                        hoverSrc={element.img2} 
+                        style={{
+                            position: `${element.smileyPos.pos}`,
+                            top: `${element.smileyPos.top}`,
+                            left: `${element.smileyPos.left}`,
+
+                        }}
+                    />
+                    <div 
+                        className="process-text hidden"
+                        style={{
+                            position: `${element.textPos.pos}`,
+                            top: `${element.textPos.top}`,
+                            left: `${element.textPos.left}`,
+                        }}
+                    >
+                        <h1>{element.title}:</h1> 
+                        <p>{element.text}</p>
+                    </div>
+                </div>
+            </div>
+        ))    
+        :
+        <ProcessMobile location={location}/>
+        }
+    </div>
+)}
+
+export default Products;
