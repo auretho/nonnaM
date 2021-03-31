@@ -1,11 +1,16 @@
 import { connect } from 'react-redux';
 import Products from '../components/Home/Products';
+import { findAllProducts } from '../actions/user';
 
 const mapStateToProps = (state) => ({
     img: state.products.img,
     products: state.products.products,
 });
   
-const mapDispatchToProps = null;
+const mapDispatchToProps = (dispatch) => ({
+    findAllProducts: () => {
+        dispatch(findAllProducts());
+    }
+});
 
 export default connect( mapStateToProps, mapDispatchToProps )(Products)

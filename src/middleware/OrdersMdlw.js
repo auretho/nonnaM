@@ -18,7 +18,8 @@ const OrderMdlw = (store) => (next) => (action) => {
                     lastname: store.getState().orders.form.lastname,
                     phone: store.getState().orders.form.phone,
                     total: store.getState().orders.total,
-                    products: store.getState().products.products.map(product => product.filter(element => element.count != "")),
+                    delivery: store.getState().orders.delivery,
+                    products: store.getState().orders.selectedProducts,
                 },
             })
             .then( res => {

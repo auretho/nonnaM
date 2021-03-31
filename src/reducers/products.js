@@ -3,6 +3,7 @@ import artichaut from '../assets/artichaut2.png';
 import olive from '../assets/olive2.png';
 import truffe from '../assets/truffe.png';
 import jambon from '../assets/jambon.png';
+// import { FIND_ALL_PRODUCTS } from '../actions/user';
 
 const initialState = {
     img:
@@ -149,9 +150,14 @@ const initialState = {
 
 const products = (state = initialState, action = {}) => {
     switch (action.type){ 
+    // case FIND_ALL_PRODUCTS:
+    //     return{
+    //         ...state,
+    //     };
         default:
             return state;
     }
+
 }
 
 export default products;

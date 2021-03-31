@@ -12,6 +12,7 @@ const initialState = {
     total: 0,
     redirection: false,
     delivery: undefined,
+    selectedProducts: '',
 
     inputDetails: [
         {
@@ -58,6 +59,7 @@ const orders = (state = initialState, action = {}) => {
         case ON_SUBMIT: 
             return{
                 ...state,
+                ...action.payload,
                 redirection: true,
             };
         case ADD_PRODUCT: 
@@ -80,6 +82,7 @@ const orders = (state = initialState, action = {}) => {
                 },
                 delivery: undefined,
                 total: 0,
+                selectedProducts: '',
             };
         default:
             return state;

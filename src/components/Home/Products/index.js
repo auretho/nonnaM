@@ -6,7 +6,8 @@ import champs from '../../../assets/champs2.png';
 import './style.scss';
 
 
-const Products = ({img, products}) => {
+const Products = ({img, products, findAllProducts}) => {
+    findAllProducts();
     let mobile = false;
 
     if (window.innerWidth < 488) {

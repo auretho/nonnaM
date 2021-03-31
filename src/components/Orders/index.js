@@ -22,7 +22,6 @@ const Orders = ({inputDetails, prodList, form, total, redirection, delivery, han
     };
 
     const handleInputChange = (evt) => {
-        console.log(evt.target);
         const {name, value} = evt.target;
             inputDetails.find(el => {
             if(el.name === name){
@@ -69,6 +68,13 @@ const Orders = ({inputDetails, prodList, form, total, redirection, delivery, han
 
     const handleFormSubmit = (evt) => {
         evt.preventDefault();
+        const selectedProducts = [];
+        prodList.map(product => product.find(element => {
+            if (element.count != ""){
+                selectedProducts.push(element)
+            }  
+        }))
+        addNewProduct({selectedProducts: selectedProducts })
         handleSubmit();
         setTimeout(() => {
             prodList.forEach(product => product.map(element => {
@@ -137,7 +143,7 @@ const Orders = ({inputDetails, prodList, form, total, redirection, delivery, han
 
             <div className="order-delivery">
                 <div className="order-radio-container">
-                    <input type="radio" id="avec" name="delivery" value={delivery} onChange={handleRadioSelect} required/>
+                    <input type="radio" id="avec" name="delivery" value={delivery} onChange={handleRadioSelect}/>
                     <label htmlFor="avec" className="order-radio">Avec livraison (+1€)</label>
                 </div>
                 <div className="order-radio-container">
