@@ -4,6 +4,9 @@ export const ON_CHANGE = 'ON_CHANGE';
 export const ON_SUBMIT = 'ON_SUBMIT';
 export const ADD_PRODUCT = 'ADD_PRODUCT';
 export const FIND_ALL_PRODUCTS = 'FIND_ALL_PRODUCTS';
+export const FIND_ALL_PRODUCTS_SUCCESS = 'FIND_ALL_PRODUCTS_SUCCESS';
+export const FIND_ALL_PRODUCTS_ERROR = 'FIND_ALL_PRODUCTS_ERROR';
+
 
 export const onToggle = () => ({
     type: ON_TOGGLE,
@@ -30,4 +33,13 @@ export const addProduct = (payload) => ({
 
 export const findAllProducts = () => ({
     type: FIND_ALL_PRODUCTS,
+});
+
+export const findAllProductsSuccess = (payload) => ({
+    type: FIND_ALL_PRODUCTS_SUCCESS,
+    payload,
+});
+
+export const findAllProductsError = () => ({
+    type: FIND_ALL_PRODUCTS_ERROR,
 });
