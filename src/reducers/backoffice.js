@@ -1,4 +1,4 @@
-import { EDIT_STOCK, ON_CHANGE } from '../actions/backoffice';
+import { EDIT_STOCK, ON_CHANGE, ADD_PRODUCT_TO_DB, ON_SUBMIT } from '../actions/backoffice';
 
 const initialState = {
     stock: '',
@@ -19,6 +19,8 @@ const initialState = {
             stock: '',
         }
     ],
+
+    newProduct: '',
 };
 
 const backoffice = (state = initialState, action = {}) => {
@@ -27,6 +29,15 @@ const backoffice = (state = initialState, action = {}) => {
             return{
                 ...state,
                 ...action.payload,
+            };
+        case ADD_PRODUCT_TO_DB:
+            return{
+                ...state,
+                newProduct: action.payload,
+            };
+        case ON_SUBMIT:
+            return{
+                ...state,
             };
         default:
             return state;

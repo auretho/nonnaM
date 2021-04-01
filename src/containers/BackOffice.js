@@ -1,11 +1,10 @@
 import { connect } from 'react-redux';
 import BackOffice from '../components/BackOffice';
-import { editStock, onChange } from '../actions/backoffice';
+import { editStock, onChange, addProductToDb } from '../actions/backoffice';
 
 const mapStateToProps = (state) => ({
     stock: state.backoffice.stock,
     products: state.backoffice.products,
-
 });
   
 const mapDispatchToProps = (dispatch) => ({
@@ -15,6 +14,10 @@ const mapDispatchToProps = (dispatch) => ({
 
     handleChange: (payload) => {
         dispatch(onChange(payload))
+    },
+
+    handleAddNewProduct: (payload) => {
+        dispatch(addProductToDb(payload))
     },
 });
 

@@ -20,7 +20,7 @@ const Header = () => (
                         </div>
                     </div>
                    
-                    <Link to="/back-office" style={{zIndex: '10'}}>
+                    <Link to="/backoffice" style={{zIndex: '10'}}>
                         <button  >Vers le Back Office</button>
                     </Link>
                    

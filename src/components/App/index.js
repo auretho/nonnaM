@@ -3,8 +3,9 @@ import Nav from '../../containers/Navbar';
 import Home from '../Home';
 import Orders from '../../containers/Orders';
 import BackOffice from '../../containers/BackOffice';
+import Addproducts from '../BackOffice/AddProducts';
+import Stock from '../BackOffice/Stock';
 import Error from '../Error';
-
 import './style.scss';
 
 function App({redirection, rebootRedirection}) {
@@ -21,7 +22,7 @@ function App({redirection, rebootRedirection}) {
         <Switch>
           <Route exact path="/" component={Home}/>
           <Route exact path="/commandes" component={Orders}/>
-          <Route exact path="/back-office" component={BackOffice}/>
+          <Route path="/backoffice" component={BackOffice}/>
           <Route component={Error} />
         </Switch>
     </div>
