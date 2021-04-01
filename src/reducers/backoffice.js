@@ -33,12 +33,12 @@ const backoffice = (state = initialState, action = {}) => {
         case ADD_PRODUCT_TO_DB:
             return{
                 ...state,
-                newProduct: action.payload,
+                ...action.payload,
             };
-        case ON_SUBMIT:
-            return{
-                ...state,
-            };
+        // case ON_SUBMIT:
+        //     return{
+        //         ...state,
+        //     };
         default:
             return state;
     }

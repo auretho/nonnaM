@@ -4,7 +4,24 @@ import AddProducts from './AddProducts';
 import Stock from './Stock';
 import './style.scss';
 
-const BackOffice = ({products, handleChange}) => {
+const BackOffice = ({products, handleChange, newProduct, handleAddNewProduct}) => {
+
+  const handleStockChange = (evt) => {
+    const {name, value} = evt.target;
+    const result = products.find(product => (product.name === name)); 
+
+    handleChange({
+        products: products.map(product => {
+        if (product.name === result.name) {
+            product.stock = value;
+            return product
+        }
+        return product;
+    })})
+
+}
+
+
     return(    
     <div className="backOffice">
       <Link to="/backoffice" style={{zIndex: '10'}}>
@@ -13,9 +30,11 @@ const BackOffice = ({products, handleChange}) => {
 
         <Switch>
           <Route exact path="/backoffice" component={Welcome} />
-          <Route exact path="/backoffice/ajout-produits" component={AddProducts}/>
+          <Route exact path="/backoffice/ajout-produits">
+            <AddProducts handleChange={handleChange} newProduct={newProduct} handleAddNewProduct={handleAddNewProduct}/>
+          </Route> 
           <Route exact path="/backoffice/stock">
-            <Stock products={products} handleChange={handleChange}/>
+            <Stock products={products} handleInputChange={handleStockChange}/>
           </Route> 
         </Switch>          
     </div>

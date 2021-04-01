@@ -34,6 +34,16 @@ mongoose.connect(process.env.CONNECT,
       .catch(error => res.status(400).json({ message: 'I y a eu une erreur!', error}));
   });
 
+  app.post('/addNewProduct', (req, res) => {
+    console.log(req.body)
+  const product = new Product({
+    ...req.body
+  });
+  product.save()
+    .then(() => res.status(201).json({ message: 'Nouveau produit ajouté!'}))
+    .catch(error => res.status(400).json({ message: 'I y a eu une erreur!', error}));
+});
+
   // router.post('/sendOrder', (req, res) => {
   //     const { id, email, text, firstname, lastname, phone, products, total } = req.body;
   //     console.log(req.body);

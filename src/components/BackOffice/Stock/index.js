@@ -1,21 +1,7 @@
 import {Link} from 'react-router-dom';
 import './style.scss';
 
-const Stock = ({products, handleChange}) => {
-    const handleInputChange = (evt) => {
-        const {name, value} = evt.target;
-        const result = products.find(product => (product.name === name)); 
-
-        handleChange({
-            products: products.map(product => {
-            if (product.name === result.name) {
-                product.stock = value;
-                return product
-            }
-            return product;
-        })})
-
-    }
+const Stock = ({products, handleInputChange}) => {
 
     return(
     <div className="stock">

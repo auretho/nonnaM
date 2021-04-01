@@ -5,6 +5,7 @@ import { editStock, onChange, addProductToDb } from '../actions/backoffice';
 const mapStateToProps = (state) => ({
     stock: state.backoffice.stock,
     products: state.backoffice.products,
+    newProduct: state.backoffice.newProduct,
 });
   
 const mapDispatchToProps = (dispatch) => ({
