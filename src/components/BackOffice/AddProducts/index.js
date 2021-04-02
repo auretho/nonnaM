@@ -31,6 +31,7 @@ const AddProducts = ({handleChange, handleAddNewProduct, newProduct}) => {
             placeholder='Catégorie de produit'
             onChange={handleInputChange}
           >
+            <option value=''>Choisir</option>
             <option value='tomates'>Tomates</option>
             <option value='artichauts'>Artichauts</option>
             <option value='olive'>Huile d'olive</option>
@@ -66,6 +67,7 @@ const AddProducts = ({handleChange, handleAddNewProduct, newProduct}) => {
         <Form.Field
             control={Input}
             type="number"
+            step="0.01"
             name="price"
             label='Prix'
             placeholder='Prix'

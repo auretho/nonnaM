@@ -1,6 +1,7 @@
 import axios from 'axios';
+import { useParams } from "react-router";
 import { ADD_PRODUCT_TO_DB } from '../actions/backoffice';
-import { FIND_ALL_PRODUCTS, findAllProductsSuccess, findAllProductsError } from '../actions/user';
+import { FIND_ALL_PRODUCTS, findAllProductsSuccess, findAllProductsError, FIND_ONE_PRODUCT, findOneProductSuccess, findOneProductError } from '../actions/user';
 
 const backofficeMdlw = (store) => (next) => (action) => {
     next(action);
@@ -15,6 +16,7 @@ const backofficeMdlw = (store) => (next) => (action) => {
                 name: store.getState().backoffice.newProduct.name,
                 shortName: store.getState().backoffice.newProduct.shortName,
                 image: store.getState().backoffice.newProduct.image,
+                quantity: store.getState().backoffice.newProduct.quantity,
                 description: store.getState().backoffice.newProduct.description,
                 price: store.getState().backoffice.newProduct.price,
             }
@@ -43,7 +45,23 @@ const backofficeMdlw = (store) => (next) => (action) => {
             console.error(err);
             dispatch(findAllProductsError());
           })
-          break;
+        break;
+
+        case FIND_ONE_PRODUCT:
+          const {id} = useParams();
+        axios({
+          method: 'get',
+          url:  `http://localhost:3001/findProduct/${id}`,
+        })
+        .then((res) => {
+          console.log(res.data);
+          dispatch(findOneProductSuccess(res.data));
+        })
+        .catch((err) => {
+          console.error(err);
+          dispatch(findOneProductError());
+        })
+        break;
 
         default:
             break;

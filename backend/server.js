@@ -22,7 +22,13 @@ mongoose.connect(process.env.CONNECT,
     Product.find()
     .then(products => res.status(200).json(products))
     .catch(error => res.status(400).json({ error }));
-});
+  });
+
+  app.get('/findProduct/:id', (req, res) => {
+    Product.findOne({ _id: req.params.id })
+    .then(products => res.status(200).json(products))
+    .catch(error => res.status(404).json({ error }));
+  });
   
   app.post('/sendOrder', (req, res) => {
       console.log(req.body)

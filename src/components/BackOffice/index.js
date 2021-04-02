@@ -1,11 +1,14 @@
+import {useEffect} from 'react';
 import { Switch, Route, Link } from 'react-router-dom';
 import Welcome from './Welcome';
 import AddProducts from './AddProducts';
 import ListProducts from './ListProducts';
+import OneProduct from '../../containers/OneProduct';
 import Stock from './Stock';
 import './style.scss';
 
-const BackOffice = ({products, handleChange, newProduct, handleAddNewProduct, findAllProducts}) => {
+const BackOffice = ({products, handleChange, newProduct, handleAddNewProduct, findAllProducts, findOneProduct, productSelected}) => {
+
 
   const handleStockChange = (evt) => {
     const {name, value} = evt.target;
@@ -21,8 +24,6 @@ const BackOffice = ({products, handleChange, newProduct, handleAddNewProduct, fi
     })})
 
 }
-
-
     return(    
     <div className="backOffice">
       <Link to="/backoffice" style={{zIndex: '10'}}>
@@ -31,15 +32,35 @@ const BackOffice = ({products, handleChange, newProduct, handleAddNewProduct, fi
 
         <Switch>
           <Route exact path="/backoffice" component={Welcome} />
+
           <Route exact path="/backoffice/liste-produits">
-            <ListProducts findAllProducts={findAllProducts} products={products}/>
+            <ListProducts findAllProducts={findAllProducts} 
+                          products={products} 
+                          findproduct={findOneProduct} 
+                          productselected={productSelected}/>
           </Route>
+
+          <Route exact path="/backoffice/produit/:id" render={({match}) => (
+            <OneProduct id={match.params.id} 
+                        // findproduct={findOneProduct}
+                        // product={productSelected}
+                        />
+          )}>
+            
+          </Route>
+
           <Route exact path="/backoffice/ajout-produits">
-            <AddProducts handleChange={handleChange} newProduct={newProduct} handleAddNewProduct={handleAddNewProduct}/>
+            <AddProducts handleChange={handleChange} 
+                         newProduct={newProduct} 
+                         handleAddNewProduct={handleAddNewProduct}/>
           </Route> 
+
           <Route exact path="/backoffice/stock">
-            <Stock products={products} handleInputChange={handleStockChange}/>
+            <Stock products={products} 
+                   handleInputChange={handleStockChange}/>
           </Route> 
+
+
         </Switch>          
     </div>
 )}

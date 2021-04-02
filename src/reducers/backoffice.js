@@ -1,26 +1,10 @@
 import { EDIT_STOCK, ON_CHANGE, ADD_PRODUCT_TO_DB, ON_SUBMIT } from '../actions/backoffice';
-import { FIND_ALL_PRODUCTS_SUCCESS, FIND_ALL_PRODUCTS_ERROR} from '../actions/user'
+import { FIND_ALL_PRODUCTS_SUCCESS, FIND_ONE_PRODUCT, FIND_ONE_PRODUCT_SUCCESS} from '../actions/user'
 
 const initialState = {
     stock: '',
-    products: [
-        // {
-        //     fullname: "Tomates 1",
-        //     name: "tomates1",
-        //     stock: '',
-        // },
-        // {
-        //     fullname: "Tomates 2",
-        //     name: "tomates2",
-        //     stock: '',
-        // },
-        // {
-        //     fullname: "Tomates 3",
-        //     name: "tomates3",
-        //     stock: '',
-        // }
-    ],
-
+    products: [],
+    productSelected: '',
     newProduct: '',
 };
 
@@ -39,7 +23,17 @@ const backoffice = (state = initialState, action = {}) => {
         case FIND_ALL_PRODUCTS_SUCCESS:
             return{
                 ...state,
-                products: action.payload
+                products: action.payload,
+                productSelected: '',
+            };
+        case FIND_ONE_PRODUCT:
+            return{
+                ...state,
+            }
+        case FIND_ONE_PRODUCT_SUCCESS:
+            return{
+                ...state,
+                productSelected: action.payload,
             };
         default:
             return state;

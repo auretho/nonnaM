@@ -6,6 +6,9 @@ export const ADD_PRODUCT = 'ADD_PRODUCT';
 export const FIND_ALL_PRODUCTS = 'FIND_ALL_PRODUCTS';
 export const FIND_ALL_PRODUCTS_SUCCESS = 'FIND_ALL_PRODUCTS_SUCCESS';
 export const FIND_ALL_PRODUCTS_ERROR = 'FIND_ALL_PRODUCTS_ERROR';
+export const FIND_ONE_PRODUCT = 'FIND_ONE_PRODUCT';
+export const FIND_ONE_PRODUCT_SUCCESS = 'FIND_ONE_PRODUCT_SUCCESS';
+export const FIND_ONE_PRODUCT_ERROR = 'FIND_ONE_PRODUCT_ERROR';
 
 
 export const onToggle = () => ({
@@ -42,4 +45,18 @@ export const findAllProductsSuccess = (payload) => ({
 
 export const findAllProductsError = () => ({
     type: FIND_ALL_PRODUCTS_ERROR,
+});
+
+export const findOneProduct = (id) => ({
+    type: FIND_ONE_PRODUCT,
+    id,
+});
+
+export const findOneProductSuccess = (payload) => ({
+    type: FIND_ONE_PRODUCT_SUCCESS,
+    payload
+});
+
+export const findOneProductError = () => ({
+    type: FIND_ONE_PRODUCT_ERROR,
 });
