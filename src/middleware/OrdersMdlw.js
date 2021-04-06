@@ -23,7 +23,7 @@ const OrderMdlw = (store) => (next) => (action) => {
                 },
             })
             .then( res => {
-                console.log(res.data, res.data.status);
+                console.log(res.data);
             })
             .catch( err => {
                 console.log(err);

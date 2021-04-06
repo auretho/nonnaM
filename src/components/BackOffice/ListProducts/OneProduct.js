@@ -1,3 +1,4 @@
+import {Link} from 'react-router-dom';
 import './style.scss';
 
 const OneProduct = ({findOneProduct, productSelected}) => {
@@ -13,7 +14,9 @@ const OneProduct = ({findOneProduct, productSelected}) => {
             <p className="oneproduct-description">{productSelected.description}</p>
             <h2 className="oneproduct-price">Prix: {productSelected.price}€</h2>
 
-            <button className="oneproduct-button">Modifier</button>
+            <Link to={`/backoffice/produit/modif/${productSelected._id}`}>
+                <button className="oneproduct-button">Modifier</button>
+            </Link>
             <button className="oneproduct-button">Supprimer</button>
         </div>
     </div>

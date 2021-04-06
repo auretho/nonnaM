@@ -30,14 +30,28 @@ mongoose.connect(process.env.CONNECT,
     .catch(error => res.status(404).json({ error }));
   });
   
+  app.put('/updateProduct/:id', (req, res) => {
+    console.log(req.body);
+    Product.updateOne({ _id: req.params.id }, { ...req.body, _id: req.params.id })
+    .then(() => res.status(200).json({message: 'objet modifié!'}))
+    .catch(error => res.status(400).json({ error }));
+  });
+
   app.post('/sendOrder', (req, res) => {
-      console.log(req.body)
-    const order = new Order({
-      ...req.body
+    const { id, email, text, firstname, lastname, phone, products, delivery, total } = req.body;    
+    console.log(req.body);
+    sendMail(id, email, text, firstname, lastname, phone, products, delivery, total, (err) => {
+      if (err) {
+          return res.status(500).json({ message: err.message || 'Erreur interne' });
+      }
+      return res.json({ message: 'Email envoyé!' });
     });
-    order.save()
-      .then(() => res.status(201).json({ message: 'Commande enregistrée !'}))
-      .catch(error => res.status(400).json({ message: 'I y a eu une erreur!', error}));
+    // const order = new Order({
+    //   ...req.body
+    // });
+    // order.save()
+    //   .then(() => res.status(201).json({ message: 'Commande enregistrée !'}))
+    //   .catch(error => res.status(400).json({ message: 'I y a eu une erreur!', error}));
   });
 
   app.post('/addNewProduct', (req, res) => {
@@ -49,17 +63,5 @@ mongoose.connect(process.env.CONNECT,
     .then(() => res.status(201).json({ message: 'Nouveau produit ajouté!'}))
     .catch(error => res.status(400).json({ message: 'I y a eu une erreur!', error}));
 });
-
-  // router.post('/sendOrder', (req, res) => {
-  //     const { id, email, text, firstname, lastname, phone, products, total } = req.body;
-  //     console.log(req.body);
-  
-  //     sendMail(id, email, text, firstname, lastname, phone, products, total, (err) => {
-  //         if (err) {
-  //             return res.status(500).json({ message: err.message || 'Erreur interne' });
-  //         }
-  //         return res.json({ message: 'Email envoyé!' });
-  //     });
-  // });
 
 app.listen(PORT, () => console.log(`Le serveur tourne sur le port ${PORT}`))

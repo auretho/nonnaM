@@ -4,10 +4,11 @@ import Welcome from './Welcome';
 import AddProducts from './AddProducts';
 import ListProducts from './ListProducts';
 import OneProduct from '../../containers/OneProduct';
+import UpdateProduct from './UpdateProduct';
 import Stock from './Stock';
 import './style.scss';
 
-const BackOffice = ({products, handleChange, newProduct, handleAddNewProduct, findAllProducts, findOneProduct, productSelected}) => {
+const BackOffice = ({products, handleChange, newProduct, handleAddNewProduct, findAllProducts, findOneProduct, productSelected, updateOneProduct}) => {
 
 
   const handleStockChange = (evt) => {
@@ -46,7 +47,6 @@ const BackOffice = ({products, handleChange, newProduct, handleAddNewProduct, fi
                         // product={productSelected}
                         />
           )}>
-            
           </Route>
 
           <Route exact path="/backoffice/ajout-produits">
@@ -54,6 +54,15 @@ const BackOffice = ({products, handleChange, newProduct, handleAddNewProduct, fi
                          newProduct={newProduct} 
                          handleAddNewProduct={handleAddNewProduct}/>
           </Route> 
+
+          <Route exact path="/backoffice/produit/modif/:id" render={({match}) => (
+            <UpdateProduct id={match.params.id} 
+                           handleChange={handleChange}
+                           product={productSelected}
+                           updateprod={updateOneProduct}
+            />
+          )}>
+          </Route>
 
           <Route exact path="/backoffice/stock">
             <Stock products={products} 

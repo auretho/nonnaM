@@ -1,13 +1,16 @@
 import axios from 'axios';
 import { useParams } from "react-router";
 import { ADD_PRODUCT_TO_DB } from '../actions/backoffice';
-import { FIND_ALL_PRODUCTS, findAllProductsSuccess, findAllProductsError, FIND_ONE_PRODUCT, findOneProductSuccess, findOneProductError } from '../actions/user';
+import { FIND_ALL_PRODUCTS, findAllProductsSuccess, findAllProductsError, 
+         FIND_ONE_PRODUCT, findOneProductSuccess, findOneProductError,
+         UPDATE_ONE_PRODUCT, updateOneProductSuccess, updateOneProductError } from '../actions/user';
 
 const backofficeMdlw = (store) => (next) => (action) => {
     next(action);
     const { dispatch } = store;
 
     switch (action.type){
+
         case ADD_PRODUCT_TO_DB:
           axios({
             method: 'post',
@@ -48,7 +51,7 @@ const backofficeMdlw = (store) => (next) => (action) => {
         break;
 
         case FIND_ONE_PRODUCT:
-          const {id} = useParams();
+        const {id} = useParams();
         axios({
           method: 'get',
           url:  `http://localhost:3001/findProduct/${id}`,
@@ -63,6 +66,31 @@ const backofficeMdlw = (store) => (next) => (action) => {
         })
         break;
 
+        case UPDATE_ONE_PRODUCT:
+          let identification = store.getState().backoffice.productSelected._id;
+        axios({
+          method: 'put',
+          url:  `http://localhost:3001/updateProduct/${identification}`,
+          data: {
+            _id: store.getState().backoffice.productSelected._id,
+            image: store.getState().backoffice.productSelected.image,
+            name: store.getState().backoffice.productSelected.name,
+            shortName: store.getState().backoffice.productSelected.shortName,
+            quantity: store.getState().backoffice.productSelected.quantity,
+            description: store.getState().backoffice.productSelected.description,
+            price: store.getState().backoffice.productSelected.price,
+
+          }
+        })
+        .then((res) => {
+          console.log(res.data);
+          dispatch(updateOneProductSuccess(res.data));
+        })
+        .catch((err) => {
+          console.error(err);
+          dispatch(updateOneProductError());
+        })
+        break;
         default:
             break;
     }

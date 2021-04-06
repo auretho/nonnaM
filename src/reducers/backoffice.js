@@ -1,5 +1,5 @@
 import { EDIT_STOCK, ON_CHANGE, ADD_PRODUCT_TO_DB, ON_SUBMIT } from '../actions/backoffice';
-import { FIND_ALL_PRODUCTS_SUCCESS, FIND_ONE_PRODUCT, FIND_ONE_PRODUCT_SUCCESS} from '../actions/user'
+import { FIND_ALL_PRODUCTS_SUCCESS, FIND_ONE_PRODUCT, FIND_ONE_PRODUCT_SUCCESS, UPDATE_ONE_PRODUCT, UPDATE_ONE_PRODUCT_SUCCESS} from '../actions/user'
 
 const initialState = {
     stock: '',
@@ -26,14 +26,15 @@ const backoffice = (state = initialState, action = {}) => {
                 products: action.payload,
                 productSelected: '',
             };
-        case FIND_ONE_PRODUCT:
-            return{
-                ...state,
-            }
         case FIND_ONE_PRODUCT_SUCCESS:
             return{
                 ...state,
                 productSelected: action.payload,
+            };
+        case UPDATE_ONE_PRODUCT_SUCCESS:
+            return{
+                ...state,
+                ...action.payload,
             };
         default:
             return state;
