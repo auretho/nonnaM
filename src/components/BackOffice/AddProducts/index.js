@@ -1,9 +1,9 @@
-import './style.scss';
-import React, { Component } from 'react'
 import { Button, Form, Input, TextArea} from 'semantic-ui-react'
+import logo from '../../../assets/coeur-solo.png';
+import './style.scss';
 
 const AddProducts = ({handleChange, handleAddNewProduct, newProduct}) => {
-  
+  console.log(newProduct);
   const handleInputChange = (evt) => {
     const { name, value } = evt.target;
     handleChange({ newProduct: {...newProduct,[name]: value }})
@@ -11,6 +11,9 @@ const AddProducts = ({handleChange, handleAddNewProduct, newProduct}) => {
 
   const handleProductSubmit = (evt) => {
     evt.preventDefault();
+    if(!newProduct.image){
+      handleChange({ newProduct: {...newProduct, image: logo }})
+    }
     handleAddNewProduct(newProduct);
   }
 

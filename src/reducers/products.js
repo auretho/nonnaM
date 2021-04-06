@@ -24,7 +24,7 @@ const initialState = {
         },
         {
             image: olive,
-            shortName: 'huile',
+            shortName: 'olive',
             name: "Huile d'olive",
             description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis porro neque eos esse. Quae, tempore ipsum harum reprehenderit delectus vel.",  
             price: 8,

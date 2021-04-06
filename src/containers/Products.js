@@ -4,7 +4,7 @@ import { findAllProducts } from '../actions/user';
 
 const mapStateToProps = (state) => ({
     img: state.products.img,
-    products: state.products.products,
+    products: state.backoffice.products,
 });
   
 const mapDispatchToProps = (dispatch) => ({

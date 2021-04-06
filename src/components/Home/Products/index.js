@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Parallax, Background } from 'react-parallax';
 import Modal from '../../../containers/Modal';
 
@@ -7,7 +7,10 @@ import './style.scss';
 
 
 const Products = ({img, products, findAllProducts}) => {
-    findAllProducts();
+    useEffect(() => {
+        findAllProducts();
+    },[]);
+    
     let mobile = false;
 
     if (window.innerWidth < 488) {

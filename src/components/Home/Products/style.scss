@@ -84,7 +84,8 @@
 }
 
 .ui.modal>.content>.image{
-    width: 150px;
+    max-width: 150px;
+    max-height: 180px;
 }
 
 .ui.dimmer{
@@ -106,6 +107,7 @@
 
     &-content{
         border-bottom: 1px solid lightgrey;
+        max-height: 200px;
     }
 }
 

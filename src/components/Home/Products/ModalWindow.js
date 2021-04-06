@@ -15,21 +15,19 @@ const ModalWindow = ({triggerItem, products, item}) => {
             className="modal-container"
             >
             {
-            products.map((element) => (
-                element.map((prod, key) => {
+            products.map((prod, key) => {
                 if(prod.shortName === item){
                     return(
                     <Modal.Content image className="modal-content" key={key}>
-                        <Image size='medium' src={prod.image} />
+                        <Image size='medium' src={prod.image} className="modal-image"/>
                         <Modal.Description>
                         <Header>{prod.name}</Header>
                         <p>{prod.description}</p>
-                        <p className="price">Prix: {prod.price}€</p>
+                        <p className="price">Prix: {prod.price.toFixed(2)}€</p>
                         </Modal.Description>
                     </Modal.Content>
                     )
                 }})
-            ))
             }
             <Modal.Actions className="modal-footer">
                 <Button color='black' onClick={() => setOpen(false)}>

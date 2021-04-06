@@ -2,7 +2,7 @@ import { connect } from 'react-redux';
 import Modal from '../components/Home/Products/ModalWindow';
 
 const mapStateToProps = (state) => ({
-    products: state.products.products,
+    products: state.backoffice.products,
 });
   
 const mapDispatchToProps = null;
