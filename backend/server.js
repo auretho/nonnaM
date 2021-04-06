@@ -37,6 +37,12 @@ mongoose.connect(process.env.CONNECT,
     .catch(error => res.status(400).json({ error }));
   });
 
+  app.delete('/deleteProduct/:id', (req, res) => {
+    Product.deleteOne({ _id: req.params.id })
+    .then(() => res.status(200).json({message: "objet supprimé!"}))
+    .catch(error => res.status(400).json({ error }));
+  });
+
   app.post('/sendOrder', (req, res) => {
     const { id, email, text, firstname, lastname, phone, products, delivery, total } = req.body;    
     console.log(req.body);

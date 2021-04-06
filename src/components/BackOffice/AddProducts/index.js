@@ -3,7 +3,6 @@ import logo from '../../../assets/coeur-solo.png';
 import './style.scss';
 
 const AddProducts = ({handleChange, handleAddNewProduct, newProduct}) => {
-  console.log(newProduct);
   const handleInputChange = (evt) => {
     const { name, value } = evt.target;
     handleChange({ newProduct: {...newProduct,[name]: value }})
@@ -38,6 +37,8 @@ const AddProducts = ({handleChange, handleAddNewProduct, newProduct}) => {
             <option value='tomates'>Tomates</option>
             <option value='artichauts'>Artichauts</option>
             <option value='olive'>Huile d'olive</option>
+            <option value='truffe'>Truffes</option>
+            <option value='jambon'>Charcuterie</option>
 
           </Form.Field>
            <Form.Field

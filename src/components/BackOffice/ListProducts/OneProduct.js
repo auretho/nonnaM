@@ -1,9 +1,13 @@
 import {Link} from 'react-router-dom';
 import './style.scss';
 
-const OneProduct = ({findOneProduct, productSelected}) => {
+const OneProduct = ({findOneProduct, productSelected, deleteProduct}) => {
     if(productSelected === ""){
         findOneProduct();
+    }
+
+    const handleDelete = () => {
+        deleteProduct()
     }
 
     return(
@@ -17,7 +21,9 @@ const OneProduct = ({findOneProduct, productSelected}) => {
             <Link to={`/backoffice/produit/modif/${productSelected._id}`}>
                 <button className="oneproduct-button">Modifier</button>
             </Link>
-            <button className="oneproduct-button">Supprimer</button>
+            <Link to="/backoffice/liste-produits">
+                <button className="oneproduct-button" onClick={handleDelete}>Supprimer</button>
+            </Link>
         </div>
     </div>
 )}

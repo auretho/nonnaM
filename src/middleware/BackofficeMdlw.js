@@ -3,7 +3,7 @@ import { useParams } from "react-router";
 import { ADD_PRODUCT_TO_DB } from '../actions/backoffice';
 import { FIND_ALL_PRODUCTS, findAllProductsSuccess, findAllProductsError, 
          FIND_ONE_PRODUCT, findOneProductSuccess, findOneProductError,
-         UPDATE_ONE_PRODUCT, updateOneProductSuccess, updateOneProductError } from '../actions/user';
+         UPDATE_ONE_PRODUCT, updateOneProductSuccess, updateOneProductError, DELETE_ONE_PRODUCT } from '../actions/user';
 
 const backofficeMdlw = (store) => (next) => (action) => {
     next(action);
@@ -23,15 +23,6 @@ const backofficeMdlw = (store) => (next) => (action) => {
                 description: store.getState().backoffice.newProduct.description,
                 price: store.getState().backoffice.newProduct.price,
             }
-          })
-          .then((res) => {
-            const serverResponse = res.data;
-            console.log(serverResponse);
-            // dispatch(fetchTravelDataSuccess(serverResponse));
-          })
-          .catch((err) => {
-            console.error(err);
-            // dispatch(fetchTravelDataError());
           })
           break;
 
@@ -67,10 +58,10 @@ const backofficeMdlw = (store) => (next) => (action) => {
         break;
 
         case UPDATE_ONE_PRODUCT:
-          let identification = store.getState().backoffice.productSelected._id;
-        axios({
+          let ide = store.getState().backoffice.productSelected._id;
+          axios({
           method: 'put',
-          url:  `http://localhost:3001/updateProduct/${identification}`,
+          url:  `http://localhost:3001/updateProduct/${ide}`,
           data: {
             _id: store.getState().backoffice.productSelected._id,
             image: store.getState().backoffice.productSelected.image,
@@ -89,6 +80,14 @@ const backofficeMdlw = (store) => (next) => (action) => {
         .catch((err) => {
           console.error(err);
           dispatch(updateOneProductError());
+        })
+        break;
+        
+        case DELETE_ONE_PRODUCT:
+          let identification = store.getState().backoffice.productSelected._id;
+        axios({
+          method: 'delete',
+          url:  `http://localhost:3001/deleteProduct/${identification}`,
         })
         break;
         default:

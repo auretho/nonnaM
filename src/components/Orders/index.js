@@ -116,28 +116,24 @@ const Orders = ({inputDetails, prodList, form, total, redirection, delivery, han
             {/* SELECTION DES PRODUITS */}
             <div className="full-item-list">
                 {
-                    prodList.map((element) => (
-                        element.map((product, key) => {
-                            // console.log(product);
-                            return(
-                            <div className="item-container" key={key}>
-                                <label htmlFor={product.name} className="item-label">
-                                    {product.name}
-                                </label>
-                                <select name={product.name} id="" onChange={handleCountChange}>
-                                    <option value="">Choisir</option>
-                                    {
-                                        numberArr.map((el, key) => {
-                                            return(
-                                            <option value={el} key={key}>{el}</option>
-                                        )})
-                                    }
-                                </select>
-                                <h2 className="item-price">{product.price.toFixed(2)}€</h2>
-                            </div>
-                            )
-                        })
-                    ))
+                    prodList.map((product, key) => (
+                        <div className="item-container" key={key}>
+                            <label htmlFor={product.name} className="item-label">
+                                {product.name}
+                            </label>
+                            <select name={product.name} id="" onChange={handleCountChange}>
+                                <option value="">Choisir</option>
+                                {
+                                    numberArr.map((el, key) => {
+                                        return(
+                                        <option value={el} key={key}>{el}</option>
+                                    )})
+                                }
+                            </select>
+                            <h2 className="item-price">{product.price.toFixed(2)}€</h2>
+                        </div>
+                        )
+                    )
                     }
             </div>
 

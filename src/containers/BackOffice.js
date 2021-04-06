@@ -1,7 +1,7 @@
 import { connect } from 'react-redux';
 import BackOffice from '../components/BackOffice';
 import { editStock, onChange, addProductToDb } from '../actions/backoffice';
-import {findAllProducts, findOneProduct, updateOneProduct } from '../actions/user';
+import {findAllProducts, findOneProduct, updateOneProduct, deleteOneProduct } from '../actions/user';
 
 const mapStateToProps = (state) => ({
     stock: state.backoffice.stock,
@@ -33,6 +33,10 @@ const mapDispatchToProps = (dispatch) => ({
 
     updateOneProduct: () => {
         dispatch(updateOneProduct());
+    },
+
+    deleteOneProduct: () => {
+        dispatch(deleteOneProduct());
     },
 });
 

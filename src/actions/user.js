@@ -16,6 +16,8 @@ export const UPDATE_ONE_PRODUCT = 'UPDATE_ONE_PRODUCT';
 export const UPDATE_ONE_PRODUCT_SUCCESS = 'UPDATE_ONE_PRODUCT_SUCCESS';
 export const UPDATE_ONE_PRODUCT_ERROR = 'UPDATE_ONE_PRODUCT_ERROR';
 
+export const DELETE_ONE_PRODUCT = 'DELETE_ONE_PRODUCT';
+
 export const onToggle = () => ({
     type: ON_TOGGLE,
 });
@@ -76,4 +78,8 @@ export const updateOneProductSuccess = (payload) => ({
 
 export const updateOneProductError = () => ({
     type: UPDATE_ONE_PRODUCT_ERROR,
+});
+
+export const deleteOneProduct = () => ({
+    type: DELETE_ONE_PRODUCT,
 });

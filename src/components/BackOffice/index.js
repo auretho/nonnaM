@@ -8,7 +8,7 @@ import UpdateProduct from './UpdateProduct';
 import Stock from './Stock';
 import './style.scss';
 
-const BackOffice = ({products, handleChange, newProduct, handleAddNewProduct, findAllProducts, findOneProduct, productSelected, updateOneProduct}) => {
+const BackOffice = ({products, handleChange, newProduct, handleAddNewProduct, findAllProducts, productSelected, updateOneProduct, deleteOneProduct}) => {
 
 
   const handleStockChange = (evt) => {
@@ -37,14 +37,12 @@ const BackOffice = ({products, handleChange, newProduct, handleAddNewProduct, fi
           <Route exact path="/backoffice/liste-produits">
             <ListProducts findAllProducts={findAllProducts} 
                           products={products} 
-                          findproduct={findOneProduct} 
                           productselected={productSelected}/>
           </Route>
 
           <Route exact path="/backoffice/produit/:id" render={({match}) => (
             <OneProduct id={match.params.id} 
-                        // findproduct={findOneProduct}
-                        // product={productSelected}
+                        deleteProduct={deleteOneProduct}
                         />
           )}>
           </Route>
