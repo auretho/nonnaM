@@ -3,7 +3,7 @@ import { useParams } from "react-router";
 import { ADD_PRODUCT_TO_DB } from '../actions/backoffice';
 import { FIND_ALL_PRODUCTS, findAllProductsSuccess, findAllProductsError, 
          FIND_ONE_PRODUCT, findOneProductSuccess, findOneProductError,
-         UPDATE_ONE_PRODUCT, updateOneProductSuccess, updateOneProductError, DELETE_ONE_PRODUCT } from '../actions/user';
+         UPDATE_ONE_PRODUCT, updateOneProductSuccess, updateOneProductError, DELETE_ONE_PRODUCT, UPLOAD_IMAGE, uploadImageSuccess } from '../actions/user';
 
 const backofficeMdlw = (store) => (next) => (action) => {
     next(action);
@@ -12,18 +12,18 @@ const backofficeMdlw = (store) => (next) => (action) => {
     switch (action.type){
 
         case ADD_PRODUCT_TO_DB:
+          const htmlform = document.querySelector(".addproducts")
+          const formData = new FormData(htmlform);
+
           axios({
             method: 'post',
             url:  `http://localhost:3001/addNewProduct`,
-            data:{
-                name: store.getState().backoffice.newProduct.name,
-                shortName: store.getState().backoffice.newProduct.shortName,
-                image: store.getState().backoffice.newProduct.image,
-                quantity: store.getState().backoffice.newProduct.quantity,
-                description: store.getState().backoffice.newProduct.description,
-                price: store.getState().backoffice.newProduct.price,
-            }
-          })
+            data: formData,
+            })
+            .then(res => {
+              console.log(res.data);
+            })
+          
           break;
 
         case FIND_ALL_PRODUCTS:
@@ -90,6 +90,20 @@ const backofficeMdlw = (store) => (next) => (action) => {
           url:  `http://localhost:3001/deleteProduct/${identification}`,
         })
         break;
+
+        // case UPLOAD_IMAGE:
+        // axios({
+        //   method: 'post',
+        //   url:  `http://localhost:3001/upload/`,
+        // })
+        // .then((res) => {
+        //   dispatch(uploadImageSuccess(res.data))
+        // })
+        // .catch((err) => {
+        //   console.error(err);
+        // })        
+        // break;
+
         default:
             break;
     }

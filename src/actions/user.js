@@ -2,6 +2,9 @@ export const ON_TOGGLE = 'ON_TOGGLE';
 export const ON_REDIRECT = 'ON_REDIRECT';
 export const ON_CHANGE = 'ON_CHANGE';
 export const ON_SUBMIT = 'ON_SUBMIT';
+export const UPLOAD_IMAGE = 'UPLOAD_IMAGE';
+export const UPLOAD_IMAGE_SUCCESS = 'UPLOAD_IMAGE_SUCCESS';
+
 export const ADD_PRODUCT = 'ADD_PRODUCT';
 
 export const FIND_ALL_PRODUCTS = 'FIND_ALL_PRODUCTS';
@@ -33,6 +36,15 @@ export const onChange = (payload) => ({
 
 export const onSubmit = (payload) => ({
     type: ON_SUBMIT,
+    payload,
+});
+
+export const uploadImage = () => ({
+    type: UPLOAD_IMAGE,
+});
+
+export const uploadImageSuccess = (payload) => ({
+    type: UPLOAD_IMAGE_SUCCESS,
     payload,
 });
 

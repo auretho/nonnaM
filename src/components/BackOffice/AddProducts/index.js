@@ -1,11 +1,24 @@
+import React from 'react';
+import axios from 'axios';
 import { Button, Form, Input, TextArea} from 'semantic-ui-react'
 import logo from '../../../assets/coeur-solo.png';
 import './style.scss';
 
 const AddProducts = ({handleChange, handleAddNewProduct, newProduct}) => {
+
+  const [ uploadedFile, setUploadedFile ] = React.useState(null)
+
   const handleInputChange = (evt) => {
     const { name, value } = evt.target;
     handleChange({ newProduct: {...newProduct,[name]: value }})
+  }
+
+  const handleUploadChange = (evt) => {
+    // console.log(newProduct.image);
+    // console.log(evt.target.files[0]);
+    // setUploadedFile(evt.target.files[0])
+    // console.log(uploadedFile);
+    handleChange({ newProduct: {...newProduct, image: evt.target.files[0] }})
   }
 
   const handleProductSubmit = (evt) => {
@@ -13,8 +26,10 @@ const AddProducts = ({handleChange, handleAddNewProduct, newProduct}) => {
     if(!newProduct.image){
       handleChange({ newProduct: {...newProduct, image: logo }})
     }
-    handleAddNewProduct(newProduct);
+    handleAddNewProduct();
   }
+
+
 
     return (
       <Form className="addproducts" onSubmit={handleProductSubmit}>
@@ -41,12 +56,20 @@ const AddProducts = ({handleChange, handleAddNewProduct, newProduct}) => {
             <option value='jambon'>Charcuterie</option>
 
           </Form.Field>
-           <Form.Field
+           {/* <Form.Field
             control={Input}
             name="image"
             label="URL de l'image"
             placeholder='URL'
             onChange={handleInputChange}
+          /> */}
+          <Form.Field
+            control={Input}
+            type="file"
+            name="image"
+            label="URL de l'image"
+            placeholder='URL'
+            onChange={handleUploadChange}
           />
         </Form.Group>
         <Form.Group inline>

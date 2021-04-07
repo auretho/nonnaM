@@ -3,6 +3,7 @@ const express = require('express');
 const mongoose = require('mongoose');
 const cors = require('cors');
 const app = express();
+const multer = require('./mdlw/multer-config');
 const sendMail = require('./mail');
 const Order = require('./models/Order');
 const Product = require('./models/Product');
@@ -10,6 +11,8 @@ const PORT = 3001;
 
 app.use(cors({ origin: "*" }));
 app.use(express.json()); // A VOIR LE FONCTIONNEMENT
+app.use('/images', express.static('images'));
+
 
 mongoose.connect(process.env.CONNECT,
   { useNewUrlParser: true,
@@ -60,14 +63,14 @@ mongoose.connect(process.env.CONNECT,
     //   .catch(error => res.status(400).json({ message: 'I y a eu une erreur!', error}));
   });
 
-  app.post('/addNewProduct', (req, res) => {
-    console.log(req.body)
-  const product = new Product({
-    ...req.body
-  });
-  product.save()
-    .then(() => res.status(201).json({ message: 'Nouveau produit ajouté!'}))
-    .catch(error => res.status(400).json({ message: 'I y a eu une erreur!', error}));
+  app.post('/addNewProduct', multer, (req, res) => {
+    const product = new Product({
+      ...req.body,
+      image: `${req.protocol}://${req.get('host')}/images/${req.file.filename}`
+    });
+    product.save()
+      .then(() => res.status(201).json({ message: 'Nouveau produit ajouté!'}))
+      .catch(error => res.status(400).json({ message: 'I y a eu une erreur!', error}));
 });
 
 app.listen(PORT, () => console.log(`Le serveur tourne sur le port ${PORT}`))
