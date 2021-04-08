@@ -8,6 +8,7 @@ const mapStateToProps = (state) => ({
     products: state.backoffice.products,
     newProduct: state.backoffice.newProduct,
     productSelected: state.backoffice.productSelected,
+    activeMenuItem: state.backoffice.activeMenuItem,
 });
   
 const mapDispatchToProps = (dispatch) => ({

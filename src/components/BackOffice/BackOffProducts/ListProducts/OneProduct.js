@@ -19,10 +19,12 @@ const OneProduct = ({findOneProduct, productSelected, deleteProduct}) => {
             <p className="oneproduct-description">{productSelected.description}</p>
             <h2 className="oneproduct-price">Prix: {productSelected.price}€</h2>
 
-            <Link to={`/backoffice/produit/modif/${productSelected._id}`}>
-                <Button className="oneproduct-button" color="yellow">Modifier</Button>
-            </Link>
-            <Button className="oneproduct-button" onClick={handleDelete} color="red">Supprimer</Button>
+            <div>
+                <Link to={`/backoffice/produit/modif/${productSelected._id}`}>
+                    <Button className="oneproduct-button" color="yellow">Modifier</Button>
+                </Link>
+                <Button className="oneproduct-button" onClick={handleDelete} color="red">Supprimer</Button>
+            </div>
         </div>
     </div>
 )}

@@ -1,16 +1,17 @@
 import { Link } from 'react-router-dom';
+import {Button} from 'semantic-ui-react';
 import './style.scss';
 
 const Welcome = () => (
     <div className="welcome" id="welcome" >
-        <Link to="/backoffice/liste-produits" style={{zIndex: '10'}}>
-            <button className="welcome-buttons">Liste des produits</button>
+        <Link to="/backoffice/produits">
+            <Button className="welcome-buttons" size="huge"color="orange">Produits</Button>
         </Link> 
-        <Link to="/backoffice/ajout-produits" style={{zIndex: '10'}}>
-            <button className="welcome-buttons">Ajout de produits</button>
+        <Link to="/backoffice/stock">
+            <Button className="welcome-buttons" size="huge"color="yellow">Stock</Button>
         </Link>          
-        <Link to="/backoffice/stock" style={{zIndex: '10'}}>
-            <button className="welcome-buttons">Gestion des stocks</button>
+        <Link to="/backoffice/photos">
+            <Button className="welcome-buttons" size="huge" color="olive">Photos</Button>
         </Link>  
     </div>
 )

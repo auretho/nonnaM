@@ -1,8 +1,6 @@
 .welcome{
-    &-buttons{
-        padding: 1em;
-        margin: 1em;
-        border: 1px solid grey;
-        background-color: skyblue;
-    }
+    width: 50%;
+    display: flex;
+    justify-content: space-evenly;
+    padding: 1em;
 }

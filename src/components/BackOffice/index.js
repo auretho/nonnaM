@@ -1,14 +1,15 @@
-import {useEffect} from 'react';
-import { Switch, Route, Link } from 'react-router-dom';
+import { Switch, Route } from 'react-router-dom';
+import Menu from './Menu';
+import BackOffProducts from './BackOffProducts';
 import Welcome from './Welcome';
-import AddProducts from './Products/AddProducts';
-import ListProducts from './Products/ListProducts';
+import AddProducts from './BackOffProducts/AddProducts';
+import ListProducts from './BackOffProducts/ListProducts';
 import OneProduct from '../../containers/OneProduct';
-import UpdateProduct from './Products/UpdateProduct';
+import UpdateProduct from './BackOffProducts/UpdateProduct';
 import Stock from './Stock';
 import './style.scss';
 
-const BackOffice = ({products, handleChange, newProduct, handleAddNewProduct, findAllProducts, productSelected, updateOneProduct, deleteOneProduct}) => {
+const BackOffice = ({products, handleChange, newProduct, handleAddNewProduct, findAllProducts, productSelected, updateOneProduct, deleteOneProduct, activeMenuItem}) => {
 
 
   const handleStockChange = (evt) => {
@@ -27,12 +28,12 @@ const BackOffice = ({products, handleChange, newProduct, handleAddNewProduct, fi
 }
     return(    
     <div className="backOffice">
-      <Link to="/backoffice" style={{zIndex: '10'}}>
-        <button>Backoffice</button>
-      </Link>
+      <Menu handleChange={handleChange} activeMenuItem={activeMenuItem}/>
 
         <Switch>
           <Route exact path="/backoffice" component={Welcome} />
+
+          <Route exact path="/backoffice/produits" component={BackOffProducts} />
 
           <Route exact path="/backoffice/liste-produits">
             <ListProducts findAllProducts={findAllProducts} 
