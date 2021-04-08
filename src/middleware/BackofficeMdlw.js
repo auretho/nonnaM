@@ -59,16 +59,16 @@ const backofficeMdlw = (store) => (next) => (action) => {
 
         case UPDATE_ONE_PRODUCT:
           let ide = store.getState().backoffice.productSelected._id;
-          // const htmlformUPD = document.querySelector("#updateProds")
-          const formDataUPD = new FormData();
-          formDataUPD.set('image', store.getState().backoffice.productSelected.image)
+          const UpdFormData = new FormData();
+          UpdFormData.set('image', store.getState().backoffice.productSelected.image)
           axios({
           method: 'put',
           url:  `http://localhost:3001/updateProduct/${ide}`,
+          data: UpdFormData,
           // data: {
           //   ...store.getState().backoffice.productSelected,
+          //   UpdFormData,
           // }
-          data: formDataUPD,
         })
         .then((res) => {
           console.log(res.data);

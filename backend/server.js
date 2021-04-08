@@ -47,14 +47,21 @@ mongoose.connect(process.env.CONNECT,
   });
   
   app.put('/updateProduct/:id', multer, (req, res) => {
-    const prodObject = req.file ? 
-    { ...req.body,
-      image: `${req.protocol}://${req.get('host')}/images/${req.file.filename}`} 
-    : 
-    { ...req.body};
-    Product.updateOne({ _id: req.params.id }, { ...prodObject, _id: req.params.id })
-    .then(() => res.status(200).json({message: 'objet modifié!'}))
-    .catch(error => res.status(400).json({ error }));
+    Product.findOne({ _id: req.params.id })
+    .then(element => {
+      const filename = element.image.split('/images/')[1];
+      fs.unlink(`images/${filename}`, () => {
+        Product.deleteOne({ _id: req.params.id })
+        const prodObject = req.file ? 
+        { ...req.body,
+          image: `${req.protocol}://${req.get('host')}/images/${req.file.filename}`} 
+        : 
+        { ...req.body};
+        Product.updateOne({ _id: req.params.id }, { ...prodObject, _id: req.params.id })
+        .then(() => res.status(200).json({message: 'objet modifié!'}))
+        .catch(error => res.status(400).json({ error }));
+      })
+    })
   });
 
   app.delete('/deleteProduct/:id', (req, res) => {
