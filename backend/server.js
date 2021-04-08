@@ -36,7 +36,6 @@ mongoose.connect(process.env.CONNECT,
   });
 
   app.post('/addNewProduct', multer, (req, res) => {
-    console.log(req.file);
     const product = new Product({
       ...req.body,
       image: `${req.protocol}://${req.get('host')}/images/${req.file.filename}`
@@ -47,21 +46,29 @@ mongoose.connect(process.env.CONNECT,
   });
   
   app.put('/updateProduct/:id', multer, (req, res) => {
-    Product.findOne({ _id: req.params.id })
-    .then(element => {
-      const filename = element.image.split('/images/')[1];
-      fs.unlink(`images/${filename}`, () => {
-        Product.deleteOne({ _id: req.params.id })
-        const prodObject = req.file ? 
-        { ...req.body,
-          image: `${req.protocol}://${req.get('host')}/images/${req.file.filename}`} 
-        : 
-        { ...req.body};
-        Product.updateOne({ _id: req.params.id }, { ...prodObject, _id: req.params.id })
-        .then(() => res.status(200).json({message: 'objet modifié!'}))
-        .catch(error => res.status(400).json({ error }));
+    if(req.file && req.file != req.body.image){
+      Product.findOne({ _id: req.params.id })
+      .then(element => {
+        const filename = element.image.split('/images/')[1];
+        fs.unlink(`images/${filename}`, () => {
+          Product.deleteOne({ _id: req.params.id })
+          const prodObject = req.file ? 
+          { ...req.body,
+            image: `${req.protocol}://${req.get('host')}/images/${req.file.filename}`} 
+          : 
+          { ...req.body};
+          Product.updateOne({ _id: req.params.id }, { ...prodObject, _id: req.params.id })
+          .then(() => res.status(200).json({message: 'objet modifié!'}))
+          .catch(error => res.status(400).json({ error }));
+        })
       })
-    })
+    }
+
+    else {
+      Product.updateOne({ _id: req.params.id }, { ...req.body, _id: req.params.id })
+          .then(() => res.status(200).json({message: 'objet modifié!'}))
+          .catch(error => res.status(400).json({ error }));
+    }
   });
 
   app.delete('/deleteProduct/:id', (req, res) => {

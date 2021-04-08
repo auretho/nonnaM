@@ -61,13 +61,20 @@ const backofficeMdlw = (store) => (next) => (action) => {
           let ide = store.getState().backoffice.productSelected._id;
           const UpdFormData = new FormData();
           UpdFormData.set('image', store.getState().backoffice.productSelected.image)
+          UpdFormData.set('name', store.getState().backoffice.productSelected.name)
+          UpdFormData.set('shortName', store.getState().backoffice.productSelected.shortName)
+          UpdFormData.set('quantity', store.getState().backoffice.productSelected.quantity)
+          UpdFormData.set('description', store.getState().backoffice.productSelected.description)
+          UpdFormData.set('price', store.getState().backoffice.productSelected.price)
+
+
           axios({
           method: 'put',
           url:  `http://localhost:3001/updateProduct/${ide}`,
           data: UpdFormData,
           // data: {
           //   ...store.getState().backoffice.productSelected,
-          //   UpdFormData,
+          //   image: UpdFormData,
           // }
         })
         .then((res) => {
