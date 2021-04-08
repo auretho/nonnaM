@@ -1,5 +1,5 @@
 import axios from 'axios';
-import { useParams } from "react-router";
+import { useParams, Redirect } from "react-router";
 import { ADD_PRODUCT_TO_DB } from '../actions/backoffice';
 import { FIND_ALL_PRODUCTS, findAllProductsSuccess, findAllProductsError, 
          FIND_ONE_PRODUCT, findOneProductSuccess, findOneProductError,
@@ -21,7 +21,10 @@ const backofficeMdlw = (store) => (next) => (action) => {
             data: formData,
             })
             .then(res => {
-              console.log(res.data);
+              console.log(res.status);
+              if(res.status === 201){
+                window.location = "/backoffice"
+              }
             })
           
           break;
@@ -79,6 +82,9 @@ const backofficeMdlw = (store) => (next) => (action) => {
         })
         .then((res) => {
           console.log(res.data);
+          if(res.status === 200){
+            window.location = "/backoffice"
+          }
           dispatch(updateOneProductSuccess(res.data));
         })
         .catch((err) => {
@@ -93,20 +99,12 @@ const backofficeMdlw = (store) => (next) => (action) => {
           method: 'delete',
           url:  `http://localhost:3001/deleteProduct/${identification}`,
         })
+        .then(res => {
+          if(res.status === 200){
+            window.location = "/backoffice"
+          }
+        })
         break;
-
-        // case UPLOAD_IMAGE:
-        // axios({
-        //   method: 'post',
-        //   url:  `http://localhost:3001/upload/`,
-        // })
-        // .then((res) => {
-        //   dispatch(uploadImageSuccess(res.data))
-        // })
-        // .catch((err) => {
-        //   console.error(err);
-        // })        
-        // break;
 
         default:
             break;

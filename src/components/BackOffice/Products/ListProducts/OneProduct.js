@@ -1,4 +1,5 @@
 import {Link} from 'react-router-dom';
+import {Button} from 'semantic-ui-react';
 import './style.scss';
 
 const OneProduct = ({findOneProduct, productSelected, deleteProduct}) => {
@@ -19,11 +20,9 @@ const OneProduct = ({findOneProduct, productSelected, deleteProduct}) => {
             <h2 className="oneproduct-price">Prix: {productSelected.price}€</h2>
 
             <Link to={`/backoffice/produit/modif/${productSelected._id}`}>
-                <button className="oneproduct-button">Modifier</button>
+                <Button className="oneproduct-button" color="yellow">Modifier</Button>
             </Link>
-            <Link to="/backoffice/liste-produits">
-                <button className="oneproduct-button" onClick={handleDelete}>Supprimer</button>
-            </Link>
+            <Button className="oneproduct-button" onClick={handleDelete} color="red">Supprimer</Button>
         </div>
     </div>
 )}

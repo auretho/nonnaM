@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import OneProduct from '../components/BackOffice/ListProducts/OneProduct';
+import OneProduct from '../components/BackOffice/Products/ListProducts/OneProduct';
 import { onChange } from '../actions/backoffice';
 import {findOneProduct} from '../actions/user';
 

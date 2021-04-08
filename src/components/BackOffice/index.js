@@ -1,10 +1,10 @@
 import {useEffect} from 'react';
 import { Switch, Route, Link } from 'react-router-dom';
 import Welcome from './Welcome';
-import AddProducts from './AddProducts';
-import ListProducts from './ListProducts';
+import AddProducts from './Products/AddProducts';
+import ListProducts from './Products/ListProducts';
 import OneProduct from '../../containers/OneProduct';
-import UpdateProduct from './UpdateProduct';
+import UpdateProduct from './Products/UpdateProduct';
 import Stock from './Stock';
 import './style.scss';
 

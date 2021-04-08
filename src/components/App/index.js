@@ -3,8 +3,6 @@ import Nav from '../../containers/Navbar';
 import Home from '../Home';
 import Orders from '../../containers/Orders';
 import BackOffice from '../../containers/BackOffice';
-import Addproducts from '../BackOffice/AddProducts';
-import Stock from '../BackOffice/Stock';
 import Error from '../Error';
 import './style.scss';
 

@@ -1,5 +1,5 @@
 import './style.scss';
-import { Button, Form, Input, TextArea} from 'semantic-ui-react'
+import { Button, Form, Input, TextArea, Label} from 'semantic-ui-react'
 
 const UpdateProduct = ({handleChange, product, updateprod}) => {
   
@@ -19,7 +19,7 @@ const UpdateProduct = ({handleChange, product, updateprod}) => {
   }
 
     return (
-      <Form className="addproducts" id="updateProds" onSubmit={handleProductUpdate}>
+      <Form className="updateproducts" id="updateProds" onSubmit={handleProductUpdate}>
         <Form.Group widths='equal'>
           <Form.Field
             control={Input}
@@ -27,6 +27,25 @@ const UpdateProduct = ({handleChange, product, updateprod}) => {
             label='Nom complet'
             placeholder='Nom du produit'
             value={product.name}
+            onChange={handleInputChange}
+          />
+
+          <Form.Field
+            control={Input}
+            type="file"
+            name="image"
+            label="URL de l'image"
+            placeholder='URL'
+            onChange={handleUploadChange}
+          />
+        </Form.Group>
+        <Form.Group widths='equal'>
+          <Form.Field
+            control={Input}
+            name="quantity"
+            type="number"
+            label='Quantité'
+            placeholder='Quantité existante'
             onChange={handleInputChange}
           />
           <Form.Field
@@ -42,35 +61,7 @@ const UpdateProduct = ({handleChange, product, updateprod}) => {
             <option value='olive'>Huile d'olive</option>
             <option value='truffe'>Truffes</option>
             <option value='jambon'>Charcuterie</option>
-
           </Form.Field>
-          <Form.Field
-            control={Input}
-            type="file"
-            name="image"
-            label="URL de l'image"
-            placeholder='URL'
-            onChange={handleUploadChange}
-          />
-           {/* <Form.Field
-            control={Input}
-            name="image"
-            label="URL de l'image"
-            placeholder='URL'
-            value={product.image}
-            onChange={handleInputChange}
-          /> */}
-        </Form.Group>
-        <Form.Group inline>
-          <Form.Field
-            control={Input}
-            name="quantity"
-            type="number"
-            label='Quantité'
-            placeholder='Quantité existante'
-            onChange={handleInputChange}
-
-        />
         </Form.Group>
         <Form.Field
           control={TextArea}
@@ -91,7 +82,8 @@ const UpdateProduct = ({handleChange, product, updateprod}) => {
             value={product.price}
             onChange={handleInputChange}
         />
-        <Button type='submit'>Mettre à jour le produit</Button>
+        <Button type='submit' color="teal">Mettre à jour le produit</Button>
+
       </Form>
     )
 }

@@ -1,7 +1,6 @@
 import React from 'react';
-import axios from 'axios';
 import { Button, Form, Input, TextArea} from 'semantic-ui-react'
-import logo from '../../../assets/coeur-solo.png';
+import logo from '../../../../assets/coeur-solo.png';
 import './style.scss';
 
 const AddProducts = ({handleChange, handleAddNewProduct, newProduct}) => {
@@ -34,22 +33,8 @@ const AddProducts = ({handleChange, handleAddNewProduct, newProduct}) => {
             label='Nom complet'
             placeholder='Nom du produit'
             onChange={handleInputChange}
+            required
           />
-          <Form.Field
-            control='select'
-            name="shortName"
-            label='Catégorie de produit'
-            placeholder='Catégorie de produit'
-            onChange={handleInputChange}
-          >
-            <option value=''>Choisir</option>
-            <option value='tomates'>Tomates</option>
-            <option value='artichauts'>Artichauts</option>
-            <option value='olive'>Huile d'olive</option>
-            <option value='truffe'>Truffes</option>
-            <option value='jambon'>Charcuterie</option>
-
-          </Form.Field>
           <Form.Field
             control={Input}
             type="file"
@@ -57,9 +42,10 @@ const AddProducts = ({handleChange, handleAddNewProduct, newProduct}) => {
             label="URL de l'image"
             placeholder='URL'
             onChange={handleUploadChange}
+            required
           />
         </Form.Group>
-        <Form.Group inline>
+        <Form.Group widths='equal'>
           <Form.Field
             control={Input}
             name="quantity"
@@ -67,8 +53,22 @@ const AddProducts = ({handleChange, handleAddNewProduct, newProduct}) => {
             label='Quantité'
             placeholder='Quantité existante'
             onChange={handleInputChange}
-
         />
+          <Form.Field
+            control='select'
+            name="shortName"
+            label='Catégorie de produit'
+            placeholder='Catégorie de produit'
+            onChange={handleInputChange}
+            required
+          >
+            <option value=''>Choisir</option>
+            <option value='tomates'>Tomates</option>
+            <option value='artichauts'>Artichauts</option>
+            <option value='olive'>Huile d'olive</option>
+            <option value='truffe'>Truffes</option>
+            <option value='jambon'>Charcuterie</option>
+          </Form.Field>
         </Form.Group>
         <Form.Field
           control={TextArea}
@@ -76,7 +76,7 @@ const AddProducts = ({handleChange, handleAddNewProduct, newProduct}) => {
           label='Description du produit'
           placeholder='Description du produit'
           onChange={handleInputChange}
-
+          required
         />
         <Form.Field
             control={Input}
@@ -86,8 +86,9 @@ const AddProducts = ({handleChange, handleAddNewProduct, newProduct}) => {
             label='Prix'
             placeholder='Prix'
             onChange={handleInputChange}
+            required
         />
-        <Button type='submit'>Créer le nouveau produit</Button>
+        <Button type='submit' color="teal">Créer le nouveau produit</Button>
       </Form>
     )
 }
