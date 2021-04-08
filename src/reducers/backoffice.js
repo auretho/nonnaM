@@ -7,6 +7,10 @@ const initialState = {
     productSelected: '',
     newProduct: '',
     activeMenuItem: 'home',
+    login: {
+        email: '',
+        password: ''
+    },
 };
 
 const backoffice = (state = initialState, action = {}) => {

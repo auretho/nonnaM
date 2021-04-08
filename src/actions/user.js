@@ -2,8 +2,7 @@ export const ON_TOGGLE = 'ON_TOGGLE';
 export const ON_REDIRECT = 'ON_REDIRECT';
 export const ON_CHANGE = 'ON_CHANGE';
 export const ON_SUBMIT = 'ON_SUBMIT';
-export const UPLOAD_IMAGE = 'UPLOAD_IMAGE';
-export const UPLOAD_IMAGE_SUCCESS = 'UPLOAD_IMAGE_SUCCESS';
+export const LOGIN_SUBMIT = 'LOGIN_SUBMIT'
 
 export const ADD_PRODUCT = 'ADD_PRODUCT';
 
@@ -39,13 +38,8 @@ export const onSubmit = (payload) => ({
     payload,
 });
 
-export const uploadImage = () => ({
-    type: UPLOAD_IMAGE,
-});
-
-export const uploadImageSuccess = (payload) => ({
-    type: UPLOAD_IMAGE_SUCCESS,
-    payload,
+export const loginSubmit = () => ({
+    type: LOGIN_SUBMIT,
 });
 
 export const addProduct = (payload) => ({

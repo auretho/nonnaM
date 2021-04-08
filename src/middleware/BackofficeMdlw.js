@@ -3,13 +3,25 @@ import { useParams, Redirect } from "react-router";
 import { ADD_PRODUCT_TO_DB } from '../actions/backoffice';
 import { FIND_ALL_PRODUCTS, findAllProductsSuccess, findAllProductsError, 
          FIND_ONE_PRODUCT, findOneProductSuccess, findOneProductError,
-         UPDATE_ONE_PRODUCT, updateOneProductSuccess, updateOneProductError, DELETE_ONE_PRODUCT, UPLOAD_IMAGE, uploadImageSuccess } from '../actions/user';
+         UPDATE_ONE_PRODUCT, updateOneProductSuccess, updateOneProductError, DELETE_ONE_PRODUCT, LOGIN_SUBMIT} from '../actions/user';
 
 const backofficeMdlw = (store) => (next) => (action) => {
     next(action);
     const { dispatch } = store;
 
     switch (action.type){
+        case LOGIN_SUBMIT:
+        axios({
+          method: 'post',
+          url: `http://localhost:3001/backoffice/user/login`,
+          data: {
+            ...store.getState().backoffice.login,
+          }
+        })
+        .then(res => {
+          console.log(res.data);
+        })
+        break;
 
         case ADD_PRODUCT_TO_DB:
           const htmlform = document.querySelector("#addProds")
@@ -17,7 +29,7 @@ const backofficeMdlw = (store) => (next) => (action) => {
 
           axios({
             method: 'post',
-            url:  `http://localhost:3001/addNewProduct`,
+            url:  `http://localhost:3001/backoffice/products/addNewProduct`,
             data: formData,
             })
             .then(res => {
@@ -32,7 +44,7 @@ const backofficeMdlw = (store) => (next) => (action) => {
         case FIND_ALL_PRODUCTS:
           axios({
             method: 'get',
-            url:  `http://localhost:3001/findAllProducts`,
+            url:  `http://localhost:3001/backoffice/products/findAllProducts`,
           })
           .then((res) => {
             console.log(res.data);
@@ -48,7 +60,7 @@ const backofficeMdlw = (store) => (next) => (action) => {
         const {id} = useParams();
         axios({
           method: 'get',
-          url:  `http://localhost:3001/findProduct/${id}`,
+          url:  `http://localhost:3001/backoffice/products/findProduct/${id}`,
         })
         .then((res) => {
           console.log(res.data);
@@ -73,7 +85,7 @@ const backofficeMdlw = (store) => (next) => (action) => {
 
           axios({
           method: 'put',
-          url:  `http://localhost:3001/updateProduct/${ide}`,
+          url:  `http://localhost:3001/backoffice/products/updateProduct/${ide}`,
           data: UpdFormData,
           // data: {
           //   ...store.getState().backoffice.productSelected,
@@ -97,7 +109,7 @@ const backofficeMdlw = (store) => (next) => (action) => {
           let identification = store.getState().backoffice.productSelected._id;
         axios({
           method: 'delete',
-          url:  `http://localhost:3001/deleteProduct/${identification}`,
+          url:  `http://localhost:3001/backoffice/products/deleteProduct/${identification}`,
         })
         .then(res => {
           if(res.status === 200){

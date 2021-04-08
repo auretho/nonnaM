@@ -1,15 +1,20 @@
 import { connect } from 'react-redux';
 import NavBar from '../components/Nav';
-import { onToggle } from '../actions/user';
+import { onToggle, onChange } from '../actions/user';
 
 const mapStateToProps = (state) => ({
     navlinks: state.user.navlinks,
     burgerOpened: state.user.burgerOpened,
+    login: state.backoffice.login,
 });
   
 const mapDispatchToProps = (dispatch) => ({
     handleBurger: () => {
         dispatch(onToggle())
+    },
+
+    handleChange: (payload) => {
+        dispatch(onChange(payload))
     }
 });
 

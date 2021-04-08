@@ -3,6 +3,7 @@ import { useHistory } from 'react-router-dom'
 import './style.scss';
 
 const Orders = ({inputDetails, prodList, form, total, redirection, delivery, handleChange, handleSubmit, addNewProduct}) => {
+    console.log(prodList);
     const history = useHistory();
     const numberArr = [];
 
@@ -34,19 +35,20 @@ const Orders = ({inputDetails, prodList, form, total, redirection, delivery, han
     }
 
     const handleCountChange = (evt) => {
-        const target = evt.target.value; 
-        prodList.map(element => element.find(el => {
+        const target = evt.target.value;
+        console.log(target); 
+        prodList.find(el => {
             if(el.name === evt.target.name){
-                if(el.count < target) {
-                addNewProduct({total: total + ((target - el.count) * el.price)});
-                addNewProduct(el.count = target);
+                if(el.orderCount < target) {
+                addNewProduct({total: total + ((target - el.orderCount) * el.price)});
+                addNewProduct(el.orderCount = target);
                 } 
                 else{
-                    addNewProduct({total: total - ((el.count - target) * el.price)});
-                    addNewProduct(el.count = target);
+                    addNewProduct({total: total - ((el.orderCount - target) * el.price)});
+                    addNewProduct(el.orderCount = target);
                 }
             } 
-        }));
+        });
     }
 
     const handleRadioSelect = (evt) => {
@@ -130,7 +132,7 @@ const Orders = ({inputDetails, prodList, form, total, redirection, delivery, han
                                     )})
                                 }
                             </select>
-                            <h2 className="item-price">{product.price.toFixed(2)}€</h2>
+                            <h2 className="item-price">{product.price}€</h2>
                         </div>
                         )
                     )

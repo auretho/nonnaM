@@ -2,12 +2,33 @@ import React from'react';
 import { NavHashLink } from 'react-router-hash-link';
 import logo from '../../assets/logo-coeurSVG.png';
 import MenuIcon from '@material-ui/icons/Menu';
+import VpnKeyIcon from '@material-ui/icons/VpnKey';
 
 import './style.scss';
 
-const Nav = ({navlinks, burgerOpened, handleBurger}) => {
+const Nav = ({navlinks, burgerOpened, handleBurger, handleChange, login}) => {
     const handleBurgerClick = () => {
         handleBurger()
+    }
+
+    const handleKeyClick = (evt) => {
+        const admin = document.querySelector('.login-container');
+        admin.classList.contains('hidden') 
+        ?
+        admin.classList.remove('hidden')
+        :
+        admin.classList.add('hidden')
+        ;
+    }
+
+    const handleInputChange = (evt) => {
+        const {name, value} = evt.target;
+        handleChange({ login: {...login, [name]: value }})
+    }
+
+    const handleLoginSubmit = (evt) => {
+        evt.preventDefault();
+        
     }
 
     return(
@@ -26,6 +47,17 @@ const Nav = ({navlinks, burgerOpened, handleBurger}) => {
                 ))
                 }
             </ul>
+            <div className="login">
+                <VpnKeyIcon onClick={handleKeyClick}/>
+            </div>
+            <div className="login-container admin-login hidden">
+                <h1>Accès Admin</h1>
+                <form onSubmit={handleLoginSubmit}>
+                    <input type="email" name="email" placeholder="email" value={login.email} onChange={handleInputChange}/>
+                    <input type="password" name="password" placeholder="mot de passe" value={login.password} onChange={handleInputChange}/>
+                    <button>Connexion</button>
+                </form>
+            </div>
         </div>
         {/* ============== MOBILE ONLY ================ */}
         <div className="mobile-nav">
