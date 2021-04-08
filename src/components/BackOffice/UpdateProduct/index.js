@@ -2,9 +2,15 @@ import './style.scss';
 import { Button, Form, Input, TextArea} from 'semantic-ui-react'
 
 const UpdateProduct = ({handleChange, product, updateprod}) => {
+  
   const handleInputChange = (evt) => {
     const { name, value } = evt.target;
     handleChange({ productSelected: {...product,[name]: value }})
+  }
+
+  const handleUploadChange = (evt) => {
+    handleChange({ productSelected: {...product, image: evt.target.files[0] }})
+    console.log(product);
   }
 
   const handleProductUpdate = (evt) => {
@@ -13,7 +19,7 @@ const UpdateProduct = ({handleChange, product, updateprod}) => {
   }
 
     return (
-      <Form className="addproducts" onSubmit={handleProductUpdate}>
+      <Form className="addproducts" id="updateProds" onSubmit={handleProductUpdate}>
         <Form.Group widths='equal'>
           <Form.Field
             control={Input}
@@ -34,16 +40,26 @@ const UpdateProduct = ({handleChange, product, updateprod}) => {
             <option value='tomates'>Tomates</option>
             <option value='artichauts'>Artichauts</option>
             <option value='olive'>Huile d'olive</option>
+            <option value='truffe'>Truffes</option>
+            <option value='jambon'>Charcuterie</option>
 
           </Form.Field>
-           <Form.Field
+          <Form.Field
+            control={Input}
+            type="file"
+            name="image"
+            label="URL de l'image"
+            placeholder='URL'
+            onChange={handleUploadChange}
+          />
+           {/* <Form.Field
             control={Input}
             name="image"
             label="URL de l'image"
             placeholder='URL'
             value={product.image}
             onChange={handleInputChange}
-          />
+          /> */}
         </Form.Group>
         <Form.Group inline>
           <Form.Field

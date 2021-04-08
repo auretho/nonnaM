@@ -6,18 +6,12 @@ import './style.scss';
 
 const AddProducts = ({handleChange, handleAddNewProduct, newProduct}) => {
 
-  const [ uploadedFile, setUploadedFile ] = React.useState(null)
-
   const handleInputChange = (evt) => {
     const { name, value } = evt.target;
     handleChange({ newProduct: {...newProduct,[name]: value }})
   }
 
   const handleUploadChange = (evt) => {
-    // console.log(newProduct.image);
-    // console.log(evt.target.files[0]);
-    // setUploadedFile(evt.target.files[0])
-    // console.log(uploadedFile);
     handleChange({ newProduct: {...newProduct, image: evt.target.files[0] }})
   }
 
@@ -32,7 +26,7 @@ const AddProducts = ({handleChange, handleAddNewProduct, newProduct}) => {
 
 
     return (
-      <Form className="addproducts" onSubmit={handleProductSubmit}>
+      <Form className="addproducts" id="addProds" onSubmit={handleProductSubmit}>
         <Form.Group widths='equal'>
           <Form.Field
             control={Input}
@@ -56,13 +50,6 @@ const AddProducts = ({handleChange, handleAddNewProduct, newProduct}) => {
             <option value='jambon'>Charcuterie</option>
 
           </Form.Field>
-           {/* <Form.Field
-            control={Input}
-            name="image"
-            label="URL de l'image"
-            placeholder='URL'
-            onChange={handleInputChange}
-          /> */}
           <Form.Field
             control={Input}
             type="file"

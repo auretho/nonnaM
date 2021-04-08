@@ -9,7 +9,7 @@ const storage = multer.diskStorage({
     filename: (req, file, cb) => {
         // il peut parfois y avoir des espaces autorisés dans les noms de fichier qu'il faut éliminer
         const name = file.originalname.split(' ').join('_'); 
-        cb(null, Date.now() + name);
+        cb(null, Date.now() + '_' + name);
 
     }
 })
