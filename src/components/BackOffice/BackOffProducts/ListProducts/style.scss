@@ -64,15 +64,15 @@
     &-title{
         text-transform: uppercase;
         font-weight: bold;
-        // margin: 2em auto;
     }
 
     &-price{
-        // margin: 2em auto;
         font-weight: bold;
     }
 
-    &-button{
-        // margin: auto 1em;
+    &-buttons{
+        width: 30%;
+        display: flex;
+        justify-content: space-between;
     }
 }

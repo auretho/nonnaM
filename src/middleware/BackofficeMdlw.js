@@ -44,7 +44,6 @@ const backofficeMdlw = (store) => (next) => (action) => {
           }
         })
         .then(res => {
-          console.log(res.data);
           localStorage.setItem('token', res.data.token);
           errorMsg.classList.add('hidden');
           admin.classList.add('hidden')

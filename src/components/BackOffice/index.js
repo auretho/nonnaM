@@ -65,7 +65,7 @@ const BackOffice = ({products, handleChange, newProduct, handleAddNewProduct, fi
 
           <Route exact path="/backoffice/stock">
             <Stock products={products} 
-                   handleInputChange={handleStockChange}/>
+                   handleChange={handleChange}/>
           </Route> 
 
 
