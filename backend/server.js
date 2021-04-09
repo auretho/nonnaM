@@ -1,7 +1,7 @@
 require('dotenv'). config({ path: '/Applications/MAMP/htdocs/Perso/nonna/.env' })
 const express = require('express');
 const mongoose = require('mongoose');
-const cors = require('cors');
+// const cors = require('cors');
 const app = express();
 const path = require('path');
 const userRoute = require('./routes/user');
@@ -10,7 +10,12 @@ const orderRoute = require('./routes/order');
 
 const PORT = 3001;
 
-app.use(cors({ origin: "*" }));
+app.use((req, res, next) => {
+  res.setHeader('Access-Control-Allow-Origin', '*');
+  res.setHeader('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content, Accept, Content-Type, Authorization');
+  res.setHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, PATCH, OPTIONS');
+  next();
+});
 app.use(express.json()); // A VOIR LE FONCTIONNEMENT
 app.use('/images', express.static(path.join(__dirname,'images')));
 

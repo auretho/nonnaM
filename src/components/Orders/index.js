@@ -71,17 +71,17 @@ const Orders = ({inputDetails, prodList, form, total, redirection, delivery, han
     const handleFormSubmit = (evt) => {
         evt.preventDefault();
         const selectedProducts = [];
-        prodList.map(product => product.find(element => {
-            if (element.count != ""){
+        prodList.find(element => {
+            if (element.orderCount != ""){
                 selectedProducts.push(element)
             }  
-        }))
+        })
         addNewProduct({selectedProducts: selectedProducts })
         handleSubmit();
         setTimeout(() => {
-            prodList.forEach(product => product.map(element => {
-                element.count = ''
-            }))       
+            prodList.map(element => {
+                element.orderCount = ''
+            })       
         },5000);
     }
 

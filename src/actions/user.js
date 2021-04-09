@@ -3,6 +3,7 @@ export const ON_REDIRECT = 'ON_REDIRECT';
 export const ON_CHANGE = 'ON_CHANGE';
 export const ON_SUBMIT = 'ON_SUBMIT';
 export const LOGIN_SUBMIT = 'LOGIN_SUBMIT'
+export const SIGNUP_SUBMIT = 'SIGNUP_SUBMIT'
 
 export const ADD_PRODUCT = 'ADD_PRODUCT';
 
@@ -36,6 +37,10 @@ export const onChange = (payload) => ({
 export const onSubmit = (payload) => ({
     type: ON_SUBMIT,
     payload,
+});
+
+export const signupSubmit = () => ({
+    type: SIGNUP_SUBMIT,
 });
 
 export const loginSubmit = () => ({

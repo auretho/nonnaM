@@ -3,6 +3,7 @@ const router = express.Router();
 const fs = require('fs');
 const multer = require('../mdlw/multer-config');
 const Product = require('../models/Product');
+const auth = require('../mdlw/auth');
 
 
 router.get('/findAllProducts', (req, res) => {
@@ -11,13 +12,13 @@ router.get('/findAllProducts', (req, res) => {
     .catch(error => res.status(400).json({ error }));
   });
 
-router.get('/findProduct/:id', (req, res) => {
+router.get('/findProduct/:id', auth, (req, res) => {
     Product.findOne({ _id: req.params.id })
     .then(products => res.status(200).json(products))
     .catch(error => res.status(404).json({ error }));
 });
 
-router.post('/addNewProduct', multer, (req, res) => {
+router.post('/addNewProduct', auth, multer, (req, res) => {
     const product = new Product({
     ...req.body,
     orderCount: 0,
@@ -29,7 +30,7 @@ router.post('/addNewProduct', multer, (req, res) => {
     .catch(error => res.status(400).json({ message: 'I y a eu une erreur!', error}));
 });
 
-router.put('/updateProduct/:id', multer, (req, res) => {
+router.put('/updateProduct/:id', auth, multer, (req, res) => {
     if(req.file && req.file != req.body.image){
         Product.findOne({ _id: req.params.id })
         .then(element => {
@@ -53,7 +54,7 @@ router.put('/updateProduct/:id', multer, (req, res) => {
     }
 });
 
-router.delete('/deleteProduct/:id', (req, res) => {
+router.delete('/deleteProduct/:id', auth, (req, res) => {
     Product.findOne({ _id: req.params.id })
     .then(element => {
         const filename = element.image.split('/images/')[1];

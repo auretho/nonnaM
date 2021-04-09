@@ -46,6 +46,7 @@ const UpdateProduct = ({handleChange, product, updateprod}) => {
             type="number"
             label='Quantité'
             placeholder='Quantité existante'
+            value={product.quantity}
             onChange={handleInputChange}
           />
           <Form.Field

@@ -6,7 +6,7 @@ import VpnKeyIcon from '@material-ui/icons/VpnKey';
 
 import './style.scss';
 
-const Nav = ({navlinks, burgerOpened, handleBurger, handleChange, login}) => {
+const Nav = ({navlinks, burgerOpened, handleBurger, handleChange, login, loginSubmit, signupSubmit}) => {
     const handleBurgerClick = () => {
         handleBurger()
     }
@@ -28,8 +28,13 @@ const Nav = ({navlinks, burgerOpened, handleBurger, handleChange, login}) => {
 
     const handleLoginSubmit = (evt) => {
         evt.preventDefault();
-        
+        loginSubmit();
     }
+
+    // const handleSignupSubmit = (evt) => {
+    //     evt.preventDefault();
+    //     signupSubmit();
+    // }
 
     return(
     <nav className="navigation">
@@ -55,9 +60,19 @@ const Nav = ({navlinks, burgerOpened, handleBurger, handleChange, login}) => {
                 <form onSubmit={handleLoginSubmit}>
                     <input type="email" name="email" placeholder="email" value={login.email} onChange={handleInputChange}/>
                     <input type="password" name="password" placeholder="mot de passe" value={login.password} onChange={handleInputChange}/>
-                    <button>Connexion</button>
+                    <button type="submit">Connexion</button>
                 </form>
             </div>
+
+            {/* A VOIR POUR SUPPRIMER!! ================================================= */}
+            {/* <div className="signup-container admin-signup">
+                <h1>Signup Admin</h1>
+                <form onSubmit={handleSignupSubmit}>
+                    <input type="email" name="email" placeholder="email" value={login.email} onChange={handleInputChange}/>
+                    <input type="password" name="password" placeholder="mot de passe" value={login.password} onChange={handleInputChange}/>
+                    <button type="submit">Créer</button>
+                </form>
+            </div> */}
         </div>
         {/* ============== MOBILE ONLY ================ */}
         <div className="mobile-nav">
