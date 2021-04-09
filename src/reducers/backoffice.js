@@ -1,5 +1,5 @@
 import { EDIT_STOCK, ON_CHANGE, ADD_PRODUCT_TO_DB, ON_SUBMIT } from '../actions/backoffice';
-import { FIND_ALL_PRODUCTS_SUCCESS, FIND_ONE_PRODUCT, FIND_ONE_PRODUCT_SUCCESS, UPDATE_ONE_PRODUCT, UPDATE_ONE_PRODUCT_SUCCESS} from '../actions/user'
+import { FIND_ALL_PRODUCTS_SUCCESS, FIND_ONE_PRODUCT, FIND_ONE_PRODUCT_SUCCESS, UPDATE_ONE_PRODUCT, UPDATE_ONE_PRODUCT_SUCCESS, LOGIN_SUCCESS} from '../actions/user'
 
 const initialState = {
     stock: '',
@@ -8,9 +8,10 @@ const initialState = {
     newProduct: '',
     activeMenuItem: 'home',
     login: {
-        email: '',
-        password: ''
+        email: 'coucou@coucou.com',
+        password: 'coucou'
     },
+    logged: false,
 };
 
 const backoffice = (state = initialState, action = {}) => {
@@ -19,6 +20,11 @@ const backoffice = (state = initialState, action = {}) => {
             return{
                 ...state,
                 ...action.payload,
+            };
+        case LOGIN_SUCCESS:
+            return{
+                ...state,
+            logged: true,
             };
         case ADD_PRODUCT_TO_DB:
             return{

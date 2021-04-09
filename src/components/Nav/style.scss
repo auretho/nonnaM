@@ -21,7 +21,7 @@
         width: 100%;
         display: flex;
         align-items: center;
-        justify-content: center;
+        justify-content: space-evenly;
         text-transform: uppercase;
     }
 
@@ -100,7 +100,7 @@
 
 .login{
     height: 100%;
-    width: 5%;
+    width: 7%;
     display: flex;
     align-items: center;
     justify-content: flex-end;
@@ -108,9 +108,9 @@
 
     &-container{
         background-color: rgb(233, 231, 231);
-        height: 150px;
+        height: 180px;
         width: 250px;
-        border: 2px solid grey;
+        border: 1px solid grey;
         border-radius: 10px;
         position: absolute;
         top: 50px;
@@ -126,6 +126,7 @@
     }
 
     &-container input{
+        border: 1px solid grey;
         margin: .5em auto;
         padding: .3em;
         width: 200px;
@@ -134,6 +135,24 @@
     &-container h1{
         font-weight: bold;
     }
+
+    &-icons{
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+    }
+
+    &-home{
+        color: black;
+    }
+}
+
+.error-login-message{
+    text-transform: initial;
+    font-weight: bold;
+    font-style: italic;
+    color: red;
+
 }
 
 .admin-login{

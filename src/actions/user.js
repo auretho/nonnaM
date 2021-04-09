@@ -2,7 +2,9 @@ export const ON_TOGGLE = 'ON_TOGGLE';
 export const ON_REDIRECT = 'ON_REDIRECT';
 export const ON_CHANGE = 'ON_CHANGE';
 export const ON_SUBMIT = 'ON_SUBMIT';
-export const LOGIN_SUBMIT = 'LOGIN_SUBMIT'
+export const LOGIN_SUBMIT = 'LOGIN_SUBMIT';
+export const LOGIN_SUCCESS = 'LOGIN_SUCCESS';
+export const LOGOUT_SUBMIT = 'LOGOUT_SUBMIT';
 export const SIGNUP_SUBMIT = 'SIGNUP_SUBMIT'
 
 export const ADD_PRODUCT = 'ADD_PRODUCT';
@@ -45,6 +47,14 @@ export const signupSubmit = () => ({
 
 export const loginSubmit = () => ({
     type: LOGIN_SUBMIT,
+});
+
+export const loginSuccess = () => ({
+    type: LOGIN_SUCCESS,
+});
+
+export const logoutSubmit = () => ({
+    type: LOGOUT_SUBMIT,
 });
 
 export const addProduct = (payload) => ({

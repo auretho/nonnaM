@@ -20,10 +20,6 @@ const Header = () => (
                         </div>
                     </div>
                    
-                    <Link to="/backoffice" style={{zIndex: '10'}}>
-                        <button  >Vers le Back Office</button>
-                    </Link>
-                   
                     <div className=" header-subtitle-block translate" data-speed="0.4" style={{zIndex:'60'}}>
                         <h3 className="header-subtitle">C'est ici que commence notre histoire... </h3>
                     <HashLink smooth to="/#notre-histoire">

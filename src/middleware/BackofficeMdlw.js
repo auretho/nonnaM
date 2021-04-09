@@ -3,7 +3,7 @@ import { useParams, Redirect } from "react-router";
 import { ADD_PRODUCT_TO_DB } from '../actions/backoffice';
 import { FIND_ALL_PRODUCTS, findAllProductsSuccess, findAllProductsError, 
          FIND_ONE_PRODUCT, findOneProductSuccess, findOneProductError,
-         UPDATE_ONE_PRODUCT, updateOneProductSuccess, updateOneProductError, DELETE_ONE_PRODUCT, SIGNUP_SUBMIT, LOGIN_SUBMIT} from '../actions/user';
+         UPDATE_ONE_PRODUCT, updateOneProductSuccess, updateOneProductError, DELETE_ONE_PRODUCT, SIGNUP_SUBMIT, LOGIN_SUBMIT, loginSuccess, LOGOUT_SUBMIT} from '../actions/user';
 
 const backofficeMdlw = (store) => (next) => (action) => {
     next(action);
@@ -31,6 +31,9 @@ const backofficeMdlw = (store) => (next) => (action) => {
         break;
 
         case LOGIN_SUBMIT:
+        const errorMsg = document.querySelector('.error-login-message');
+        const admin = document.querySelector('.login-container');
+
         axios({
           headers: { Authorization: `Bearer ${token}`},
           method: 'post',
@@ -43,12 +46,26 @@ const backofficeMdlw = (store) => (next) => (action) => {
         .then(res => {
           console.log(res.data);
           localStorage.setItem('token', res.data.token);
-
-          if(res.status === 200){
-            // console.log(token);
-            // window.location = "/backoffice"
-          }
+          errorMsg.classList.add('hidden');
+          admin.classList.add('hidden')
+          dispatch(loginSuccess());
         })
+        .catch(() => {
+            errorMsg.classList.remove('hidden');
+        })
+        break;
+
+        case LOGOUT_SUBMIT:
+          axios({
+            // headers: { Authorization: `Bearer ${token}`},
+            method: 'post',
+            url: `http://localhost:3001/backoffice/user/logout`,
+          })
+          .then(() => {
+            localStorage.clear();
+          })
+          .catch(() => {
+          })
         break;
 
         case ADD_PRODUCT_TO_DB:

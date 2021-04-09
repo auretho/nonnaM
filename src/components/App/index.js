@@ -1,4 +1,4 @@
-import { Switch, Route } from 'react-router-dom';
+import { Switch, Route, Redirect } from 'react-router-dom';
 import Nav from '../../containers/Navbar';
 import Home from '../Home';
 import Orders from '../../containers/Orders';
@@ -6,7 +6,8 @@ import BackOffice from '../../containers/BackOffice';
 import Error from '../Error';
 import './style.scss';
 
-function App({redirection, rebootRedirection}) {
+function App({redirection, rebootRedirection, logged}) {
+
   if(redirection){
     setTimeout(() => {
       rebootRedirection(redirection)
@@ -17,7 +18,14 @@ function App({redirection, rebootRedirection}) {
   return (
     <div className="app" id="bienvenue" >
       <Nav />
+          {
+            logged ? 
+            <Redirect to="/backoffice"/>
+            :
+            <Redirect to="/#bienvenue" />
+          }
         <Switch>
+
           <Route exact path="/" component={Home}/>
           <Route exact path="/commandes" component={Orders}/>
           <Route path="/backoffice" component={BackOffice}/>

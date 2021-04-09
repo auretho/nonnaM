@@ -4,6 +4,7 @@ import { onRedirect } from '../actions/user';
 
 const mapStateToProps = (state) => ({
     redirection: state.orders.redirection,
+    logged: state.backoffice.logged,
 });
   
 const mapDispatchToProps = (dispatch) => ({

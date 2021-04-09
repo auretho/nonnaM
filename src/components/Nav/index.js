@@ -1,12 +1,15 @@
 import React from'react';
+import {Link} from 'react-router-dom';
 import { NavHashLink } from 'react-router-hash-link';
 import logo from '../../assets/logo-coeurSVG.png';
 import MenuIcon from '@material-ui/icons/Menu';
 import VpnKeyIcon from '@material-ui/icons/VpnKey';
+import ExitToAppIcon from '@material-ui/icons/ExitToApp';
+import HomeIcon from '@material-ui/icons/Home';
 
 import './style.scss';
 
-const Nav = ({navlinks, burgerOpened, handleBurger, handleChange, login, loginSubmit, signupSubmit}) => {
+const Nav = ({navlinks, burgerOpened, handleBurger, handleChange, login, loginSubmit, logged, logoutSubmit}) => {
     const handleBurgerClick = () => {
         handleBurger()
     }
@@ -21,6 +24,11 @@ const Nav = ({navlinks, burgerOpened, handleBurger, handleChange, login, loginSu
         ;
     }
 
+    const handleLogoutClick = (evt) => {
+        handleChange({logged: false});
+        logoutSubmit();
+    }
+
     const handleInputChange = (evt) => {
         const {name, value} = evt.target;
         handleChange({ login: {...login, [name]: value }})
@@ -30,7 +38,7 @@ const Nav = ({navlinks, burgerOpened, handleBurger, handleChange, login, loginSu
         evt.preventDefault();
         loginSubmit();
     }
-
+    // A VOIR POUR SUPPRIMER!! =================================================
     // const handleSignupSubmit = (evt) => {
     //     evt.preventDefault();
     //     signupSubmit();
@@ -53,13 +61,21 @@ const Nav = ({navlinks, burgerOpened, handleBurger, handleChange, login, loginSu
                 }
             </ul>
             <div className="login">
-                <VpnKeyIcon onClick={handleKeyClick}/>
+                { logged ?
+                <div className="login-icons">
+                    <Link to="/backoffice"><HomeIcon className="login-home" style={{fontSize: 30}}/></Link>
+                    <ExitToAppIcon onClick={handleLogoutClick} style={{fontSize: 30}}/>
+                </div>
+                :
+                <VpnKeyIcon onClick={handleKeyClick} />
+                }
             </div>
             <div className="login-container admin-login hidden">
                 <h1>Accès Admin</h1>
                 <form onSubmit={handleLoginSubmit}>
                     <input type="email" name="email" placeholder="email" value={login.email} onChange={handleInputChange}/>
                     <input type="password" name="password" placeholder="mot de passe" value={login.password} onChange={handleInputChange}/>
+                    <p className="error-login-message hidden">Identifiants incorrects</p>
                     <button type="submit">Connexion</button>
                 </form>
             </div>

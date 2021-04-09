@@ -1,11 +1,12 @@
 import { connect } from 'react-redux';
 import NavBar from '../components/Nav';
-import { onToggle, onChange, signupSubmit, loginSubmit } from '../actions/user';
+import { onToggle, onChange, signupSubmit, loginSubmit, logoutSubmit } from '../actions/user';
 
 const mapStateToProps = (state) => ({
     navlinks: state.user.navlinks,
     burgerOpened: state.user.burgerOpened,
     login: state.backoffice.login,
+    logged: state.backoffice.logged,
 });
   
 const mapDispatchToProps = (dispatch) => ({
@@ -23,6 +24,10 @@ const mapDispatchToProps = (dispatch) => ({
 
     loginSubmit: () => {
         dispatch(loginSubmit())
+    },
+
+    logoutSubmit: () => {
+        dispatch(logoutSubmit())
     },
 });
 

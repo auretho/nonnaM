@@ -43,4 +43,8 @@ router.post('/login', (req, res) => {
     .catch(error => res.status(500).json({ error }));
 });
 
+router.post('/logout', (req,res) => {
+    res.status(200).json();
+})
+
 module.exports = router;
