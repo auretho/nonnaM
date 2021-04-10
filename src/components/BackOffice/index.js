@@ -9,7 +9,7 @@ import UpdateProduct from './BackOffProducts/UpdateProduct';
 import Stock from './Stock';
 import './style.scss';
 
-const BackOffice = ({products, handleChange, newProduct, handleAddNewProduct, findAllProducts, productSelected, updateOneProduct, deleteOneProduct, activeMenuItem}) => {
+const BackOffice = ({products, handleChange, newProduct, handleAddNewProduct, findAllProducts, productSelected, updateOneProduct, deleteOneProduct, activeMenuItem, updateStock, stock}) => {
 
 
   const handleStockChange = (evt) => {
@@ -65,7 +65,9 @@ const BackOffice = ({products, handleChange, newProduct, handleAddNewProduct, fi
 
           <Route exact path="/backoffice/stock">
             <Stock products={products} 
-                   handleChange={handleChange}/>
+                   handleChange={handleChange}
+                   updateStock={updateStock}
+                   stock={stock}/>
           </Route> 
 
 

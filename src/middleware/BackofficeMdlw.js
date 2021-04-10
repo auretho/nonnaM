@@ -3,7 +3,7 @@ import { useParams, Redirect } from "react-router";
 import { ADD_PRODUCT_TO_DB } from '../actions/backoffice';
 import { FIND_ALL_PRODUCTS, findAllProductsSuccess, findAllProductsError, 
          FIND_ONE_PRODUCT, findOneProductSuccess, findOneProductError,
-         UPDATE_ONE_PRODUCT, updateOneProductSuccess, updateOneProductError, DELETE_ONE_PRODUCT, SIGNUP_SUBMIT, LOGIN_SUBMIT, loginSuccess, LOGOUT_SUBMIT} from '../actions/user';
+         UPDATE_ONE_PRODUCT, updateOneProductSuccess, updateOneProductError, DELETE_ONE_PRODUCT, SIGNUP_SUBMIT, LOGIN_SUBMIT, loginSuccess, LOGOUT_SUBMIT, UPDATE_STOCK, updateStockSuccess} from '../actions/user';
 
 const backofficeMdlw = (store) => (next) => (action) => {
     next(action);
@@ -109,7 +109,7 @@ const backofficeMdlw = (store) => (next) => (action) => {
           url:  `http://localhost:3001/backoffice/products/findProduct/${id}`,
         })
         .then((res) => {
-          console.log(res.data);
+          // console.log(res.data);
           dispatch(findOneProductSuccess(res.data));
         })
         .catch((err) => {
@@ -159,6 +159,21 @@ const backofficeMdlw = (store) => (next) => (action) => {
         })
         break;
 
+        case UPDATE_STOCK:
+          axios({
+            headers: { Authorization: `Bearer ${token}`},
+            method: 'put',
+            url:  `http://localhost:3001/backoffice/products/updateStock`,
+            data: store.getState().backoffice.stock,
+          })
+          .then((res) => {
+            dispatch(updateStockSuccess());
+          })
+          .catch((err) => {
+            console.error(err);
+          })
+        break;
+        
         default:
             break;
     }

@@ -20,6 +20,9 @@ export const FIND_ONE_PRODUCT_ERROR = 'FIND_ONE_PRODUCT_ERROR';
 export const UPDATE_ONE_PRODUCT = 'UPDATE_ONE_PRODUCT';
 export const UPDATE_ONE_PRODUCT_SUCCESS = 'UPDATE_ONE_PRODUCT_SUCCESS';
 export const UPDATE_ONE_PRODUCT_ERROR = 'UPDATE_ONE_PRODUCT_ERROR';
+export const UPDATE_STOCK = 'UPDATE_STOCK';
+export const UPDATE_STOCK_SUCCESS = 'UPDATE_STOCK_SUCCESS';
+
 
 export const DELETE_ONE_PRODUCT = 'DELETE_ONE_PRODUCT';
 
@@ -103,4 +106,12 @@ export const updateOneProductError = () => ({
 
 export const deleteOneProduct = () => ({
     type: DELETE_ONE_PRODUCT,
+});
+
+export const updateStock = () => ({
+    type: UPDATE_STOCK,
+});
+
+export const updateStockSuccess = () => ({
+    type: UPDATE_STOCK_SUCCESS,
 });

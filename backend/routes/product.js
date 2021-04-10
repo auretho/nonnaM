@@ -30,6 +30,12 @@ router.post('/addNewProduct', auth, multer, (req, res) => {
     .catch(error => res.status(400).json({ message: 'I y a eu une erreur!', error}));
 });
 
+router.put('/updateStock', auth, (req,res) => {
+    Product.updateOne({ _id: req.body._id }, {quantity: req.body.quantity})
+    .then(prod => res.status(200).json( prod ))
+    .catch(error => res.status(400).json({ error }))
+})
+
 router.put('/updateProduct/:id', auth, multer, (req, res) => {
     if(req.file && req.file != req.body.image){
         Product.findOne({ _id: req.params.id })

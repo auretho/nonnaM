@@ -1,17 +1,20 @@
 .stock{
-    min-height: 100vh;
+    // min-height: 100vh;
     width: 100%;
     display:flex;
     justify-content: center;
-    align-items: center;
+    // align-items: flex-start;
 
     &-container{
-        height: 70vh;
+        // height: 80vh;
         width: 100%;
         background-color: rgba(255, 255, 255, 0.6);
         display: flex;
         flex-direction: column;
         justify-content: space-evenly;
+        margin-top: 13em;
+        padding: 1em;
+        // overflow-y: scroll;
     }
 
     &-title{
@@ -40,16 +43,13 @@
         padding: .5em;
         margin: .5em auto 0;
     }
-        // padding-left: 3em;
-
-        // &-icon{
-        //     filter: drop-shadow(0 0 1px grey);
-        //     margin-right: 1em;
-        // }
-
-        // &-icon:hover{
-        //     filter: drop-shadow(0 0 3px grey);
-        // }
+    
+    &-message{
+        font-weight: bold;
+        color: red;
+        text-align: center;
+        text-transform: uppercase;
+    }
 
     &-stock-div{
         display: flex;
