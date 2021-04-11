@@ -40,13 +40,13 @@ const Stock = ({products, handleChange, updateStock, stock}) => {
                     <div className="stock-header-item">STOCK ACTUEL</div>
                     <div className="stock-header-item">PRIX UNITAIRE HT</div>
                     <div className="stock-header-item">PRIX UNITAIRE TTC</div>
-                    <div className="stock-item">METTRE A JOUR</div>
+                    <div className="stock-header-item">METTRE A JOUR</div>
                 </div>
                 <div className="stock-items-list">
                 {
                 products.map((product, key) => (
                     <form onSubmit={handleSubmitStock} key={key} className="stock-row">
-                        <h2>{product.name}</h2>
+                        <h2 className="stock-item">{product.name}</h2>
                         <div className="stock-item">
                             <input type="number"
                                 className="stock-input" 
@@ -57,22 +57,24 @@ const Stock = ({products, handleChange, updateStock, stock}) => {
                         </div>
                         
                         <div className="stock-item">
-                            <input type="number"
+                            €<input type="number"
                                 className="stock-input" 
                                 id={product.name}
                                 name="puht"
                                 value={product.puht} 
-                                onChange={handleInputChange}/>€
+                                onChange={handleInputChange}/>
                         </div> 
                         <div className="stock-item">
-                            <input type="number"
+                            €<input type="number"
                                 className="stock-input" 
                                 id={product.name}
                                 name="puttc"
                                 value={product.puttc} 
-                                onChange={handleInputChange}/>€
+                                onChange={handleInputChange}/>
                         </div>
-                        <Button type="submit" className="stock-submit" color="teal">Mettre à jour</Button>
+                        <div className="stock-item">
+                            <Button type="submit" className="stock-submit" color="teal">Mettre à jour</Button>
+                        </div>
                     </form>
                 ))
                 }
