@@ -4,58 +4,19 @@ import './style.scss';
 const Stock = ({products, handleChange, updateStock, stock}) => {
 
     const handleInputChange = (evt) => {
-        const {name, value} = evt.target;
+        let {name, value, id} = evt.target;
         const message = document.querySelector('.stock-message');
-        const result = products.find(product => (product.name === name)); 
+        const result = products.find(product => (product.name === id));
         
         handleChange({
             stock: result,
             products: products.map(product => {
             if (product.name === result.name) {
-                product.quantity = value;
+                product[name] = value;
                 return product
             }
             return product;
         })});
-
-        message.classList.remove('hidden');
-    }
-
-    const handlePUHTChange = (evt) => {
-        console.log(evt.target);
-
-        const {name, value} = evt.target;
-        const message = document.querySelector('.stock-message');
-        const result = products.find(product => (product.name === name)); 
-        
-        handleChange({
-            stock: result,
-            products: products.map(product => {
-            if (product.name === result.name) {
-                product.puht = value;
-                return product
-            }
-            return product;
-        })});
-
-        message.classList.remove('hidden');
-    }
-
-    const handleTTCChange = (evt) => {
-        const {name, value} = evt.target;
-        const message = document.querySelector('.stock-message');
-        const result = products.find(product => (product.name === name)); 
-        
-        handleChange({
-            stock: result,
-            products: products.map(product => {
-            if (product.name === result.name) {
-                product.puttc = value;
-                return product
-            }
-            return product;
-        })});
-
         message.classList.remove('hidden');
     }
 
@@ -89,7 +50,8 @@ const Stock = ({products, handleChange, updateStock, stock}) => {
                         <div className="stock-item">
                             <input type="number"
                                 className="stock-input" 
-                                name={product.name}
+                                id={product.name}
+                                name="quantity"
                                 value={product.quantity} 
                                 onChange={handleInputChange}/>
                         </div>
@@ -97,16 +59,18 @@ const Stock = ({products, handleChange, updateStock, stock}) => {
                         <div className="stock-item">
                             <input type="number"
                                 className="stock-input" 
-                                name={product.name}
+                                id={product.name}
+                                name="puht"
                                 value={product.puht} 
-                                onChange={handlePUHTChange}/>€
+                                onChange={handleInputChange}/>€
                         </div> 
                         <div className="stock-item">
                             <input type="number"
                                 className="stock-input" 
-                                name={product.name}
+                                id={product.name}
+                                name="puttc"
                                 value={product.puttc} 
-                                onChange={handleTTCChange}/>€
+                                onChange={handleInputChange}/>€
                         </div>
                         <Button type="submit" className="stock-submit" color="teal">Mettre à jour</Button>
                     </form>
