@@ -8,6 +8,9 @@ const ProductSchema = mongoose.Schema({
     description: { type:String, required: false },
     price: { type:Number, required: false },
     orderCount: {type: Number, required: false},
+    puht: {type: Number, required: false},
+    puttc: {type: Number, required: false},
+
 });
 
 module.exports = mongoose.model('Product', ProductSchema)
