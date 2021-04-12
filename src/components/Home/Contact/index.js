@@ -1,4 +1,5 @@
 import React from'react';
+import {Link} from 'react-router-dom';
 import { NavHashLink } from 'react-router-hash-link'
 import logo from '../../../assets/coeur-solo.png';
 import './style.scss';
@@ -35,6 +36,22 @@ const Contact = () => {
             <NavHashLink smooth to="#bienvenue">
                 <img src={logo} alt="" className="contact-image"/>
             </NavHashLink>
+        </div>
+        <div className="contact-footer">
+            <ul className="contact-footer-list">
+                <Link to="/mentions-legales">
+                    <li className="contact-footer-item">Mentions légales</li>
+                </Link>
+                <Link to="/CGV">
+                    <li className="contact-footer-item">CGV</li>
+                </Link>
+                <Link to="/CGU">
+                    <li className="contact-footer-item">CGU</li>
+                </Link>
+            </ul>
+                <h1 className="contact-footer-signature">
+                    Aurélie Thouzeau 2021
+                </h1>
         </div>
     </div>
 )}
