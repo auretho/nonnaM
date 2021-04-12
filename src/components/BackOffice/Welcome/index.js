@@ -13,6 +13,9 @@ const Welcome = () => (
         <Link to="/backoffice/photos">
             <Button className="welcome-buttons" size="huge" color="olive">Photos</Button>
         </Link>  
+        <Link to="/backoffice/legals">
+            <Button className="welcome-buttons" size="huge" color="teal">Legals</Button>
+        </Link> 
     </div>
 )
 

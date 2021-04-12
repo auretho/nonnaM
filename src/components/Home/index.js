@@ -5,7 +5,7 @@ import About from '../../containers/About';
 import Products from '../../containers/Products';
 import Process from '../../containers/Process';
 import Comments from '../../containers/Comments';
-import Contact from './Contact';
+import Contact from '../../containers/Contact';
 
 
 import './style.scss';

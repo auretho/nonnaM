@@ -9,8 +9,8 @@ const mapStateToProps = (state) => ({
   
 const mapDispatchToProps = (dispatch) => ({
     rebootRedirection: (payload) => {
-        dispatch(onRedirect(payload))
-    }
+        dispatch(onRedirect(payload));
+    },
 });
 
 export default connect( mapStateToProps, mapDispatchToProps )(App)

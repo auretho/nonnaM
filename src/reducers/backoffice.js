@@ -1,5 +1,5 @@
-import { EDIT_STOCK, ON_CHANGE, ADD_PRODUCT_TO_DB, ON_SUBMIT } from '../actions/backoffice';
-import { FIND_ALL_PRODUCTS_SUCCESS, FIND_ONE_PRODUCT_SUCCESS, UPDATE_ONE_PRODUCT_SUCCESS, LOGIN_SUCCESS, UPDATE_STOCK_SUCCESS} from '../actions/user'
+import { ON_CHANGE, ADD_PRODUCT_TO_DB } from '../actions/backoffice';
+import { FIND_ALL_PRODUCTS_SUCCESS, FIND_ONE_PRODUCT_SUCCESS, UPDATE_ONE_PRODUCT_SUCCESS, LOGIN_SUCCESS, UPDATE_STOCK_SUCCESS, FIND_ALL_LEGALS_SUCCESS} from '../actions/user'
 
 const initialState = {
     stock: '',
@@ -12,6 +12,7 @@ const initialState = {
         password: 'coucou'
     },
     logged: false,
+    legals: '',
 };
 
 const backoffice = (state = initialState, action = {}) => {
@@ -52,6 +53,12 @@ const backoffice = (state = initialState, action = {}) => {
                 ...state,
             stock: '',
             };
+
+        case FIND_ALL_LEGALS_SUCCESS:
+            return{
+                ...state,
+                legals: action.payload
+            }
         default:
             return state;
     }

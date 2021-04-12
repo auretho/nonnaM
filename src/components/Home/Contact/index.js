@@ -1,10 +1,14 @@
-import React from'react';
+import React, {useEffect} from'react';
 import {Link} from 'react-router-dom';
 import { NavHashLink } from 'react-router-hash-link'
 import logo from '../../../assets/coeur-solo.png';
 import './style.scss';
 
-const Contact = () => {
+const Contact = ({findAllLegals}) => {
+    useEffect(() => {
+        findAllLegals();
+    },[]);
+
     let mobile = false;
 
     if(window.innerWidth <= 488){

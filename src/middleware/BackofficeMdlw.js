@@ -3,7 +3,7 @@ import { useParams, Redirect } from "react-router";
 import { ADD_PRODUCT_TO_DB } from '../actions/backoffice';
 import { FIND_ALL_PRODUCTS, findAllProductsSuccess, findAllProductsError, 
          FIND_ONE_PRODUCT, findOneProductSuccess, findOneProductError,
-         UPDATE_ONE_PRODUCT, updateOneProductSuccess, updateOneProductError, DELETE_ONE_PRODUCT, SIGNUP_SUBMIT, LOGIN_SUBMIT, loginSuccess, LOGOUT_SUBMIT, UPDATE_STOCK, updateStockSuccess} from '../actions/user';
+         UPDATE_ONE_PRODUCT, updateOneProductSuccess, updateOneProductError, DELETE_ONE_PRODUCT, SIGNUP_SUBMIT, LOGIN_SUBMIT, loginSuccess, LOGOUT_SUBMIT, UPDATE_STOCK, updateStockSuccess, FIND_ALL_LEGALS, UPDATE_LEGALS, findAllLegalsSuccess} from '../actions/user';
 
 const backofficeMdlw = (store) => (next) => (action) => {
     next(action);
@@ -13,6 +13,7 @@ const backofficeMdlw = (store) => (next) => (action) => {
     const ide = store.getState().backoffice.productSelected._id;
 
     switch (action.type){
+      // SIGNUP & LOGIN ===========================
         case SIGNUP_SUBMIT:
           axios({
             headers: { Authorization: `Bearer ${token}`},
@@ -67,6 +68,7 @@ const backofficeMdlw = (store) => (next) => (action) => {
           })
         break;
 
+        // PRODUCTS SECTION ===========================
         case ADD_PRODUCT_TO_DB:
           const htmlform = document.querySelector("#addProds")
           const formData = new FormData(htmlform);
@@ -158,7 +160,8 @@ const backofficeMdlw = (store) => (next) => (action) => {
           }
         })
         break;
-
+      
+        // STOCK SECTION ===========================
         case UPDATE_STOCK:
           axios({
             headers: { Authorization: `Bearer ${token}`},
@@ -174,6 +177,36 @@ const backofficeMdlw = (store) => (next) => (action) => {
           })
         break;
         
+        // LEGALS SECTION ===========================
+        case FIND_ALL_LEGALS:
+          axios({
+            method: 'get',
+            url:  `http://localhost:3001/backoffice/legal/findAllLegals`,
+          })
+          .then((res) => {
+            const legalData = res.data.find(res => res);
+            dispatch(findAllLegalsSuccess(legalData));
+          })
+          .catch((err) => {
+            console.error(err);
+          })
+        break;
+
+        case UPDATE_LEGALS:
+          axios({
+            headers: { Authorization: `Bearer ${token}`},
+            method: 'put',
+            url:  `http://localhost:3001/backoffice/legal/updateLegals`,
+            data: store.getState().backoffice.legals,
+          })
+          .then((res) => {
+            // console.log(res.data);
+          })
+          .catch((err) => {
+            console.error(err);
+          })
+        break;
+
         default:
             break;
     }

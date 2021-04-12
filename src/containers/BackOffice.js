@@ -1,7 +1,7 @@
 import { connect } from 'react-redux';
 import BackOffice from '../components/BackOffice';
 import { editStock, onChange, addProductToDb } from '../actions/backoffice';
-import {findAllProducts, findOneProduct, updateOneProduct, deleteOneProduct, updateStock } from '../actions/user';
+import {findAllProducts, findOneProduct, updateOneProduct, deleteOneProduct, updateStock, findAllLegals, updateLegals } from '../actions/user';
 
 const mapStateToProps = (state) => ({
     stock: state.backoffice.stock,
@@ -9,6 +9,7 @@ const mapStateToProps = (state) => ({
     newProduct: state.backoffice.newProduct,
     productSelected: state.backoffice.productSelected,
     activeMenuItem: state.backoffice.activeMenuItem,
+    legals: state.backoffice.legals,
 });
   
 const mapDispatchToProps = (dispatch) => ({
@@ -43,6 +44,14 @@ const mapDispatchToProps = (dispatch) => ({
     deleteOneProduct: () => {
         dispatch(deleteOneProduct());
     },
+
+    findAllLegals: () => {
+        dispatch(findAllLegals());
+    },
+
+    updateLegals: () => {
+        dispatch(updateLegals());
+    }
 });
 
 export default connect( mapStateToProps, mapDispatchToProps )(BackOffice)

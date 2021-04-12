@@ -1,7 +1,7 @@
 import { Switch, Route, Redirect } from 'react-router-dom';
 import Nav from '../../containers/Navbar';
 import Home from '../Home';
-import Legals from '../Home/Contact/Legals.js';
+import Legals from '../../containers/Legals';
 import Orders from '../../containers/Orders';
 import BackOffice from '../../containers/BackOffice';
 import Error from '../Error';
@@ -28,7 +28,7 @@ function App({redirection, rebootRedirection, logged}) {
         <Switch>
 
           <Route exact path="/" component={Home}/>
-          <Route exact path="/mentions-legales" component={Legals}/>
+          <Route exact path="/mentions-legales" component={Legals} />
           <Route exact path="/commandes" component={Orders}/>
           <Route path="/backoffice" component={BackOffice}/>
           <Route component={Error} />

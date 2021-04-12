@@ -20,11 +20,17 @@ export const FIND_ONE_PRODUCT_ERROR = 'FIND_ONE_PRODUCT_ERROR';
 export const UPDATE_ONE_PRODUCT = 'UPDATE_ONE_PRODUCT';
 export const UPDATE_ONE_PRODUCT_SUCCESS = 'UPDATE_ONE_PRODUCT_SUCCESS';
 export const UPDATE_ONE_PRODUCT_ERROR = 'UPDATE_ONE_PRODUCT_ERROR';
+
 export const UPDATE_STOCK = 'UPDATE_STOCK';
 export const UPDATE_STOCK_SUCCESS = 'UPDATE_STOCK_SUCCESS';
 
-
 export const DELETE_ONE_PRODUCT = 'DELETE_ONE_PRODUCT';
+
+export const FIND_ALL_LEGALS = 'FIND_ALL_LEGALS';
+export const FIND_ALL_LEGALS_SUCCESS = 'FIND_ALL_LEGALS_SUCCESS';
+
+export const UPDATE_LEGALS = 'UPDATE_LEGALS';
+
 
 export const onToggle = () => ({
     type: ON_TOGGLE,
@@ -114,4 +120,18 @@ export const updateStock = () => ({
 
 export const updateStockSuccess = () => ({
     type: UPDATE_STOCK_SUCCESS,
+});
+
+// LEGALS
+export const findAllLegals = () => ({
+    type: FIND_ALL_LEGALS,
+});
+
+export const findAllLegalsSuccess = (payload) => ({
+    type: FIND_ALL_LEGALS_SUCCESS,
+    payload,
+});
+
+export const updateLegals = () => ({
+    type: UPDATE_LEGALS,
 });
