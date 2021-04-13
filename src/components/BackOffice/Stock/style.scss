@@ -69,10 +69,13 @@
         height: 100%;
         width: 100%;
         display: flex;
-        flex-direction: column;
         align-items: center;
         justify-content: center;
         border: 1px dotted lightgrey;
+
+        &-first{
+            flex-direction: column;
+        }
     }
 
     &-input{
@@ -80,6 +83,10 @@
         border: none;
         background-color: transparent;
         text-align: center;
+
+        &-first{
+            width: 100%;
+        }
     }
 
     &-stock-title{

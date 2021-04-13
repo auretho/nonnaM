@@ -2,35 +2,42 @@ import {Button} from 'semantic-ui-react';
 import './style.scss';
 
 const Stock = ({products, handleChange, updateStock, stock}) => {
+    const message = document.querySelectorAll('.stock-message');
+    const messageArray = [].slice.call(message);
 
     const handleInputChange = (evt) => {
         let {name, value, id} = evt.target;
-        const message = document.querySelectorAll('.stock-message');
-        const msgArray = [];
-        const res = msgArray.slice.call(message);
-        const result = products.find(product => (product.name === id));
+
+        messageArray.map(el => {
+            if(id === el.id){
+                el.classList.remove('hidden')
+            }
+        });
+        const result = products.find(product => (product._id === id));
         
         handleChange({
             stock: result,
             products: products.map(product => {
-            if (product.name === result.name) {
+            if (product._id === result._id) {
                 product[name] = value;
                 return product
-            }
-
-            const msgFinal = res.find(element => element.attributes.name.value === product.name)
-            if (msgFinal){
-                msgFinal.classList.remove('hidden');
             }
             return product;
         })});
     }
 
     const handleSubmitStock = (evt) => {
-        const message = document.querySelector('.stock-message');
         evt.preventDefault();
-        message.classList.add('hidden');
+        messageArray.map(el => {
+            if(evt.target.id === el.id){
+                el.classList.add('hidden')
+            }
+            else{
+                el.classList.add('hidden');
+            }
+        });
         updateStock();
+        window.alert('Le produit a été mis à jour')
     }
 
     return(
@@ -39,7 +46,6 @@ const Stock = ({products, handleChange, updateStock, stock}) => {
             <h1 className="stock-title">
                 Liste de tous les produits disponibles:
             </h1>
-            {/* <h2 className="hidden stock-message" >Il faut valider le changement!</h2> */}
             <div className="stock-full-wrapper">
                 <div className="stock-header-titles">
                     <div className="stock-header-item">NOM</div>
@@ -51,35 +57,43 @@ const Stock = ({products, handleChange, updateStock, stock}) => {
                 <div className="stock-items-list">
                 {
                 products.map((product, key) => (
-                    <form onSubmit={handleSubmitStock} key={key} className="stock-row">
-                        <div className="stock-item">
-                        <h2 >{product.name}</h2>
-                        <h2 className="hidden stock-message" name={product.name}>Il faut valider le changement!</h2>
+                    <form onSubmit={handleSubmitStock} key={key} id={product._id} className="stock-row">
+                        <div className="stock-item stock-item-first">
+                            <input type="text"
+                                className="stock-input stock-input-first" 
+                                id={product._id}
+                                name="name"
+                                value={product.name} 
+                                onChange={handleInputChange}/>
+                            <h2 className="hidden stock-message" name={product.name} id={product._id}>
+                                Il faut valider le changement!
+                            </h2>
                         </div>
                         <div className="stock-item">
                             <input type="number"
                                 className="stock-input" 
-                                id={product.name}
+                                id={product._id}
                                 name="quantity"
+                                step="1"
                                 value={product.quantity} 
                                 onChange={handleInputChange}/>
-                            
-
                         </div>
                         
                         <div className="stock-item">
                             €<input type="number"
                                 className="stock-input" 
-                                id={product.name}
+                                id={product._id}
                                 name="puht"
+                                step="0.01"
                                 value={product.puht} 
                                 onChange={handleInputChange}/>
                         </div> 
                         <div className="stock-item">
                             €<input type="number"
                                 className="stock-input" 
-                                id={product.name}
+                                id={product._id}
                                 name="puttc"
+                                step="0.01"
                                 value={product.puttc} 
                                 onChange={handleInputChange}/>
                         </div>
