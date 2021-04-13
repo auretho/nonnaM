@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 import NavBar from '../components/Nav';
-import { onToggle, onChange, signupSubmit, loginSubmit, logoutSubmit } from '../actions/user';
+import { onToggle, onOrderChange, signupSubmit, loginSubmit, logoutSubmit } from '../actions/user';
 
 const mapStateToProps = (state) => ({
     navlinks: state.user.navlinks,
@@ -15,7 +15,7 @@ const mapDispatchToProps = (dispatch) => ({
     },
 
     handleChange: (payload) => {
-        dispatch(onChange(payload))
+        dispatch(onOrderChange(payload))
     },
 
     signupSubmit: () => {

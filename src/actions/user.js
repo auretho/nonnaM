@@ -1,6 +1,6 @@
 export const ON_TOGGLE = 'ON_TOGGLE';
 export const ON_REDIRECT = 'ON_REDIRECT';
-export const ON_CHANGE = 'ON_CHANGE';
+export const ON_ORDER_CHANGE = 'ON_ORDER_CHANGE';
 export const ON_SUBMIT = 'ON_SUBMIT';
 export const LOGIN_SUBMIT = 'LOGIN_SUBMIT';
 export const LOGIN_SUCCESS = 'LOGIN_SUCCESS';
@@ -26,9 +26,13 @@ export const UPDATE_STOCK_SUCCESS = 'UPDATE_STOCK_SUCCESS';
 
 export const DELETE_ONE_PRODUCT = 'DELETE_ONE_PRODUCT';
 
+export const FIND_ALL_RECIPES = 'FIND_ALL_RECIPES';
+export const FIND_ALL_RECIPES_SUCCESS = 'FIND_ALL_RECIPES_SUCCESS';
+export const UPDATE_RECIPES = 'UPDATE_RECIPES';
+export const UPDATE_RECIPE_SUCCESS = 'UPDATE_RECIPE_SUCCESS';
+
 export const FIND_ALL_LEGALS = 'FIND_ALL_LEGALS';
 export const FIND_ALL_LEGALS_SUCCESS = 'FIND_ALL_LEGALS_SUCCESS';
-
 export const UPDATE_LEGALS = 'UPDATE_LEGALS';
 
 
@@ -40,8 +44,8 @@ export const onRedirect = () => ({
     type: ON_REDIRECT,
 });
 
-export const onChange = (payload) => ({
-    type: ON_CHANGE,
+export const onOrderChange = (payload) => ({
+    type: ON_ORDER_CHANGE,
     payload,
 });
 
@@ -122,7 +126,24 @@ export const updateStockSuccess = () => ({
     type: UPDATE_STOCK_SUCCESS,
 });
 
-// LEGALS
+// RECETTES ====================================================
+export const findAllrecipes = () => ({
+    type: FIND_ALL_RECIPES,
+});
+
+export const findAllrecipesSuccess = (payload) => ({
+    type: FIND_ALL_RECIPES_SUCCESS,
+    payload,
+});
+
+export const updateRecipes = () => ({
+    type: UPDATE_RECIPES,
+});
+
+export const updateRecipeSuccess = () => ({
+    type: UPDATE_RECIPE_SUCCESS,
+});
+// LEGALS ====================================================
 export const findAllLegals = () => ({
     type: FIND_ALL_LEGALS,
 });

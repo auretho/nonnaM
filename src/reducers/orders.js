@@ -1,4 +1,4 @@
-import { ON_CHANGE, ON_SUBMIT, ADD_PRODUCT, ON_REDIRECT } from '../actions/user';
+import { ON_ORDER_CHANGE, ON_SUBMIT, ADD_PRODUCT, ON_REDIRECT } from '../actions/user';
 
 const initialState = {
     form: {
@@ -47,7 +47,7 @@ const initialState = {
 
 const orders = (state = initialState, action = {}) => {
     switch (action.type){ 
-        case ON_CHANGE:
+        case ON_ORDER_CHANGE:
             return{
                 ...state,
                 // ...action.payload,

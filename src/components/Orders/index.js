@@ -2,7 +2,7 @@ import { v1 as uuidv1 } from 'uuid';
 import { useHistory } from 'react-router-dom'
 import './style.scss';
 
-const Orders = ({inputDetails, prodList, form, total, redirection, delivery, handleChange, handleSubmit, addNewProduct}) => {
+const Orders = ({inputDetails, prodList, form, total, redirection, delivery, handleOrderChange, handleSubmit, addNewProduct}) => {
     console.log(prodList);
     const history = useHistory();
     const numberArr = [];
@@ -26,10 +26,10 @@ const Orders = ({inputDetails, prodList, form, total, redirection, delivery, han
         const {name, value} = evt.target;
             inputDetails.find(el => {
             if(el.name === name){
-                handleChange({[name]: el.value = value});
+                handleOrderChange({[name]: el.value = value});
             }
             else if (name === 'message'){
-                handleChange({[name]: el.value = value})
+                handleOrderChange({[name]: el.value = value})
             }
         })
     }

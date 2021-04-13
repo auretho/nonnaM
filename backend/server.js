@@ -7,6 +7,7 @@ const path = require('path');
 const userRoute = require('./routes/user');
 const productRoute = require('./routes/product');
 const orderRoute = require('./routes/order');
+const recipeRoute = require('./routes/recipe');
 const legalRoute = require('./routes/legal');
 
 const PORT = 3001;
@@ -32,6 +33,7 @@ mongoose.set('useCreateIndex', true);
 app.use('/backoffice/user', userRoute);
 app.use('/backoffice/products', productRoute);
 app.use('/backoffice/order', orderRoute);
+app.use('/backoffice/recipe', recipeRoute);
 app.use('/backoffice/legal', legalRoute);
 
 

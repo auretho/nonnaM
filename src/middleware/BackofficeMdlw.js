@@ -3,7 +3,7 @@ import { useParams, Redirect } from "react-router";
 import { ADD_PRODUCT_TO_DB } from '../actions/backoffice';
 import { FIND_ALL_PRODUCTS, findAllProductsSuccess, findAllProductsError, 
          FIND_ONE_PRODUCT, findOneProductSuccess, findOneProductError,
-         UPDATE_ONE_PRODUCT, updateOneProductSuccess, updateOneProductError, DELETE_ONE_PRODUCT, SIGNUP_SUBMIT, LOGIN_SUBMIT, loginSuccess, LOGOUT_SUBMIT, UPDATE_STOCK, updateStockSuccess, FIND_ALL_LEGALS, UPDATE_LEGALS, findAllLegalsSuccess} from '../actions/user';
+         UPDATE_ONE_PRODUCT, updateOneProductSuccess, updateOneProductError, DELETE_ONE_PRODUCT, SIGNUP_SUBMIT, LOGIN_SUBMIT, loginSuccess, LOGOUT_SUBMIT, UPDATE_STOCK, updateStockSuccess, FIND_ALL_LEGALS, UPDATE_LEGALS, findAllLegalsSuccess, FIND_ALL_RECIPES, findAllrecipesSuccess, UPDATE_RECIPES, updateRecipeSuccess} from '../actions/user';
 
 const backofficeMdlw = (store) => (next) => (action) => {
     next(action);
@@ -177,6 +177,37 @@ const backofficeMdlw = (store) => (next) => (action) => {
           })
         break;
         
+        // RECIPES SECTION ===========================
+        case FIND_ALL_RECIPES:
+          axios({
+            method: 'get',
+            url:  `http://localhost:3001/backoffice/recipe/findAllRecipes`,
+          })
+          .then((res) => {
+            console.log(res.data);
+            dispatch(findAllrecipesSuccess(res.data));
+          })
+          .catch((err) => {
+            console.error(err);
+          })
+        break;
+
+        case UPDATE_RECIPES:
+          axios({
+            headers: { Authorization: `Bearer ${token}`},
+            method: 'put',
+            url:  `http://localhost:3001/backoffice/recipe/updateRecipes`,
+            data: store.getState().backoffice.recipeToUpdt,
+          })
+          .then((res) => {
+            console.log(res.data);
+            dispatch(updateRecipeSuccess());
+          })
+          .catch((err) => {
+            console.error(err);
+          })
+        break;
+
         // LEGALS SECTION ===========================
         case FIND_ALL_LEGALS:
           axios({

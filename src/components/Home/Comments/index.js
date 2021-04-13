@@ -1,11 +1,14 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import { Parallax } from 'react-parallax';
 import bg from '../../../assets/recetas.png';
 import KeyboardReturnIcon from '@material-ui/icons/KeyboardReturn';
 
 import './style.scss';
 
-const Comments = ({comments}) => {
+const Comments = ({recipes, findAllrecipes}) => {
+    useEffect(() => {
+        findAllrecipes();
+    }, [])
 
     const handleClickToBack= (evt) => {
         const target = evt.currentTarget;
@@ -31,19 +34,15 @@ const Comments = ({comments}) => {
                 <div className="comments-blocks">
                 
                 {
-                comments.map((comment, id) => (
+                recipes && recipes.map((recipe, id) => (
                     <div className="wrapper" key={id}>
                         <div className="oneBlock back" onClick={handleClickToFront}>
-                            <h1 className="oneBlock-name">{comment.name}</h1>
-                            <p className="oneBlock-comment">
-                                *Recette secrète de la Nonna*
-                            </p>
+                            <h1 className="oneBlock-name">{recipe.firstname}</h1>
+                            <p className="oneBlock-comment">{recipe.recipe}</p>
                         </div>
                         <div className="oneBlock front" onClick={handleClickToBack}>
-                            <h1 className="oneBlock-name">{comment.name}</h1>
-                            <p className="oneBlock-comment">{comment.text} 
-                                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Esse, enim.
-                            </p>
+                            <h1 className="oneBlock-name">{recipe.firstname}</h1>
+                            <p className="oneBlock-comment">{recipe.text}</p>
                             <KeyboardReturnIcon className="oneBlock-icon" />
                         </div>
                     </div>

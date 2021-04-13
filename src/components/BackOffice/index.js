@@ -6,11 +6,12 @@ import AddProducts from './BackOffProducts/AddProducts';
 import ListProducts from './BackOffProducts/ListProducts';
 import OneProduct from '../../containers/OneProduct';
 import UpdateProduct from './BackOffProducts/UpdateProduct';
+import Recipes from './BackOffRecipes';
 import Stock from './Stock';
 import Legals from './BackOffLegals';
 import './style.scss';
 
-const BackOffice = ({products, handleChange, newProduct, handleAddNewProduct, findAllProducts, productSelected, updateOneProduct, deleteOneProduct, activeMenuItem, updateStock, stock, findAllLegals, legals, updateLegals}) => {
+const BackOffice = ({products, handleChange, newProduct, handleAddNewProduct, findAllProducts, productSelected, updateOneProduct, deleteOneProduct, activeMenuItem, updateStock, stock, findAllLegals, legals, updateLegals, findAllrecipes, recipes, updateRecipes}) => {
 
 
   const handleStockChange = (evt) => {
@@ -70,6 +71,13 @@ const BackOffice = ({products, handleChange, newProduct, handleAddNewProduct, fi
                    updateStock={updateStock}
                    stock={stock}/>
           </Route> 
+
+          <Route exact path="/backoffice/recipes">
+            <Recipes findAllrecipes={findAllrecipes} 
+                    recipes={recipes}
+                    handleChange={handleChange}
+                    updateRecipes={updateRecipes}/>
+          </Route>
 
           <Route exact path="/backoffice/legals">
             <Legals findAllLegals={findAllLegals} 

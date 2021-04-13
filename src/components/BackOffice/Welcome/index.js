@@ -13,8 +13,11 @@ const Welcome = () => (
         <Link to="/backoffice/photos">
             <Button className="welcome-buttons" size="huge" color="olive">Photos</Button>
         </Link>  
+        <Link to="/backoffice/recipes">
+            <Button className="welcome-buttons" size="huge" color="teal">Recettes</Button>
+        </Link> 
         <Link to="/backoffice/legals">
-            <Button className="welcome-buttons" size="huge" color="teal">Legals</Button>
+            <Button className="welcome-buttons" size="huge" color="blue">Légal</Button>
         </Link> 
     </div>
 )
