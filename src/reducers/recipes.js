@@ -26,7 +26,7 @@ import photo26 from './img/26.jpg';
 import photo27 from './img/27.jpg';
 import photo28 from './img/28.jpg';
 import photo29 from './img/29.jpg';
-import photo30 from './img/30.jpg';
+import photo30 from './img/18.jpg';
 
 const initialState = {
     cupello: [

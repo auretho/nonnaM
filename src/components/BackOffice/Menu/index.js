@@ -5,7 +5,6 @@ import './style.scss';
 const MenuBar = ({activeMenuItem, handleChange}) => {
 
     const handleMenuItemChange = (evt, {name}) => {
-      console.log(name);
         handleChange({activeMenuItem: name})
     }
     
@@ -41,6 +40,14 @@ const MenuBar = ({activeMenuItem, handleChange}) => {
               // href="/backoffice/photos"
               name='photos'
               active={activeMenuItem === 'photos'}
+              onClick={handleMenuItemChange}
+            />
+          </NavHashLink>
+          <NavHashLink smooth to="/backoffice/legal">
+            <Menu.Item              
+              // href="/backoffice/photos"
+              name='infos légales'
+              active={activeMenuItem === 'infos légales'}
               onClick={handleMenuItemChange}
             />
           </NavHashLink>

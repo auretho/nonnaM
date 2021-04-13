@@ -1,8 +1,11 @@
 import { ON_CHANGE, ADD_PRODUCT_TO_DB } from '../actions/backoffice';
-import { FIND_ALL_PRODUCTS_SUCCESS, FIND_ONE_PRODUCT_SUCCESS, UPDATE_ONE_PRODUCT_SUCCESS, LOGIN_SUCCESS, UPDATE_STOCK_SUCCESS, FIND_ALL_LEGALS_SUCCESS, FIND_ALL_RECIPES_SUCCESS, UPDATE_RECIPE_SUCCESS} from '../actions/user'
+import { FIND_ALL_PRODUCTS_SUCCESS, FIND_ONE_PRODUCT_SUCCESS, UPDATE_ONE_PRODUCT_SUCCESS, LOGIN_SUCCESS, UPDATE_STOCK_SUCCESS, FIND_ALL_LEGALS_SUCCESS, FIND_ALL_RECIPES_SUCCESS, UPDATE_RECIPE_SUCCESS, FIND_ALL_PHOTOS_SUCCESS} from '../actions/user'
 
 const initialState = {
     stock: '',
+    filteredProd: '',
+    allPhotos: [],
+    photoToUpdt: '',
     products: [],
     productSelected: '',
     newProduct: '',
@@ -70,6 +73,11 @@ const backoffice = (state = initialState, action = {}) => {
                 ...state,
                 legals: action.payload
             }
+        case FIND_ALL_PHOTOS_SUCCESS:
+            return{
+                ...state,
+                allPhotos: action.payload,
+            };
         default:
             return state;
     }

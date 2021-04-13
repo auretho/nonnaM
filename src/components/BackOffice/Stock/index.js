@@ -1,9 +1,10 @@
-import {Button} from 'semantic-ui-react';
+import {Button, Input} from 'semantic-ui-react';
 import './style.scss';
 
-const Stock = ({products, handleChange, updateStock, stock}) => {
+const Stock = ({products, handleChange, updateStock, stock, filteredProd}) => {
     const message = document.querySelectorAll('.stock-message');
     const messageArray = [].slice.call(message);
+    const filteredProducts = products.filter(element => element.name.toLowerCase().includes(filteredProd.toLowerCase()));
 
     const handleInputChange = (evt) => {
         let {name, value, id} = evt.target;
@@ -40,12 +41,26 @@ const Stock = ({products, handleChange, updateStock, stock}) => {
         window.alert('Le produit a été mis à jour')
     }
 
+    const handleFilterChange = (evt) => {
+        const {value} = evt.target;
+        handleChange({filteredProd: value})
+    }
+
     return(
     <div className="stock">
         <div className="stock-container">
             <h1 className="stock-title">
                 Liste de tous les produits disponibles:
             </h1>
+
+            <Input className="stock-search"
+                   icon='search' 
+                   type="text" 
+                   placeholder="Produits..." 
+                   value={filteredProd}
+                   onChange={handleFilterChange}/>
+
+
             <div className="stock-full-wrapper">
                 <div className="stock-header-titles">
                     <div className="stock-header-item">NOM</div>
@@ -56,7 +71,7 @@ const Stock = ({products, handleChange, updateStock, stock}) => {
                 </div>
                 <div className="stock-items-list">
                 {
-                products.map((product, key) => (
+                filteredProducts.map((product, key) => (
                     <form onSubmit={handleSubmitStock} key={key} id={product._id} className="stock-row">
                         <div className="stock-item stock-item-first">
                             <input type="text"

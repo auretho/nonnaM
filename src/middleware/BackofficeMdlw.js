@@ -3,7 +3,7 @@ import { useParams, Redirect } from "react-router";
 import { ADD_PRODUCT_TO_DB } from '../actions/backoffice';
 import { FIND_ALL_PRODUCTS, findAllProductsSuccess, findAllProductsError, 
          FIND_ONE_PRODUCT, findOneProductSuccess, findOneProductError,
-         UPDATE_ONE_PRODUCT, updateOneProductSuccess, updateOneProductError, DELETE_ONE_PRODUCT, SIGNUP_SUBMIT, LOGIN_SUBMIT, loginSuccess, LOGOUT_SUBMIT, UPDATE_STOCK, updateStockSuccess, FIND_ALL_LEGALS, UPDATE_LEGALS, findAllLegalsSuccess, FIND_ALL_RECIPES, findAllrecipesSuccess, UPDATE_RECIPES, updateRecipeSuccess} from '../actions/user';
+         UPDATE_ONE_PRODUCT, updateOneProductSuccess, updateOneProductError, DELETE_ONE_PRODUCT, SIGNUP_SUBMIT, LOGIN_SUBMIT, loginSuccess, LOGOUT_SUBMIT, UPDATE_STOCK, updateStockSuccess, FIND_ALL_LEGALS, UPDATE_LEGALS, findAllLegalsSuccess, FIND_ALL_RECIPES, findAllrecipesSuccess, UPDATE_RECIPES, updateRecipeSuccess, ADD_NEW_PHOTO, FIND_ALL_PHOTOS, UPDATE_PHOTO, updatePhotoSuccess, findAllPhotosSuccess, } from '../actions/user';
 
 const backofficeMdlw = (store) => (next) => (action) => {
     next(action);
@@ -208,6 +208,52 @@ const backofficeMdlw = (store) => (next) => (action) => {
           })
         break;
 
+        // PHOTOS SECTION ===========================
+        case ADD_NEW_PHOTO:
+          const photosForm = document.querySelector("#addPhotos")
+          const photosFormData = new FormData(photosForm);
+
+          axios({
+            headers: { Authorization: `Bearer ${token}`},
+            method: 'post',
+            url:  `http://localhost:3001/backoffice/photo/addNewPhoto`,
+            data: photosFormData,
+            })
+            .then(res => {
+              console.log(res.status);
+            })
+          break;
+
+        case FIND_ALL_PHOTOS:
+          axios({
+            method: 'get',
+            url:  `http://localhost:3001/backoffice/photo/findAllPhotos`,
+          })
+          .then((res) => {
+            console.log(res.data);
+            dispatch(findAllPhotosSuccess(res.data))
+          })
+          .catch((err) => {
+            console.error(err);
+          })
+        break;
+
+        case UPDATE_PHOTO:
+          axios({
+            headers: { Authorization: `Bearer ${token}`},
+            method: 'put',
+            url:  `http://localhost:3001/backoffice/photo/updatePhoto`,
+            data: store.getState().backoffice.photoToUpdt,
+          })
+          .then((res) => {
+            console.log(res.data);
+            dispatch(updatePhotoSuccess());
+          })
+          .catch((err) => {
+            console.error(err);
+          })
+        break;
+                
         // LEGALS SECTION ===========================
         case FIND_ALL_LEGALS:
           axios({

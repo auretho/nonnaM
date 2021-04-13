@@ -26,6 +26,12 @@ export const UPDATE_STOCK_SUCCESS = 'UPDATE_STOCK_SUCCESS';
 
 export const DELETE_ONE_PRODUCT = 'DELETE_ONE_PRODUCT';
 
+export const ADD_NEW_PHOTO = 'ADD_NEW_PHOTO';
+export const FIND_ALL_PHOTOS = 'FIND_ALL_PHOTOS';
+export const FIND_ALL_PHOTOS_SUCCESS = 'FIND_ALL_PHOTOS_SUCCESS';
+export const UPDATE_PHOTO = 'UPDATE_PHOTO';
+export const UPDATE_PHOTO_SUCCESS = 'UPDATE_PHOTO_SUCCESS';
+
 export const FIND_ALL_RECIPES = 'FIND_ALL_RECIPES';
 export const FIND_ALL_RECIPES_SUCCESS = 'FIND_ALL_RECIPES_SUCCESS';
 export const UPDATE_RECIPES = 'UPDATE_RECIPES';
@@ -143,6 +149,30 @@ export const updateRecipes = () => ({
 export const updateRecipeSuccess = () => ({
     type: UPDATE_RECIPE_SUCCESS,
 });
+
+// PHOTOS ====================================================
+export const addNewPhoto = (payload) => ({
+    type: ADD_NEW_PHOTO,
+    payload,
+});
+
+export const findAllPhotos = () => ({
+    type: FIND_ALL_PHOTOS,
+});
+
+export const findAllPhotosSuccess = (payload) => ({
+    type: FIND_ALL_PHOTOS_SUCCESS,
+    payload,
+});
+
+export const updatePhoto = () => ({
+    type: UPDATE_PHOTO,
+});
+
+export const updatePhotoSuccess = () => ({
+    type: UPDATE_PHOTO_SUCCESS,
+});
+
 // LEGALS ====================================================
 export const findAllLegals = () => ({
     type: FIND_ALL_LEGALS,

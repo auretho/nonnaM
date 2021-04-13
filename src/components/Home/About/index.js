@@ -1,8 +1,12 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import './style.scss';
 
-const About = ({cupello}) => {
-  
+const About = ({findAllPhotos, allPhotos}) => {
+
+    useEffect(() => {
+        findAllPhotos();
+    }, [])
+
     const handleClick = (evt) => {
         const img = document.querySelectorAll('.about-photo');
         img.forEach(element => {
@@ -22,9 +26,9 @@ const About = ({cupello}) => {
     <div className="about pageSection" id="photos">
         <div className="about-container" >
             {
-            cupello.map((img, index) => (
+            allPhotos.map((img, index) => (
                 <div className="about-photos" key={index} onClick={handleClick}>
-                    <img className="about-photo" src={img.photo} alt="photos de cupello"/>
+                    <img className="about-photo" src={img.image} alt="photos de cupello"/>
                     <p className="about-text hidden">{img.text}</p>
                 </div>
             ))

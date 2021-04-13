@@ -5,6 +5,7 @@ const mongoose = require('mongoose');
 const app = express();
 const path = require('path');
 const userRoute = require('./routes/user');
+const photoRoute = require('./routes/photo');
 const productRoute = require('./routes/product');
 const orderRoute = require('./routes/order');
 const recipeRoute = require('./routes/recipe');
@@ -31,6 +32,7 @@ mongoose.set('useCreateIndex', true);
 
 
 app.use('/backoffice/user', userRoute);
+app.use('/backoffice/photo', photoRoute);
 app.use('/backoffice/products', productRoute);
 app.use('/backoffice/order', orderRoute);
 app.use('/backoffice/recipe', recipeRoute);

@@ -11,7 +11,7 @@ import Stock from './Stock';
 import Legals from './BackOffLegals';
 import './style.scss';
 
-const BackOffice = ({products, handleChange, newProduct, handleAddNewProduct, findAllProducts, productSelected, updateOneProduct, deleteOneProduct, activeMenuItem, updateStock, stock, findAllLegals, legals, updateLegals, findAllrecipes, recipes, updateRecipes}) => {
+const BackOffice = ({products, handleChange, newProduct, handleAddNewProduct, findAllProducts, productSelected, updateOneProduct, deleteOneProduct, activeMenuItem, updateStock, stock, filteredProd, findAllLegals, legals, updateLegals, findAllrecipes, recipes, updateRecipes, addNewPhoto, findAllPhotos, photoToUpdt, allPhotos}) => {
 
 
   const handleStockChange = (evt) => {
@@ -33,7 +33,13 @@ const BackOffice = ({products, handleChange, newProduct, handleAddNewProduct, fi
       <Menu handleChange={handleChange} activeMenuItem={activeMenuItem}/>
 
         <Switch>
-          <Route exact path="/backoffice" component={Welcome} />
+          {/* <Route exact path="/backoffice" component={Welcome} /> */}
+          <Route exact path="/backoffice">
+            <Welcome findAllPhotos={findAllPhotos} 
+                     addNewPhoto={addNewPhoto}
+                     handleChange={handleChange} 
+                     photoToUpdt={photoToUpdt}/>
+          </Route>
 
           <Route exact path="/backoffice/produits" component={BackOffProducts} />
 
@@ -69,7 +75,8 @@ const BackOffice = ({products, handleChange, newProduct, handleAddNewProduct, fi
             <Stock products={products} 
                    handleChange={handleChange}
                    updateStock={updateStock}
-                   stock={stock}/>
+                   stock={stock}
+                   filteredProd={filteredProd}/>
           </Route> 
 
           <Route exact path="/backoffice/recipes">
@@ -79,7 +86,7 @@ const BackOffice = ({products, handleChange, newProduct, handleAddNewProduct, fi
                     updateRecipes={updateRecipes}/>
           </Route>
 
-          <Route exact path="/backoffice/legals">
+          <Route exact path="/backoffice/legal">
             <Legals findAllLegals={findAllLegals} 
                     legals={legals}
                     handleChange={handleChange}
