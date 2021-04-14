@@ -8,18 +8,19 @@ const Stock = ({products, handleChange, updateStock, stock, filteredProd}) => {
 
     const handleInputChange = (evt) => {
         let {name, value, id} = evt.target;
+        const idRes = id.split('-')[1];
 
         messageArray.map(el => {
-            if(id === el.id){
+            if(idRes === el.id){
                 el.classList.remove('hidden')
             }
         });
-        const result = products.find(product => (product._id === id));
+        const result = products.find(product => (product._id === idRes));
         
         handleChange({
             stock: result,
             products: products.map(product => {
-            if (product._id === result._id) {
+            if (product._id === idRes) {
                 product[name] = value;
                 return product
             }
@@ -76,7 +77,7 @@ const Stock = ({products, handleChange, updateStock, stock, filteredProd}) => {
                         <div className="stock-item stock-item-first">
                             <input type="text"
                                 className="stock-input stock-input-first" 
-                                id={product._id}
+                                id={`name-${product._id}`}
                                 name="name"
                                 value={product.name} 
                                 onChange={handleInputChange}/>
@@ -87,7 +88,7 @@ const Stock = ({products, handleChange, updateStock, stock, filteredProd}) => {
                         <div className="stock-item">
                             <input type="number"
                                 className="stock-input" 
-                                id={product._id}
+                                id={`stock-${product._id}`}
                                 name="quantity"
                                 step="1"
                                 value={product.quantity} 
@@ -97,7 +98,7 @@ const Stock = ({products, handleChange, updateStock, stock, filteredProd}) => {
                         <div className="stock-item">
                             €<input type="number"
                                 className="stock-input" 
-                                id={product._id}
+                                id={`puht-${product._id}`}
                                 name="puht"
                                 step="0.01"
                                 value={product.puht} 
@@ -106,7 +107,7 @@ const Stock = ({products, handleChange, updateStock, stock, filteredProd}) => {
                         <div className="stock-item">
                             €<input type="number"
                                 className="stock-input" 
-                                id={product._id}
+                                id={`puttc-${product._id}`}
                                 name="puttc"
                                 step="0.01"
                                 value={product.puttc} 

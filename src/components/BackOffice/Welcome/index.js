@@ -5,9 +5,9 @@ import './style.scss';
 
 const Welcome = ({findAllPhotos, addNewPhoto, handleChange, photoToUpdt}) => {
     
-    useEffect(() => {
-        findAllPhotos()
-    },[]);
+    // useEffect(() => {
+    //     findAllPhotos()
+    // },[]);
 
     const handlePhotoChange = (evt) => {
         const {name, value} = evt.target;

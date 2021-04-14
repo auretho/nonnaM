@@ -7,11 +7,12 @@ import ListProducts from './BackOffProducts/ListProducts';
 import OneProduct from '../../containers/OneProduct';
 import UpdateProduct from './BackOffProducts/UpdateProduct';
 import Recipes from './BackOffRecipes';
+import Photos from './BackOffPhotos';
 import Stock from './Stock';
 import Legals from './BackOffLegals';
 import './style.scss';
 
-const BackOffice = ({products, handleChange, newProduct, handleAddNewProduct, findAllProducts, productSelected, updateOneProduct, deleteOneProduct, activeMenuItem, updateStock, stock, filteredProd, findAllLegals, legals, updateLegals, findAllrecipes, recipes, updateRecipes, addNewPhoto, findAllPhotos, photoToUpdt, allPhotos}) => {
+const BackOffice = ({products, handleChange, newProduct, handleAddNewProduct, findAllProducts, productSelected, updateOneProduct, deleteOneProduct, activeMenuItem, updateStock, stock, filteredProd, findAllLegals, legals, updateLegals, findAllrecipes, recipes, updateRecipes, addNewPhoto, findAllPhotos, updatePhoto, photoToUpdt, allPhotos, emptyPhotoObj}) => {
 
 
   const handleStockChange = (evt) => {
@@ -84,6 +85,16 @@ const BackOffice = ({products, handleChange, newProduct, handleAddNewProduct, fi
                     recipes={recipes}
                     handleChange={handleChange}
                     updateRecipes={updateRecipes}/>
+          </Route>
+
+          <Route exact path="/backoffice/photos">
+            <Photos findAllPhotos={findAllPhotos} 
+                    allPhotos={allPhotos}
+                    photoToUpdt={photoToUpdt}
+                    handleChange={handleChange}
+                    updatePhoto={updatePhoto}
+                    emptyPhotoObj={emptyPhotoObj}
+                    />
           </Route>
 
           <Route exact path="/backoffice/legal">

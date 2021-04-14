@@ -1,0 +1,36 @@
+.backoffice-photos{
+    height: 100%;
+    width: 100%;
+
+    &-container{
+        margin-top: 140px;
+    }
+
+    &-form{
+        height: 200px;
+        width: 80%;
+        margin: 1em auto;
+        background-color: rgba(255, 255, 255, 0.5);
+        border: 1px solid grey;
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+    }
+
+    &-view{
+        border-left: 1px solid grey;
+        border-right: 1px solid grey;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        text-align: center;
+        height: 100%;
+        width: 200px;
+        padding: 1em;
+    }
+
+    &-image{
+        max-height: 140px;
+        max-width: 100%;
+    }
+}

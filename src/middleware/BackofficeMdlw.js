@@ -239,11 +239,16 @@ const backofficeMdlw = (store) => (next) => (action) => {
         break;
 
         case UPDATE_PHOTO:
+          const UpdPhotoFormData = new FormData();
+          UpdPhotoFormData.set('num', store.getState().backoffice.photoToUpdt._id)
+          UpdPhotoFormData.set('text', store.getState().backoffice.photoToUpdt.text)
+          UpdPhotoFormData.set('image', store.getState().backoffice.photoToUpdt.image)
+
           axios({
             headers: { Authorization: `Bearer ${token}`},
             method: 'put',
             url:  `http://localhost:3001/backoffice/photo/updatePhoto`,
-            data: store.getState().backoffice.photoToUpdt,
+            data: UpdPhotoFormData,
           })
           .then((res) => {
             console.log(res.data);
