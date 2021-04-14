@@ -97,7 +97,7 @@ const BackOffice = ({products, handleChange, newProduct, handleAddNewProduct, fi
                     />
           </Route>
 
-          <Route exact path="/backoffice/legal">
+          <Route exact path="/backoffice/legals">
             <Legals findAllLegals={findAllLegals} 
                     legals={legals}
                     handleChange={handleChange}

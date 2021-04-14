@@ -16,14 +16,18 @@
         // width: 70%;
     }
 
-    &-title{
+    &-title, &-subtitle{
         text-align: center;
         font-family: 'Amatic SC', serif;
         color: #fff;
-        margin-bottom: 1em;
         font-size: 5em;
         font-weight: bold;
         text-shadow: 0 0 5px black;
+    }
+
+    &-subtitle{
+        font-size: 3em;
+        padding: .5em 0 1em;
     }
 }
 

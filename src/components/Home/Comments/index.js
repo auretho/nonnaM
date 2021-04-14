@@ -31,8 +31,8 @@ const Comments = ({recipes, findAllrecipes}) => {
         <Parallax bgImage={bg} strength={250} className="comments-section" >
             <div>
                 <h2 className="comments-title">Idées de recettes: les nôtres... et les vôtres!</h2>
-                <div className="comments-blocks">
-                
+
+                <div className="comments-blocks">               
                 {
                 recipes && recipes.map((recipe, id) => (
                     <div className="wrapper" key={id}>

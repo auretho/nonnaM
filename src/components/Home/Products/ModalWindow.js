@@ -1,5 +1,6 @@
 import React from 'react';
-import { Header, Button, Image, Modal } from 'semantic-ui-react'
+import { Header, Button, Image, Modal } from 'semantic-ui-react';
+import {Link} from 'react-router-dom';
 import { HashLink } from 'react-router-hash-link';
 import './style.scss';
 
@@ -30,18 +31,21 @@ const ModalWindow = ({triggerItem, products, item}) => {
                 }})
             }
             <Modal.Actions className="modal-footer">
-                <Button color='black' onClick={() => setOpen(false)}>
-                Annuler
-                </Button>
-                <HashLink to="/commandes/#order">
-                    <Button
-                    content="Super, je commande!"
-                    labelPosition='right'
-                    icon='checkmark'
-                    onClick={() => setOpen(false)}
-                    positive
-                    />
-                </HashLink>
+                <h1 className="modal-footer-text">Pour toutes les infos détaillées sur nos produits, n'hésitez pas à aller consulter leurs fiches! <Link to="/fiches-recette">Par ici!</Link> </h1>
+                <div className="buttons">
+                    <Button color='black' onClick={() => setOpen(false)}>
+                    Annuler
+                    </Button>
+                    <HashLink to="/commandes/#order">
+                        <Button
+                        content="Super, je commande!"
+                        labelPosition='right'
+                        icon='checkmark'
+                        onClick={() => setOpen(false)}
+                        positive
+                        />
+                    </HashLink>
+                </div>
             </Modal.Actions>
         </Modal>
 )}

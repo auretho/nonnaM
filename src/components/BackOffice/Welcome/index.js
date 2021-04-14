@@ -3,11 +3,7 @@ import { Link } from 'react-router-dom';
 import {Button, Form, Input, TextArea} from 'semantic-ui-react';
 import './style.scss';
 
-const Welcome = ({findAllPhotos, addNewPhoto, handleChange, photoToUpdt}) => {
-    
-    // useEffect(() => {
-    //     findAllPhotos()
-    // },[]);
+const Welcome = ({addNewPhoto, handleChange, photoToUpdt}) => {
 
     const handlePhotoChange = (evt) => {
         const {name, value} = evt.target;
@@ -41,7 +37,7 @@ const Welcome = ({findAllPhotos, addNewPhoto, handleChange, photoToUpdt}) => {
             <Button className="welcome-buttons" size="huge" color="blue">Légal</Button>
         </Link> 
 
-        <Form className="addproducts" id="addPhotos" onSubmit={handleAddPhoto}>
+        {/* <Form className="addproducts" id="addPhotos" onSubmit={handleAddPhoto}>
             <Form.Group widths='equal'>
             <Form.Field
                 control={TextArea}
@@ -60,7 +56,7 @@ const Welcome = ({findAllPhotos, addNewPhoto, handleChange, photoToUpdt}) => {
             />
             </Form.Group>
             <button type="submit">Ajouter</button>
-        </Form>
+        </Form> */}
     </div>
 )}
 

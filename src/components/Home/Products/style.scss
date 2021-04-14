@@ -76,6 +76,12 @@
     align-items: center;
 }
 
+.ui.modal>.actions{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
 .ui.header{
     position: relative;
     top: 0;
@@ -109,11 +115,58 @@
         border-bottom: 1px solid lightgrey;
         max-height: 200px;
     }
+
+    &-footer-text{
+        width: 50%;
+        text-align: left;
+        padding-left: 1em;
+    }
 }
 
 .price{
     font-weight: bold;
     margin-top: 1em;
+}
+
+.recipeCards{
+    height: 100vh;
+    width: 100%;
+    background-image: url('../../../assets/champs.jpg');
+    background-size: cover;
+
+
+    &-container{
+        height: 100%;
+        width: 100%;
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+        padding: 2em;
+    }
+
+    &-back{
+        width: 25%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        font-weight: bold;
+    }
+
+    &-list{
+        width: 50%;
+        background-color: rgba(255, 255, 255, 0.5);
+        text-align: center;
+        margin-right: 5em;
+    }
+
+    &-item{
+        width: 70%;
+        margin: 1em auto;
+        font-size: 2em;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
 }
 
 
