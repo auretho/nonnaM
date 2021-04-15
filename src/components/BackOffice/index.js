@@ -46,6 +46,8 @@ const BackOffice = ({products, handleChange, newProduct, handleAddNewProduct, fi
           <Route exact path="/backoffice/liste-produits">
             <ListProducts findAllProducts={findAllProducts} 
                           products={products} 
+                          handleChange={handleChange} 
+                          filteredProd={filteredProd}
                           productselected={productSelected}/>
           </Route>
 
