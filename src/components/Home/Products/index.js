@@ -6,7 +6,7 @@ import champs from '../../../assets/champs2.png';
 import './style.scss';
 
 
-const Products = ({img, products, findAllProducts}) => {
+const Products = ({img, findAllProducts}) => {
     useEffect(() => {
         findAllProducts();
     },[]);

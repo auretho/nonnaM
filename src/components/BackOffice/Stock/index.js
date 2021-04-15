@@ -1,7 +1,12 @@
+import { useEffect } from 'react';
 import {Button, Input} from 'semantic-ui-react';
 import './style.scss';
 
-const Stock = ({products, handleChange, updateStock, stock, filteredProd}) => {
+const Stock = ({products, handleChange, updateStock, filteredProd, findAllProducts}) => {
+    useEffect(() => {
+        findAllProducts();
+    },[])
+
     const message = document.querySelectorAll('.stock-message');
     const messageArray = [].slice.call(message);
     const filteredProducts = products.filter(element => element.name.toLowerCase().includes(filteredProd.toLowerCase()));

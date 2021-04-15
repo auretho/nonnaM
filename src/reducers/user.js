@@ -44,20 +44,6 @@ const initialState = {
 
         },
     ],
-    comments: [
-        {
-            name: "Luca",
-            text: "Mamma mia! Ces produits sont tellement bons! A chaque bouchée, c'est un vrai bonheur! Grazie Nonna!"
-        },
-        {
-            name: "Delf",
-            text: "Waah! Ces produits sont tellement bons! A chaque bouchée, c'est un vrai bonheur! Grazie Nonna!"
-        },
-        {
-            name: "Ade",
-            text: "Waah! Ces produits sont tellement bons! A chaque bouchée, c'est un vrai bonheur! Grazie Nonna!"
-        }
-    ],
 };
 
 const user = (state = initialState, action = {}) => {

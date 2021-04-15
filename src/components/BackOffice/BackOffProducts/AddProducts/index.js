@@ -1,4 +1,5 @@
 import React from 'react';
+import {Link} from 'react-router-dom';
 import { Button, Form, Input, TextArea} from 'semantic-ui-react'
 import logo from '../../../../assets/coeur-solo.png';
 import './style.scss';
@@ -20,6 +21,7 @@ const AddProducts = ({handleChange, handleAddNewProduct, newProduct}) => {
       handleChange({ newProduct: {...newProduct, image: logo }})
     }
     handleAddNewProduct();
+    window.alert('Le nouveau produit a bien été créé!')
   }
 
 
@@ -88,7 +90,7 @@ const AddProducts = ({handleChange, handleAddNewProduct, newProduct}) => {
             onChange={handleInputChange}
             required
         />
-        <Button type='submit' color="teal">Créer le nouveau produit</Button>
+          <Button type='submit' color="teal">Créer le nouveau produit</Button>
       </Form>
     )
 }

@@ -1,5 +1,5 @@
 import axios from 'axios';
-import { useParams, Redirect } from "react-router";
+import { useParams } from "react-router";
 import { ADD_PRODUCT_TO_DB } from '../actions/backoffice';
 import { FIND_ALL_PRODUCTS, findAllProductsSuccess, findAllProductsError, 
          FIND_ONE_PRODUCT, findOneProductSuccess, findOneProductError,
@@ -8,7 +8,7 @@ import { FIND_ALL_PRODUCTS, findAllProductsSuccess, findAllProductsError,
 const backofficeMdlw = (store) => (next) => (action) => {
     next(action);
     const { dispatch } = store;
-    
+
     const token = localStorage.getItem('token');
     const ide = store.getState().backoffice.productSelected._id;
 
@@ -81,9 +81,6 @@ const backofficeMdlw = (store) => (next) => (action) => {
             })
             .then(res => {
               console.log(res.status);
-              if(res.status === 201){
-                window.location = "/backoffice/liste-produits"
-              }
             })
           
           break;
@@ -137,9 +134,6 @@ const backofficeMdlw = (store) => (next) => (action) => {
         })
         .then((res) => {
           console.log(res.data);
-          if(res.status === 200){
-            window.location = "/backoffice/produits"
-          }
           dispatch(updateOneProductSuccess(res.data));
         })
         .catch((err) => {
@@ -153,11 +147,6 @@ const backofficeMdlw = (store) => (next) => (action) => {
           headers: { Authorization: `Bearer ${token}`},
           method: 'delete',
           url:  `http://localhost:3001/backoffice/products/deleteProduct/${ide}`,
-        })
-        .then(res => {
-          if(res.status === 200){
-            window.location = "/backoffice/produits"
-          }
         })
         break;
       

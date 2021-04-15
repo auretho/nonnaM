@@ -3,12 +3,15 @@ import {Button} from 'semantic-ui-react';
 import './style.scss';
 
 const OneProduct = ({findOneProduct, productSelected, deleteProduct}) => {
+
     if(productSelected === ""){
         findOneProduct();
     }
 
-    const handleDelete = () => {
+    const handleDelete = (evt) => {
+        evt.preventDefault();
         deleteProduct()
+        window.alert('Le produit a bien été supprimé.')
     }
 
     return(

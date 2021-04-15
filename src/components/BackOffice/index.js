@@ -34,7 +34,6 @@ const BackOffice = ({products, handleChange, newProduct, handleAddNewProduct, fi
       <Menu handleChange={handleChange} activeMenuItem={activeMenuItem}/>
 
         <Switch>
-          {/* <Route exact path="/backoffice" component={Welcome} /> */}
           <Route exact path="/backoffice">
             <Welcome findAllPhotos={findAllPhotos} 
                      addNewPhoto={addNewPhoto}
@@ -76,8 +75,8 @@ const BackOffice = ({products, handleChange, newProduct, handleAddNewProduct, fi
             <Stock products={products} 
                    handleChange={handleChange}
                    updateStock={updateStock}
-                   stock={stock}
-                   filteredProd={filteredProd}/>
+                   filteredProd={filteredProd}
+                   findAllProducts={findAllProducts}/>
           </Route> 
 
           <Route exact path="/backoffice/recipes">

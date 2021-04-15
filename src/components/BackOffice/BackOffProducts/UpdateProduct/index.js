@@ -16,6 +16,8 @@ const UpdateProduct = ({handleChange, product, updateprod}) => {
   const handleProductUpdate = (evt) => {
     evt.preventDefault();
     updateprod()  
+    window.alert('Le nouveau produit a bien été mis à jour!')
+
   }
 
     return (
