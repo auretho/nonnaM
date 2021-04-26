@@ -37,7 +37,7 @@ const Products = ({location}) => {
                 <div className="process-imageDiv">
                     <img 
                         src={element.arrow} 
-                        alt="" 
+                        alt="flèche" 
                         className="process-arrow" 
                         onMouseOver={handleHover} 
                         onMouseLeave={handleHoverOut} 
@@ -49,6 +49,7 @@ const Products = ({location}) => {
                     />
                     <HoverImage 
                         className="process-smile" 
+                        alt="smiley" 
                         src={element.img1} 
                         hoverSrc={element.img2} 
                         style={{

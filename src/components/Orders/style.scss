@@ -8,8 +8,8 @@
     justify-content: center;
 
     &-form{
-        max-width: 60%;
-        margin: 4em auto; // A VOIR
+        max-width: 45%;
+        margin: 4em auto;
         padding: 2em;
         background-color: #fff;
         box-shadow: 0 0 10px black;
@@ -38,7 +38,8 @@
         &-input{
             margin: 1em;
             padding: .5em;
-            width: 300px;
+            width: 400px;
+            border: 1px solid black;
         }
 
         &-button{
@@ -53,6 +54,12 @@
         display: flex;
         justify-content: space-evenly;
         border: 1px solid rgb(230, 229, 229);
+
+        &-text{
+            padding: 1em;
+            text-align: center;
+            font-style: italic;
+        }
     }
 
     &-radio-container{
@@ -83,10 +90,15 @@
         display: grid;
         grid-template-columns: 1.5fr .5fr .6fr;
         margin: .5em auto;
+        justify-content: center;
+        align-items: center;
+        padding: 0 .5em;
     }
 
     &-label{
         margin-right: 1em;
+        display: flex;
+        align-items: center;
     }
 
     &-price{

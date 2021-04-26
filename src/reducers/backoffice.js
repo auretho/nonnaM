@@ -11,8 +11,8 @@ const initialState = {
     newProduct: '',
     activeMenuItem: 'home',
     login: {
-        email: 'coucou@coucou.com',
-        password: 'coucou'
+        email: '',
+        password: ''
     },
     logged: false,
     recipes: '',

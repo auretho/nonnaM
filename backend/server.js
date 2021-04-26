@@ -20,8 +20,8 @@ app.use((req, res, next) => {
   next();
 });
 app.use(express.json()); // A VOIR LE FONCTIONNEMENT
+app.use(express.static('./build'))
 app.use('/images', express.static(path.join(__dirname,'images')));
-
 
 mongoose.connect(process.env.CONNECT,
   { useNewUrlParser: true,
@@ -38,6 +38,8 @@ app.use('/backoffice/order', orderRoute);
 app.use('/backoffice/recipe', recipeRoute);
 app.use('/backoffice/legal', legalRoute);
 
-
+app.get('/*', (req,res) => {
+  res.sendFile(path.join(__dirname, './build/index.html'))
+})
 
 app.listen(PORT, () => console.log(`Le serveur tourne sur le port ${PORT}`))

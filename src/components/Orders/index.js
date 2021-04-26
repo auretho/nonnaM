@@ -140,14 +140,17 @@ const Orders = ({inputDetails, prodList, form, total, redirection, delivery, han
             </div>
 
             <div className="order-delivery">
-                <div className="order-radio-container">
+                <p className="order-delivery-text">
+                    Dans le cas d'une demande de livraison, d'éventuels frais seraient à prévoir. Dans ce cas, merci de bien vouloir nous préciser le lieu de livraison.
+                </p>
+                {/* <div className="order-radio-container">
                     <input type="radio" id="avec" name="delivery" value={delivery} onChange={handleRadioSelect}/>
                     <label htmlFor="avec" className="order-radio">Avec livraison (+1€)</label>
                 </div>
                 <div className="order-radio-container">
                     <input type="radio" id="sans"  name="delivery" value={delivery} onChange={handleRadioSelect}/>
                     <label htmlFor="sans" className="order-radio">Sans livraison</label>
-                </div>
+                </div> */}
             </div>
             <h2 className="item-total">TOTAL TTC: {total.toFixed(2)}€</h2>
             <div className="order-form-div">

@@ -38,7 +38,7 @@ const Contact = ({findAllLegals}) => {
                 }
             </div>
             <NavHashLink smooth to="#bienvenue">
-                <img src={logo} alt="" className="contact-image"/>
+                <img src={logo} alt="logo" className="contact-image"/>
             </NavHashLink>
         </div>
         <div className="contact-footer">

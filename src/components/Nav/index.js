@@ -9,7 +9,7 @@ import HomeIcon from '@material-ui/icons/Home';
 
 import './style.scss';
 
-const Nav = ({navlinks, burgerOpened, handleBurger, handleChange, login, loginSubmit, logged, logoutSubmit}) => {
+const Nav = ({navlinks, burgerOpened, handleBurger, handleChange, login, loginSubmit, logged, logoutSubmit, signup}) => {
     const handleBurgerClick = () => {
         handleBurger()
     }

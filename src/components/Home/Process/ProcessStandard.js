@@ -31,7 +31,7 @@ const ProcessStandard = ({location}) => {
                 <div className="process-imageDiv">
                     <img 
                         src={element.arrow} 
-                        alt="" 
+                        alt="flèche" 
                         className="process-arrow" 
                         onMouseOver={handleHover} 
                         onMouseLeave={handleHoverOut} 
@@ -43,6 +43,7 @@ const ProcessStandard = ({location}) => {
                     />
                     <HoverImage 
                         className="process-smile" 
+                        alt="smiley"
                         src={element.img1} 
                         hoverSrc={element.img2} 
                         style={{
@@ -60,7 +61,7 @@ const ProcessStandard = ({location}) => {
                             left: `${element.textPos.left}`,
                         }}
                     >
-                        <h1>{element.title}:</h1> 
+                        {/* <h1>{element.title}:</h1>  */}
                         <p>{element.text}</p>
                     </div>
                 </div>

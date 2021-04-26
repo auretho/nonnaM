@@ -34,7 +34,7 @@ const Products = ({img, findAllProducts}) => {
                     <div className="product-block" key={i} id={element.shortName}>
                         <Modal item={element.shortName} triggerItem={
                             <img className="product-image"
-                                src={element.image} alt="" 
+                                src={element.image} alt="type de produit" 
                                 style={transformStyle}   
                             />
                         }/>
@@ -57,7 +57,7 @@ const Products = ({img, findAllProducts}) => {
     <section className="product" id="nos-produits">
         <Parallax className="product-parallax"  strength={300} renderLayer={rendered}>
             <Background>
-                <img src={champs} alt="" className="product-parallax-bgimg"/>
+                <img src={champs} alt="champs" className="product-parallax-bgimg"/>
             </Background>
         </Parallax>
 
@@ -70,7 +70,7 @@ const Products = ({img, findAllProducts}) => {
                     <div className="product-block" key={i} id={element.shortName}>
                         <Modal item={element.shortName} triggerItem={
                             <img className="product-image"
-                                src={element.image} alt="" 
+                                src={element.image} alt="type de produit" 
                                 // style={transformStyle}   
                             />
                         }/>
@@ -92,46 +92,3 @@ const Products = ({img, findAllProducts}) => {
 )}
 
 export default Products;
-
-
-
-// CODE TEST A GARDER
-/* <div className="wrapper product-one" >
-
-                    <p className="product-description" style={{ transition: 'opacity'}}>
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Et voluptates veritatis aliquam quidem, perspiciatis quam assumenda saepe, minima voluptate possimus doloremque consequuntur earum omnis repellendus est, deleniti repudiandae. Magnam, maiores! Suscipit recusandae iste unde nisi accusantium distinctio. Ducimus dolor veniam, nemo eveniet amet quia. Consequuntur delectus adipisci enim totam minus?
-                    </p>
-                    
-                    <img src={salade} alt="" className="product-veggie left"/>
-                    <img src={tomate} alt="" className="product-veggie right"/>
-                    <img src={artichaut} alt="" className="product-veggie left"/>
-                    <img src={salade} alt="" className="product-veggie right"/>
-                    <img src={tomate} alt="" className="product-veggie left"/>
-                    <img src={artichaut} alt="" className="product-veggie right"/>
-                    <img src={panier} alt="" className="product-basket"/>
-                </div> */
-                /* <div className="wrapper product-two">
-                    <div className="drops">
-                        <div className="red-drops">
-                            <img src={drop} alt="" className="product-drop left-drop"/>
-                            <img src={drop} alt="" className="product-drop left-drop"/>
-                            <img src={drop} alt="" className="product-drop left-drop"/>
-                            <img src={drop} alt="" className="product-drop left-drop"/>
-                            <img src={drop} alt="" className="product-drop left-drop"/>
-                        </div>
-
-                        <div className="green-drops">
-                            <img src={drop2} alt="" className="product-drop right-drop"/>
-                            <img src={drop2} alt="" className="product-drop right-drop"/>
-                            <img src={drop2} alt="" className="product-drop right-drop"/>
-                            <img src={drop2} alt="" className="product-drop right-drop"/>
-                            <img src={drop2} alt="" className="product-drop right-drop"/>
-                        </div>
-
-                    </div>
-                    
-                    <div className="jars">
-                        <img src={pot} alt="" className="product-jar"/>
-                        <img src={pot2} alt="" className="product-jar"/>
-                    </div>
-                </div> */

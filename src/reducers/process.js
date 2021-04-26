@@ -13,11 +13,11 @@ const initialState = {
             img2: smile2,
             arrow: arrow1,
             title: 'Les artichauts',
-            text: 'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Officia officiis amet iusto enim placeat quisquam saepe corrupti hic consectetur repellat.',
+            text: "Ces légumes sont considérés comme la perle du village de Cupello (connu au niveau national comme le `Village des artichauts`; il y a même un panneau à l'entrée du village `Cupello città del Carciofo`! Ma famille utilise depuis plusieurs générations les mêmes graines qu'elle protège jalousement (de type `Mazzaferrata`) afin de vous livrer un produit d'exception.",
             imgBlockPos: {
                 pos: 'relative',
                 top: '45%',
-                left: '62%', 
+                left: '60%', 
             },
             imgBlockPosMob: {
                 pos: 'absolute',
@@ -66,7 +66,7 @@ const initialState = {
             },
             textPosMob: {
                 pos: 'absolute',
-                top: '50%',
+                top: '10%',
                 left: '-140%',
             },
             textPosIpad: {
@@ -80,7 +80,7 @@ const initialState = {
             img2: smile2,
             arrow: arrow2,
             title: 'L\'huile d\'olive',
-            text: 'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Officia officiis amet iusto enim placeat quisquam saepe corrupti hic consectetur repellat.',
+            text: "Nous avons plus de 600 oliviers (qualité `leccino` et qualité `gentile`) dont ma famille prend soin depuis environ 1921. D'autres champs d'oliviers situés dans la province de Chieti peuvent être utilisés pour satisfaire vos besoins. Les olives une fois ramassées sont amenées au moulin et transformées en une huile extra vierge, douce, intense… et délicieuse.",
             imgBlockPos: {
                 pos: 'relative',
                 top: '45%',
@@ -147,7 +147,7 @@ const initialState = {
             img2: smile2,
             arrow: arrow3,
             title: 'Le soleil (la plupart du temps) pour les tomates',
-            text: 'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Officia officiis amet iusto enim placeat quisquam saepe corrupti hic consectetur repellat.',
+            text: "Nous avons la chance d'avoir des conditions climatiques optimales (soleil 300 jours par an, la mer à moins de 10 km et l'air frais de la montagne Maiella qui préserve notre vallée). Cupello se trouve sur ces coordonnées : latitude 42° 2'37.54\" N , longitude 14°40'58.85\" E",
             imgBlockPos: {
                 pos: 'relative',
                 top: '20%',

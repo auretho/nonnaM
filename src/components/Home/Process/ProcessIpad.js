@@ -26,7 +26,7 @@ const ProcessIpad = ({location}) => {
         <div className="process-imageDiv" >
             <img 
                 src={element.arrow} 
-                alt="" 
+                alt="flèche" 
                 className="process-arrow" 
                 style={{
                     position: `${element.arrowPosIpad.pos}`,
@@ -37,7 +37,7 @@ const ProcessIpad = ({location}) => {
             <img 
                 className="process-smile" 
                 src={element.img1} 
-                alt=""
+                alt="smiley"
                 // hoverSrc={element.img2}
                 onClick={handleClick} 
                 style={{

@@ -28,8 +28,8 @@ const Header = () => (
                     </div>
                 </div>
 
-                <img className="translate header-bg-sky" src={ciel} alt="" data-speed="0.4" />
-                <img className="translate header-bg-field" src={terrain} alt="" data-speed="0"/>
+                <img className="translate header-bg-sky" src={ciel} alt="sky" data-speed="0.4" />
+                <img className="translate header-bg-field" src={terrain} alt="field" data-speed="0"/>
 
             </header>
             {/* <section>
