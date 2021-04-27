@@ -11,8 +11,6 @@ const orderRoute = require('./routes/order');
 const recipeRoute = require('./routes/recipe');
 const legalRoute = require('./routes/legal');
 
-const PORT = 3001;
-
 app.use((req, res, next) => {
   res.setHeader('Access-Control-Allow-Origin', '*');
   res.setHeader('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content, Accept, Content-Type, Authorization');
@@ -42,4 +40,5 @@ app.get('/*', (req,res) => {
   res.sendFile(path.join(__dirname, './build/index.html'))
 })
 
-app.listen(PORT, () => console.log(`Le serveur tourne sur le port ${PORT}`))
+const port = process.env.PORT || 3001;
+app.listen(port, () => console.log(`Le serveur tourne sur le port ${port}`))
