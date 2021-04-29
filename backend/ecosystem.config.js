@@ -10,12 +10,12 @@ module.exports = {
   deploy : {
     production : {
       "user" : 'ubuntu',
-      "host" : '34.238.52.84',
+      "host" : '18.235.233.76',
       "ref"  : 'origin/master',
       "repo" : 'git@github.com:auretho/nonnaM.git',
-      "path" : '/home/ubuntu',
+      "path" : '/home/ubuntu/nonna/backend',
       'pre-deploy-local': '',
-      'post-deploy' : 'npm install && pm2 reload ecosystem.config.js --env production',
+      'post-deploy' : 'yarn && pm2 reload ecosystem.config.js --env production',
       'pre-setup': ''
     }
   }

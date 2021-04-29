@@ -26,7 +26,8 @@ mongoose.connect(process.env.CONNECT,
     useUnifiedTopology: true })
   .then(() => console.log('Connexion à MongoDB réussie !'))
   .catch(() => console.log('Connexion à MongoDB échouée !'));
-mongoose.set('useCreateIndex', true);
+mongoose.set(
+  'useCreateIndex', true);
 
 
 app.use('/backoffice/user', userRoute);
