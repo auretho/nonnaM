@@ -10,7 +10,7 @@ const OrderMdlw = (store) => (next) => (action) => {
         case ON_SUBMIT:
             axios({
                 method: 'post',
-                url: `http://${baseURL}backoffice/order/sendOrder`,
+                url: `https://${baseURL}backoffice/order/sendOrder`,
                 data: {
                     id: store.getState().orders.form.id,
                     email:store.getState().orders.form.email,
