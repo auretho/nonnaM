@@ -4,13 +4,13 @@ import { ON_SUBMIT } from '../actions/user';
 const OrderMdlw = (store) => (next) => (action) => {
     next(action);
     // const { dispatch } = store;
-    const baseURL = process.env.NODE_ENV === "production" ? "/" : "localhost:3001/";
+    const baseURL = process.env.NODE_ENV === "production" ? "/" : "http://localhost:3001/";
 
     switch (action.type){
         case ON_SUBMIT:
             axios({
                 method: 'post',
-                url: `https://${baseURL}backoffice/order/sendOrder`,
+                url: `${baseURL}backoffice/order/sendOrder`,
                 data: {
                     id: store.getState().orders.form.id,
                     email:store.getState().orders.form.email,

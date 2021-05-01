@@ -9,7 +9,7 @@ const backofficeMdlw = (store) => (next) => (action) => {
     next(action);
     const { dispatch } = store;
 
-    const baseURL = process.env.NODE_ENV === "production" ? "/" : "localhost:3001/";
+    const baseURL = process.env.NODE_ENV === "production" ? "" : "http://localhost:3001/";
     const token = localStorage.getItem('token');
     const ide = store.getState().backoffice.productSelected._id;
 
@@ -19,7 +19,7 @@ const backofficeMdlw = (store) => (next) => (action) => {
           axios({
             headers: { Authorization: `Bearer ${token}`},
             method: 'post',
-            url: `https://${baseURL}backoffice/user/signup`,
+            url: `${baseURL}backoffice/user/signup`,
             data: {
               email: store.getState().backoffice.login.email,
               password: store.getState().backoffice.login.password,
@@ -39,7 +39,7 @@ const backofficeMdlw = (store) => (next) => (action) => {
         axios({
           headers: { Authorization: `Bearer ${token}`},
           method: 'post',
-          url: `https://${baseURL}backoffice/user/login`,
+          url: `${baseURL}backoffice/user/login`,
           data: {
             email: store.getState().backoffice.login.email,
             password: store.getState().backoffice.login.password,
@@ -60,7 +60,7 @@ const backofficeMdlw = (store) => (next) => (action) => {
           axios({
             // headers: { Authorization: `Bearer ${token}`},
             method: 'post',
-            url: `https://${baseURL}backoffice/user/logout`,
+            url: `${baseURL}backoffice/user/logout`,
           })
           .then(() => {
             localStorage.clear();
@@ -77,7 +77,7 @@ const backofficeMdlw = (store) => (next) => (action) => {
           axios({
             headers: { Authorization: `Bearer ${token}`},
             method: 'post',
-            url:  `https://${baseURL}backoffice/products/addNewProduct`,
+            url:  `${baseURL}backoffice/products/addNewProduct`,
             data: formData,
             })
             .then(res => {
@@ -89,7 +89,7 @@ const backofficeMdlw = (store) => (next) => (action) => {
         case FIND_ALL_PRODUCTS:
           axios({
             method: 'get',
-            url:  `https://${baseURL}backoffice/products/findAllProducts`,
+            url:  `${baseURL}backoffice/products/findAllProducts`,
           })
           .then((res) => {
             console.log(res.data);
@@ -106,7 +106,7 @@ const backofficeMdlw = (store) => (next) => (action) => {
         axios({
           headers: { Authorization: `Bearer ${token}`},
           method: 'get',
-          url:  `https://${baseURL}backoffice/products/findProduct/${id}`,
+          url:  `${baseURL}backoffice/products/findProduct/${id}`,
         })
         .then((res) => {
           // console.log(res.data);
@@ -130,7 +130,7 @@ const backofficeMdlw = (store) => (next) => (action) => {
           axios({
           headers: { Authorization: `Bearer ${token}`},
           method: 'put',
-          url:  `https://${baseURL}backoffice/products/updateProduct/${ide}`,
+          url:  `${baseURL}backoffice/products/updateProduct/${ide}`,
           data: UpdFormData,
         })
         .then((res) => {
@@ -147,7 +147,7 @@ const backofficeMdlw = (store) => (next) => (action) => {
         axios({
           headers: { Authorization: `Bearer ${token}`},
           method: 'delete',
-          url:  `https://${baseURL}backoffice/products/deleteProduct/${ide}`,
+          url:  `${baseURL}backoffice/products/deleteProduct/${ide}`,
         })
         break;
       
@@ -156,7 +156,7 @@ const backofficeMdlw = (store) => (next) => (action) => {
           axios({
             headers: { Authorization: `Bearer ${token}`},
             method: 'put',
-            url:  `https://${baseURL}backoffice/products/updateStock`,
+            url:  `${baseURL}backoffice/products/updateStock`,
             data: store.getState().backoffice.stock,
           })
           .then((res) => {
@@ -171,7 +171,7 @@ const backofficeMdlw = (store) => (next) => (action) => {
         case FIND_ALL_RECIPES:
           axios({
             method: 'get',
-            url:  `https://${baseURL}backoffice/recipe/findAllRecipes`,
+            url:  `${baseURL}backoffice/recipe/findAllRecipes`,
           })
           .then((res) => {
             console.log(res.data);
@@ -186,7 +186,7 @@ const backofficeMdlw = (store) => (next) => (action) => {
           axios({
             headers: { Authorization: `Bearer ${token}`},
             method: 'put',
-            url:  `https://${baseURL}backoffice/recipe/updateRecipes`,
+            url:  `${baseURL}backoffice/recipe/updateRecipes`,
             data: store.getState().backoffice.recipeToUpdt,
           })
           .then((res) => {
@@ -206,7 +206,7 @@ const backofficeMdlw = (store) => (next) => (action) => {
           axios({
             headers: { Authorization: `Bearer ${token}`},
             method: 'post',
-            url:  `https://${baseURL}backoffice/photo/addNewPhoto`,
+            url:  `${baseURL}backoffice/photo/addNewPhoto`,
             data: photosFormData,
             })
             .then(res => {
@@ -217,7 +217,7 @@ const backofficeMdlw = (store) => (next) => (action) => {
         case FIND_ALL_PHOTOS:
           axios({
             method: 'get',
-            url:  `https://${baseURL}backoffice/photo/findAllPhotos`,
+            url:  `${baseURL}backoffice/photo/findAllPhotos`,
           })
           .then((res) => {
             console.log(res.data);
@@ -237,7 +237,7 @@ const backofficeMdlw = (store) => (next) => (action) => {
           axios({
             headers: { Authorization: `Bearer ${token}`},
             method: 'put',
-            url:  `https://${baseURL}backoffice/photo/updatePhoto`,
+            url:  `${baseURL}backoffice/photo/updatePhoto`,
             data: UpdPhotoFormData,
           })
           .then((res) => {
@@ -253,7 +253,7 @@ const backofficeMdlw = (store) => (next) => (action) => {
         case FIND_ALL_LEGALS:
           axios({
             method: 'get',
-            url:  `https://${baseURL}backoffice/legal/findAllLegals`,
+            url:  `${baseURL}backoffice/legal/findAllLegals`,
           })
           .then((res) => {
             const legalData = res.data.find(res => res);
@@ -268,7 +268,7 @@ const backofficeMdlw = (store) => (next) => (action) => {
           axios({
             headers: { Authorization: `Bearer ${token}`},
             method: 'put',
-            url:  `https://${baseURL}backoffice/legal/updateLegals`,
+            url:  `${baseURL}backoffice/legal/updateLegals`,
             data: store.getState().backoffice.legals,
           })
           .then((res) => {
