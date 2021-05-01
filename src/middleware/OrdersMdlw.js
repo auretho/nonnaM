@@ -4,7 +4,7 @@ import { ON_SUBMIT } from '../actions/user';
 const OrderMdlw = (store) => (next) => (action) => {
     next(action);
     // const { dispatch } = store;
-    const baseURL = process.env.NODE_ENV === "production" ? "/" : "http://localhost:3001/";
+    const baseURL = process.env.NODE_ENV === "production" ? "" : "http://localhost:3001/";
 
     switch (action.type){
         case ON_SUBMIT:
