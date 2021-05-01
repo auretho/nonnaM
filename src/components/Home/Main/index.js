@@ -9,7 +9,7 @@ import mamma from '../../../assets/mamma2.png';
 import './style.scss';
 
 const Main = () => {
-    
+   
     return(
     <section id="notre-histoire">
     <Parallax bgImage={bg}  className="main" strength={300}>
