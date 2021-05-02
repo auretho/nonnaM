@@ -1,4 +1,4 @@
-require('dotenv'). config({ path: '/Applications/MAMP/htdocs/Perso/nonna/.env' })
+require('dotenv').config();
 const express = require('express');
 const mongoose = require('mongoose');
 // const cors = require('cors');
