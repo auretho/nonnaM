@@ -78,7 +78,8 @@
 
     &-footer{
         position: relative;
-        bottom: 100%;
+        bottom: 0;
+        left: 0;
         height: 3em;
         width: 100%;
         background-color: #B8D4A5;
@@ -143,29 +144,49 @@
 
 
 @media (max-width: 488px){
-    .contact-title{
-        font-size: 3em;
-    }
+    .contact{
+        &-title{
+            font-size: 3em;
+        }
+    
+        &-subtitle{
+            font-size: 1.4em;
+        }
+    
+        &-details h2, &-details a{
+            font-size: .7em;
+        }
+    
+        &-details{
+            background-color: rgba(255, 255, 255, 0.6);
+        }
+    
+        &-image{
+            margin: 1em 0;
+        }
+    
+        &-tel a{
+            font-size: .9em;
+            font-weight: bold;
+            color: black;
+        }
 
-    .contact-subtitle{
-        font-size: 1.4em;
-    }
+        &-footer{
+            height: 3.8em;
 
-    .contact-details h2, .contact-details a{
-        font-size: .7em;
-    }
+            &-list{
+                width: 90%;
+            }
 
-    .contact-details{
-        background-color: rgba(255, 255, 255, 0.6);
-    }
+            &-item{
+                font-size: 1.3em;
+                margin-bottom: .3em;
+            }
 
-    .contact-image{
-        margin: 1em 0;
-    }
-
-    .contact-tel a{
-        font-size: .9em;
-        font-weight: bold;
-        color: black;
+            &-signature{
+                position: relative;
+                margin: auto auto .5em;
+            }
+        }
     }
 }

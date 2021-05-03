@@ -90,8 +90,8 @@
 }
 
 .ui.modal>.content>.image{
-    max-width: 150px;
-    max-height: 180px;
+    width: 150px;
+    // max-height: 180px;
 }
 
 .ui.dimmer{
@@ -113,7 +113,7 @@
 
     &-content{
         border-bottom: 1px solid lightgrey;
-        max-height: 200px;
+        min-height: 200px;
     }
 
     &-footer-text{
@@ -189,66 +189,97 @@
 
 
 @media (max-width: 488px){
-    .product-images-mobile{
-        background-image: url('../../../assets/champs2.png');
-        background-size: cover;
-        height: 100vh;
-        display: flex;
-        flex-direction: column;
-        justify-content: space-evenly;
-    }
-
-    .product-items{
-        width: 90%;
-        align-items: baseline;
-        padding-top: 1.5em;
-    }
-
-    .product-text{
-        position: relative;
-        top: 10%;
-        font-size: 2.3em;
-        margin-bottom: 0;
-    }
-
-    .product-block{
-        width: 30%;
-        margin: 0 auto;
-        padding-top: 2em;
-        align-items: flex-end;
-    }
-
-    .product-image{
-        object-fit: contain;
-        height: auto;
-        width: 80%;
-        margin: auto;
-        filter: drop-shadow(0 0 5px white);
-        
-        &-title{
-            position: relative;
-            top: 0px;
-            font-size: 1em;
-            padding: .3em;
-            width: 100%;
-            height: 50px;
+    .product{
+        &-images-mobile{
+            background-image: url('../../../assets/champs2.png');
+            background-size: cover;
+            height: 100vh;
             display: flex;
-            justify-content: center;
-            align-items: center;
-            margin-top: 2em;
+            flex-direction: column;
+            justify-content: space-evenly;
+        }
+    
+        &-items{
+            width: 90%;
+            align-items: baseline;
+            padding-top: 1.5em;
+        }
+    
+        &-text{
+            position: relative;
+            top: 10%;
+            font-size: 2.3em;
+            margin-bottom: 0;
+        }
+    
+        &-block{
+            width: 30%;
+            margin: 0 auto;
+            padding-top: 2em;
+            align-items: flex-end;
+        }
+    
+        &-image{
+            object-fit: contain;
+            height: auto;
+            width: 80%;
+            margin: auto;
+            filter: drop-shadow(0 0 5px white);
+            
+            &-title{
+                position: relative;
+                top: 0px;
+                font-size: 1em;
+                padding: .3em;
+                width: 100%;
+                height: 50px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                margin-top: 2em;
+            }
         }
     }
 
     .modal{
         &-container{
-            height: 70vh;
             padding-bottom: 1em;
         }
+
+        &-footer-text{
+            width: 90%;
+            margin: auto;
+            text-align: center;
+            margin-bottom: 1em;
+        }
+    }
+
+    .buttons{
+        text-align: center;
+        margin-bottom: 0 i !important;
+    }
+
+    .order-button{
+        margin-bottom: 1em !important;
+    }
+
+    .ui.modal > .content > .image{
+        height: 130px;
+        width: 150px;
+    }
+    .ui.modal > .image.content{
+        min-height: auto;
+        flex-direction: row;
+    }
+
+    .ui.modal>.content>.icon+.description, .ui.modal>.content>.image+.description{        margin-left: 1em;
+        margin-left: 1em !important;
+    }
+
+    .ui.modal > .actions{
+        display: unset;
     }
 }
-
-
-
 
 
 @media(max-width: 1450px){

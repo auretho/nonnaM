@@ -3,6 +3,8 @@ import Nav from '../../containers/Navbar';
 import Home from '../Home';
 import RecipeCards from '../Home/Products/recipeCards';
 import Legals from '../../containers/Legals';
+import Cgv from '../../containers/Cgv';
+import Cgu from '../../containers/Cgu';
 import Orders from '../../containers/Orders';
 import BackOffice from '../../containers/BackOffice';
 import Error from '../Error';
@@ -31,6 +33,8 @@ function App({redirection, rebootRedirection, logged}) {
           <Route exact path="/" component={Home}/>
           <Route exact path="/fiches-recette" component={RecipeCards} />
           <Route exact path="/mentions-legales" component={Legals} />
+          <Route exact path="/CGV" component={Cgv} />
+          <Route exact path="/CGU" component={Cgu} />
           <Route exact path="/commandes" component={Orders}/>
           <Route path="/backoffice" component={BackOffice}/>
           <Route component={Error} />

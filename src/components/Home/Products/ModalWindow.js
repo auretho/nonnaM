@@ -33,9 +33,6 @@ const ModalWindow = ({triggerItem, products, item}) => {
             <Modal.Actions className="modal-footer">
                 <h1 className="modal-footer-text">Pour toutes les infos détaillées sur nos produits, n'hésitez pas à aller consulter leurs fiches! <Link to="/fiches-recette">Par ici!</Link> </h1>
                 <div className="buttons">
-                    <Button color='black' onClick={() => setOpen(false)}>
-                    Annuler
-                    </Button>
                     <HashLink to="/commandes/#order">
                         <Button
                         content="Super, je commande!"
@@ -43,8 +40,12 @@ const ModalWindow = ({triggerItem, products, item}) => {
                         icon='checkmark'
                         onClick={() => setOpen(false)}
                         positive
+                        className="order-button"
                         />
                     </HashLink>
+                    <Button color='black' onClick={() => setOpen(false)}>
+                        Annuler
+                    </Button>
                 </div>
             </Modal.Actions>
         </Modal>

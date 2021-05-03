@@ -17,6 +17,7 @@ const initialState = {
     logged: false,
     recipes: '',
     legals: '',
+
 };
 
 const backoffice = (state = initialState, action = {}) => {
