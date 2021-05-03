@@ -32,7 +32,7 @@ const sendMail = (id, email, text, firstname, lastname, phone, products, deliver
 
     const mailOptions = {
         from: email,
-        to: 'aurelie.thouzeau@gmail.com', 
+        to: 'luca@nonna-m.com', 
         subject: `Commande n° ${shortId}`,
         html:`<p><b>FULL ID:</b> ${id}</p> 
         <p><b>NOM:</b> ${firstname} ${lastname} </p>
@@ -40,7 +40,6 @@ const sendMail = (id, email, text, firstname, lastname, phone, products, deliver
         <p><b>TELEPHONE:</b> ${phone}</p>
         <p><b>MESSAGE:</b> ${text}</p> 
         <p><b>PRODUITS:</b>${productsOrdered}</p>
-        <p><b>LIVRAISON:</b> ${transport()}</p>
         <p><b>TOTAL TTC:</b> ${total.toFixed(2)}€</p>`,
     };
 
