@@ -11,7 +11,6 @@ const orderRoute = require('./routes/order');
 const recipeRoute = require('./routes/recipe');
 const legalRoute = require('./routes/legal');
 
-app.use(express.static(path.join(__dirname,'/images')));
 app.use((req, res, next) => {
   res.setHeader('Access-Control-Allow-Origin', '*');
   res.setHeader('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content, Accept, Content-Type, Authorization');
@@ -20,6 +19,7 @@ app.use((req, res, next) => {
 });
 app.use(express.json()); // A VOIR LE FONCTIONNEMENT
 app.use(express.static('./build'))
+app.use('/images', express.static(path.join(__dirname,'/images')));
 
 mongoose.connect(`mongodb+srv://${process.env.DB_USER}:${process.env.DB_PASSWORD}@cluster0.9fmcl.mongodb.net/${process.env.DB_COLLECTION}?authSource=$external&authMechanism=MONGODB-AWS`,
   { useNewUrlParser: true,
