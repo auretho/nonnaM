@@ -1,4 +1,4 @@
-require('dotenv').config({ path: '/home/ubuntu/.env' });
+require('dotenv').config({ path: '../.env' });
 const express = require('express');
 const mongoose = require('mongoose');
 // const cors = require('cors');
@@ -21,7 +21,7 @@ app.use(express.json()); // A VOIR LE FONCTIONNEMENT
 app.use(express.static('./build'))
 app.use('/images', express.static(path.join(__dirname,'/images')));
 
-mongoose.connect(`mongodb+srv://${process.env.DB_USER}:${process.env.DB_PASSWORD}@cluster0.9fmcl.mongodb.net/${process.env.DB_COLLECTION}?authSource=$external&authMechanism=MONGODB-AWS`,
+mongoose.connect(`mongodb+srv://${process.env.DB_USER}:${process.env.DB_PASSWORD}@cluster0.9fmcl.mongodb.net/${process.env.DB_COLLECTION}?retryWrites=true&w=majority"`,
   { useNewUrlParser: true,
     useUnifiedTopology: true })
   .then(() => console.log('Connexion à MongoDB réussie !'))
