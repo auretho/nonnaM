@@ -1,5 +1,6 @@
 import { v1 as uuidv1 } from 'uuid';
-import { useHistory } from 'react-router-dom'
+import { useHistory } from 'react-router-dom';
+import {Button} from 'semantic-ui-react';
 import './style.scss';
 
 const Orders = ({inputDetails, prodList, form, total, redirection, delivery, handleOrderChange, handleSubmit, addNewProduct}) => {
@@ -100,10 +101,14 @@ const Orders = ({inputDetails, prodList, form, total, redirection, delivery, han
             <h1 className="order-form-title">
                 Formulaire de commande
             </h1>
+            <p className="instructions">Le principe est simple: vous sélectionnez les produits que vous voulez acheter, vous me laissez vos coordonnées et je vous recontacte rapidement pour finaliser votre commande! </p>
                 {
                 inputDetails.map((element, key) => (
                     <div className="order-form-div" key={key}>
-                    {element.title}
+                    <div>
+                        {element.title}
+                        <span style={{color: "red", fontWeight: "bold", marginLeft: ".3em"}}>*</span>
+                    </div>
                     <input type={element.type} 
                            name={element.name}
                            className="order-form-input" 
@@ -111,6 +116,7 @@ const Orders = ({inputDetails, prodList, form, total, redirection, delivery, han
                            value={form.value}
                         //    pattern={element.pattern}
                            onChange={handleInputChange} 
+                           required
                     />
                     </div>
                 ))
@@ -167,9 +173,9 @@ const Orders = ({inputDetails, prodList, form, total, redirection, delivery, han
             <h2 className="errorMsg">
                 Merci de bien vouloir remplir tous les champs demandés!
             </h2>
-            <button type="submit" className="order-form-button">
-                Valider ma commande
-            </button>
+            <Button type="submit" className="order-form-button" color="green">
+                Envoyer une demande
+            </Button>
         </form>
         }
     </div>

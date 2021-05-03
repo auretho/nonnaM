@@ -7,7 +7,7 @@ const OrderSchema = mongoose.Schema({
     email: { type: String, required: true },
     phone: { type: String, required: true },
     products: { type: Array, required: false}, // A VOIR
-    delivery: { type: Boolean, required: true },
+    delivery: { type: Boolean, required: false },
     text: {type: String, required: false},
     total: {type: Number, required: false},
 });
