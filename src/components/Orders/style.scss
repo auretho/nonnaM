@@ -48,19 +48,19 @@
         }
     }
 
-    &-delivery{
-        width: 100%;
-        margin: 1em auto 0;
-        display: flex;
-        justify-content: space-evenly;
-        border: 1px solid rgb(230, 229, 229);
+    // &-delivery{
+    //     width: 100%;
+    //     margin: 1em auto 0;
+    //     display: flex;
+    //     justify-content: space-evenly;
+    //     border: 1px solid rgb(230, 229, 229);
 
-        &-text{
-            padding: 1em;
-            text-align: center;
-            font-style: italic;
-        }
-    }
+    //     &-text{
+    //         padding: 1em;
+    //         text-align: center;
+    //         font-style: italic;
+    //     }
+    // }
 
     &-radio-container{
         margin: .5em auto;

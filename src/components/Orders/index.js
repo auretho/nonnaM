@@ -50,22 +50,22 @@ const Orders = ({inputDetails, prodList, form, total, redirection, delivery, han
         });
     }
 
-    const handleRadioSelect = (evt) => {
-        if(delivery === undefined){
-            if(evt.target.id === "avec"){
-                addNewProduct({delivery: true, total: total + 1})
-            } else{
-                addNewProduct({delivery: false})
-            }
-        }
-        else {
-            if(evt.target.id === "avec"){
-                addNewProduct({delivery: true, total: total + 1})
-            } else{
-                addNewProduct({delivery: false, total: total - 1})
-            }
-        }
-    }
+    // const handleRadioSelect = (evt) => {
+    //     if(delivery === undefined){
+    //         if(evt.target.id === "avec"){
+    //             addNewProduct({delivery: true, total: total + 1})
+    //         } else{
+    //             addNewProduct({delivery: false})
+    //         }
+    //     }
+    //     else {
+    //         if(evt.target.id === "avec"){
+    //             addNewProduct({delivery: true, total: total + 1})
+    //         } else{
+    //             addNewProduct({delivery: false, total: total - 1})
+    //         }
+    //     }
+    // }
 
     const handleFormSubmit = (evt) => {
         evt.preventDefault();
