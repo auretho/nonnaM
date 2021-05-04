@@ -1,3 +1,4 @@
+require('dotenv').config({ path: '../.env' });
 const nodemailer = require('nodemailer');
 const mailGun = require('nodemailer-mailgun-transport');
 
@@ -22,17 +23,17 @@ const sendMail = (id, email, text, firstname, lastname, phone, products, deliver
             }
     }).join('');
 
-    const transport = () => {
-        if(delivery){
-            return 'OUI'
-        } else{
-            return 'NON'
-        }
-    }
+    // const transport = () => {
+    //     if(delivery){
+    //         return 'OUI'
+    //     } else{
+    //         return 'NON'
+    //     }
+    // }
 
     const mailOptions = {
         from: email,
-        to: 'luca@nonna-m.com', 
+        to: "luca@nonna-m.com", 
         subject: `Commande n° ${shortId}`,
         html:`<p><b>FULL ID:</b> ${id}</p> 
         <p><b>NOM:</b> ${firstname} ${lastname} </p>
