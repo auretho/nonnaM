@@ -12,7 +12,6 @@ router.get('/findAllLegals', (req, res) => {
 
 
 router.put('/updateLegals', auth, (req,res) => {
-    console.log(req.body);
     Legal.updateOne({ _id: req.body._id }, {...req.body})
     .then(legals => res.status(200).json( legals ))
     .catch(error => res.status(400).json({ error }))

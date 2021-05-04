@@ -25,7 +25,6 @@ router.get('/findAllPhotos', (req, res) => {
 
 
 router.put('/updatePhoto', auth, multer,(req,res) => {
-  console.log(req.body);
   if(req.file && req.file != req.body.image){
     return Photo.findOne({ _id: req.body.num })
     .then(element => {

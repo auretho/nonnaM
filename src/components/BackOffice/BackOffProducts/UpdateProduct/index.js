@@ -10,7 +10,6 @@ const UpdateProduct = ({handleChange, product, updateprod}) => {
 
   const handleUploadChange = (evt) => {
     handleChange({ productSelected: {...product, image: evt.target.files[0] }})
-    console.log(product);
   }
 
   const handleProductUpdate = (evt) => {

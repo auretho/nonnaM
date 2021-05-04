@@ -26,7 +26,6 @@ const backofficeMdlw = (store) => (next) => (action) => {
             }
           })
           .then(res => {
-            console.log(res.data);
             store.getState().backoffice.login.email = '';
             store.getState().backoffice.login.password = '';
           })
@@ -81,7 +80,7 @@ const backofficeMdlw = (store) => (next) => (action) => {
             data: formData,
             })
             .then(res => {
-              console.log(res.status);
+              // console.log(res.status);
             })
           
           break;
@@ -92,7 +91,6 @@ const backofficeMdlw = (store) => (next) => (action) => {
             url:  `${baseURL}backoffice/products/findAllProducts`,
           })
           .then((res) => {
-            console.log(res.data);
             dispatch(findAllProductsSuccess(res.data));
           })
           .catch((err) => {
@@ -134,7 +132,6 @@ const backofficeMdlw = (store) => (next) => (action) => {
           data: UpdFormData,
         })
         .then((res) => {
-          console.log(res.data);
           dispatch(updateOneProductSuccess(res.data));
         })
         .catch((err) => {
@@ -174,7 +171,6 @@ const backofficeMdlw = (store) => (next) => (action) => {
             url:  `${baseURL}backoffice/recipe/findAllRecipes`,
           })
           .then((res) => {
-            console.log(res.data);
             dispatch(findAllrecipesSuccess(res.data));
           })
           .catch((err) => {
@@ -190,7 +186,6 @@ const backofficeMdlw = (store) => (next) => (action) => {
             data: store.getState().backoffice.recipeToUpdt,
           })
           .then((res) => {
-            console.log(res.data);
             dispatch(updateRecipeSuccess());
           })
           .catch((err) => {
@@ -210,7 +205,7 @@ const backofficeMdlw = (store) => (next) => (action) => {
             data: photosFormData,
             })
             .then(res => {
-              console.log(res.status);
+              // console.log(res.status);
             })
           break;
 
@@ -220,7 +215,6 @@ const backofficeMdlw = (store) => (next) => (action) => {
             url:  `${baseURL}backoffice/photo/findAllPhotos`,
           })
           .then((res) => {
-            console.log(res.data);
             dispatch(findAllPhotosSuccess(res.data))
           })
           .catch((err) => {
@@ -241,7 +235,6 @@ const backofficeMdlw = (store) => (next) => (action) => {
             data: UpdPhotoFormData,
           })
           .then((res) => {
-            console.log(res.data);
             dispatch(updatePhotoSuccess());
           })
           .catch((err) => {

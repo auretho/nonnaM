@@ -31,7 +31,6 @@ router.post('/addNewProduct', auth, multer, (req, res) => {
 });
 
 router.put('/updateStock', auth, (req,res) => {
-    console.log(req.body);
     Product.updateOne({ _id: req.body._id }, {...req.body})
     .then(prod => res.status(200).json( prod ))
     .catch(error => res.status(400).json({ error }))

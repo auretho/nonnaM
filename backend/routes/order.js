@@ -6,7 +6,6 @@ const sendMail = require('../mail');
 
 router.post('/sendOrder', (req, res) => {
     const { id, email, text, firstname, lastname, phone, products, delivery, total } = req.body;    
-    console.log(req.body);
     sendMail(id, email, text, firstname, lastname, phone, products, delivery, total, (err) => {
       if (err) {
           return res.status(500).json({ message: err.message || 'Erreur interne' });

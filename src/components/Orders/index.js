@@ -4,7 +4,6 @@ import {Button} from 'semantic-ui-react';
 import './style.scss';
 
 const Orders = ({inputDetails, prodList, form, total, redirection, delivery, handleOrderChange, handleSubmit, addNewProduct}) => {
-    console.log(prodList);
     const history = useHistory();
     const numberArr = [];
 
@@ -37,7 +36,6 @@ const Orders = ({inputDetails, prodList, form, total, redirection, delivery, han
 
     const handleCountChange = (evt) => {
         const target = evt.target.value;
-        console.log(target); 
         prodList.find(el => {
             if(el.name === evt.target.name){
                 if(el.orderCount < target) {
