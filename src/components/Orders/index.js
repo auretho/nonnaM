@@ -114,7 +114,7 @@ const Orders = ({inputDetails, prodList, form, total, redirection, delivery, han
                            value={form.value}
                         //    pattern={element.pattern}
                            onChange={handleInputChange} 
-                           required
+                        //    required
                     />
                     </div>
                 ))

@@ -5,6 +5,7 @@ const sendMail = require('../mail');
 
 
 router.post('/sendOrder', (req, res) => {
+  console.log(req.body);
     const { id, email, text, firstname, lastname, phone, products, total } = req.body;    
     sendMail(id, email, text, firstname, lastname, phone, products, total, (err) => {
       if (err) {

@@ -1,6 +1,5 @@
-require('dotenv').config({ path: '../.env' });
 const nodemailer = require('nodemailer');
-const mailGun = require('nodemailer-mailgun-transport');
+const nodemailMailGun = require('nodemailer-mailgun-transport');
 
 const auth = {
     auth: {
@@ -9,7 +8,7 @@ const auth = {
     }
 };
 
-const transporter = nodemailer.createTransport(mailGun(auth));
+const transporter = nodemailer.createTransport(nodemailMailGun(auth));
 
 const sendMail = (id, email, text, firstname, lastname, phone, products, total, cb) => {
     const shortId = id.substring(0, 8);
@@ -38,7 +37,7 @@ const sendMail = (id, email, text, firstname, lastname, phone, products, total, 
 
     transporter.sendMail(mailOptions, (err, data) => {
         if (err) {
-            console.log('il y a eu une erreur');
+            console.log('il y a une erreur');
             return cb(err, null);
         }
         console.log('message envoyé!');
