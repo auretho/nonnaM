@@ -25,6 +25,7 @@ const sendMail = (id, email, text, firstname, lastname, phone, products, total, 
     const mailOptions = {
         from: email,
         to: 'luca@nonna-m.com',
+        cc: email,
         subject: `Commande n° ${shortId}`,
         html:`<p><b>FULL ID:</b> ${id}</p>
         <p><b>NOM:</b> ${firstname} ${lastname} </p>

@@ -17,7 +17,7 @@ const Orders = ({inputDetails, prodList, form, total, redirection, delivery, han
     }    
 
     const ListNumbers = () => {
-        for (let i = 1; i <= 100; i++) {
+        for (let i = 1; i <= 20; i++) {
             numberArr.push(i)
         }
     };
@@ -99,7 +99,7 @@ const Orders = ({inputDetails, prodList, form, total, redirection, delivery, han
             <h1 className="order-form-title">
                 Formulaire de commande
             </h1>
-            <p className="instructions">Le principe est simple: vous sélectionnez les produits que vous voulez acheter, vous me laissez vos coordonnées et je vous recontacte rapidement pour finaliser votre commande! </p>
+            <p className="instructions">Sélectionnez vos produits, laissez-moi vos coordonnées et lieu de livraison, je vous recontacterai ensuite pour finaliser votre commande!</p>
                 {
                 inputDetails.map((element, key) => (
                     <div className="order-form-div" key={key}>
@@ -114,7 +114,7 @@ const Orders = ({inputDetails, prodList, form, total, redirection, delivery, han
                            value={form.value}
                         //    pattern={element.pattern}
                            onChange={handleInputChange} 
-                        //    required
+                           required
                     />
                     </div>
                 ))
@@ -136,7 +136,7 @@ const Orders = ({inputDetails, prodList, form, total, redirection, delivery, han
                                     )})
                                 }
                             </select>
-                            <h2 className="item-price">{product.price}€</h2>
+                            <h2 className="item-price">{product.price.toFixed(2)}€</h2>
                         </div>
                         )
                     )
@@ -144,8 +144,11 @@ const Orders = ({inputDetails, prodList, form, total, redirection, delivery, han
             </div>
 
             <div className="order-delivery">
+                <h1 className="order-delivery-title">Livraison:</h1>
                 <p className="order-delivery-text">
-                    Dans le cas d'une demande de livraison, d'éventuels frais seraient à prévoir. Dans ce cas, merci de bien vouloir nous préciser le lieu de livraison.
+                Livraison gratuite sur Nice à partir de 50 euros d’achat.<br/>
+                Livraison gratuite sur Antibes, Eze, Villefranche, Cannes, Biot, St Jean Cap Ferrat, Villeneuve Loubet, Cagnes sur Mer, St Laurent du Var, Beaulieu, Beausoleil à partir de 100 euros d’achat.<br/>
+                En dehors de ces villes nous appliquerons les prix Colissimo.
                 </p>
                 {/* <div className="order-radio-container">
                     <input type="radio" id="avec" name="delivery" value={delivery} onChange={handleRadioSelect}/>
@@ -163,7 +166,7 @@ const Orders = ({inputDetails, prodList, form, total, redirection, delivery, han
                           rows="10"
                           className="order-form-input" 
                           id="msgArea"
-                          placeholder="Merci d'indiquer les produits et quantités souhaités." 
+                          placeholder="N'hésitez pas à nous laisser un message!" 
                         //   value={form.message}
                           onChange={handleInputChange} 
                           ></textarea>
@@ -171,7 +174,7 @@ const Orders = ({inputDetails, prodList, form, total, redirection, delivery, han
             <h2 className="errorMsg">
                 Merci de bien vouloir remplir tous les champs demandés!
             </h2>
-            <Button type="submit" className="order-form-button" color="green">
+            <Button type="submit" className="order-form-button order-button" color="green">
                 Envoyer une demande
             </Button>
         </form>

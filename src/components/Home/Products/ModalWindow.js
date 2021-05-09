@@ -40,10 +40,10 @@ const ModalWindow = ({triggerItem, products, item}) => {
                         icon='checkmark'
                         onClick={() => setOpen(false)}
                         positive
-                        className="order-button"
+                        className="order-button order-button-main"
                         />
                     </HashLink>
-                    <Button color='black' onClick={() => setOpen(false)}>
+                    <Button color='grey' onClick={() => setOpen(false)}>
                         Annuler
                     </Button>
                 </div>

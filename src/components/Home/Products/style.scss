@@ -26,7 +26,7 @@
     &-text{
         font-family: 'Amatic SC', 'Nunito', sans-serif;
         position: relative;
-        top: 50px;
+        top: 70px;
         text-align: center;
         font-size: 4em;
         color: #fff;
@@ -34,6 +34,10 @@
         text-shadow: 0 0 10px black;
         margin-bottom: 1em;
         z-index: 1;
+    }
+
+    &-images{
+        text-align: center;
     }
 
     &-block{
@@ -70,6 +74,20 @@
     &-block:hover{
         filter: drop-shadow(0 0 5px black)
     }
+}
+
+.order-button-main{
+    z-index: 100;
+    box-shadow: 0 0 5px black !important;
+    background-color: rgba(128, 191, 34, 0.9) !important;
+    color: #fff !important;
+    margin-top: 1em !important;
+}
+
+.order-button{
+    margin-top: none !important;
+    box-shadow: none !important;
+    background-color: rgba(128, 191, 34) !important;
 }
 
 .ui.modal>.image.content{

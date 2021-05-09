@@ -1,7 +1,8 @@
 import React, { useEffect } from 'react';
 import { Parallax, Background } from 'react-parallax';
+import {Button} from 'semantic-ui-react';
+import { HashLink } from 'react-router-hash-link';
 import Modal from '../../../containers/Modal';
-
 import champs from '../../../assets/champs2.png';
 import './style.scss';
 
@@ -28,6 +29,14 @@ const Products = ({img, findAllProducts}) => {
         return(
         <div className="product-images" >
             <h1 className="product-text">Que voulez-vous commander aujourd'hui?</h1>
+            <HashLink to="/commandes/#order">
+                <Button
+                    content="Passer directement au formulaire de commande"
+                    labelPosition='right'
+                    icon='long arrow alternate right'
+                    className="order-button-main"
+                />
+            </HashLink>
             <div className="product-items">
                 {
                 img.map((element, i) => (
