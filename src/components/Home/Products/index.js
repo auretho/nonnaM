@@ -29,14 +29,14 @@ const Products = ({img, findAllProducts}) => {
         return(
         <div className="product-images" >
             <h1 className="product-text">Que voulez-vous commander aujourd'hui?</h1>
-            <HashLink to="/commandes/#order">
+            {/* <HashLink to="/commandes/#order">
                 <Button
                     content="Passer directement au formulaire de commande"
                     labelPosition='right'
                     icon='long arrow alternate right'
                     className="order-button-main"
                 />
-            </HashLink>
+            </HashLink> */}
             <div className="product-items">
                 {
                 img.map((element, i) => (
