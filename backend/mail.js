@@ -23,7 +23,7 @@ const sendMail = (id, email, text, firstname, lastname, phone, products, total, 
     }).join('');
 
     const mailOptions = {
-        from: email,
+        from: `Nouvelle commande <${email}>`,
         to: 'luca@nonna-m.com',
         cc: email,
         subject: `Commande n° ${shortId}`,
