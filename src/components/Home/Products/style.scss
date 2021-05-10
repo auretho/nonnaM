@@ -283,15 +283,16 @@
     }
 
     .ui.modal > .content > .image{
-        height: 130px;
-        width: 150px;
+        height: 150px;
+        width: 130px;
     }
     .ui.modal > .image.content{
         min-height: auto;
         flex-direction: row;
     }
 
-    .ui.modal>.content>.icon+.description, .ui.modal>.content>.image+.description{        margin-left: 1em;
+    .ui.modal>.content>.icon+.description, .ui.modal>.content>.image+.description{        
+        margin-left: 1em;
         margin-left: 1em !important;
     }
 
