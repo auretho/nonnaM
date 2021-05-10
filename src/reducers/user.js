@@ -26,6 +26,11 @@ const initialState = {
 
         },
         {
+            name: 'Commander',
+            location: '',
+            anchor: '/commandes/#order',
+        },
+        {
             name: 'Leur origine',
             location: '',
             anchor: '/#origine-des-produits',
