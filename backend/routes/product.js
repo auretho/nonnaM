@@ -22,7 +22,7 @@ router.post('/addNewProduct', auth, multer, (req, res) => {
     const product = new Product({
     ...req.body,
     orderCount: 0,
-    image: `${req.protocol}://${req.get('host')}/backend/images/${req.file.filename}`
+    image: `${req.protocol}://${req.get('host')}/images/${req.file.filename}`
 });
 
     product.save()
