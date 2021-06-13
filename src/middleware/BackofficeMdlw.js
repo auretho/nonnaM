@@ -9,7 +9,7 @@ const backofficeMdlw = (store) => (next) => (action) => {
     next(action);
     const { dispatch } = store;
 
-    const baseURL = process.env.NODE_ENV === "production" ? "/" : "http://localhost:3001/";
+    const baseURL = process.env.NODE_ENV === "production" ? "https://nonna-m.com/" : "http://localhost:3001/";
     const token = localStorage.getItem('token');
     const ide = store.getState().backoffice.productSelected._id;
 
