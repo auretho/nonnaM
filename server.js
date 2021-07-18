@@ -18,7 +18,7 @@ app.use((req, res, next) => {
   next();
 });
 app.use(express.json());
-app.use(express.static('./build'))
+// app.use(express.static('build'))
 
 mongoose.connect(`mongodb+srv://${process.env.DB_USER}:${process.env.DB_PASSWORD}@cluster0.9fmcl.mongodb.net/${process.env.DB_COLLECTION}?retryWrites=true"`,
   { useNewUrlParser: true,
@@ -28,7 +28,7 @@ mongoose.connect(`mongodb+srv://${process.env.DB_USER}:${process.env.DB_PASSWORD
 mongoose.set(
   'useCreateIndex', true);
 
-app.use(express.static(path.join(__dirname,'images')));
+app.use(express.static(path.join(__dirname,'uploads')));
 
 
 app.use('/backoffice/user', userRoute);

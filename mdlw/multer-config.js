@@ -9,7 +9,7 @@ const MIME_TYPES = {
 const storage = multer.diskStorage({
     // dans quel dossier enregistrer le fichier 
     destination: (req, file, cb) => {
-        cb(null, 'images') // nom du dossier créé pour recevoir les images en 2e argument
+        cb(null, 'uploads') // nom du dossier créé pour recevoir les images en 2e argument
     },
     // quel nom de fichier utiliser
     filename: (req, file, cb) => {
