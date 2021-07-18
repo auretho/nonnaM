@@ -22,7 +22,7 @@ router.post('/addNewProduct', auth, multer, (req, res) => {
     const product = new Product({
     ...req.body,
     orderCount: 0,
-    image: `${req.protocol}://${req.get('host')}/images/${req.file.filename}`
+    image: `${req.protocol}://${req.get('host')}/uploads/${req.file.filename}`
 });
 
     product.save()
@@ -40,12 +40,12 @@ router.put('/updateProduct/:id', auth, multer, (req, res) => {
     if(req.file && req.file != req.body.image){
         Product.findOne({ _id: req.params.id })
         .then(element => {
-        const filename = element.image.split('/images/')[1];
-        fs.unlink(`images/${filename}`, () => {
+        const filename = element.image.split('/uploads/')[1];
+        fs.unlink(`/uploads/${filename}`, () => {
             Product.deleteOne({ _id: req.params.id })
             const prodObject = req.file ? 
             { ...req.body,
-            image: `${req.protocol}://${req.get('host')}/images/${req.file.filename}`} 
+            image: `${req.protocol}://${req.get('host')}/uploads/${req.file.filename}`} 
             : 
             { ...req.body};
             Product.updateOne({ _id: req.params.id }, { ...prodObject, _id: req.params.id })
@@ -63,8 +63,8 @@ router.put('/updateProduct/:id', auth, multer, (req, res) => {
 router.delete('/deleteProduct/:id', auth, (req, res) => {
     Product.findOne({ _id: req.params.id })
     .then(element => {
-        const filename = element.image.split('/images/')[1];
-        fs.unlink(`images/${filename}`, () => {
+        const filename = element.image.split('/uploads/')[1];
+        fs.unlink(`/uploads/${filename}`, () => {
             Product.deleteOne({ _id: req.params.id })
             .then(() => res.status(200).json({message: "objet supprimé!"}))
             .catch(error => res.status(400).json({ error }));

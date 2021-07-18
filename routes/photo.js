@@ -9,7 +9,7 @@ const Photo = require('../models/Photo');
 router.post('/addNewPhoto', auth, multer, (req, res) => {
   const photo = new Photo({
   ...req.body,
-  image: `${req.protocol}://${req.get('host')}/images/${req.file.filename}`
+  image: `${req.protocol}://${req.get('host')}/uploads/${req.file.filename}`
 });
 
   photo.save()
@@ -28,12 +28,12 @@ router.put('/updatePhoto', auth, multer,(req,res) => {
   if(req.file && req.file != req.body.image){
     return Photo.findOne({ _id: req.body.num })
     .then(element => {
-      const filename = element.image.split('/images/')[1];
-      fs.unlink(`images/${filename}`, () => {
+      const filename = element.image.split('/uploads/')[1];
+      fs.unlink(`/uploads/${filename}`, () => {
           Photo.deleteOne({ _id: req.body.num })
             const photoObject = req.file ? 
             { ...req.body,
-            image: `${req.protocol}://${req.get('host')}/images/${req.file.filename}`} 
+            image: `${req.protocol}://${req.get('host')}/uploads/${req.file.filename}`} 
             : 
             { ...req.body};
           Photo.updateOne({ _id: req.body.num }, { ...photoObject, _id: req.body.num })
