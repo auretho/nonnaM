@@ -28,7 +28,7 @@ mongoose.connect(`mongodb+srv://${process.env.DB_USER}:${process.env.DB_PASSWORD
 mongoose.set(
   'useCreateIndex', true);
 
-app.use('/images', express.static(path.join(__dirname,'images')));
+app.use(express.static(path.join(__dirname,'images')));
 
 
 app.use('/backoffice/user', userRoute);
@@ -38,9 +38,9 @@ app.use('/backoffice/order', orderRoute);
 app.use('/backoffice/recipe', recipeRoute);
 app.use('/backoffice/legal', legalRoute);
 
-// app.get('/*', (req,res) => {
-//   res.sendFile(path.join(__dirname, './build/index.html'))
-// })
+app.get('/*', (req,res) => {
+  res.sendFile(path.join(__dirname, './build/index.html'))
+})
 
 const port = process.env.PORT || 3001;
 app.listen(port, () => console.log(`Le serveur tourne sur le port ${port}`))
