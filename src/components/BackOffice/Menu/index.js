@@ -43,7 +43,7 @@ const MenuBar = ({activeMenuItem, handleChange}) => {
               onClick={handleMenuItemChange}
             />
           </NavHashLink>
-          <NavHashLink smooth to="/backoffice/legal">
+          <NavHashLink smooth to="/backoffice/legals">
             <Menu.Item              
               // href="/backoffice/photos"
               name='infos légales'
