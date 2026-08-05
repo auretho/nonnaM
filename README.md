@@ -56,18 +56,18 @@ l’administrateur du site qui a accès à la partie back-office en plus du rest
 site, grâce à des identifiants sécurisés.
 
 ## TECHNOLOGIES UTILISÉES
-- **Front** :
-o React
-o Redux
-o Axios
-o Sass
-o Semantic UI (utilisé uniquement pour quelques éléments ponctuels, type
+**Front** :
+- React
+- Redux
+- Axios
+- Sass
+- Semantic UI (utilisé uniquement pour quelques éléments ponctuels, type
 bouton etc...)
 
-- **Back** :
-o Node.js
-o Express
-o MongoDb
-o Mongoose
-o Multer
-o Nodemailer
+**Back** :
+- Node.js
+- Express
+- MongoDb
+- Mongoose
+- Multer
+- Nodemailer
